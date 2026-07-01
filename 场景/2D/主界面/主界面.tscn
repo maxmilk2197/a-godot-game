@@ -1,0 +1,179 @@
+[gd_scene format=3 uid="uid://q8sgepxllruc"]
+
+[ext_resource type="Texture2D" uid="uid://flqa8iodbcsp" path="res://资源/图片/主界面/主界面.png" id="1_wotfb"]
+[ext_resource type="FontFile" uid="uid://bpdhcar5v37ae" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="2_1vsfq"]
+[ext_resource type="Script" uid="uid://bi8cy7awif724" path="res://脚本/菜单/主界面/按钮.gd" id="2_bi7fr"]
+[ext_resource type="FontFile" uid="uid://b6lvbw70p2mhj" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="3_wotfb"]
+
+[sub_resource type="Theme" id="Theme_ajy4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bi7fr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wotfb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pyy4s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk53g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bk627"]
+
+[node name="主界面" type="Control" unique_id=151493605]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="背景" type="TextureRect" parent="." unique_id=621781731]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0000076
+offset_top = -4.000004
+offset_right = 389.0
+offset_bottom = 217.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("1_wotfb")
+
+[node name="按钮" type="NinePatchRect" parent="." unique_id=910123976]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019965278
+anchor_top = 0.41666666
+anchor_right = 0.27083334
+anchor_bottom = 0.875
+offset_bottom = 1.5258789e-05
+theme = SubResource("Theme_ajy4o")
+script = ExtResource("2_bi7fr")
+metadata/_edit_use_anchors_ = true
+
+[node name="加载存档" type="Button" parent="按钮" unique_id=324746433]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.31515148
+anchor_right = 1.0
+anchor_bottom = 0.530303
+offset_bottom = 1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(0.9529412, 0.9529412, 0.9529412, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5019608)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_wotfb")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bi7fr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wotfb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pyy4s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mk53g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bk627")
+text = "加载游戏"
+alignment = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="新游戏" type="Button" parent="按钮" unique_id=1324917329]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5545454
+anchor_right = 1.0
+anchor_bottom = 0.76969695
+offset_top = 1.5258789e-05
+offset_bottom = 1.5258789e-05
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_visual_only = false
+theme_override_colors/font_color = Color(0.9529412, 0.9529412, 0.9529412, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5019608)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_wotfb")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bi7fr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wotfb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pyy4s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mk53g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bk627")
+text = "新游戏"
+alignment = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="退出" type="Button" parent="按钮" unique_id=819196277]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+offset_transform_enabled = true
+theme_override_colors/font_color = Color(0.9529412, 0.9529412, 0.9529412, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.5019608)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("3_wotfb")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bi7fr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wotfb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pyy4s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mk53g")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bk627")
+text = "退出"
+alignment = 0
+
+[node name="标题" type="Control" parent="." unique_id=1122255156]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -323.9858
+offset_top = -275.0
+offset_right = 323.98584
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="标题" unique_id=1232800246]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.7764706)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.36078432)
+theme_override_fonts/font = ExtResource("2_1vsfq")
+theme_override_font_sizes/font_size = 100
+text = "眠冬与你 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="遮罩" type="ColorRect" parent="." unique_id=1328901426]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="按钮/加载存档" to="按钮" method="当_加载_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/加载存档" to="按钮" method="当_加载_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/加载存档" to="按钮" method="加载存档"]
+[connection signal="mouse_entered" from="按钮/新游戏" to="按钮" method="当_新游戏_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/新游戏" to="按钮" method="当_新游戏_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/新游戏" to="按钮" method="新游戏"]
+[connection signal="mouse_entered" from="按钮/退出" to="按钮" method="当_退出_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/退出" to="按钮" method="当_退出_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/退出" to="按钮" method="_on_退出_pressed"]

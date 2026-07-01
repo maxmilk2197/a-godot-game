@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bbyxssg0k1p6d"]
+
+[ext_resource type="StyleBox" uid="uid://c0mcf4o5j2a1y" path="res://资源/stylebox/存档按钮.tres" id="1_738b0"]
+[ext_resource type="StyleBox" uid="uid://c4kjrsbq0dejj" path="res://资源/stylebox/存档按钮_按下.tres" id="2_5n8b4"]
+
+[node name="保存加载按钮" type="Button" unique_id=1652372160]
+anchors_preset = -1
+anchor_right = 0.7762106
+anchor_bottom = 0.21944444
+offset_right = 6.4504395
+offset_bottom = 2.0
+theme_override_styles/normal = ExtResource("1_738b0")
+theme_override_styles/pressed = ExtResource("2_5n8b4")
+theme_override_styles/hover = ExtResource("1_738b0")
+theme_override_styles/disabled = ExtResource("1_738b0")
+theme_override_styles/focus = ExtResource("2_5n8b4")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="标签" type="Label" parent="." unique_id=869754093]
+layout_mode = 1
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 38.0
+offset_bottom = 29.0
+text = "Null"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="主标签" type="Label" parent="." unique_id=1743359865]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.468
+anchor_top = 0.4272152
+anchor_right = 0.532
+anchor_bottom = 0.57278484
+offset_left = 11.870148
+offset_right = -11.870117
+grow_horizontal = 2
+grow_vertical = 2
+text = "没有存档"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true

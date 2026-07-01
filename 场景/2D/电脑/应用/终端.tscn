@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://8x0nfbbrqaw7"]
+
+[ext_resource type="PackedScene" uid="uid://bmooiueddrl71" path="res://场景/2D/电脑/模板/窗口.tscn" id="1_pwgau"]
+[ext_resource type="Script" uid="uid://nf3lx5tnsqdv" path="res://脚本/电脑/应用/终端.gd" id="2_ea1ky"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwgau"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ea1ky"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_detail = 5
+
+[node name="窗口" unique_id=464597521 instance=ExtResource("1_pwgau")]
+
+[node name="背景" parent="背景" parent_id_path=PackedInt32Array(50669860) index="0" unique_id=1307743298]
+offset_top = 24.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pwgau")
+
+[node name="标题" parent="标题栏" parent_id_path=PackedInt32Array(329504784) index="2" unique_id=1424943315]
+text = "终端"
+
+[node name="控件" parent="." index="2" unique_id=1208819778]
+script = ExtResource("2_ea1ky")
+
+[node name="终端" type="TextEdit" parent="控件" index="0" unique_id=638373195]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -0.70833397
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea1ky")

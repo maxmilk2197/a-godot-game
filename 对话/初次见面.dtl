@@ -1,0 +1,33 @@
+[style name="02"]
+[background arg="#000000ff" fade="0.0"]
+开始？
+audio music "res://资源/音频/音乐/木漏れ日の調べ.mp3"
+数天前的晚上
+[voice path="res://资源/音频/音效/敲门声.mp3" volume="0.0"]
+(咚咚咚)
+join yun (默认) rightmost
+yun: 是哥哥吗？
+你: 谁啊？
+yun: （看样子应该是这里了）
+yun: 哦!，请看看这个
+yun: （递过来一封信）
+你: 嗯，我知道了
+你: 先进门吧
+yun: 谢谢了
+leave yun
+audio "res://资源/音频/音效/木门关门声、关门、哐当、提示音_爱给网_aigei_com.mp3"
+[background arg="res://资源/图片/家/玄关.png" fade="1.0" transition="Simple Fade" wait="true"]
+join yun right
+[wait_input]
+leave yun [animation="Fade Out Down"]
+[background arg="#000000ff" fade="1.0" transition="Simple Fade" wait="true"]
+[wait_input]
+join yun right
+yun: 哥哥起床了！
+[background arg="res://资源/图片/家/白天.png" fade="1.0" wait="true"]
+你: （又梦到那一天了啊）
+你: （总之，这就是妹妹的来历了）
+yun: 哥哥？
+[background arg="res://资源/图片/过渡/存档保存中.png" fade="0.3" wait="true"]
+[signal arg="进入客厅场景"]
+jump 01/

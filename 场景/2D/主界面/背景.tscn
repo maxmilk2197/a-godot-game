@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dwijqhyg01337"]
+
+[ext_resource type="Texture2D" uid="uid://dadkmnr7f1pr5" path="res://资源/天空/贴图/AllSkyFree_Sky_OvercastLow_Equirect.png" id="1_i6not"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_w6fby"]
+panorama = ExtResource("1_i6not")
+
+[sub_resource type="Sky" id="Sky_sq3e6"]
+sky_material = SubResource("PanoramaSkyMaterial_w6fby")
+
+[sub_resource type="Environment" id="Environment_qaxoq"]
+background_mode = 2
+sky = SubResource("Sky_sq3e6")
+
+[node name="背景" type="Node3D" unique_id=2006096851]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1118757604]
+environment = SubResource("Environment_qaxoq")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1646652382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="世界" type="Node3D" parent="." unique_id=1895619571]

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dedi4gjjam6fm"]
+
+[ext_resource type="Shader" uid="uid://s61bgp0vm2bf" path="res://资源/着色器/亚克力.gdshader" id="1_wssre"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0x7cn"]
+shader = ExtResource("1_wssre")
+shader_parameter/strength = 3.3
+shader_parameter/mix_percentage = 0.400000019
+
+[node name="主界面" type="Control" unique_id=440480169]
+layout_mode = 3
+anchor_right = 0.3265625
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="背景" type="Control" parent="." unique_id=463994230]
+layout_mode = 1
+anchor_right = 0.92583734
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="模糊2" type="ColorRect" parent="背景" unique_id=1089224950]
+material = SubResource("ShaderMaterial_0x7cn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="." unique_id=1185171646]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control3" type="Control" parent="." unique_id=408099177]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Control4" type="Control" parent="." unique_id=122667629]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

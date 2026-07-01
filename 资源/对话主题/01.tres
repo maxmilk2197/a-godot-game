@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://dfccowolc64nx"]
+
+[ext_resource type="PackedScene" uid="uid://cjnnvd86pl6e0" path="res://资源/对话主题/Custom01/custom_01.tscn" id="1_sryob"]
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_r4wkv"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_wdh87"]
+
+[sub_resource type="Resource" id="Resource_5a0jh"]
+script = ExtResource("2_r4wkv")
+scene = ExtResource("1_sryob")
+
+[resource]
+script = ExtResource("11_wdh87")
+name = "01"
+layer_info = {
+"": SubResource("Resource_5a0jh")
+}
+metadata/_latest_layer = ""

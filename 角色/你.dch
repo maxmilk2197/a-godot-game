@@ -1,0 +1,21 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 0.58431375, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "02",
+"suffix": ""
+},
+&"default_portrait": "",
+&"description": "",
+&"display_name": "你",
+&"mirror": false,
+&"nicknames": ["你"],
+&"offset": Vector2(0, 0),
+&"portraits": {},
+&"scale": 1.0
+}

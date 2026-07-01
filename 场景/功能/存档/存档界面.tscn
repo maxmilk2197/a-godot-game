@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dc1oyd6jk2qqg"]
+
+[ext_resource type="Script" uid="uid://c8ncbcgiv373a" path="res://脚本/菜单/存档界面/存档界面.gd" id="1_3khrw"]
+[ext_resource type="PackedScene" uid="uid://bbyxssg0k1p6d" path="res://场景/功能/存档/保存加载按钮.tscn" id="2_dsnkd"]
+
+[node name="存档" type="Control" unique_id=818469670]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3khrw")
+"缓动类型" = 0
+
+[node name="背景" type="Control" parent="." unique_id=322226846]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="背景" unique_id=1026923017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="按钮组" type="Control" parent="." unique_id=990095366]
+layout_mode = 1
+anchor_left = 0.109375
+anchor_top = 0.13055556
+anchor_right = 0.9052084
+anchor_bottom = 0.92638886
+offset_right = -18.666748
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="保存加载按钮1" parent="按钮组" unique_id=1652372160 instance=ExtResource("2_dsnkd")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 160.0
+grow_horizontal = 2
+
+[node name="保存加载按钮2" parent="按钮组" unique_id=1955547161 instance=ExtResource("2_dsnkd")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -86.5
+offset_right = 500.0
+offset_bottom = 73.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="保存加载按钮3" parent="按钮组" unique_id=1852769125 instance=ExtResource("2_dsnkd")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -173.0
+offset_right = 500.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="遮罩" type="ColorRect" parent="." unique_id=734635825]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="页码" type="Label" parent="." unique_id=1538693812]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.93828124
+anchor_top = 0.95555556
+anchor_right = 0.9585937
+anchor_bottom = 0.9875
+grow_horizontal = 0
+grow_vertical = 0
+text = "0/6"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="按钮组/保存加载按钮1" to="." method="按下_保存加载按钮1"]
+[connection signal="pressed" from="按钮组/保存加载按钮2" to="." method="按下_保存加载按钮2"]
+[connection signal="pressed" from="按钮组/保存加载按钮3" to="." method="按下_保存加载按钮3"]
+
+[editable path="按钮组/保存加载按钮1"]
+[editable path="按钮组/保存加载按钮2"]
+[editable path="按钮组/保存加载按钮3"]

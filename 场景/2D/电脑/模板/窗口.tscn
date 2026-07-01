@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bmooiueddrl71"]
+
+[ext_resource type="Script" uid="uid://dpvuoki40mj5i" path="res://脚本/电脑/窗口.gd" id="1_7ixvk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0srsx"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7p7o"]
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ixvk"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_611x2"]
+bg_color = Color(0, 0, 0, 0.6901961)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nj1ri"]
+bg_color = Color(0.99999994, 0.22953573, 0.17418528, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="窗口" type="Control" unique_id=464597521]
+layout_mode = 3
+anchor_right = 0.99670476
+anchor_bottom = 0.96944445
+offset_right = 4.2178955
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ixvk")
+metadata/_edit_lock_ = true
+
+[node name="背景" type="Control" parent="." unique_id=50669860]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="背景" type="Panel" parent="背景" unique_id=1307743298]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0srsx")
+metadata/_edit_lock_ = true
+
+[node name="标题栏" type="Control" parent="." unique_id=329504784]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 0.04042179
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="标题栏背景" type="Panel" parent="标题栏" unique_id=688176762]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o7p7o")
+metadata/_edit_lock_ = true
+
+[node name="分割" type="Panel" parent="标题栏/标题栏背景" unique_id=1456738756]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7ixvk")
+
+[node name="关闭" type="Button" parent="标题栏" unique_id=278495879]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9765625
+anchor_top = 0.13743962
+anchor_right = 0.9921875
+anchor_bottom = 0.8246377
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_611x2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_611x2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nj1ri")
+text = "X"
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="标题" type="Label" parent="标题栏" unique_id=1424943315]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012812501
+anchor_top = 0.18633334
+anchor_right = 0.96015626
+anchor_bottom = 0.9
+offset_left = 0.5999994
+offset_top = -1.5900002
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="控件" type="Control" parent="." unique_id=1208819778]
+anchors_preset = 0
+anchor_top = 0.041666668
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="标题栏/关闭" to="." method="_on_关闭_pressed"]
