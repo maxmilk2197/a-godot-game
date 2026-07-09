@@ -34,6 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xshxy")
 metadata/_edit_lock_ = true
+metadata/_edit_vertical_guides_ = [-266.0]
 
 [node name="背景" type="TextureRect" parent="." unique_id=121810114]
 z_index = -1
@@ -150,9 +151,14 @@ metadata/_edit_lock_ = true
 
 [node name="信息" type="Control" parent="场景交互" unique_id=900413945]
 layout_mode = 1
-anchor_left = -0.246875
-anchor_right = 0.03359375
-anchor_bottom = 0.16805555
+anchor_left = -0.00078125
+anchor_top = -0.0027777778
+anchor_right = 0.2796875
+anchor_bottom = 0.16527776
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
 script = ExtResource("3_eioms")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
@@ -167,11 +173,19 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="场景交互/信息" unique_id=1307070065]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-metadata/_edit_lock_ = true
+[node name="好感" type="Label" parent="场景交互/信息" unique_id=1307070065]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013927577
+anchor_top = 0.5867769
+anchor_right = 0.21448468
+anchor_bottom = 0.86776865
+offset_right = -24.0
+offset_bottom = -11.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "好感度"
+metadata/_edit_use_anchors_ = true
 
 [node name="折叠" type="Button" parent="场景交互/信息" unique_id=223286673]
 layout_mode = 1
@@ -186,6 +200,19 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_s8gn6")
 theme_override_styles/focus = SubResource("StyleBoxFlat_s8gn6")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
+
+[node name="星期" type="Label" parent="场景交互/信息" unique_id=514422843]
+layout_mode = 0
+anchor_left = 0.011142061
+anchor_top = 0.016528927
+anchor_right = 0.21169916
+anchor_bottom = 0.29752067
+offset_right = -32.0
+offset_bottom = -11.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "星期一"
+metadata/_edit_use_anchors_ = true
 
 [node name="背景音乐" type="AudioStreamPlayer" parent="." unique_id=1891284887]
 stream = ExtResource("7_u4jm0")

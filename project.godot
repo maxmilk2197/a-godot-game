@@ -13,6 +13,7 @@ config_version=5
 config/name="养只妹妹"
 run/main_scene="uid://q8sgepxllruc"
 config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 
 [autoload]
 
@@ -20,8 +21,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 Dialogic="*uid://ds2q0uclmolvu"
 cmd="*uid://c6pltkbl2dq77"
 save="*uid://bfg2to5u6v5od"
-save_system="*uid://by4b70xtsmlgl"
-____="*uid://bxjfff87yw4x1"
+info="*uid://c66qvaxv5kkhx"
 
 [dialogic]
 

@@ -11,10 +11,10 @@ func _ready():
 	$"退出".offset_transform_enabled = true
 	$"加载存档".offset_transform_enabled = true
 	if save.是否有任意存档():
-		print("[信息]","发现现存档")
+		print("[存档]","发现现存档")
 		$"加载存档".show()
 	else:
-		print("[信息]","未发现存档")
+		print("[存档]","未发现存档")
 		$"加载存档".hide()
 
 func _on_signal_event(argument: Variant):
@@ -23,24 +23,28 @@ func _on_signal_event(argument: Variant):
 		
 		
 func 进入客厅场景():
-	print("[信息]","开始自动保存")
+	print("[保存]","开始自动保存")
 	var 当前时间字典 = Time.get_datetime_dict_from_system()
 	var 月 = 当前时间字典.month
 	var 日 = 当前时间字典.day
 	var 时 = 当前时间字典.hour
 	var 分 = 当前时间字典.minute
-	var 数据 = 存档.new()
-	数据.游玩天数 = 0
-	数据.最后游玩时间 = "%d月%d日 %02d:%02d" % [月, 日, 时, 分]
-	数据.最后游玩场景 = "res://场景/游戏/家/家.tscn"
-	数据.上次存档 = save.当前存档
+
+	# 直接构造字典，代替原来的 Resource 对象
+	var 数据 = {
+		"游玩天数": 0,
+		"最后游玩时间": "%d月%d日 %02d:%02d" % [月, 日, 时, 分],
+		"最后游玩场景": "res://场景/游戏/家/家.tscn",
+		"上次存档": save.当前存档
+	}
+
 	var 返回信息 = save.自动保存(数据)
 	if 返回信息:
-		print("[信息]","自动保存成功")
+		print("[存档]","自动保存成功")
 	else:
-		printerr("[错误]","自动保存失败,返回结果:",返回信息 )
+		printerr("[存档]","自动保存失败,返回结果:", 返回信息)
 	get_tree().change_scene_to_file("res://场景/游戏/家/家.tscn")
-	
+
 	
 func 渐变动画() :
 	遮罩.modulate = Color(0,0,0,0)   # 透明

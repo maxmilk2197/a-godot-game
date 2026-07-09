@@ -54,24 +54,24 @@ func 刷新存档显示() -> void:
 
 	# 1
 	if save.检查槽位有无存档(槽位1):
-		var d1 = save.加载指定槽位(槽位1) as 存档
+		var d1 = save.加载指定槽位(槽位1)       # 返回 Dictionary
 		var b1 = 获取按钮(1)
 		b1.disabled = false
-		获取标签(1, "主标签").text = d1.最后游玩时间
+		获取标签(1, "主标签").text = d1.get("最后游玩时间", "未知时间")
 
 	# 2
 	if save.检查槽位有无存档(槽位2):
-		var d2 = save.加载指定槽位(槽位2) as 存档
+		var d2 = save.加载指定槽位(槽位2)
 		var b2 = 获取按钮(2)
 		b2.disabled = false
-		获取标签(2, "主标签").text = d2.最后游玩时间
+		获取标签(2, "主标签").text = d2.get("最后游玩时间", "未知时间")
 
 	# 3
 	if save.检查槽位有无存档(槽位3):
-		var d3 = save.加载指定槽位(槽位3) as 存档
+		var d3 = save.加载指定槽位(槽位3)
 		var b3 = 获取按钮(3)
 		b3.disabled = false
-		获取标签(3, "主标签").text = d3.最后游玩时间
+		获取标签(3, "主标签").text = d3.get("最后游玩时间", "未知时间")
 
 
 # =========================
@@ -176,7 +176,8 @@ func _input(event: InputEvent) -> void:
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			上一页 = false
 			翻页()
-		
+
+
 # =========================
 # 翻页逻辑
 # =========================
@@ -220,7 +221,6 @@ func 按下_保存加载按钮3() -> void:
 	读取存档(当前页数 * 3 + 2)
 
 
-
 func 关闭窗口() -> void:
 	var tween = create_tween()
 	tween.tween_property(遮罩, "modulate:a", 0.0, 0.2)
@@ -234,10 +234,10 @@ func 读取存档(槽位: int) -> void:
 	var tween = create_tween().bind_node(遮罩)
 	tween.tween_property(遮罩, "modulate", Color.BLACK, 0.2)
 	await tween.finished
+
 	save.切换槽位(槽位)
-	var 数据资源 = save.加载()
-	var 存档数据 = 数据资源 as 存档
-	if 存档数据 == null:
-		printerr("加载的文件不是有效的存档资源")
+	var 数据字典 = save.加载()          # 现在是 Dictionary
+	if 数据字典.is_empty():
+		printerr("加载的存档为空或无效")
 		return
-	get_tree().change_scene_to_file(存档数据.最后游玩场景)
+	get_tree().change_scene_to_file(数据字典["最后游玩场景"])

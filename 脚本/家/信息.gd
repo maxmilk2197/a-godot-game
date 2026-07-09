@@ -1,5 +1,5 @@
 extends Control
-var 折叠 := true
+var 折叠 := false
 
 func _ready() -> void:
 	save.加载()
