@@ -5,9 +5,3 @@ func _ready() -> void:
 	if info.开发者模式:
 		$"./设备类型".text ="是否为移动设备:"+ str(info.设备是否为移动设备)
 	
-
-
-
-
-func _process(delta: float) -> void:
-	pass

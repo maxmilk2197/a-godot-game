@@ -6,9 +6,6 @@ func _ready() -> void:
 
 
 
-func _process(delta: float) -> void:
-	pass
-
 
 
 func 切换显示() -> void:
