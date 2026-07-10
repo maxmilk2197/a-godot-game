@@ -19,7 +19,7 @@
 &"portraits": {
 "生气的云": {
 "export_overrides": {
-"image": "\"res://资源/图片/角色/阿云/2669DBD9FEAED9FCBFD4A3CCBC0AE9B3.png\""
+"image": "\"res://资源/纹理/角色/阿云/2669DBD9FEAED9FCBFD4A3CCBC0AE9B3.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -28,7 +28,7 @@
 },
 "默认": {
 "export_overrides": {
-"image": "\"res://资源/图片/角色/阿云/001.png\""
+"image": "\"res://资源/纹理/角色/阿云/001.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

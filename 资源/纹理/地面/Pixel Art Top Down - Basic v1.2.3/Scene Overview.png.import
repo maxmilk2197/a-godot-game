@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7k7f3f6agxfr"
-path="res://.godot/imported/晚上.png-eab481d9eb6253b88cb3ab9ac37cca68.ctex"
+uid="uid://dkus5ibmk3nhc"
+path="res://.godot/imported/Scene Overview.png-4bf5dd328461e1876e1efea0b040693a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://资源/图片/家/晚上.png"
-dest_files=["res://.godot/imported/晚上.png-eab481d9eb6253b88cb3ab9ac37cca68.ctex"]
+source_file="res://资源/纹理/地面/Pixel Art Top Down - Basic v1.2.3/Scene Overview.png"
+dest_files=["res://.godot/imported/Scene Overview.png-4bf5dd328461e1876e1efea0b040693a.ctex"]
 
 [params]
 

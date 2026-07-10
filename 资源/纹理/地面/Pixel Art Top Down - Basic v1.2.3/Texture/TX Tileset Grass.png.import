@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx68o6d104sys"
-path="res://.godot/imported/白天.png-6b794ac0713cbc84b7cc8fd843fdf621.ctex"
+uid="uid://vxu3akjj6g3f"
+path="res://.godot/imported/TX Tileset Grass.png-a693725d4c77df2d5127924b09d20ca7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://资源/图片/家/白天.png"
-dest_files=["res://.godot/imported/白天.png-6b794ac0713cbc84b7cc8fd843fdf621.ctex"]
+source_file="res://资源/纹理/地面/Pixel Art Top Down - Basic v1.2.3/Texture/TX Tileset Grass.png"
+dest_files=["res://.godot/imported/TX Tileset Grass.png-a693725d4c77df2d5127924b09d20ca7.ctex"]
 
 [params]
 

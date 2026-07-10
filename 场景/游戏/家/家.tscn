@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c6q4nwtp1vnyq"]
 
-[ext_resource type="Texture2D" uid="uid://qlltal2kga7g" path="res://资源/图片/角色/阿云/001.png" id="1_ba6u3"]
+[ext_resource type="Texture2D" uid="uid://qlltal2kga7g" path="res://资源/纹理/角色/阿云/001.png" id="1_ba6u3"]
 [ext_resource type="Script" uid="uid://wn0wwk6he07k" path="res://脚本/家/立绘.gd" id="1_ecy2k"]
 [ext_resource type="Script" uid="uid://bp5kf4usuftoh" path="res://脚本/家/主脚本.gd" id="1_xshxy"]
-[ext_resource type="Texture2D" uid="uid://dx68o6d104sys" path="res://资源/图片/家/白天.png" id="2_u4jm0"]
+[ext_resource type="Texture2D" uid="uid://dx68o6d104sys" path="res://资源/纹理/家/白天.png" id="2_u4jm0"]
 [ext_resource type="Script" uid="uid://cfnmxc13p1jrt" path="res://脚本/家/信息.gd" id="3_eioms"]
 [ext_resource type="FontFile" uid="uid://bpdhcar5v37ae" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="3_vgfoc"]
 [ext_resource type="Script" uid="uid://bke21nys8vcmj" path="res://脚本/家/场景交互.gd" id="6_gq21x"]

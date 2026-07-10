@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hakdlqevxdoe"
-path="res://.godot/imported/存档保存中.png-ed340525f196654a10fb7b79b7ee6503.ctex"
+uid="uid://dtox7r1q2po1n"
+path="res://.godot/imported/TX Shadow.png-5252f23fbe0192a780a5a30247ec9990.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://资源/图片/过渡/存档保存中.png"
-dest_files=["res://.godot/imported/存档保存中.png-ed340525f196654a10fb7b79b7ee6503.ctex"]
+source_file="res://资源/纹理/地面/Pixel Art Top Down - Basic v1.2.3/Texture/TX Shadow.png"
+dest_files=["res://.godot/imported/TX Shadow.png-5252f23fbe0192a780a5a30247ec9990.ctex"]
 
 [params]
 

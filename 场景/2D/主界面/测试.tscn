@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://bpdhcar5v37ae" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="1_g85eo"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bk627"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g85eo"]
 bg_color = Color(0, 0.39215687, 1, 1)
 border_color = Color(9.62615e-07, 0.33463684, 0.8612479, 1)
@@ -46,6 +48,8 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pyy4s"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8gn6"]
 bg_color = Color(0.9515795, 0.95157963, 0.9515795, 1)
 corner_radius_top_left = 30
@@ -69,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=168760193]
-visible = false
+material = SubResource("ShaderMaterial_bk627")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -95,6 +99,7 @@ text = "Button"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="." unique_id=588874953]
+material = SubResource("ShaderMaterial_pyy4s")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.203125

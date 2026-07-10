@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ceoiu8u0gik3j"]
 
-[ext_resource type="Texture2D" uid="uid://dokh5pvtx0qh7" path="res://资源/图片/电脑/壁纸/1.png" id="1_5lr2e"]
+[ext_resource type="Texture2D" uid="uid://dokh5pvtx0qh7" path="res://资源/纹理/电脑/壁纸/1.png" id="1_5lr2e"]
 [ext_resource type="Shader" uid="uid://s61bgp0vm2bf" path="res://资源/着色器/亚克力.gdshader" id="2_v1684"]
 [ext_resource type="PackedScene" uid="uid://8x0nfbbrqaw7" path="res://场景/2D/电脑/应用/终端.tscn" id="3_tgh6f"]
 

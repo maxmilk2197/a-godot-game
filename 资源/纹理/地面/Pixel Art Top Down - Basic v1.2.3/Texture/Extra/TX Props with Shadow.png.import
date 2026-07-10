@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byu7jidrafdf5"
-path="res://.godot/imported/玄关.png-c34e2c0496a2384f5581b369d3fc0286.ctex"
+uid="uid://c5d7nn100lh4l"
+path="res://.godot/imported/TX Props with Shadow.png-d250fe6eea95eb6aec3f13637ffb9717.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://资源/图片/家/玄关.png"
-dest_files=["res://.godot/imported/玄关.png-c34e2c0496a2384f5581b369d3fc0286.ctex"]
+source_file="res://资源/纹理/地面/Pixel Art Top Down - Basic v1.2.3/Texture/Extra/TX Props with Shadow.png"
+dest_files=["res://.godot/imported/TX Props with Shadow.png-d250fe6eea95eb6aec3f13637ffb9717.ctex"]
 
 [params]
 

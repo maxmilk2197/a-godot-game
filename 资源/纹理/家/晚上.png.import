@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qlltal2kga7g"
-path="res://.godot/imported/001.png-730da43f00d1dc8ea5fbf9367c4e33c6.ctex"
+uid="uid://c7k7f3f6agxfr"
+path="res://.godot/imported/晚上.png-9415ebf2e4bfa4c7cbaa33c5892476f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://资源/图片/角色/阿云/001.png"
-dest_files=["res://.godot/imported/001.png-730da43f00d1dc8ea5fbf9367c4e33c6.ctex"]
+source_file="res://资源/纹理/家/晚上.png"
+dest_files=["res://.godot/imported/晚上.png-9415ebf2e4bfa4c7cbaa33c5892476f7.ctex"]
 
 [params]
 

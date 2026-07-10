@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://q8sgepxllruc"]
 
-[ext_resource type="Texture2D" uid="uid://flqa8iodbcsp" path="res://资源/图片/主界面/主界面.png" id="1_wotfb"]
+[ext_resource type="Texture2D" uid="uid://flqa8iodbcsp" path="res://资源/纹理/主界面/主界面.png" id="1_wotfb"]
 [ext_resource type="FontFile" uid="uid://bpdhcar5v37ae" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="2_1vsfq"]
 [ext_resource type="Script" uid="uid://bi8cy7awif724" path="res://脚本/菜单/主界面/按钮.gd" id="2_bi7fr"]
 [ext_resource type="FontFile" uid="uid://b6lvbw70p2mhj" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="3_wotfb"]
