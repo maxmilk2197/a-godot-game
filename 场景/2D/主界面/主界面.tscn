@@ -42,9 +42,9 @@ texture = ExtResource("1_bk627")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019965278
-anchor_top = 0.41666666
+anchor_top = 0.45555556
 anchor_right = 0.27083334
-anchor_bottom = 0.875
+anchor_bottom = 0.9138889
 offset_bottom = 1.5258789e-05
 theme = SubResource("Theme_ajy4o")
 script = ExtResource("2_bi7fr")
@@ -52,7 +52,7 @@ script = ExtResource("2_bi7fr")
 "新游戏" = NodePath("新游戏2")
 "退出" = NodePath("退出2")
 "雪花" = NodePath("雪花")
-"按钮移动" = false
+"按钮移动" = true
 metadata/_edit_use_anchors_ = true
 
 [node name="加载存档2" type="TextureButton" parent="按钮" unique_id=2007528563]
@@ -109,11 +109,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="雪花" type="TextureRect" parent="按钮" unique_id=878624343]
 layout_mode = 0
-offset_left = -41.0
-offset_top = 116.0
-offset_right = 1223.0
-offset_bottom = 1064.0
-scale = Vector2(0.07999945, 0.08050732)
+offset_left = -17.555555
+offset_top = 124.0
+offset_right = 716.44446
+offset_bottom = 858.0
+scale = Vector2(0.066, 0.066)
 texture = ExtResource("6_u1ukt")
 
 [node name="标题" type="Control" parent="." unique_id=1122255156]

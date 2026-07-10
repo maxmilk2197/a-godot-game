@@ -9,7 +9,7 @@ var 雪花移动补间 : Tween
 @export var 新游戏 : TextureButton
 @export var 退出 : TextureButton
 @export var 雪花 : TextureRect
-@export var 按钮移动 : bool = true
+@export var 按钮移动 : bool = false
 #endregion
 
 func _ready():
@@ -61,7 +61,7 @@ func 渐变动画() :
 	
 #region 按钮动画
 func 当_加载_被鼠标碰到() -> void:
-	移动雪花(Vector2(-41, 28))
+	移动雪花(Vector2(-17, 36.0 ))
 	if 按钮移动:
 		加载存档补间 = 播放按钮动画(加载存档, Vector2(20, 0), 加载存档补间)
 
@@ -72,7 +72,7 @@ func 当_加载_不再被鼠标碰到() -> void:
 
 
 func 当_新游戏_被鼠标碰到() -> void:
-	移动雪花(Vector2(-41, 116))
+	移动雪花(Vector2(-17, 124.0))
 	if 按钮移动:
 		新游戏补间 = 播放按钮动画(新游戏, Vector2(20, 0), 新游戏补间)
 
@@ -81,7 +81,7 @@ func 当_新游戏_不再被鼠标碰到() -> void:
 		新游戏补间 = 播放按钮动画(新游戏, Vector2(0, 0), 新游戏补间)
 
 func 当_退出_被鼠标碰到() -> void:
-	移动雪花(Vector2(-41, 212),)
+	移动雪花(Vector2(-17, 228.0),)
 	if 按钮移动:
 		退出补间 = 播放按钮动画(退出, Vector2(20, 0), 退出补间)
 
