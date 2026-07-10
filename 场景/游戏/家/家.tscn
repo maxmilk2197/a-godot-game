@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cfnmxc13p1jrt" path="res://脚本/家/信息.gd" id="3_eioms"]
 [ext_resource type="FontFile" uid="uid://bpdhcar5v37ae" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="3_vgfoc"]
 [ext_resource type="Script" uid="uid://bke21nys8vcmj" path="res://脚本/家/场景交互.gd" id="6_gq21x"]
+[ext_resource type="FontFile" uid="uid://cvhju55m46fci" path="res://资源/字体/GenSenRounded2-B.ttc" id="7_sn4bq"]
 [ext_resource type="AudioStream" uid="uid://dye6urihdu0tt" path="res://资源/音频/音乐/1_30pm.mp3" id="7_u4jm0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gq21x"]
@@ -20,6 +21,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q50p0"]
 
 [sub_resource type="Theme" id="Theme_8yo52"]
+Label/fonts/font = ExtResource("7_sn4bq")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8gn6"]
 bg_color = Color(1, 1, 1, 1)
