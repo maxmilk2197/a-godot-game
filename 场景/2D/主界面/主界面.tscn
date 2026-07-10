@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://dye6urihdu0tt" path="res://资源/音频/音乐/1_30pm.mp3" id="13_weg6c"]
 
 [sub_resource type="Gradient" id="Gradient_illsk"]
-offsets = PackedFloat32Array(0.8761062, 1)
+offsets = PackedFloat32Array(0.82840234, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_j2inh"]

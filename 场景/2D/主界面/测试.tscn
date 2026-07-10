@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://bpdhcar5v37ae" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="1_g85eo"]
 [ext_resource type="Texture2D" uid="uid://jgltnpcf8dt6" path="res://资源/纹理/主界面/74D5CA03828781DE8F3AA1106CC8F2BC.png" id="2_6twhm"]
+[ext_resource type="FontFile" uid="uid://b6lvbw70p2mhj" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="3_nqqtx"]
+[ext_resource type="Texture2D" uid="uid://vr5leyy2hg21" path="res://资源/纹理/按钮/467A2222AA63BE8BA1FDDD4ECB8E4619.png" id="4_nvm03"]
 
 [sub_resource type="Gradient" id="Gradient_wakdm"]
 offsets = PackedFloat32Array(0, 0.4159292, 0.7345133, 1)
@@ -70,6 +72,18 @@ corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hxb8f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3str8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a0vim"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nhocf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3b6r8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_npl5c"]
+
 [node name="测试" type="Control" unique_id=852065109]
 layout_mode = 3
 anchors_preset = 15
@@ -80,16 +94,17 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1388051617]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = -0.06796875
+anchor_top = -0.011111111
+anchor_right = 0.9320313
+anchor_bottom = 0.98888886
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_kxh35")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=102985244]
-visible = false
 layout_mode = 0
 anchor_left = 0.03984375
 anchor_top = 0.16944444
@@ -106,7 +121,6 @@ text = "Button"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="." unique_id=588874953]
-visible = false
 material = SubResource("ShaderMaterial_pyy4s")
 layout_mode = 1
 anchors_preset = -1
@@ -133,3 +147,71 @@ visible = false
 position = Vector2(619, 330.00003)
 scale = Vector2(0.45780593, 0.4578059)
 texture = ExtResource("2_6twhm")
+
+[node name="Button3" type="Button" parent="." unique_id=1414391579]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 228.0
+offset_right = 284.0
+offset_bottom = 312.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hxb8f")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3str8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_a0vim")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nhocf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3b6r8")
+
+[node name="ColorRect" type="ColorRect" parent="Button3" unique_id=512445029]
+visible = false
+self_modulate = Color(0.4862745, 0.56078434, 0.7411765, 1)
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Button3" unique_id=394341827]
+material = SubResource("ShaderMaterial_npl5c")
+layout_mode = 0
+offset_left = -51.0
+offset_top = 8.0
+offset_right = 149.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0.4862745, 0.56078434, 0.7411765, 1)
+theme_override_colors/font_shadow_color = Color(0.5882353, 0.627451, 0.83137256, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.84705883, 0.85490197, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = -2
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("3_nqqtx")
+theme_override_font_sizes/font_size = 50
+text = "开始"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Button3" unique_id=969242397]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 9.0
+offset_right = 254.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.4862745, 0.56078434, 0.7411765, 1)
+theme_override_colors/font_shadow_color = Color(0.5882353, 0.627451, 0.83137256, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.84705883, 0.85490197, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = -2
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("3_nqqtx")
+theme_override_font_sizes/font_size = 50
+text = "游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="467a2222aa63be8ba1fddd4ecb8e4619" type="Sprite2D" parent="." unique_id=352614780]
+position = Vector2(147, 220)
+scale = Vector2(0.18199998, 0.19361702)
+texture = ExtResource("4_nvm03")

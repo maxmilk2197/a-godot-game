@@ -106,6 +106,7 @@ func 播放按钮动画(按钮: Control, 目标位置: Vector2, 旧补间: Tween
 
 
 func _加载存档() -> void:
+	$"../背景音乐".stop()
 	遮罩.modulate = Color(0,0,0,0)   # 透明
 	遮罩.show()
 	var tween = create_tween().bind_node(遮罩)
@@ -117,11 +118,13 @@ func _加载存档() -> void:
 	遮罩.hide()
 	
 func _新游戏() -> void:
+	$"../背景音乐".stop()
 	await 渐变动画()
 	Dialogic.signal_event.connect(_on_signal_event)
 	Dialogic.start("res://对话/初次见面.dtl")
 
 func _on_退出_pressed() -> void:
+	$"../背景音乐".stop()
 	await 渐变动画()
 	get_tree().quit()
 
