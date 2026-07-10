@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://dejrw24bjabo8"]
 
 [ext_resource type="FontFile" uid="uid://bpdhcar5v37ae" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="1_g85eo"]
+[ext_resource type="Texture2D" uid="uid://jgltnpcf8dt6" path="res://资源/纹理/主界面/74D5CA03828781DE8F3AA1106CC8F2BC.png" id="2_6twhm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bk627"]
+[sub_resource type="Gradient" id="Gradient_wakdm"]
+offsets = PackedFloat32Array(0, 0.4159292, 0.7345133, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.9797552, 0.83859134, 0.93361753, 1, 0.8974558, 0.9080749, 0.97835165, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kxh35"]
+gradient = SubResource("Gradient_wakdm")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g85eo"]
 bg_color = Color(0, 0.39215687, 1, 1)
@@ -72,17 +78,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=168760193]
-material = SubResource("ShaderMaterial_bk627")
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1388051617]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = SubResource("GradientTexture1D_kxh35")
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=102985244]
+visible = false
 layout_mode = 0
 anchor_left = 0.03984375
 anchor_top = 0.16944444
@@ -99,6 +106,7 @@ text = "Button"
 metadata/_edit_use_anchors_ = true
 
 [node name="Button2" type="Button" parent="." unique_id=588874953]
+visible = false
 material = SubResource("ShaderMaterial_pyy4s")
 layout_mode = 1
 anchors_preset = -1
@@ -119,3 +127,9 @@ anchor_right = 0.29
 anchor_bottom = 0.81666666
 theme_override_styles/panel = SubResource("StyleBoxFlat_60060")
 metadata/_edit_use_anchors_ = true
+
+[node name="74d5ca03828781de8f3aa1106cc8f2bc" type="Sprite2D" parent="." unique_id=1135513223]
+visible = false
+position = Vector2(619, 330.00003)
+scale = Vector2(0.45780593, 0.4578059)
+texture = ExtResource("2_6twhm")

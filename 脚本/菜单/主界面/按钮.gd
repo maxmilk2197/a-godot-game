@@ -13,15 +13,17 @@ var 雪花移动补间 : Tween
 #endregion
 
 func _ready():
+	$"../动画".play("logo")
+	await $"../动画".animation_finished
+	$"../logo".queue_free()
 	新游戏.offset_transform_enabled = true
 	退出.offset_transform_enabled = true
 	加载存档.offset_transform_enabled = true
 	if save.是否有任意存档():
 		print("[存档]","发现现存档")
-		加载存档.show()
 	else:
 		print("[存档]","未发现存档")
-		加载存档.hide()
+		雪花.position = Vector2(-17, 124.0)  
 
 func _on_signal_event(argument: Variant):
 	if argument == "进入客厅场景":
@@ -61,7 +63,7 @@ func 渐变动画() :
 	
 #region 按钮动画
 func 当_加载_被鼠标碰到() -> void:
-	移动雪花(Vector2(-17, 36.0 ))
+	移动雪花(Vector2(-17, 124.0))
 	if 按钮移动:
 		加载存档补间 = 播放按钮动画(加载存档, Vector2(20, 0), 加载存档补间)
 
@@ -72,7 +74,7 @@ func 当_加载_不再被鼠标碰到() -> void:
 
 
 func 当_新游戏_被鼠标碰到() -> void:
-	移动雪花(Vector2(-17, 124.0))
+	移动雪花(Vector2(-17, 36.0 ))
 	if 按钮移动:
 		新游戏补间 = 播放按钮动画(新游戏, Vector2(20, 0), 新游戏补间)
 
