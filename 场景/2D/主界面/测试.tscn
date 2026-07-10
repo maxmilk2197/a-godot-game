@@ -238,7 +238,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Button4" unique_id=1001532684]
 clip_children = 2
-material = SubResource("ShaderMaterial_npl5c")
 layout_mode = 0
 offset_left = -51.0
 offset_top = 8.0
