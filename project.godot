@@ -14,6 +14,7 @@ config/name="养只妹妹"
 run/main_scene="uid://q8sgepxllruc"
 config/features=PackedStringArray("4.7", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 
 [autoload]
 

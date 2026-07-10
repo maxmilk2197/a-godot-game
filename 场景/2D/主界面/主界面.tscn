@@ -41,7 +41,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("logo/白遮罩:modulate")
+tracks/1/path = NodePath("logo/遮罩:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -98,10 +98,22 @@ tracks/5/keys = {
 "update": 0,
 "values": [-80.0]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("logo/遮罩:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_1beqf"]
 resource_name = "logo"
-length = 5.0
+length = 6.0
 step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -110,7 +122,7 @@ tracks/0/path = NodePath("logo/logo:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2.5, 3.3),
+"times": PackedFloat32Array(0.5, 1.5, 3, 3.8000002),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -118,11 +130,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("logo/白遮罩:modulate")
+tracks/1/path = NodePath("logo/遮罩:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"times": PackedFloat32Array(0.5, 1, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0.5), Color(1, 1, 1, 1)]
@@ -134,7 +146,7 @@ tracks/2/path = NodePath("logo:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(3, 3.5),
+"times": PackedFloat32Array(3.5, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -146,7 +158,7 @@ tracks/3/path = NodePath("logo:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 3, 3.5),
+"times": PackedFloat32Array(0.5, 3.5, 4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, true, false]
@@ -158,7 +170,7 @@ tracks/4/path = NodePath("背景音乐:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 3.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -170,10 +182,22 @@ tracks/5/path = NodePath("背景音乐:volume_db")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(3, 4),
+"times": PackedFloat32Array(3.5, 4.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-20.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("logo/遮罩:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_es7vd"]
@@ -371,13 +395,14 @@ grow_vertical = 2
 texture = SubResource("GradientTexture1D_illsk")
 metadata/_edit_use_anchors_ = true
 
-[node name="白遮罩" type="ColorRect" parent="logo" unique_id=364929344]
+[node name="遮罩" type="ColorRect" parent="logo" unique_id=364929344]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="logo" type="TextureRect" parent="logo" unique_id=1062703028]
