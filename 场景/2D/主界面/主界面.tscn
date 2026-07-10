@@ -47,6 +47,7 @@ anchor_right = 0.27083334
 anchor_bottom = 0.9138889
 offset_bottom = 1.5258789e-05
 theme = SubResource("Theme_ajy4o")
+draw_center = false
 script = ExtResource("2_bi7fr")
 "加载存档" = NodePath("加载存档2")
 "新游戏" = NodePath("新游戏2")
