@@ -16,7 +16,7 @@ yun: （递过来一封信）
 yun: 谢谢了
 leave yun
 audio "res://资源/音频/音效/木门关门声、关门、哐当、提示音_爱给网_aigei_com.mp3"
-[background arg="res://资源/图片/家/玄关.png" fade="1.0" transition="Simple Fade" wait="true"]
+[background arg="res://资源/纹理/家/玄关.png" fade="1.0" transition="Simple Fade" wait="true"]
 join yun right
 [wait_input]
 leave yun [animation="Fade Out Down"]
@@ -24,10 +24,10 @@ leave yun [animation="Fade Out Down"]
 [wait_input]
 join yun right
 yun: 哥哥起床了！
-[background arg="res://资源/图片/家/白天.png" fade="1.0" wait="true"]
+[background arg="res://资源/纹理/家/白天.png" fade="1.0" wait="true"]
 你: （又梦到那一天了啊）
 你: （总之，这就是妹妹的来历了）
 yun: 哥哥？
-[background arg="res://资源/图片/过渡/存档保存中.png" fade="0.3" wait="true"]
+[background arg="res://资源/纹理/过渡/存档保存中.png" fade="0.3" wait="true"]
 [signal arg="进入客厅场景"]
 jump 01/

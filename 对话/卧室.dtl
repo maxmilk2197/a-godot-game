@@ -1,9 +1,9 @@
 audio music "res://资源/音频/音乐/宁静的序幕.mp3" [volume="0.0"]
 label 选项
 if {time} == "白天":
-	[background arg="res://资源/图片/家/白天.png" fade="1.0" wait="true"]
+	[background arg="res://资源/纹理/家/白天.png" fade="1.0" wait="true"]
 elif {time} == "晚上":
-	[background arg="res://资源/图片/家/晚上.png" fade="1.0" wait="true"]
+	[background arg="res://资源/纹理/家/晚上.png" fade="1.0" wait="true"]
 join yun right [wait="true"]
 yun: 怎么了？
 - 特别选项
@@ -54,7 +54,7 @@ yun: 怎么了？
 		yun: 我来啦有什么事吗？
 		jump 选项
 	- 离开卧室
-		[background arg="res://资源/图片/家/玄关.png" fade="0.0"]
+		[background arg="res://资源/纹理/家/玄关.png" fade="0.0"]
 		你: 要去做什么呢？
 		- 回到卧室
 			（妹妹似乎又进入房间了）
@@ -65,7 +65,7 @@ yun: 怎么了？
 				set {time} = "晚上"
 				[background arg="#000000ff" fade="1.0" wait="true"]
 				[signal arg="等到晚上"]
-				[background arg="res://资源/图片/家/晚上.png" fade="1.0" wait="true"]
+				[background arg="res://资源/纹理/家/晚上.png" fade="1.0" wait="true"]
 				[wait_input]
 				audio "res://资源/音频/音效/木门关门声、关门、哐当、提示音_爱给网_aigei_com.mp3"
 				join yun center
@@ -78,7 +78,7 @@ yun: 怎么了？
 				set {time} = "白天"
 				[background arg="#000000ff" fade="1.0" wait="true"]
 				[signal arg="睡觉"]
-				[background arg="res://资源/图片/家/白天.png" fade="1.0" wait="true"]
+				[background arg="res://资源/纹理/家/白天.png" fade="1.0" wait="true"]
 				[wait_input]
 				audio "res://资源/音频/音效/木门关门声、关门、哐当、提示音_爱给网_aigei_com.mp3"
 				join yun center

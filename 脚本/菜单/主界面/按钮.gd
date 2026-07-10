@@ -3,19 +3,25 @@ extends NinePatchRect
 var 新游戏补间: Tween
 var 退出补间: Tween
 var 加载存档补间: Tween
+var 雪花移动补间 : Tween
 @onready var 遮罩 = $"../遮罩"
+@export var 加载存档 : TextureButton
+@export var 新游戏 : TextureButton
+@export var 退出 : TextureButton
+@export var 雪花 : TextureRect
+@export var 按钮移动 : bool = true
 #endregion
 
 func _ready():
-	$"新游戏".offset_transform_enabled = true
-	$"退出".offset_transform_enabled = true
-	$"加载存档".offset_transform_enabled = true
+	新游戏.offset_transform_enabled = true
+	退出.offset_transform_enabled = true
+	加载存档.offset_transform_enabled = true
 	if save.是否有任意存档():
 		print("[存档]","发现现存档")
-		$"加载存档".show()
+		加载存档.show()
 	else:
 		print("[存档]","未发现存档")
-		$"加载存档".hide()
+		加载存档.hide()
 
 func _on_signal_event(argument: Variant):
 	if argument == "进入客厅场景":
@@ -55,24 +61,33 @@ func 渐变动画() :
 	
 #region 按钮动画
 func 当_加载_被鼠标碰到() -> void:
-	加载存档补间 = 播放按钮动画($"加载存档", Vector2(20, 0), 加载存档补间)
+	移动雪花(Vector2(-41, 28))
+	if 按钮移动:
+		加载存档补间 = 播放按钮动画(加载存档, Vector2(20, 0), 加载存档补间)
 
 
 func 当_加载_不再被鼠标碰到() -> void:
-	加载存档补间 = 播放按钮动画($"加载存档", Vector2(0, 0), 加载存档补间)
+	if 按钮移动:
+		加载存档补间 = 播放按钮动画(加载存档, Vector2(0, 0), 加载存档补间)
 
 
 func 当_新游戏_被鼠标碰到() -> void:
-	新游戏补间 = 播放按钮动画($"新游戏", Vector2(20, 0), 新游戏补间)
+	移动雪花(Vector2(-41, 116))
+	if 按钮移动:
+		新游戏补间 = 播放按钮动画(新游戏, Vector2(20, 0), 新游戏补间)
 
 func 当_新游戏_不再被鼠标碰到() -> void:
-	新游戏补间 = 播放按钮动画($"新游戏", Vector2(0, 0), 新游戏补间)
+	if 按钮移动:
+		新游戏补间 = 播放按钮动画(新游戏, Vector2(0, 0), 新游戏补间)
 
 func 当_退出_被鼠标碰到() -> void:
-	退出补间 = 播放按钮动画($"退出", Vector2(20, 0), 退出补间)
+	移动雪花(Vector2(-41, 212),)
+	if 按钮移动:
+		退出补间 = 播放按钮动画(退出, Vector2(20, 0), 退出补间)
 
 func 当_退出_不再被鼠标碰到() -> void:
-	退出补间 = 播放按钮动画($"退出", Vector2(0, 0), 退出补间)
+	if 按钮移动:
+		退出补间 = 播放按钮动画(退出, Vector2(0, 0), 退出补间)
 
 func 播放按钮动画(按钮: Control, 目标位置: Vector2, 旧补间: Tween = null) -> Tween:
 	if 旧补间 and 旧补间.is_valid():
@@ -88,7 +103,7 @@ func 播放按钮动画(按钮: Control, 目标位置: Vector2, 旧补间: Tween
 #region 按钮逻辑
 
 
-func 加载存档() -> void:
+func _加载存档() -> void:
 	遮罩.modulate = Color(0,0,0,0)   # 透明
 	遮罩.show()
 	var tween = create_tween().bind_node(遮罩)
@@ -99,7 +114,7 @@ func 加载存档() -> void:
 	get_tree().current_scene.add_child(窗口实例)
 	遮罩.hide()
 	
-func 新游戏() -> void:
+func _新游戏() -> void:
 	await 渐变动画()
 	Dialogic.signal_event.connect(_on_signal_event)
 	Dialogic.start("res://对话/初次见面.dtl")
@@ -110,3 +125,11 @@ func _on_退出_pressed() -> void:
 
 
 #endregion
+
+
+func 移动雪花(目标位置: Vector2) -> void:
+	if 雪花移动补间 and 雪花移动补间.is_valid():
+		雪花移动补间.kill()
+	雪花移动补间 = create_tween()
+	雪花移动补间.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+	雪花移动补间.tween_property(雪花, "position", 目标位置, 0.2)

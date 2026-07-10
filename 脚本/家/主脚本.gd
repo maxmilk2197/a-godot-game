@@ -16,8 +16,8 @@ func _on_signal_event(argument: Variant):
 	
 func 设置背景(背景: String) -> void:
 	if 背景 == "白天":
-		$"背景".texture = load("res://资源/图片/家/白天.png")
+		$"背景".texture = load("res://资源/纹理/家/白天.png")
 	elif 背景 == "晚上":
-		$"背景".texture = load("res://资源/图片/家/晚上.png")
+		$"背景".texture = load("res://资源/纹理/家/晚上.png")
 
 	
