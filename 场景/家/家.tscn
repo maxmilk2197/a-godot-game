@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://c6q4nwtp1vnyq"]
 
-[ext_resource type="Texture2D" uid="uid://qlltal2kga7g" path="res://资源/纹理/角色/阿云/001.png" id="1_ba6u3"]
-[ext_resource type="Script" uid="uid://wn0wwk6he07k" path="res://脚本/家/立绘.gd" id="1_ecy2k"]
-[ext_resource type="Script" uid="uid://bp5kf4usuftoh" path="res://脚本/家/主脚本.gd" id="1_xshxy"]
+[ext_resource type="Texture2D" uid="uid://bs2bmpfdt6awc" path="res://璧勬簮/绾圭悊/瑙掕壊/闃夸簯/001.png" id="1_ba6u3"]
+[ext_resource type="Script" uid="uid://dsyqo2j4y4r63" path="res://脚本/家/立绘.gd" id="1_ecy2k"]
+[ext_resource type="Script" uid="uid://dci4euht3qx2y" path="res://脚本/家/主脚本.gd" id="1_xshxy"]
 [ext_resource type="Texture2D" uid="uid://dx68o6d104sys" path="res://资源/纹理/家/白天.png" id="2_u4jm0"]
-[ext_resource type="Script" uid="uid://cfnmxc13p1jrt" path="res://脚本/家/信息.gd" id="3_eioms"]
-[ext_resource type="FontFile" uid="uid://bpdhcar5v37ae" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="3_vgfoc"]
-[ext_resource type="Script" uid="uid://bke21nys8vcmj" path="res://脚本/家/场景交互.gd" id="6_gq21x"]
-[ext_resource type="FontFile" uid="uid://cvhju55m46fci" path="res://资源/字体/GenSenRounded2-B.ttc" id="7_sn4bq"]
+[ext_resource type="Script" uid="uid://cqor223gx73tb" path="res://脚本/家/信息.gd" id="3_eioms"]
+[ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://璧勬簮/瀛椾綋/HarmonyOS_Sans_SC_Black.ttf" id="3_vgfoc"]
+[ext_resource type="Script" uid="uid://bhij74bjy2fei" path="res://脚本/家/场景交互.gd" id="6_gq21x"]
+[ext_resource type="FontFile" uid="uid://c0qguixcifn3p" path="res://资源/字体/GenSenRounded2-B.ttc" id="7_sn4bq"]
 [ext_resource type="AudioStream" uid="uid://dye6urihdu0tt" path="res://资源/音频/音乐/1_30pm.mp3" id="7_u4jm0"]
-[ext_resource type="Script" uid="uid://dlmackne7bwpw" path="res://脚本/家/AI聊天界面.gd" id="10_q50p0"]
+[ext_resource type="Script" uid="uid://da3s2tieoeonl" path="res://脚本/家/AI聊天界面.gd" id="10_q50p0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gq21x"]
 
