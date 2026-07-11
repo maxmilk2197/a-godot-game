@@ -9,4 +9,4 @@ func _ready() -> void:
 func _on_signal_event(argument: Variant):
 	Dialogic.end_timeline()
 	if argument == "回到房间":
-		get_tree().change_scene_to_file("res://场景/游戏/家/家.tscn")
+		get_tree().change_scene_to_file("res://场景/家/家.tscn")

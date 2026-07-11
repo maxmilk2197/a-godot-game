@@ -9,4 +9,4 @@ func _ready() -> void:
 
 
 func _on_电脑_pressed() -> void:
-	get_tree().change_scene_to_file("res://场景/2D/电脑/电脑主界面.tscn")
+	get_tree().change_scene_to_file("res://场景/电脑/电脑主界面.tscn")

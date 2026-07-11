@@ -11,6 +11,7 @@ var 默认存档: Dictionary = {
 	"最后游玩时间": "",
 	"上次存档": 0,
 	"金钱数量": 100,
+	"ai_memory": [],
 }
 
 
@@ -57,6 +58,23 @@ func 保存指定槽位(槽位编号: int, 存档数据: Dictionary) -> bool:
 ## 自动保存（默认槽位 0）
 func 自动保存(存档数据: Dictionary) -> bool:
 	return 保存指定槽位(0, 存档数据)
+
+var _ai记忆缓存: Dictionary = {}
+
+
+func 当前AI记忆() -> Array:
+	if not _ai记忆缓存.has(当前存档):
+		_ai记忆缓存[当前存档] = 读取AI记忆(当前存档)
+	return _ai记忆缓存[当前存档]
+
+
+func 设置当前AI记忆(记忆: Array) -> void:
+	_ai记忆缓存[当前存档] = 记忆.duplicate(true)
+	更新AI记忆(当前存档, 记忆)
+
+
+func 清除当前AI记忆缓存() -> void:
+	_ai记忆缓存.erase(当前存档)
 
 
 ## 加载当前槽位的存档（自动补全默认值，返回 Dictionary）
@@ -158,3 +176,40 @@ func 是否有任意存档() -> bool:
 
 	dir.list_dir_end()
 	return false
+
+
+func 更新AI记忆(槽位: int, 记忆: Array) -> void:
+	_ai记忆缓存[槽位] = 记忆
+	var 路径 := 存档目录 + "save_" + str(槽位) + ".json"
+	var 数据 := {}
+	if FileAccess.file_exists(路径):
+		var file := FileAccess.open(路径, FileAccess.READ)
+		if file:
+			var text := file.get_as_text()
+			file.close()
+			var parsed = JSON.parse_string(text)
+			if parsed is Dictionary:
+				数据 = parsed
+	数据["ai_memory"] = 记忆
+	var wfile := FileAccess.open(路径, FileAccess.WRITE)
+	if wfile:
+		wfile.store_string(JSON.stringify(数据))
+		wfile.close()
+		print("[存档] AI记忆已写入槽位 ", 槽位)
+
+
+func 读取AI记忆(槽位: int) -> Array:
+	var 路径 := 存档目录 + "save_" + str(槽位) + ".json"
+	if not FileAccess.file_exists(路径):
+		return []
+	var file := FileAccess.open(路径, FileAccess.READ)
+	if file:
+		var text := file.get_as_text()
+		file.close()
+		var 结果 = JSON.parse_string(text)
+		if 结果 is Dictionary and 结果.has("ai_memory"):
+			var mem = 结果["ai_memory"]
+			if mem is Array:
+				print("[存档] AI记忆已读取，共 ", mem.size(), " 条")
+				return mem
+	return []

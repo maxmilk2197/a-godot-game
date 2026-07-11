@@ -11,23 +11,23 @@ config_version=5
 [application]
 
 config/name="养只妹妹"
-run/main_scene="uid://q8sgepxllruc"
+run/main_scene="res://场景/主菜单/主界面.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 
 [autoload]
 
-DialogueManager="*uid://c3rodes2l3gxb"
 Dialogic="*uid://ds2q0uclmolvu"
-cmd="*uid://c6pltkbl2dq77"
-save="*uid://bfg2to5u6v5od"
-info="*uid://c66qvaxv5kkhx"
-AIChat="*uid://dqomfvlcuj336"
+cmd="*res://脚本/全局/CMD.gd"
+save="*res://脚本/全局/存档.gd"
+info="*res://脚本/全局/全局变量.gd"
+AIChat="*res://脚本/全局/AI对话管理器.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"unit_test_character": "res://Tests/Resources/unit_test_character.dch",
 "yun": "res://角色/yun.dch",
 "你": "res://角色/你.dch",
 "旁白": "res://角色/旁白.dch"
@@ -74,6 +74,7 @@ audio/channel_defaults={
 }
 }
 variables={
+"send": "",
 "time": "白天"
 }
 layout/style_list=["res://资源/对话主题/02.tres"]

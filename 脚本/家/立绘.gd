@@ -14,6 +14,7 @@ func _ready() -> void:
 
 	var btn2 := get_node_or_null("交互/Button2") as Button
 	if btn2:
+		btn2.text = "保存"
 		btn2.pressed.connect(func() -> void: interaction_requested.emit(2))
 		_style_button(btn2)
 

@@ -2,8 +2,7 @@ extends Node
 
 var 设备是否为移动设备: bool = false
 
-# 当前运行中的存档（内存）
-var 当前存档: 存档 = null
+var 当前存档数据: Dictionary = {}
 
 var 开发者模式: bool = false
 var 是否为编辑器运行: bool = false

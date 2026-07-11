@@ -5,7 +5,6 @@ const 配置路径 := "user://aisettings.cfg"
 var 接口地址: String = "https://api.openai.com"
 var 密钥: String = ""
 var 模型: String = "gpt-3.5-turbo"
-var 系统提示: String = ""
 
 var 对话记录: Array = []
 var 等待中: bool = false
@@ -30,29 +29,31 @@ func 加载配置() -> void:
 		接口地址 = 配置.get_value("api", "url", 接口地址)
 		密钥 = 配置.get_value("api", "key", 密钥)
 		模型 = 配置.get_value("api", "model", 模型)
-		系统提示 = 配置.get_value("api", "system_prompt", "")
 		if not 密钥.is_empty():
 			已配置 = true
-		if not 系统提示.is_empty():
-			设置系统提示(系统提示)
 		print("[AI对话] 配置已加载")
 
-func 保存配置(地址: String, 新密钥: String, 模型名: String, 提示: String = "") -> void:
+func 保存配置(地址: String, 新密钥: String, 模型名: String) -> void:
 	接口地址 = 地址
 	密钥 = 新密钥
 	模型 = 模型名
-	系统提示 = 提示
 	已配置 = not 新密钥.is_empty()
 	var 配置 := ConfigFile.new()
 	配置.set_value("api", "url", 地址)
 	配置.set_value("api", "key", 新密钥)
 	配置.set_value("api", "model", 模型名)
-	配置.set_value("api", "system_prompt", 提示)
 	配置.save(配置路径)
 	print("[AI对话] 配置已保存")
 
 func 设置系统提示(提示: String) -> void:
 	对话记录 = [{"role": "system", "content": 提示}]
+
+func 加载记忆(槽位: int) -> void:
+	var 记忆 := save.读取AI记忆(槽位)
+	if 记忆.size() > 0:
+		对话记录 = 记忆
+		save.设置当前AI记忆(记忆)
+		print("[AI对话] 记忆已从存档加载，共 ", 对话记录.size(), " 条")
 
 func 清除历史() -> void:
 	var 系统消息 = null
@@ -127,4 +128,5 @@ func 收到回应(结果: int, 状态码: int, 响应头: PackedStringArray, 响
 
 	var 回复: String = 解析结果["choices"][0]["message"]["content"]
 	对话记录.append({"role": "assistant", "content": 回复})
+	save.设置当前AI记忆(对话记录)
 	收到AI回复.emit(回复)

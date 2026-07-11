@@ -1,9 +1,5 @@
 audio music "res://资源/音频/音乐/宁静的序幕.mp3" [volume="0.0"]
 label 选项
-if {time} == "白天":
-	[background arg="res://资源/纹理/家/白天.png" fade="1.0" wait="true"]
-elif {time} == "晚上":
-	[background arg="res://资源/纹理/家/晚上.png" fade="1.0" wait="true"]
 join yun right [wait="true"]
 yun: 怎么了？
 - 特别选项
@@ -20,25 +16,8 @@ yun: 怎么了？
 	yun: 哼！
 	jump 选项
 - 对话
-	- 吃过饭了吗？
-		yun: 还没呢...
-		yun: 难道...
-		yun: 不然你要带我去吃饭吗？（嬉笑）
-		你: 我没钱哎~
-		update yun [animation="Shake Y" wait="true"]
-		yun: 没关系啦~我开玩笑的
-		jump 选项
-	- 要不要玩游戏？
-		yun: 可是...我的电脑并不是游戏本啊
-		你: 啊！好吧...
-		你: os\:本来还想用来玩steam呢..
-		yun: 怎么了？
-		你: 啊？什么？！
-		yun: 看你好像在想某些事呢
-		你: 噢哦没什么啦哈哈
-		jump 选项
-	- 没什么...
-		jump 选项
+	[text_input text="说点什么:" var="send"]
+
 - 离开
 	你: 我想一个人静静...
 	yun: 有什么不舒服的吗？
@@ -49,6 +28,7 @@ yun: 怎么了？
 	audio -
 	label 选项2
 	你: 好啦！接下来要干么呢
+	[background arg="#000000ff" fade="1.0" wait="true"]
 	- 让阿云回来
 		join yun right
 		yun: 我来啦有什么事吗？
@@ -59,33 +39,8 @@ yun: 怎么了？
 		- 回到卧室
 			（妹妹似乎又进入房间了）
 			jump 选项
-	- 等一会
-		if {time} == "白天":
-			- 等到晚上
-				set {time} = "晚上"
-				[background arg="#000000ff" fade="1.0" wait="true"]
-				[signal arg="等到晚上"]
-				[background arg="res://资源/纹理/家/晚上.png" fade="1.0" wait="true"]
-				[wait_input]
-				audio "res://资源/音频/音效/木门关门声、关门、哐当、提示音_爱给网_aigei_com.mp3"
-				join yun center
-				yun: 哥哥晚上好
-				leave yun
-				join yun right
-				jump 选项
-		if {time} == "晚上":
-			- 睡觉
-				set {time} = "白天"
-				[background arg="#000000ff" fade="1.0" wait="true"]
-				[signal arg="睡觉"]
-				[background arg="res://资源/纹理/家/白天.png" fade="1.0" wait="true"]
-				[wait_input]
-				audio "res://资源/音频/音效/木门关门声、关门、哐当、提示音_爱给网_aigei_com.mp3"
-				join yun center
-				yun: 哥哥起床了
-				leave yun
-				join yun right
-				jump 选项
+	- 返回
+		jump 选项
 - 没什么（结束对话）
 	你: 没什么
 	yun: 哦
