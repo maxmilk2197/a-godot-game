@@ -112,3 +112,7 @@ func _on_关闭按钮_pressed() -> void:
 	$"../角色交互".show()
 	$"../角色交互/交互".hide()
 	对话已关闭.emit()
+
+
+func _on_ai设置弹窗_close_requested() -> void:
+	$"AI设置弹窗".hide()

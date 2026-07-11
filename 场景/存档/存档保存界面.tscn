@@ -1,6 +1,6 @@
 ﻿[gd_scene format=3 uid="uid://cpmvl10438qj2"]
 
-[ext_resource type="Script" uid="uid://c8ncbcgiv373a" path="res://脚本/存档界面/存档保存界面.gd" id="1_7vdbx"]
+[ext_resource type="Script" uid="uid://b5f0lmphw3aco" path="res://脚本/存档界面/存档保存界面.gd" id="1_7vdbx"]
 [ext_resource type="PackedScene" uid="uid://bbyxssg0k1p6d" path="res://场景/存档/保存加载按钮.tscn" id="2_b36ll"]
 
 [node name="存档" type="Control" unique_id=818469670]
