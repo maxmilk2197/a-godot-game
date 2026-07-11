@@ -26,8 +26,17 @@ AIChat="*res://脚本/全局/AI对话管理器.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"unit_test_character": "res://Tests/Resources/unit_test_character.dch",
+"yun": "res://角色/yun.dch",
+"你": "res://角色/你.dch",
+"旁白": "res://角色/旁白.dch"
+}
+directories/dtl_directory={
+"初次见面": "res://对话/初次见面.dtl",
+"卧室": "res://对话/卧室.dtl",
+"玄关对话": "res://对话/玄关对话.dtl"
+}
 layout/style_directory={
 "02": "res://资源/对话主题/02.tres"
 }
