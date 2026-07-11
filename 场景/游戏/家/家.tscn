@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bke21nys8vcmj" path="res://脚本/家/场景交互.gd" id="6_gq21x"]
 [ext_resource type="FontFile" uid="uid://cvhju55m46fci" path="res://资源/字体/GenSenRounded2-B.ttc" id="7_sn4bq"]
 [ext_resource type="AudioStream" uid="uid://dye6urihdu0tt" path="res://资源/音频/音乐/1_30pm.mp3" id="7_u4jm0"]
+[ext_resource type="Script" uid="uid://dlmackne7bwpw" path="res://脚本/家/AI聊天界面.gd" id="10_q50p0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gq21x"]
 
@@ -58,6 +59,33 @@ texture = ExtResource("2_u4jm0")
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
+[node name="场景交互" type="Control" parent="." unique_id=1723660798]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_gq21x")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="电脑" type="Button" parent="场景交互" unique_id=1065066854]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.39027777
+anchor_right = 0.1609375
+anchor_bottom = 0.51111114
+offset_bottom = -3.0517578e-05
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gq21x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_u4jm0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eioms")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sn4bq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q50p0")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
 [node name="角色交互" type="Control" parent="." unique_id=1149596293]
 layout_mode = 1
 anchors_preset = 15
@@ -70,22 +98,23 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="立绘" type="Control" parent="角色交互" unique_id=1592851904]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="图" type="TextureButton" parent="角色交互/立绘" unique_id=1264305339]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.628125
-anchor_top = 0.097222224
-anchor_right = 0.966797
-anchor_bottom = 1.0003473
-offset_left = 778.875
-offset_top = 66.111115
-offset_right = 1789.3281
-offset_bottom = 1565.9861
+anchor_left = 0.6273438
+anchor_top = 0.09166667
+anchor_right = 0.9687501
+anchor_bottom = 0.99479187
+offset_right = 595.2676
+offset_bottom = 885.7499
 scale = Vector2(0.4233399, 0.4233399)
 texture_normal = ExtResource("1_ba6u3")
 metadata/_edit_use_anchors_ = true
@@ -125,33 +154,6 @@ offset_top = 334.0
 offset_right = 751.0
 offset_bottom = 413.0
 text = "Button"
-
-[node name="场景交互" type="Control" parent="." unique_id=1723660798]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("6_gq21x")
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
-
-[node name="电脑" type="Button" parent="场景交互" unique_id=1065066854]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.05
-anchor_top = 0.39027777
-anchor_right = 0.1609375
-anchor_bottom = 0.51111114
-offset_bottom = -3.0517578e-05
-theme_override_styles/normal = SubResource("StyleBoxEmpty_gq21x")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_u4jm0")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_eioms")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_sn4bq")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_q50p0")
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="信息" type="Control" parent="." unique_id=900413945]
 visible = false
@@ -221,6 +223,146 @@ metadata/_edit_use_anchors_ = true
 [node name="背景音乐" type="AudioStreamPlayer" parent="." unique_id=1891284887]
 stream = ExtResource("7_u4jm0")
 
-[connection signal="pressed" from="角色交互/立绘/图" to="角色交互" method="立绘被按下"]
+[node name="AI聊天界面" type="Control" parent="." unique_id=51273642 node_paths=PackedStringArray("_输入框", "_状态标签", "_设置URL输入", "_设置密钥输入", "_设置模型输入", "_设置提示输入", "_设置取消按钮", "_设置保存按钮")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_q50p0")
+"_输入框" = NodePath("输入框")
+"_状态标签" = NodePath("状态标签")
+"_设置URL输入" = NodePath("AI设置弹窗/_PanelContainer_8/_VBoxContainer_9/_LineEdit_11")
+"_设置密钥输入" = NodePath("AI设置弹窗/_PanelContainer_8/_VBoxContainer_9/_LineEdit_13")
+"_设置模型输入" = NodePath("AI设置弹窗/_PanelContainer_8/_VBoxContainer_9/_LineEdit_15")
+"_设置提示输入" = NodePath("AI设置弹窗/_PanelContainer_8/_VBoxContainer_9/_TextEdit_22")
+"_设置取消按钮" = NodePath("AI设置弹窗/_PanelContainer_8/_VBoxContainer_9/_HBoxContainer_25/_Button_23")
+"_设置保存按钮" = NodePath("AI设置弹窗/_PanelContainer_8/_VBoxContainer_9/_HBoxContainer_25/_Button_24")
+metadata/_edit_use_anchors_ = true
+
+[node name="输入面板" type="Panel" parent="AI聊天界面" unique_id=999771956]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 558.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="输入框" type="LineEdit" parent="AI聊天界面" unique_id=1906283235]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -48.0
+offset_right = 384.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="关闭按钮" type="Button" parent="AI聊天界面" unique_id=1340160144]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+text = "X"
+
+[node name="设置按钮" type="Button" parent="AI聊天界面" unique_id=1359208963]
+visible = false
+layout_mode = 0
+anchor_right = 0.05
+anchor_bottom = 0.08888889
+metadata/_edit_use_anchors_ = true
+
+[node name="状态标签" type="Label" parent="AI聊天界面" unique_id=1168745093]
+visible = false
+layout_mode = 0
+offset_top = 558.0
+offset_right = 96.0
+offset_bottom = 595.0
+text = "Null"
+
+[node name="AI设置弹窗" type="Window" parent="AI聊天界面" unique_id=2093396631]
+oversampling_override = 1.0
+title = "AI 设置"
+position = Vector2i(164, 36)
+size = Vector2i(480, 460)
+visible = false
+transient = true
+exclusive = true
+unresizable = true
+
+[node name="_PanelContainer_8" type="PanelContainer" parent="AI聊天界面/AI设置弹窗" unique_id=1398243732]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="_VBoxContainer_9" type="VBoxContainer" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8" unique_id=1257564144]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="_Label_10" type="Label" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9" unique_id=1860077014]
+layout_mode = 2
+text = "API 地址:"
+
+[node name="_LineEdit_11" type="LineEdit" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9" unique_id=1594769462]
+layout_mode = 2
+placeholder_text = "https://api.deepseek.com"
+
+[node name="_Label_12" type="Label" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9" unique_id=1818049063]
+layout_mode = 2
+text = "API 密钥:"
+
+[node name="_LineEdit_13" type="LineEdit" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9" unique_id=1527075754]
+layout_mode = 2
+placeholder_text = "sk-..."
+secret = true
+
+[node name="_Label_14" type="Label" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9" unique_id=2383111]
+layout_mode = 2
+text = "模型名称:"
+
+[node name="_LineEdit_15" type="LineEdit" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9" unique_id=137122734]
+layout_mode = 2
+placeholder_text = "gpt-3.5-turbo"
+
+[node name="_Label_16" type="Label" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9" unique_id=450245627]
+layout_mode = 2
+text = "系统提示 (角色设定):"
+
+[node name="_TextEdit_22" type="TextEdit" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9" unique_id=1425263022]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+wrap_mode = 1
+
+[node name="_HBoxContainer_25" type="HBoxContainer" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9" unique_id=1133053377]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="_Button_23" type="Button" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9/_HBoxContainer_25" unique_id=793743941]
+layout_mode = 2
+text = "取消"
+
+[node name="_Button_24" type="Button" parent="AI聊天界面/AI设置弹窗/_PanelContainer_8/_VBoxContainer_9/_HBoxContainer_25" unique_id=1363497385]
+layout_mode = 2
+text = "保存"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1453434080]
+
 [connection signal="pressed" from="场景交互/电脑" to="场景交互" method="_on_电脑_pressed"]
+[connection signal="pressed" from="角色交互/立绘/图" to="角色交互" method="立绘被按下"]
+[connection signal="pressed" from="角色交互/交互/交流" to="角色交互" method="_on_交流_pressed"]
 [connection signal="pressed" from="信息/折叠" to="信息" method="切换显示"]
+[connection signal="pressed" from="AI聊天界面/关闭按钮" to="AI聊天界面" method="_on_关闭按钮_pressed"]
+[connection signal="pressed" from="AI聊天界面/设置按钮" to="AI聊天界面" method="_on_设置按钮_pressed"]
+[connection signal="close_requested" from="AI聊天界面/AI设置弹窗" to="AI聊天界面" method="_on_ai设置弹窗_close_requested"]
