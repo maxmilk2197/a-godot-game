@@ -102,7 +102,7 @@ func 发送消息(用户消息: String) -> void:
 
 	_网络请求.request_completed.connect(收到回应)
 
-func 收到回应(结果: int, 状态码: int, 响应头: PackedStringArray, 响应体: PackedByteArray) -> void:
+func 收到回应(结果: int, 状态码: int, _响应头: PackedStringArray, 响应体: PackedByteArray) -> void:
 	if _网络请求:
 		_网络请求.queue_free()
 		_网络请求 = null

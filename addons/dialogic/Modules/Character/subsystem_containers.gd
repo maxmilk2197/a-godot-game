@@ -239,7 +239,6 @@ func load_position_container(position_id: String) -> DialogicNode_PortraitContai
 	container.container_ids = info.container_ids
 	container.position = info.position
 	container.rotation = info.rotation
-	container.size = info.size
 	container.pivot_mode = info.pivot_mode
 	container.pivot_value = info.pivot_value
 	container.origin_anchor = info.origin_anchor
@@ -247,6 +246,7 @@ func load_position_container(position_id: String) -> DialogicNode_PortraitContai
 	container.anchor_right = info.anchor_right
 	container.anchor_top = info.anchor_top
 	container.anchor_bottom = info.anchor_bottom
+	container.set_deferred("size", info.size)
 	container.offset_left = info.offset_left
 	container.offset_right = info.offset_right
 	container.offset_top = info.offset_top

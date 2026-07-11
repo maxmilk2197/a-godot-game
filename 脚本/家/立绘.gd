@@ -4,7 +4,7 @@ signal interaction_requested(button_index: int)
 
 func _ready() -> void:
 	var portrait_btn := get_node_or_null("立绘/图") as TextureButton
-	if portrait_btn:
+	if portrait_btn and not portrait_btn.pressed.is_connected(立绘被按下):
 		portrait_btn.pressed.connect(立绘被按下)
 
 	var talk_btn := get_node_or_null("交互/交流") as Button
@@ -26,7 +26,6 @@ func _ready() -> void:
 	$"交互".hide()
 
 func 立绘被按下() -> void:
-	var portrait := $"立绘"
 	var interaction := $"交互"
 	interaction.visible = not interaction.visible
 
