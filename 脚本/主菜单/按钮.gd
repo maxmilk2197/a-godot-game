@@ -13,6 +13,7 @@ var 雪花移动补间 : Tween
 #endregion
 
 func _ready():
+	$"../logo".show()
 	$"../动画".play("logo")
 	await $"../动画".animation_finished
 	$"../logo".queue_free()

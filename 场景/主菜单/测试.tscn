@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dejrw24bjabo8"]
 
-[ext_resource type="FontFile" uid="uid://bpdhcar5v37ae" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="1_g85eo"]
+[ext_resource type="Script" uid="uid://b7g14e83ucj7y" path="res://脚本/菜单/主界面/测试.gd" id="1_1o3i5"]
+[ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="1_g85eo"]
 [ext_resource type="Texture2D" uid="uid://jgltnpcf8dt6" path="res://资源/纹理/主界面/74D5CA03828781DE8F3AA1106CC8F2BC.png" id="2_6twhm"]
-[ext_resource type="FontFile" uid="uid://b6lvbw70p2mhj" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="3_nqqtx"]
+[ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="3_nqqtx"]
 [ext_resource type="Texture2D" uid="uid://ctfom23mscw02" path="res://资源/纹理/按钮/346FEAED1439D9C38C7FB62C413634A5.png" id="4_8yo52"]
 [ext_resource type="Texture2D" uid="uid://vr5leyy2hg21" path="res://资源/纹理/按钮/467A2222AA63BE8BA1FDDD4ECB8E4619.png" id="4_nvm03"]
 
@@ -92,12 +93,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1o3i5")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1388051617]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.003125
+anchor_top = 0.019444445
+anchor_right = 1.003125
+anchor_bottom = 1.0194445
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_kxh35")
@@ -274,7 +278,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="346feaed1439d9c38c7fb62c413634a5" type="Sprite2D" parent="Button4" unique_id=56100220]
-position = Vector2(98, 97)
+position = Vector2(123, 180)
 scale = Vector2(0.16935483, 0.16935484)
 texture = ExtResource("4_8yo52")
 

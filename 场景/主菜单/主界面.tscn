@@ -32,10 +32,10 @@ metadata/_snap_enabled = true
 gradient = SubResource("Gradient_weg6c")
 
 [sub_resource type="Animation" id="Animation_1emje"]
-length = 0.001
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("logo/logo:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -47,7 +47,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("logo/遮罩:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -59,7 +59,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("logo:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -71,7 +71,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("logo:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -83,7 +83,7 @@ tracks/3/keys = {
 }
 tracks/4/type = "value"
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/path = NodePath("背景音乐:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
@@ -95,7 +95,7 @@ tracks/4/keys = {
 }
 tracks/5/type = "value"
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/path = NodePath("背景音乐:volume_db")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
@@ -107,7 +107,7 @@ tracks/5/keys = {
 }
 tracks/6/type = "value"
 tracks/6/imported = false
-tracks/6/enabled = true
+tracks/6/enabled = false
 tracks/6/path = NodePath("logo/遮罩:color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
@@ -369,7 +369,6 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="调试" type="Control" parent="." unique_id=1444531706]
-visible = false
 y_sort_enabled = true
 use_parent_material = true
 layout_mode = 1
@@ -440,7 +439,7 @@ libraries/ = SubResource("AnimationLibrary_xt34k")
 
 [node name="背景音乐" type="AudioStreamPlayer" parent="." unique_id=199618337]
 stream = ExtResource("13_weg6c")
-volume_db = -80.0
+volume_db = -20.0
 
 [connection signal="focus_entered" from="按钮/加载存档2" to="按钮" method="_on_加载存档_获得焦点"]
 [connection signal="mouse_entered" from="按钮/加载存档2" to="按钮" method="当_加载_被鼠标碰到"]

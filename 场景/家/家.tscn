@@ -109,10 +109,10 @@ metadata/_edit_use_anchors_ = true
 [node name="图" type="TextureButton" parent="角色交互/立绘" unique_id=1264305339]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.6273438
-anchor_top = 0.09166667
-anchor_right = 0.9687501
-anchor_bottom = 0.99479187
+anchor_left = 0.6257812
+anchor_top = 0.09583333
+anchor_right = 0.9671875
+anchor_bottom = 0.9989585
 offset_right = 595.2676
 offset_bottom = 885.7499
 scale = Vector2(0.4233399, 0.4233399)
