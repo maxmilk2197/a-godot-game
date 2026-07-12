@@ -1,13 +1,18 @@
-﻿[gd_scene format=3 uid="uid://ceoiu8u0gik3j"]
+[gd_scene format=3 uid="uid://dkspy8ocww4m0"]
 
-[ext_resource type="Texture2D" uid="uid://dokh5pvtx0qh7" path="res://资源/纹理/电脑/壁纸/1.png" id="1_5lr2e"]
-[ext_resource type="Shader" uid="uid://s61bgp0vm2bf" path="res://资源/着色器/亚克力.gdshader" id="2_v1684"]
-[ext_resource type="PackedScene" uid="uid://8x0nfbbrqaw7" path="res://场景/电脑/终端.tscn" id="3_tgh6f"]
+[ext_resource type="Texture2D" uid="uid://dokh5pvtx0qh7" path="res://资源/纹理/电脑/壁纸/1.png" id="1_wallpaper"]
+[ext_resource type="Shader" uid="uid://s61bgp0vm2bf" path="res://资源/着色器/亚克力.gdshader" id="2_shader"]
+[ext_resource type="PackedScene" path="res://场景/电脑/终端.tscn" id="3_terminal"]
+[ext_resource type="Texture2D" uid="uid://d3vmtedflhx7b" path="res://资源/纹理/亚克力噪点.tres" id="4_noise"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tgh6f"]
-shader = ExtResource("2_v1684")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_blur"]
+shader = ExtResource("2_shader")
+shader_parameter/noise_texture = ExtResource("4_noise")
 shader_parameter/strength = 3.3
-shader_parameter/mix_percentage = 0.400000019
+shader_parameter/opacity = 0.85
+shader_parameter/tint_color = Color(0, 0, 0, 0.4)
+shader_parameter/noise_amount = 0.03
+shader_parameter/noise_scale = 4.0
 
 [node name="电脑" type="Control" unique_id=640956174]
 layout_mode = 3
@@ -39,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.72, 0.72)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-texture = ExtResource("1_5lr2e")
+texture = ExtResource("1_wallpaper")
 
 [node name="图标" type="Control" parent="." unique_id=753524955]
 anchors_preset = 0
@@ -53,6 +58,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="应用" type="Control" parent="." unique_id=1884171984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="窗口" parent="应用" unique_id=464597521 instance=ExtResource("3_terminal")]
+layout_mode = 1
+anchor_right = 0.8125
+anchor_bottom = 0.7902778
+offset_left = 0.7
+offset_right = 0.6999512
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
 
 [node name="底栏" type="Control" parent="." unique_id=996198629]
 layout_mode = 1
@@ -75,7 +98,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="模糊" type="ColorRect" parent="底栏/背景" unique_id=50815444]
-material = SubResource("ShaderMaterial_tgh6f")
+material = SubResource("ShaderMaterial_blur")
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.16666667
@@ -89,12 +112,3 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 offset_right = 8.0
 offset_bottom = 8.0
-
-[node name="窗口" parent="." unique_id=464597521 instance=ExtResource("3_tgh6f")]
-layout_mode = 1
-anchor_right = 0.8125
-anchor_bottom = 0.7902778
-offset_left = 0.7
-offset_right = 0.6999512
-offset_bottom = 0.0
-metadata/_edit_use_anchors_ = true

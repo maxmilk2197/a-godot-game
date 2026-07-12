@@ -1,0 +1,400 @@
+[gd_scene format=3 uid="uid://brn1kvt06lkh2"]
+
+[ext_resource type="Script" uid="uid://cqg7yewlk2rff" path="res://脚本/手机/聊天界面.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="2_font"]
+
+[sub_resource type="StyleBoxFlat" id="sb_topbar"]
+bg_color = Color(0.027451, 0.756863, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="sb_transparent"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="sb_avatar_sister"]
+bg_color = Color(1, 0.419608, 0.615686, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="sb_avatar_yun"]
+bg_color = Color(0.305882, 0.803922, 0.768627, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="sb_bottombar"]
+bg_color = Color(0.968627, 0.968627, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="sb_inputbar"]
+bg_color = Color(0.968627, 0.968627, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="sb_inputfield"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.878431, 0.878431, 0.878431, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="sb_send"]
+bg_color = Color(0.027451, 0.756863, 0.376471, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="聊天应用" type="Control" unique_id=675123890]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+metadata/_edit_use_anchors_ = true
+
+[node name="背景" type="Panel" parent="." unique_id=1072515330]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="顶栏" type="Panel" parent="." unique_id=159874236]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("sb_topbar")
+metadata/_edit_use_anchors_ = true
+
+[node name="返回按钮" type="Button" parent="顶栏" unique_id=876524189]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 44.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("sb_transparent")
+theme_override_styles/pressed = SubResource("sb_transparent")
+theme_override_styles/hover = SubResource("sb_transparent")
+text = "<"
+
+[node name="标题" type="Label" parent="顶栏" unique_id=341258967]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 17
+text = "巨信"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="关闭按钮" type="Button" parent="顶栏" unique_id=842136597]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_top = 6.0
+offset_right = -8.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("sb_transparent")
+theme_override_styles/pressed = SubResource("sb_transparent")
+theme_override_styles/hover = SubResource("sb_transparent")
+text = "X"
+
+[node name="内容容器" type="Control" parent="." unique_id=456123789]
+layout_mode = 1
+anchor_top = 0.06666667
+anchor_right = 1.0
+anchor_bottom = 0.91
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="联系人滚动" type="ScrollContainer" parent="内容容器" unique_id=512478963]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+
+[node name="联系人列表" type="VBoxContainer" parent="内容容器/联系人滚动" unique_id=987456321]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="联系人_妹妹" type="Button" parent="内容容器/联系人滚动/联系人列表" unique_id=111111111]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("sb_transparent")
+
+[node name="头像背景" type="Panel" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111112]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 64.0
+offset_bottom = 60.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("sb_avatar_sister")
+
+[node name="头像文字" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111113]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 64.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "妹"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="名称" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111114]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 14.0
+offset_right = 250.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.10196, 0.10196, 0.10196, 1)
+theme_override_font_sizes/font_size = 16
+text = "妹妹"
+
+[node name="最后消息" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111115]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 40.0
+offset_right = 250.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
+theme_override_font_sizes/font_size = 13
+text = "哥哥你在干嘛呀~"
+
+[node name="时间" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111116]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 14.0
+offset_right = -16.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
+theme_override_font_sizes/font_size = 12
+text = "10:30"
+horizontal_alignment = 2
+
+[node name="分割线" type="ColorRect" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111117]
+layout_mode = 0
+anchor_right = 1.0
+offset_left = 76.0
+offset_top = 71.0
+offset_bottom = 72.0
+mouse_filter = 2
+color = Color(0.878431, 0.878431, 0.878431, 1)
+
+[node name="联系人_阿云" type="Button" parent="内容容器/联系人滚动/联系人列表" unique_id=222222221]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("sb_transparent")
+
+[node name="头像背景" type="Panel" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222222]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 64.0
+offset_bottom = 60.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("sb_avatar_yun")
+
+[node name="头像文字" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222223]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 64.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "云"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="名称" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222224]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 14.0
+offset_right = 250.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.10196, 0.10196, 0.10196, 1)
+theme_override_font_sizes/font_size = 16
+text = "阿云"
+
+[node name="最后消息" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222225]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 40.0
+offset_right = 250.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
+theme_override_font_sizes/font_size = 13
+text = "今天的任务完成了吗？"
+
+[node name="时间" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222226]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 14.0
+offset_right = -16.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
+theme_override_font_sizes/font_size = 12
+text = "09:15"
+horizontal_alignment = 2
+
+[node name="分割线" type="ColorRect" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222227]
+layout_mode = 0
+anchor_right = 1.0
+offset_left = 76.0
+offset_top = 71.0
+offset_bottom = 72.0
+mouse_filter = 2
+color = Color(0.878431, 0.878431, 0.878431, 1)
+
+[node name="聊天滚动" type="ScrollContainer" parent="内容容器" unique_id=369874125]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+follow_focus = true
+
+[node name="消息列表" type="VBoxContainer" parent="内容容器/聊天滚动" unique_id=214785369]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="底栏" type="Panel" parent="." unique_id=785236914]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("sb_bottombar")
+
+[node name="底栏按钮组" type="HBoxContainer" parent="底栏" unique_id=369852147]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="微信标签" type="Label" parent="底栏/底栏按钮组" unique_id=147852369]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.027451, 0.756863, 0.376471, 1)
+theme_override_font_sizes/font_size = 12
+text = "巨信"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="通讯录标签" type="Label" parent="底栏/底栏按钮组" unique_id=258963147]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
+theme_override_font_sizes/font_size = 12
+text = "通讯录"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="发现标签" type="Label" parent="底栏/底栏按钮组" unique_id=369852741]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
+theme_override_font_sizes/font_size = 12
+text = "发现"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="我标签" type="Label" parent="底栏/底栏按钮组" unique_id=963852741]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
+theme_override_font_sizes/font_size = 12
+text = "我"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="输入区" type="Panel" parent="." unique_id=159753468]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.858
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 22.23999
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("sb_inputbar")
+
+[node name="输入框" type="LineEdit" parent="输入区" unique_id=842136579]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_top = 0.15
+anchor_right = 0.8
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("sb_inputfield")
+theme_override_styles/focus = SubResource("sb_inputfield")
+placeholder_text = "输入消息..."
+
+[node name="发送按钮" type="Button" parent="输入区" unique_id=357159486]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.82
+anchor_top = 0.19
+anchor_right = 0.97
+anchor_bottom = 0.81
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("sb_send")
+text = "发送"
+
+[connection signal="pressed" from="顶栏/返回按钮" to="." method="_on_返回按钮_pressed"]
+[connection signal="pressed" from="顶栏/关闭按钮" to="." method="_on_关闭按钮_pressed"]
+[connection signal="pressed" from="内容容器/联系人滚动/联系人列表/联系人_妹妹" to="." method="_on_联系人_妹妹_pressed"]
+[connection signal="pressed" from="内容容器/联系人滚动/联系人列表/联系人_阿云" to="." method="_on_联系人_阿云_pressed"]
+[connection signal="text_submitted" from="输入区/输入框" to="." method="_on_发送消息"]
+[connection signal="pressed" from="输入区/发送按钮" to="." method="_on_发送消息"]

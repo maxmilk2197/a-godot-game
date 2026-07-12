@@ -1,7 +1,7 @@
 ﻿[gd_scene format=3 uid="uid://8x0nfbbrqaw7"]
 
 [ext_resource type="PackedScene" uid="uid://bmooiueddrl71" path="res://场景/电脑/窗口.tscn" id="1_pwgau"]
-[ext_resource type="Script" uid="uid://nf3lx5tnsqdv" path="res://脚本/电脑/终端.gd" id="2_ea1ky"]
+[ext_resource type="Script" uid="uid://blb4wsc5goc5s" path="res://脚本/电脑/终端.gd" id="2_ea1ky"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwgau"]
 bg_color = Color(0, 0, 0, 1)

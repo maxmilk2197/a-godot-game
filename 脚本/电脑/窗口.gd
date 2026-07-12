@@ -26,4 +26,5 @@ func _process(_delta):
 		global_position = get_global_mouse_position() - drag_offset
 
 func _on_关闭_pressed() -> void:
-	queue_free()
+	$".".queue_free()
+	$".".hide()
