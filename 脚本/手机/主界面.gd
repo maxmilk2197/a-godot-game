@@ -15,6 +15,20 @@ func _process(_delta: float) -> void:
 	_更新时间()
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		_关闭手机()
+		get_viewport().set_input_as_handled()
+		return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+		_关闭手机()
+		get_viewport().set_input_as_handled()
+
+
+func _关闭手机() -> void:
+	queue_free()
+
+
 func _更新时间() -> void:
 	var d = Time.get_datetime_dict_from_system()
 	时间标签.text = "%02d:%02d" % [d.hour, d.minute]

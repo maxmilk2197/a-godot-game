@@ -95,11 +95,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ecy2k")
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="立绘" type="Control" parent="角色交互" unique_id=1592851904]
 layout_mode = 1
-anchors_preset = 15
+anchor_left = 0.675
+anchor_top = 0.14444445
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -109,12 +109,16 @@ metadata/_edit_use_anchors_ = true
 [node name="图" type="TextureButton" parent="角色交互/立绘" unique_id=1264305339]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.63124996
-anchor_top = 0.09861111
-anchor_right = 0.97265625
-anchor_bottom = 1.0017363
-offset_right = 595.2676
-offset_bottom = 885.7499
+anchor_left = -0.9807692
+anchor_top = -0.7987014
+anchor_right = 0.061298225
+anchor_bottom = 0.25689954
+offset_left = 304.0
+offset_top = 460.00003
+offset_right = 894.49994
+offset_bottom = 1345.7499
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.4233399, 0.4233399)
 texture_normal = ExtResource("1_ba6u3")
 metadata/_edit_use_anchors_ = true
@@ -356,6 +360,22 @@ text = "取消"
 layout_mode = 2
 text = "保存"
 
+[node name="功能" type="Control" parent="." unique_id=707084541]
+anchors_preset = 0
+offset_top = 664.0
+offset_right = 40.0
+offset_bottom = 704.0
+
+[node name="手机" type="Button" parent="功能" unique_id=2065066854]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.2
+anchor_right = 1.6
+anchor_bottom = 1.25
+grow_vertical = 0
+text = "手机"
+metadata/_edit_use_anchors_ = true
+
 [node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1453434080]
 
 [connection signal="pressed" from="场景交互/电脑" to="场景交互" method="_on_电脑_pressed"]
@@ -365,3 +385,4 @@ text = "保存"
 [connection signal="pressed" from="AI聊天界面/关闭按钮" to="AI聊天界面" method="_on_关闭按钮_pressed"]
 [connection signal="pressed" from="AI聊天界面/设置按钮" to="AI聊天界面" method="_on_设置按钮_pressed"]
 [connection signal="close_requested" from="AI聊天界面/AI设置弹窗" to="AI聊天界面" method="_on_ai设置弹窗_close_requested"]
+[connection signal="pressed" from="功能/手机" to="场景交互" method="_on_手机_pressed"]

@@ -98,11 +98,10 @@ grow_vertical = 2
 
 [node name="状态栏" type="Control" parent="屏幕显示" unique_id=835120987]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 32.0
-grow_horizontal = 2
+grow_horizontal = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="时间" type="Label" parent="屏幕显示/状态栏" unique_id=214563879]
@@ -162,11 +161,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="巨信App" type="Button" parent="屏幕显示/应用区" unique_id=1987134040]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 12.0
-offset_right = 108.0
-offset_bottom = 106.0
+anchor_left = 0.07028112
+anchor_top = 0.08058608
+anchor_right = 0.23343372
+anchor_bottom = 0.1996337
 theme_override_styles/normal = SubResource("icon_green")
+metadata/_edit_use_anchors_ = true
 
 [node name="图标文字" type="Label" parent="屏幕显示/应用区/巨信App" unique_id=521478963]
 layout_mode = 1

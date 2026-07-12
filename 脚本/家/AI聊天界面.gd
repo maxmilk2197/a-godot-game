@@ -77,10 +77,14 @@ func _发送消息() -> void:
 	AIChat.发送消息(text)
 
 func _on_AI回复(回复内容: String) -> void:
+	if not visible:
+		return
 	_show_dialog(_上一条用户消息, 回复内容)
 	_状态标签.text = "已配置 - " + AIChat.模型
 
 func _on_AI出错(错误信息: String) -> void:
+	if not visible:
+		return
 	_show_dialog(_上一条用户消息, "（" + 错误信息 + "）")
 	_状态标签.text = "发生错误"
 

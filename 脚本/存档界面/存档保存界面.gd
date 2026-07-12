@@ -178,14 +178,26 @@ func _保存到槽位(槽位: int) -> void:
 	var 时 = 当前时间字典.hour
 	var 分 = 当前时间字典.minute
 
+	var 已有数据 = save.加载指定槽位(槽位)
+	var 游玩天数 = 已有数据.get("游玩天数", 0)
+	# 如果槽位已有数据且与当前存档同一槽位，累加天数
+	if save.检查槽位有无存档(槽位) and 槽位 == save.当前存档:
+		pass  # 保持已有天数
+	elif not save.检查槽位有无存档(槽位):
+		游玩天数 = 0 if 槽位 != save.当前存档 else save.加载().get("游玩天数", 0)
+
+	var 当前场景路径 = get_tree().current_scene.scene_file_path
+
 	var 数据 = {
-		"游玩天数": 0,
+		"游玩天数": 游玩天数,
 		"最后游玩时间": "%d月%d日 %02d:%02d" % [月, 日, 时, 分],
-		"最后游玩场景": "res://场景/家/家.tscn",
+		"最后游玩场景": 当前场景路径,
 		"上次存档": 槽位,
-		"ai_memory": save.当前AI记忆(),
+		"ai_memory": {"_global": save.当前AI记忆()},
 	}
 	save.保存指定槽位(槽位, 数据)
+
+	聊天数据.复制到槽位(槽位)
 
 	遮罩.modulate = Color(0, 0, 0, 0)
 	遮罩.show()

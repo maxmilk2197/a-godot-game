@@ -5,6 +5,8 @@
 
 [sub_resource type="StyleBoxFlat" id="sb_topbar"]
 bg_color = Color(0.027451, 0.756863, 0.376471, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
 
 [sub_resource type="StyleBoxFlat" id="sb_transparent"]
 bg_color = Color(0, 0, 0, 0)
@@ -25,9 +27,13 @@ corner_radius_bottom_left = 24
 
 [sub_resource type="StyleBoxFlat" id="sb_bottombar"]
 bg_color = Color(0.968627, 0.968627, 0.968627, 1)
+corner_radius_bottom_left = 35
+corner_radius_bottom_right = 35
 
 [sub_resource type="StyleBoxFlat" id="sb_inputbar"]
 bg_color = Color(0.968627, 0.968627, 0.968627, 1)
+corner_radius_bottom_left = 35
+corner_radius_bottom_right = 35
 
 [sub_resource type="StyleBoxFlat" id="sb_inputfield"]
 bg_color = Color(1, 1, 1, 1)
@@ -69,10 +75,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="顶栏" type="Panel" parent="." unique_id=159874236]
 layout_mode = 1
-anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 48.0
-grow_horizontal = 2
+grow_horizontal = 0
 theme_override_styles/panel = SubResource("sb_topbar")
 metadata/_edit_use_anchors_ = true
 

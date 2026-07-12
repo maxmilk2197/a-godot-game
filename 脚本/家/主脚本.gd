@@ -24,12 +24,15 @@ func _自动保存() -> void:
 	var 时 = 当前时间字典.hour
 	var 分 = 当前时间字典.minute
 
+	var 已有数据 = save.加载()
+	var 游玩天数 = 已有数据.get("游玩天数", 0)
+
 	var 数据 = {
-		"游玩天数": 0,
+		"游玩天数": 游玩天数,
 		"最后游玩时间": "%d月%d日 %02d:%02d" % [月, 日, 时, 分],
-		"最后游玩场景": "res://场景/家/家.tscn",
+		"最后游玩场景": get_tree().current_scene.scene_file_path,
 		"上次存档": save.当前存档,
-		"ai_memory": save.当前AI记忆(),
+		"ai_memory": {"_global": save.当前AI记忆()},
 	}
 	save.自动保存(数据)
 	print("[自动保存] 已保存到槽位 0")
@@ -64,3 +67,13 @@ func 设置背景(背景: String) -> void:
 		$"背景".texture = load("res://资源/纹理/家/白天.png")
 	elif 背景 == "晚上":
 		$"背景".texture = load("res://资源/纹理/家/晚上.png")
+
+
+func _打开手机() -> void:
+	var 场景资源 = load("res://场景/手机/主界面.tscn")
+	if 场景资源 == null:
+		printerr("[手机] 加载场景失败: res://场景/手机/主界面.tscn")
+		return
+	var 手机实例 = 场景资源.instantiate()
+	手机实例.add_to_group("手机弹窗")
+	add_child(手机实例)

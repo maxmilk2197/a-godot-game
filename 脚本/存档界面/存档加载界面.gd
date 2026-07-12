@@ -183,6 +183,7 @@ func 读取存档(槽位: int) -> void:
 	await tween.finished
 
 	save.切换槽位(槽位)
+	聊天数据.初始化(槽位)
 	var 数据字典 = save.加载()
 	if 数据字典.is_empty():
 		printerr("加载的存档为空或无效")

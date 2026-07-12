@@ -3,6 +3,7 @@ extends Control
 signal interaction_requested(button_index: int)
 
 func _ready() -> void:
+	mouse_filter = MOUSE_FILTER_PASS
 	var portrait_btn := get_node_or_null("立绘/图") as TextureButton
 	if portrait_btn and not portrait_btn.pressed.is_connected(立绘被按下):
 		portrait_btn.pressed.connect(立绘被按下)
