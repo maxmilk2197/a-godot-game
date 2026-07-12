@@ -27,13 +27,13 @@ corner_radius_bottom_left = 24
 
 [sub_resource type="StyleBoxFlat" id="sb_bottombar"]
 bg_color = Color(0.968627, 0.968627, 0.968627, 1)
-corner_radius_bottom_left = 35
 corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
 
 [sub_resource type="StyleBoxFlat" id="sb_inputbar"]
 bg_color = Color(0.968627, 0.968627, 0.968627, 1)
-corner_radius_bottom_left = 35
 corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
 
 [sub_resource type="StyleBoxFlat" id="sb_inputfield"]
 bg_color = Color(1, 1, 1, 1)
@@ -75,6 +75,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="顶栏" type="Panel" parent="." unique_id=159874236]
 layout_mode = 1
+anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 48.0
 grow_horizontal = 0
@@ -359,7 +360,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="输入区" type="Panel" parent="." unique_id=159753468]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.858
@@ -378,6 +378,8 @@ anchor_right = 0.8
 anchor_bottom = 0.85
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 14
 theme_override_styles/normal = SubResource("sb_inputfield")
 theme_override_styles/focus = SubResource("sb_inputfield")

@@ -91,7 +91,7 @@ func _刷新消息列表() -> void:
 		var hint = Label.new()
 		hint.text = "对方正在输入..."
 		hint.add_theme_font_size_override("font_size", 11)
-		hint.add_theme_color_override("font_color", Color(0.502, 0.502, 0.502, 1))
+		hint.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0, 1.0))
 		hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		hint.custom_minimum_size = Vector2(0, 24)
 		消息列表.add_child(hint)
@@ -152,7 +152,7 @@ func _创建气泡(msg: Dictionary) -> Control:
 	var time_label = Label.new()
 	time_label.text = msg.get("时间", "")
 	time_label.add_theme_font_size_override("font_size", 10)
-	time_label.add_theme_color_override("font_color", Color(0.502, 0.502, 0.502, 1))
+	time_label.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0, 1.0))
 	time_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	time_label.layout_mode = 1
 	time_label.anchor_left = 0.5
