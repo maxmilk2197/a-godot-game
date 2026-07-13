@@ -9,11 +9,8 @@ var 默认存档: Dictionary = {
 	"最后游玩场景": "",
 	"最后游玩时间": "",
 	"上次存档": 0,
-	"金钱数量": 1000,
-	"ai_memory": {
-		"_global": [],
-	},
-	"chat_records": {},
+	"金钱数量": 100,
+	"角色数据": {},
 }
 
 
@@ -140,102 +137,60 @@ func 是否有任意存档() -> bool:
 	return false
 
 
-var _ai记忆缓存: Dictionary = {}
-
-
-func 当前AI记忆() -> Array:
-	if not _ai记忆缓存.has(当前存档):
-		_ai记忆缓存[当前存档] = 读取AI记忆(当前存档)
-	return _ai记忆缓存[当前存档]
-
-
-func 设置当前AI记忆(记忆: Array) -> void:
-	_ai记忆缓存[当前存档] = 记忆.duplicate(true)
-	更新AI记忆(当前存档, 记忆)
-
-
-func 清除当前AI记忆缓存() -> void:
-	_ai记忆缓存.erase(当前存档)
-
-
-func _确保内存结构(数据: Dictionary) -> void:
-	if not 数据.has("ai_memory") or not 数据["ai_memory"] is Dictionary:
-		数据["ai_memory"] = {"_global": []}
-	elif not 数据["ai_memory"].has("_global"):
-		数据["ai_memory"]["_global"] = []
-	if not 数据.has("chat_records") or not 数据["chat_records"] is Dictionary:
-		数据["chat_records"] = {}
-
-
-func 更新AI记忆(槽位: int, 记忆: Array) -> void:
-	_ai记忆缓存[槽位] = 记忆
+func _读角色数据(槽位: int, 角色名: String) -> Dictionary:
 	var 路径 := 存档目录 + "save_" + str(槽位) + ".json"
 	var 数据 := _读文件(路径)
 	if 数据.is_empty():
 		数据 = 默认存档.duplicate(true)
-	_确保内存结构(数据)
-	数据["ai_memory"]["_global"] = 记忆
-	_写文件(路径, 数据)
-	print("[存档] AI记忆已写入槽位 ", 槽位)
+	_确保结构(数据)
+	var 角色数据 = 数据["角色数据"]
+	if not 角色数据.has(角色名):
+		角色数据[角色名] = {}
+	return 角色数据[角色名]
 
 
-func 读取AI记忆(槽位: int) -> Array:
-	var 路径 := 存档目录 + "save_" + str(槽位) + ".json"
-	var 数据 := _读文件(路径)
-	if 数据.is_empty():
-		return []
-	var mem = 数据.get("ai_memory", {})
-	if mem is Dictionary:
-		var global_mem = mem.get("_global", [])
-		if global_mem is Array:
-			print("[存档] AI记忆已读取，共 ", global_mem.size(), " 条")
-			return global_mem
-	return []
+func _确保结构(数据: Dictionary) -> void:
+	if not 数据.has("角色数据") or not 数据["角色数据"] is Dictionary:
+		数据["角色数据"] = {}
 
 
 func 更新角色AI记忆(槽位: int, 角色名: String, 记忆: Array) -> void:
 	var 路径 := 存档目录 + "save_" + str(槽位) + ".json"
-	var 数据 := _读文件(路径)
-	if 数据.is_empty():
-		数据 = 默认存档.duplicate(true)
-	_确保内存结构(数据)
-	数据["ai_memory"][角色名] = 记忆
-	_写文件(路径, 数据)
+	var 角色数据 := _读角色数据(槽位, 角色名)
+	角色数据["ai_memory"] = 记忆
+	var 文件数据 := _读文件(路径)
+	if 文件数据.is_empty():
+		文件数据 = 默认存档.duplicate(true)
+	_确保结构(文件数据)
+	文件数据["角色数据"][角色名] = 角色数据
+	_写文件(路径, 文件数据)
 
 
 func 读取角色AI记忆(槽位: int, 角色名: String) -> Array:
-	var 路径 := 存档目录 + "save_" + str(槽位) + ".json"
-	var 数据 := _读文件(路径)
-	if 数据.is_empty():
-		return []
-	var mem = 数据.get("ai_memory", {})
-	if mem is Dictionary:
-		var 角色记忆 = mem.get(角色名, [])
-		if 角色记忆 is Array:
-			return 角色记忆
+	var 角色数据 := _读角色数据(槽位, 角色名)
+	var mem = 角色数据.get("ai_memory", [])
+	if mem is Array:
+		return mem
 	return []
 
 
 func 更新聊天记录(槽位: int, 角色名: String, 消息列表: Array) -> void:
 	var 路径 := 存档目录 + "save_" + str(槽位) + ".json"
-	var 数据 := _读文件(路径)
-	if 数据.is_empty():
-		数据 = 默认存档.duplicate(true)
-	_确保内存结构(数据)
-	数据["chat_records"][角色名] = 消息列表
-	_写文件(路径, 数据)
+	var 角色数据 := _读角色数据(槽位, 角色名)
+	角色数据["chat_records"] = 消息列表
+	var 文件数据 := _读文件(路径)
+	if 文件数据.is_empty():
+		文件数据 = 默认存档.duplicate(true)
+	_确保结构(文件数据)
+	文件数据["角色数据"][角色名] = 角色数据
+	_写文件(路径, 文件数据)
 
 
 func 读取聊天记录(槽位: int, 角色名: String) -> Array:
-	var 路径 := 存档目录 + "save_" + str(槽位) + ".json"
-	var 数据 := _读文件(路径)
-	if 数据.is_empty():
-		return []
-	var records = 数据.get("chat_records", {})
-	if records is Dictionary:
-		var msgs = records.get(角色名, [])
-		if msgs is Array:
-			return msgs
+	var 角色数据 := _读角色数据(槽位, 角色名)
+	var records = 角色数据.get("chat_records", [])
+	if records is Array:
+		return records
 	return []
 
 
@@ -244,5 +199,25 @@ func 读取全部聊天记录(槽位: int) -> Dictionary:
 	var 数据 := _读文件(路径)
 	if 数据.is_empty():
 		return {}
-	var records = 数据.get("chat_records", {})
-	return records if records is Dictionary else {}
+	var 角色数据 = 数据.get("角色数据", {})
+	if not 角色数据 is Dictionary:
+		return {}
+	var result: Dictionary = {}
+	for 角色名 in 角色数据:
+		var entry = 角色数据[角色名]
+		if entry is Dictionary and entry.has("chat_records"):
+			result[角色名] = entry["chat_records"]
+	return result
+
+
+func 复制角色数据(源槽位: int, 目标槽位: int, 角色名: String) -> void:
+	var 源角色数据 := _读角色数据(源槽位, 角色名)
+	if 源角色数据.is_empty():
+		return
+	var 路径 := 存档目录 + "save_" + str(目标槽位) + ".json"
+	var 文件数据 := _读文件(路径)
+	if 文件数据.is_empty():
+		文件数据 = 默认存档.duplicate(true)
+	_确保结构(文件数据)
+	文件数据["角色数据"][角色名] = 源角色数据.duplicate(true)
+	_写文件(路径, 文件数据)

@@ -32,7 +32,6 @@ func _自动保存() -> void:
 		"最后游玩时间": "%d月%d日 %02d:%02d" % [月, 日, 时, 分],
 		"最后游玩场景": get_tree().current_scene.scene_file_path,
 		"上次存档": save.当前存档,
-		"ai_memory": {"_global": save.当前AI记忆()},
 	}
 	save.自动保存(数据)
 	print("[自动保存] 已保存到槽位 0")

@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cqg7yewlk2rff" path="res://脚本/手机/聊天界面.gd" id="1_script"]
 [ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="2_font"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qttyn"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="StyleBoxFlat" id="sb_topbar"]
 bg_color = Color(0.027451, 0.756863, 0.376471, 1)
 corner_radius_top_left = 28
@@ -71,6 +74,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qttyn")
 metadata/_edit_use_anchors_ = true
 
 [node name="顶栏" type="Panel" parent="." unique_id=159874236]

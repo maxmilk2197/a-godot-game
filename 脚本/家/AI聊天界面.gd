@@ -15,10 +15,12 @@ signal 对话已关闭()
 var _等待中: bool = false
 var _上一条用户消息: String = ""
 
+const _记忆键 := "_home"
+
 func _ready() -> void:
 	await get_tree().process_frame
 
-	加载记忆()
+	_加载记忆()
 
 	if AIChat.已配置:
 		_状态标签.text = "已配置 - " + AIChat.模型
@@ -79,6 +81,7 @@ func _发送消息() -> void:
 func _on_AI回复(回复内容: String) -> void:
 	if not visible:
 		return
+	_save_memory()
 	_show_dialog(_上一条用户消息, 回复内容)
 	_状态标签.text = "已配置 - " + AIChat.模型
 
@@ -101,15 +104,29 @@ func _show_dialog_error(msg: String) -> void:
 func _on_timeline_ended() -> void:
 	_等待中 = false
 
-func 加载记忆() -> void:
+func _加载记忆() -> void:
 	var 槽位 := save.当前存档 if save else 0
-	AIChat.加载记忆(槽位)
-	if not AIChat.已配置:
-		return
+	var 记忆 := save.读取角色AI记忆(槽位, _记忆键)
+	if 记忆.size() > 0:
+		AIChat.对话记录 = 记忆
+		print("[AI聊天] 记忆已加载，共 ", 记忆.size(), " 条")
+
 	if AIChat.对话记录.size() > 0 and AIChat.对话记录[0]["role"] == "system":
 		pass
-	elif not 提示词.is_empty():
-		AIChat.设置系统提示(提示词)
+	else:
+		var cfg := ConfigFile.new()
+		if cfg.load("user://aisettings.cfg") == OK:
+			var 角色提示词 = cfg.get_value("提示词", "妹妹", "")
+			if not 角色提示词.is_empty():
+				AIChat.设置系统提示(角色提示词)
+				return
+		if not 提示词.is_empty():
+			AIChat.设置系统提示(提示词)
+
+
+func _save_memory() -> void:
+	var 槽位 := save.当前存档 if save else 0
+	save.更新角色AI记忆(槽位, _记忆键, AIChat.对话记录.duplicate(true))
 
 func _on_关闭按钮_pressed() -> void:
 	hide()
