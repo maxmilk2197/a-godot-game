@@ -186,42 +186,49 @@ layout_mode = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 text = "心情：60"
 
 [node name="好感数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000005]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 text = "好感：30"
 
 [node name="体力数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000006]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 text = "体力：70"
 
 [node name="金币数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000007]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 text = "金币：0"
 
 [node name="天数数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000008]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 text = "第 1 天"
 
 [node name="时段数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000009]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 text = "时段：白天"
 
 [node name="行动点数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000010]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 22
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 text = "剩余行动：3"
 
 [node name="行动栏" type="Control" parent="养成面板" unique_id=1717000011]

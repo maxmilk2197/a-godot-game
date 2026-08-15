@@ -1,0 +1,29 @@
+【Minecraft 掉落物定期清理 - 一键命令方块生成】
+适用: Java 版(新语法, 26.1.2 可用)
+功能: 每5分钟清理一次掉落物, 覆盖主世界/下界/末地(已加载区块), 清理前30秒和5秒全服广播提示
+
+使用方法:
+1. 聊天栏执行: /give @s command_block
+2. 把命令方块放在空地(上方2~10格保持空旷无方块), 右键打开它
+3. 把下面"主命令"整条复制粘贴进命令栏, 点"完成"
+4. 在命令方块侧面放一个按钮, 按一下
+5. 装置自动出现在命令方块上方2~10格, 立即开始运行(建造用临时矿车会自动消失)
+
+主命令(整条复制):
+summon minecraft:command_block_minecart ~ ~ ~ {Tags:["dlw_b"],auto:1b,Command:"scoreboard objectives add cleartimer dummy",Passengers:[{id:"minecraft:command_block_minecart",Tags:["dlw_b"],auto:1b,Command:"setblock ~ ~2 ~ minecraft:repeating_command_block[facing=up]{auto:1b,Command:\"scoreboard players add #timer cleartimer 1\",TrackOutput:0b}"},{id:"minecraft:command_block_minecart",Tags:["dlw_b"],auto:1b,Command:"setblock ~ ~3 ~ minecraft:chain_command_block[facing=up]{auto:1b,Command:\"execute if entity @e[type=command_block_minecart,tag=dlw_b] run kill @e[type=command_block_minecart,tag=dlw_b]\",TrackOutput:0b}"},{id:"minecraft:command_block_minecart",Tags:["dlw_b"],auto:1b,Command:"setblock ~ ~4 ~ minecraft:chain_command_block[facing=up]{auto:1b,Command:\"execute if score #timer cleartimer matches 5400 run say [掉落物清理] 30秒后将会清理掉落物！\",TrackOutput:0b}"},{id:"minecraft:command_block_minecart",Tags:["dlw_b"],auto:1b,Command:"setblock ~ ~5 ~ minecraft:chain_command_block[facing=up]{auto:1b,Command:\"execute if score #timer cleartimer matches 5900 run say [掉落物清理] 5秒后将会清理掉落物！\",TrackOutput:0b}"},{id:"minecraft:command_block_minecart",Tags:["dlw_b"],auto:1b,Command:"setblock ~ ~6 ~ minecraft:chain_command_block[facing=up]{auto:1b,Command:\"execute if score #timer cleartimer matches 6000.. run execute in minecraft:overworld run kill @e[type=item]\",TrackOutput:0b}"},{id:"minecraft:command_block_minecart",Tags:["dlw_b"],auto:1b,Command:"setblock ~ ~7 ~ minecraft:chain_command_block[facing=up]{auto:1b,Command:\"execute if score #timer cleartimer matches 6000.. run execute in minecraft:the_nether run kill @e[type=item]\",TrackOutput:0b}"},{id:"minecraft:command_block_minecart",Tags:["dlw_b"],auto:1b,Command:"setblock ~ ~8 ~ minecraft:chain_command_block[facing=up]{auto:1b,Command:\"execute if score #timer cleartimer matches 6000.. run execute in minecraft:the_end run kill @e[type=item]\",TrackOutput:0b}"},{id:"minecraft:command_block_minecart",Tags:["dlw_b"],auto:1b,Command:"setblock ~ ~9 ~ minecraft:chain_command_block[facing=up]{auto:1b,Command:\"execute if score #timer cleartimer matches 6000.. run say [掉落物清理] 清理完毕！\",TrackOutput:0b}"},{id:"minecraft:command_block_minecart",Tags:["dlw_b"],auto:1b,Command:"setblock ~ ~10 ~ minecraft:chain_command_block[facing=up]{auto:1b,Command:\"execute if score #timer cleartimer matches 6000.. run scoreboard players set #timer cleartimer 0\",TrackOutput:0b}"}]}
+
+验证:
+- 聊天栏执行 /scoreboard players get #timer cleartimer, 隔几秒再执行一次, 数字在涨 = 正常
+- 丢个物品在地上, 30秒前会收到广播提示
+
+改周期(默认6000刻=5分钟; 1秒=20刻):
+- 1分钟: 第4格 5400->600, 第5格 5900->1100, 第6~10格 6000..->1200..
+- 10分钟: 第4格 5400->11400, 第5格 5900->11900, 第6~10格 6000..->12000..
+
+拆除装置(站在建造命令方块位置执行):
+/fill ~ ~2 ~ ~ ~10 ~ air
+
+注意:
+- 只能清理"已加载区块"里的掉落物; 建议装置放在出生点区块附近, 或对所在区块执行 /forceload add ~ ~
+- 重复按按钮可以重新搭建, 不会出错
+- 需要OP/开启作弊
