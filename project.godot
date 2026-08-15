@@ -23,7 +23,7 @@ cmd="*res://脚本/全局/CMD.gd"
 save="*res://脚本/全局/存档.gd"
 info="*res://脚本/全局/全局变量.gd"
 AIChat="*res://脚本/全局/AI对话管理器.gd"
-"养成"="*res://脚本/全局/养成管理器.gd"
+Raise="*res://脚本/全局/养成管理器.gd"
 
 [dialogic]
 

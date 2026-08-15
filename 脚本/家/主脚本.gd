@@ -4,7 +4,7 @@ var 自动保存定时器: Timer
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_signal_event)
-	设置背景(养成.时段)
+	设置背景(Raise.时段)
 
 	自动保存定时器 = Timer.new()
 	自动保存定时器.wait_time = 600.0
