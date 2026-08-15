@@ -23,6 +23,7 @@ cmd="*res://脚本/全局/CMD.gd"
 save="*res://脚本/全局/存档.gd"
 info="*res://脚本/全局/全局变量.gd"
 AIChat="*res://脚本/全局/AI对话管理器.gd"
+"养成"="*res://脚本/全局/养成管理器.gd"
 
 [dialogic]
 
@@ -33,6 +34,8 @@ directories/dch_directory={
 "旁白": "res://角色/旁白.dch"
 }
 directories/dtl_directory={
+"养成_交流": "res://对话/养成_交流.dtl",
+"养成_摸摸": "res://对话/养成_摸摸.dtl",
 "初次见面": "res://对话/初次见面.dtl",
 "卧室": "res://对话/卧室.dtl",
 "玄关对话": "res://对话/玄关对话.dtl"
@@ -75,7 +78,11 @@ audio/channel_defaults={
 }
 variables={
 "send": "",
-"time": "白天"
+"time": "白天",
+"体力": 70,
+"好感": 30,
+"心情": 60,
+"金币": 0
 }
 layout/style_list=["res://资源/对话主题/02.tres"]
 layout/default_style=""

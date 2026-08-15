@@ -1,0 +1,7 @@
+join yun right [wait="true"]
+set {好感} += 3
+set {心情} += 1
+yun: 唔……哥哥又在摸我头啦。
+yun: 不过……感觉还挺舒服的。(嘀咕)
+leave yun
+[end_timeline]

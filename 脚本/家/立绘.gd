@@ -8,7 +8,7 @@ func _ready() -> void:
 	if portrait_btn and not portrait_btn.pressed.is_connected(立绘被按下):
 		portrait_btn.pressed.connect(立绘被按下)
 
-	var talk_btn := get_node_or_null("交互/交流") as Button
+	var talk_btn := get_node_or_null("交互/聊天") as Button
 	if talk_btn:
 		talk_btn.pressed.connect(func() -> void: interaction_requested.emit(1))
 		_style_button(talk_btn)
@@ -18,11 +18,6 @@ func _ready() -> void:
 		btn2.text = "保存"
 		btn2.pressed.connect(func() -> void: interaction_requested.emit(2))
 		_style_button(btn2)
-
-	var btn3 := get_node_or_null("交互/Button3") as Button
-	if btn3:
-		btn3.pressed.connect(func() -> void: interaction_requested.emit(3))
-		_style_button(btn3)
 
 	$"交互".hide()
 

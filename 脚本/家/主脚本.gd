@@ -4,8 +4,7 @@ var 自动保存定时器: Timer
 
 func _ready() -> void:
 	Dialogic.signal_event.connect(_on_signal_event)
-	Dialogic.start("res://对话/卧室.dtl")
-	设置背景("白天")
+	设置背景(养成.时段)
 
 	自动保存定时器 = Timer.new()
 	自动保存定时器.wait_time = 600.0
@@ -48,7 +47,7 @@ func _打开存档界面(保存模式: bool = false) -> void:
 
 func _on_signal_event(argument: Variant):
 	if argument == "进入玄关":
-		get_tree().change_scene_to_file("res://场景/家/玄关.tscn")
+		get_tree().change_scene_to_file("res://场景/屋外/世界.tscn")
 	if argument == "等到晚上":
 		设置背景("晚上")
 	if argument == "睡觉":

@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://dsyqo2j4y4r63" path="res://脚本/家/立绘.gd" id="1_ecy2k"]
 [ext_resource type="Script" uid="uid://dci4euht3qx2y" path="res://脚本/家/主脚本.gd" id="1_xshxy"]
 [ext_resource type="Texture2D" uid="uid://dx68o6d104sys" path="res://资源/纹理/家/白天.png" id="2_u4jm0"]
-[ext_resource type="Script" uid="uid://cqor223gx73tb" path="res://脚本/家/信息.gd" id="3_eioms"]
 [ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="3_vgfoc"]
 [ext_resource type="Script" uid="uid://bhij74bjy2fei" path="res://脚本/家/场景交互.gd" id="6_gq21x"]
 [ext_resource type="FontFile" uid="uid://c0qguixcifn3p" path="res://资源/字体/GenSenRounded2-B.ttc" id="7_sn4bq"]
 [ext_resource type="AudioStream" uid="uid://dye6urihdu0tt" path="res://资源/音频/音乐/1_30pm.mp3" id="7_u4jm0"]
 [ext_resource type="Script" uid="uid://da3s2tieoeonl" path="res://脚本/家/AI聊天界面.gd" id="10_q50p0"]
+[ext_resource type="Script" uid="uid://c5b20bc5e868d" path="res://脚本/家/养成面板.gd" id="11_yangcheng"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gq21x"]
 
@@ -21,8 +21,12 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q50p0"]
 
-[sub_resource type="Theme" id="Theme_8yo52"]
-Label/fonts/font = ExtResource("7_sn4bq")
+[sub_resource type="StyleBoxFlat" id="sb_stat_panel"]
+bg_color = Color(1, 1, 1, 0.88)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8gn6"]
 bg_color = Color(1, 1, 1, 1)
@@ -133,7 +137,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="交流" type="Button" parent="角色交互/交互" unique_id=1079993443]
+[node name="聊天" type="Button" parent="角色交互/交互" unique_id=1079993443]
 layout_mode = 0
 offset_left = 465.0
 offset_top = 227.0
@@ -141,7 +145,7 @@ offset_right = 751.0
 offset_bottom = 306.0
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 32
-text = "交流"
+text = "聊天"
 
 [node name="Button2" type="Button" parent="角色交互/交互" unique_id=206699694]
 layout_mode = 0
@@ -151,81 +155,149 @@ offset_right = 751.0
 offset_bottom = 528.0
 text = "Button"
 
-[node name="Button3" type="Button" parent="角色交互/交互" unique_id=1218472736]
-layout_mode = 0
-offset_left = 465.0
-offset_top = 334.0
-offset_right = 751.0
-offset_bottom = 413.0
-text = "Button"
+[node name="背景音乐" type="AudioStreamPlayer" parent="." unique_id=1891284887]
+stream = ExtResource("7_u4jm0")
 
-[node name="信息" type="Control" parent="." unique_id=900413945]
-visible = false
+[node name="养成面板" type="Control" parent="." unique_id=1717000001]
 layout_mode = 1
-anchor_left = -0.00078125
-anchor_top = -0.0027777778
-anchor_right = 0.2796875
-anchor_bottom = 0.16527776
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 1.0
-offset_bottom = 2.0
-theme = SubResource("Theme_8yo52")
-script = ExtResource("3_eioms")
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect" type="ColorRect" parent="信息" unique_id=238824268]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.9220056
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("11_yangcheng")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="属性面板" type="PanelContainer" parent="养成面板" unique_id=1717000002]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 282.0
+offset_bottom = 296.0
+theme_override_styles/panel = SubResource("sb_stat_panel")
 metadata/_edit_use_anchors_ = true
 
-[node name="好感" type="Label" parent="信息" unique_id=1307070065]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.013927577
-anchor_top = 0.5867769
-anchor_right = 0.21448468
-anchor_bottom = 0.86776865
-offset_right = -24.0
-offset_bottom = -11.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "好感度"
-metadata/_edit_use_anchors_ = true
+[node name="数值栏" type="VBoxContainer" parent="养成面板/属性面板" unique_id=1717000003]
+layout_mode = 2
 
-[node name="折叠" type="Button" parent="信息" unique_id=223286673]
+[node name="心情数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000004]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "心情：60"
+
+[node name="好感数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000005]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "好感：30"
+
+[node name="体力数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000006]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "体力：70"
+
+[node name="金币数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000007]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "金币：0"
+
+[node name="天数数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000008]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "第 1 天"
+
+[node name="时段数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000009]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "时段：白天"
+
+[node name="行动点数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000010]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "剩余行动：3"
+
+[node name="行动栏" type="Control" parent="养成面板" unique_id=1717000011]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.88022286
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0000001
-theme_override_styles/normal = SubResource("StyleBoxFlat_s8gn6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_s8gn6")
-theme_override_styles/hover = SubResource("StyleBoxFlat_s8gn6")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_s8gn6")
-theme_override_styles/focus = SubResource("StyleBoxFlat_s8gn6")
-metadata/_edit_use_anchors_ = true
+anchor_bottom = 1.0
+offset_top = -110.0
 
-[node name="星期" type="Label" parent="信息" unique_id=514422843]
+[node name="结果提示" type="Label" parent="养成面板/行动栏" unique_id=1717000012]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.011142061
-anchor_top = 0.016528927
-anchor_right = 0.30083567
-anchor_bottom = 0.3884298
-offset_right = -32.0
-offset_bottom = -11.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "星期一"
-metadata/_edit_use_anchors_ = true
+anchors_preset = 10
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = ""
+horizontal_alignment = 1
 
-[node name="背景音乐" type="AudioStreamPlayer" parent="." unique_id=1891284887]
-stream = ExtResource("7_u4jm0")
+[node name="交流" type="Button" parent="养成面板/行动栏" unique_id=1717000013]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 20.0
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 32
+text = "交流"
+
+[node name="摸摸" type="Button" parent="养成面板/行动栏" unique_id=1717000014]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 20.0
+offset_right = 390.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 32
+text = "摸摸"
+
+[node name="做家务" type="Button" parent="养成面板/行动栏" unique_id=1717000015]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 20.0
+offset_right = 580.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 32
+text = "做家务"
+
+[node name="睡觉" type="Button" parent="养成面板/行动栏" unique_id=1717000016]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 20.0
+offset_right = 770.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 32
+text = "睡觉"
+
+[node name="离开" type="Button" parent="养成面板/行动栏" unique_id=1717000017]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 20.0
+offset_right = 960.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 32
+text = "离开"
 
 [node name="AI聊天界面" type="Control" parent="." unique_id=51273642 node_paths=PackedStringArray("_输入框", "_状态标签", "_设置URL输入", "_设置密钥输入", "_设置模型输入", "_设置取消按钮", "_设置保存按钮")]
 visible = false
@@ -380,9 +452,13 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="场景交互/电脑" to="场景交互" method="_on_电脑_pressed"]
 [connection signal="pressed" from="角色交互/立绘/图" to="角色交互" method="立绘被按下"]
-[connection signal="pressed" from="角色交互/交互/交流" to="角色交互" method="_on_交流_pressed"]
-[connection signal="pressed" from="信息/折叠" to="信息" method="切换显示"]
+[connection signal="pressed" from="角色交互/交互/聊天" to="角色交互" method="_on_交流_pressed"]
 [connection signal="pressed" from="AI聊天界面/关闭按钮" to="AI聊天界面" method="_on_关闭按钮_pressed"]
 [connection signal="pressed" from="AI聊天界面/设置按钮" to="AI聊天界面" method="_on_设置按钮_pressed"]
 [connection signal="close_requested" from="AI聊天界面/AI设置弹窗" to="AI聊天界面" method="_on_ai设置弹窗_close_requested"]
 [connection signal="pressed" from="功能/手机" to="场景交互" method="_on_手机_pressed"]
+[connection signal="pressed" from="养成面板/行动栏/交流" to="养成面板" method="_on_交流_pressed"]
+[connection signal="pressed" from="养成面板/行动栏/摸摸" to="养成面板" method="_on_摸摸_pressed"]
+[connection signal="pressed" from="养成面板/行动栏/做家务" to="养成面板" method="_on_做家务_pressed"]
+[connection signal="pressed" from="养成面板/行动栏/睡觉" to="养成面板" method="_on_睡觉_pressed"]
+[connection signal="pressed" from="养成面板/行动栏/离开" to="养成面板" method="_on_离开_pressed"]
