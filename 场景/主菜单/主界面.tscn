@@ -369,6 +369,7 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="调试" type="Control" parent="." unique_id=1444531706]
+visible = false
 y_sort_enabled = true
 use_parent_material = true
 layout_mode = 1

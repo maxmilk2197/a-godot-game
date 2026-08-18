@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dx68o6d104sys" path="res://资源/纹理/家/白天.png" id="2_u4jm0"]
 [ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="3_vgfoc"]
 [ext_resource type="Script" uid="uid://bhij74bjy2fei" path="res://脚本/家/场景交互.gd" id="6_gq21x"]
-[ext_resource type="FontFile" uid="uid://c0qguixcifn3p" path="res://资源/字体/GenSenRounded2-B.ttc" id="7_sn4bq"]
 [ext_resource type="AudioStream" uid="uid://dye6urihdu0tt" path="res://资源/音频/音乐/1_30pm.mp3" id="7_u4jm0"]
 [ext_resource type="Script" uid="uid://da3s2tieoeonl" path="res://脚本/家/AI聊天界面.gd" id="10_q50p0"]
 [ext_resource type="Script" uid="uid://c5b20bc5e868d" path="res://脚本/家/养成面板.gd" id="11_yangcheng"]
@@ -27,11 +26,7 @@ corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8gn6"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_right = 8
+expand_margin_top = 10.0
 
 [node name="家" type="Control" unique_id=1678795185]
 clip_contents = true
@@ -171,7 +166,6 @@ metadata/_edit_lock_ = true
 
 [node name="属性面板" type="PanelContainer" parent="养成面板" unique_id=1717000002]
 layout_mode = 1
-anchors_preset = 0
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 282.0
@@ -181,55 +175,63 @@ metadata/_edit_use_anchors_ = true
 
 [node name="数值栏" type="VBoxContainer" parent="养成面板/属性面板" unique_id=1717000003]
 layout_mode = 2
-
-[node name="心情数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000004]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_vgfoc")
-theme_override_font_sizes/font_size = 22
-theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-text = "心情：60"
-
-[node name="好感数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000005]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_vgfoc")
-theme_override_font_sizes/font_size = 22
-theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-text = "好感：30"
-
-[node name="体力数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000006]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_vgfoc")
-theme_override_font_sizes/font_size = 22
-theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-text = "体力：70"
-
-[node name="金币数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000007]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_vgfoc")
-theme_override_font_sizes/font_size = 22
-theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-text = "金币：0"
-
-[node name="天数数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000008]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_vgfoc")
-theme_override_font_sizes/font_size = 22
-theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
-text = "第 1 天"
+theme_override_constants/separation = 12
 
 [node name="时段数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000009]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 22
-theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 text = "时段：白天"
+horizontal_alignment = 1
+
+[node name="心情数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000004]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "心情：60"
+horizontal_alignment = 1
+
+[node name="好感数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000005]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "好感：30"
+horizontal_alignment = 1
+
+[node name="体力数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000006]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "体力：70"
+horizontal_alignment = 1
+
+[node name="金币数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000007]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "金币：0"
+horizontal_alignment = 1
+
+[node name="天数数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000008]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 22
+text = "第 1 天"
+horizontal_alignment = 1
 
 [node name="行动点数值" type="Label" parent="养成面板/属性面板/数值栏" unique_id=1717000010]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 22
-theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 text = "剩余行动：3"
+horizontal_alignment = 1
 
 [node name="行动栏" type="Control" parent="养成面板" unique_id=1717000011]
 layout_mode = 1
@@ -237,23 +239,26 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 49.0
 offset_top = -110.0
+offset_right = -75.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="结果提示" type="Label" parent="养成面板/行动栏" unique_id=1717000012]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -100.0
 offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_vgfoc")
-theme_override_font_sizes/font_size = 20
 theme_override_colors/font_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-text = ""
+theme_override_fonts/font = ExtResource("3_vgfoc")
+theme_override_font_sizes/font_size = 20
 horizontal_alignment = 1
 
 [node name="交流" type="Button" parent="养成面板/行动栏" unique_id=1717000013]
@@ -448,9 +453,10 @@ offset_bottom = 704.0
 [node name="手机" type="Button" parent="功能" unique_id=2065066854]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = -0.2
-anchor_right = 1.6
-anchor_bottom = 1.25
+anchor_left = 0.05
+anchor_top = -0.9
+anchor_right = 1.225
+anchor_bottom = 1.35
 grow_vertical = 0
 text = "手机"
 metadata/_edit_use_anchors_ = true
@@ -460,12 +466,12 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="场景交互/电脑" to="场景交互" method="_on_电脑_pressed"]
 [connection signal="pressed" from="角色交互/立绘/图" to="角色交互" method="立绘被按下"]
 [connection signal="pressed" from="角色交互/交互/聊天" to="角色交互" method="_on_交流_pressed"]
-[connection signal="pressed" from="AI聊天界面/关闭按钮" to="AI聊天界面" method="_on_关闭按钮_pressed"]
-[connection signal="pressed" from="AI聊天界面/设置按钮" to="AI聊天界面" method="_on_设置按钮_pressed"]
-[connection signal="close_requested" from="AI聊天界面/AI设置弹窗" to="AI聊天界面" method="_on_ai设置弹窗_close_requested"]
-[connection signal="pressed" from="功能/手机" to="场景交互" method="_on_手机_pressed"]
 [connection signal="pressed" from="养成面板/行动栏/交流" to="养成面板" method="_on_交流_pressed"]
 [connection signal="pressed" from="养成面板/行动栏/摸摸" to="养成面板" method="_on_摸摸_pressed"]
 [connection signal="pressed" from="养成面板/行动栏/做家务" to="养成面板" method="_on_做家务_pressed"]
 [connection signal="pressed" from="养成面板/行动栏/睡觉" to="养成面板" method="_on_睡觉_pressed"]
 [connection signal="pressed" from="养成面板/行动栏/离开" to="养成面板" method="_on_离开_pressed"]
+[connection signal="pressed" from="AI聊天界面/关闭按钮" to="AI聊天界面" method="_on_关闭按钮_pressed"]
+[connection signal="pressed" from="AI聊天界面/设置按钮" to="AI聊天界面" method="_on_设置按钮_pressed"]
+[connection signal="close_requested" from="AI聊天界面/AI设置弹窗" to="AI聊天界面" method="_on_ai设置弹窗_close_requested"]
+[connection signal="pressed" from="功能/手机" to="场景交互" method="_on_手机_pressed"]
