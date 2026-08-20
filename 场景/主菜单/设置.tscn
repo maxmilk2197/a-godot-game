@@ -1,18 +1,338 @@
 [gd_scene format=3 uid="uid://buy2xfbsqkcno"]
 
-[node name="设置" type="Control" unique_id=1878841576]
+[ext_resource type="Script" path="res://脚本/主菜单/设置.gd" id="1_script"]
+[ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="2_font"]
+
+[sub_resource type="Theme" id="Theme_ui"]
+default_font = ExtResource("2_font")
+default_font_size = 18
+
+[sub_resource type="StyleBoxFlat" id="面板样式"]
+bg_color = Color(0.07843137, 0.09803922, 0.15686275, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4627451, 0.5529412, 0.7764706, 0.35)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 24
+
+[sub_resource type="StyleBoxFlat" id="按钮正常"]
+bg_color = Color(0.15686275, 0.19215686, 0.29019608, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="按钮悬停"]
+bg_color = Color(0.23529412, 0.29019608, 0.43921569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="按钮按下"]
+bg_color = Color(0.10196078, 0.12941176, 0.20784314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+content_margin_left = 16.0
+content_margin_top = 10.0
+content_margin_right = 16.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="按钮禁用"]
+bg_color = Color(0.10980392, 0.1372549, 0.21568627, 0.45)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="滑轨"]
+bg_color = Color(0.09803922, 0.1254902, 0.19215686, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="滑轨已填"]
+bg_color = Color(0.32941176, 0.41960784, 0.65882353, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="滑轨已填悬停"]
+bg_color = Color(0.42352941, 0.52156863, 0.78039216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="设置" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_ui")
+script = ExtResource("1_script")
 
-[node name="Control" type="Control" parent="." unique_id=147480805]
+[node name="背景" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0.62)
 metadata/_edit_use_anchors_ = true
+
+[node name="面板" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -260.0
+offset_right = 290.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("面板样式")
+
+[node name="标题" type="Label" parent="面板"]
+layout_mode = 0
+offset_top = 6.0
+offset_bottom = 46.0
+text = "设置"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.9098039, 0.9333333, 0.972549, 1)
+theme_override_font_sizes/font_size = 32
+
+[node name="分隔线" type="ColorRect" parent="面板"]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 56.0
+offset_bottom = 57.0
+color = Color(1, 1, 1, 0.1)
+
+[node name="音乐行" type="Control" parent="面板"]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 76.0
+offset_bottom = 118.0
+
+[node name="音乐标签" type="Label" parent="面板/音乐行"]
+layout_mode = 0
+offset_top = 6.0
+offset_bottom = 32.0
+text = "音乐音量"
+theme_override_colors/font_color = Color(0.72156863, 0.76862745, 0.87843137, 1)
+
+[node name="音乐滑条" type="HSlider" parent="面板/音乐行"]
+layout_mode = 0
+anchor_left = 0.25
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 8.0
+offset_right = 0.0
+offset_bottom = 36.0
+grow_horizontal = 2
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+value = 100.0
+theme_override_styles/slider = SubResource("滑轨")
+theme_override_styles/grabber_area = SubResource("滑轨已填")
+theme_override_styles/grabber_area_highlight = SubResource("滑轨已填悬停")
+
+[node name="音乐数值" type="Label" parent="面板/音乐行"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 6.0
+offset_bottom = 32.0
+grow_horizontal = 0
+text = "100%"
+horizontal_alignment = 2
+theme_override_colors/font_color = Color(0.56078434, 0.65882353, 0.87843137, 1)
+
+[node name="音效行" type="Control" parent="面板"]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 136.0
+offset_bottom = 178.0
+
+[node name="音效标签" type="Label" parent="面板/音效行"]
+layout_mode = 0
+offset_top = 6.0
+offset_bottom = 32.0
+text = "音效音量"
+theme_override_colors/font_color = Color(0.72156863, 0.76862745, 0.87843137, 1)
+
+[node name="音效滑条" type="HSlider" parent="面板/音效行"]
+layout_mode = 0
+anchor_left = 0.25
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 8.0
+offset_right = 0.0
+offset_bottom = 36.0
+grow_horizontal = 2
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+value = 100.0
+theme_override_styles/slider = SubResource("滑轨")
+theme_override_styles/grabber_area = SubResource("滑轨已填")
+theme_override_styles/grabber_area_highlight = SubResource("滑轨已填悬停")
+
+[node name="音效数值" type="Label" parent="面板/音效行"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = 6.0
+offset_bottom = 32.0
+grow_horizontal = 0
+text = "100%"
+horizontal_alignment = 2
+theme_override_colors/font_color = Color(0.56078434, 0.65882353, 0.87843137, 1)
+
+[node name="关于按钮" type="Button" parent="面板"]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 210.0
+offset_bottom = 258.0
+text = "关于"
+theme_override_styles/normal = SubResource("按钮正常")
+theme_override_styles/hover = SubResource("按钮悬停")
+theme_override_styles/pressed = SubResource("按钮按下")
+theme_override_styles/disabled = SubResource("按钮禁用")
+theme_override_colors/font_color = Color(0.85882353, 0.88627451, 0.94117647, 1)
+theme_override_colors/font_hover_color = Color(0.9098039, 0.9333333, 0.972549, 1)
+theme_override_colors/font_pressed_color = Color(0.65882353, 0.75294118, 0.94117647, 1)
+
+[node name="返回按钮" type="Button" parent="面板"]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 272.0
+offset_bottom = 320.0
+text = "返回"
+theme_override_styles/normal = SubResource("按钮正常")
+theme_override_styles/hover = SubResource("按钮悬停")
+theme_override_styles/pressed = SubResource("按钮按下")
+theme_override_styles/disabled = SubResource("按钮禁用")
+theme_override_colors/font_color = Color(0.85882353, 0.88627451, 0.94117647, 1)
+theme_override_colors/font_hover_color = Color(0.9098039, 0.9333333, 0.972549, 1)
+theme_override_colors/font_pressed_color = Color(0.65882353, 0.75294118, 0.94117647, 1)
+
+[node name="关于遮罩" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+metadata/_edit_use_anchors_ = true
+
+[node name="关于面板" type="Panel" parent="关于遮罩"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -170.0
+offset_right = 240.0
+offset_bottom = 170.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("面板样式")
+
+[node name="关于标题" type="Label" parent="关于遮罩/关于面板"]
+layout_mode = 0
+offset_top = 12.0
+offset_bottom = 48.0
+text = "关于"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.9098039, 0.9333333, 0.972549, 1)
+theme_override_font_sizes/font_size = 26
+
+[node name="关于分隔线" type="ColorRect" parent="关于遮罩/关于面板"]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 56.0
+offset_bottom = 57.0
+color = Color(1, 1, 1, 0.1)
+
+[node name="关于内容" type="Label" parent="关于遮罩/关于面板"]
+layout_mode = 0
+anchor_right = 1.0
+offset_top = 76.0
+offset_bottom = 220.0
+text = "养只妹妹
+
+版本 0.05 测试版
+
+与妹妹共度的日常养成游戏
+养成 · 剧情 · 手机聊天"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_colors/font_color = Color(0.72156863, 0.76862745, 0.87843137, 1)
+
+[node name="关闭按钮" type="Button" parent="关于遮罩/关于面板"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 236.0
+offset_right = 80.0
+offset_bottom = 284.0
+grow_horizontal = 2
+text = "关闭"
+theme_override_styles/normal = SubResource("按钮正常")
+theme_override_styles/hover = SubResource("按钮悬停")
+theme_override_styles/pressed = SubResource("按钮按下")
+theme_override_styles/disabled = SubResource("按钮禁用")
+theme_override_colors/font_color = Color(0.85882353, 0.88627451, 0.94117647, 1)
+theme_override_colors/font_hover_color = Color(0.9098039, 0.9333333, 0.972549, 1)
+theme_override_colors/font_pressed_color = Color(0.65882353, 0.75294118, 0.94117647, 1)
+
+[node name="遮罩" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="value_changed" from="面板/音乐行/音乐滑条" to="." method="_on_音乐滑条_value_changed"]
+[connection signal="value_changed" from="面板/音效行/音效滑条" to="." method="_on_音效滑条_value_changed"]
+[connection signal="pressed" from="面板/关于按钮" to="." method="_on_关于按钮_pressed"]
+[connection signal="pressed" from="面板/返回按钮" to="." method="_on_返回按钮_pressed"]
+[connection signal="pressed" from="关于遮罩/关于面板/关闭按钮" to="." method="_on_关闭按钮_pressed"]

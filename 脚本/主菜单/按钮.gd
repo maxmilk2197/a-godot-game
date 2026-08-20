@@ -85,9 +85,15 @@ func _on_退出_pressed() -> void:
 	get_tree().quit()
 
 func _打开设置() -> void:
+<<<<<<< Updated upstream
 	pass
 	#计划：
 	#准备打开res://场景/主菜单/设置.tscn，并且设置里有<关于>选项，可进入关于，并且可以微调部分，例如开关聊天界面中对方头像
+=======
+	$"../背景音乐".stop()
+	await 渐变动画()
+	get_tree().change_scene_to_file("res://场景/主菜单/设置.tscn")
+>>>>>>> Stashed changes
 	
 #endregion
 
