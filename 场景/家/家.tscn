@@ -461,8 +461,6 @@ grow_vertical = 0
 text = "手机"
 metadata/_edit_use_anchors_ = true
 
-[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1453434080]
-
 [connection signal="pressed" from="场景交互/电脑" to="场景交互" method="_on_电脑_pressed"]
 [connection signal="pressed" from="角色交互/立绘/图" to="角色交互" method="立绘被按下"]
 [connection signal="pressed" from="角色交互/交互/聊天" to="角色交互" method="_on_交流_pressed"]

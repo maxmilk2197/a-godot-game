@@ -38,8 +38,7 @@ directories/dtl_directory={
 "养成_交流": "res://对话/养成_交流.dtl",
 "养成_摸摸": "res://对话/养成_摸摸.dtl",
 "初次见面": "res://对话/初次见面.dtl",
-"卧室": "res://对话/卧室.dtl",
-"玄关对话": "res://对话/玄关对话.dtl"
+"卧室": "res://对话/卧室.dtl"
 }
 layout/style_directory={
 "02": "res://资源/对话主题/02.tres"
@@ -116,10 +115,6 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
-
-[internationalization]
-
-locale/translations_pot_files=PackedStringArray("res://场景/游戏/相遇/01/对话.dialogue")
 
 [physics]
 
