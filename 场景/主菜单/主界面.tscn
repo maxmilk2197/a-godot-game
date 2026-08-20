@@ -36,20 +36,12 @@ gradient = SubResource("Gradient_illsk")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_geguo"]
 
-[sub_resource type="Gradient" id="Gradient_weg6c"]
-offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.9805457, 0.8518765, 0.9369752, 1, 1, 1, 1, 1, 0.8974558, 0.9080749, 0.97835165, 1, 1, 1, 1, 1)
-metadata/_snap_enabled = true
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_illsk"]
-gradient = SubResource("Gradient_weg6c")
-
 [sub_resource type="Animation" id="Animation_1emje"]
 length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = false
-tracks/0/path = NodePath("logo/logo:modulate")
+tracks/0/path = NodePath("动画/logo/logo:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -61,7 +53,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = false
-tracks/1/path = NodePath("logo/遮罩:modulate")
+tracks/1/path = NodePath("动画/logo/遮罩:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -73,7 +65,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = false
-tracks/2/path = NodePath("logo:modulate")
+tracks/2/path = NodePath("动画/logo:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -85,7 +77,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = false
-tracks/3/path = NodePath("logo:visible")
+tracks/3/path = NodePath("动画/logo:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -121,7 +113,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = false
-tracks/6/path = NodePath("logo/遮罩:color")
+tracks/6/path = NodePath("动画/logo/遮罩:color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -138,7 +130,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("logo/logo:modulate")
+tracks/0/path = NodePath("动画/logo/logo:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -150,7 +142,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("logo/遮罩:modulate")
+tracks/1/path = NodePath("动画/logo/遮罩:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -162,7 +154,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("logo:modulate")
+tracks/2/path = NodePath("动画/logo:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -174,7 +166,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("logo:visible")
+tracks/3/path = NodePath("动画/logo:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -210,7 +202,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("logo/遮罩:color")
+tracks/6/path = NodePath("动画/logo/遮罩:color")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -229,6 +221,14 @@ _data = {
 &"logo": SubResource("Animation_1beqf"),
 &"new_animation": SubResource("Animation_es7vd")
 }
+
+[sub_resource type="Gradient" id="Gradient_weg6c"]
+offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.9805457, 0.8518765, 0.9369752, 1, 1, 1, 1, 1, 0.8974558, 0.9080749, 0.97835165, 1, 1, 1, 1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_illsk"]
+gradient = SubResource("Gradient_weg6c")
 
 [node name="主界面" type="Control" unique_id=151493605]
 clip_contents = true
@@ -287,7 +287,7 @@ offset_transform_position = Vector2(0, -183.88625)
 texture = ExtResource("2_weg6c")
 metadata/_edit_use_anchors_ = true
 
-[node name="按钮" type="Control" parent="." unique_id=438225853 node_paths=PackedStringArray("新游戏", "加载存档", "设置", "退出", "雪花")]
+[node name="按钮" type="Control" parent="." unique_id=438225853 node_paths=PackedStringArray("新游戏", "新游戏Label", "继续游戏", "继续游戏Label", "设置", "设置Label", "退出", "退出Label", "雪花")]
 layout_mode = 1
 anchor_left = 0.04140625
 anchor_top = 0.42222223
@@ -296,15 +296,18 @@ anchor_bottom = 0.88055557
 offset_transform_enabled = true
 theme = SubResource("Theme_ajy4o")
 script = ExtResource("2_bi7fr")
-"新游戏" = NodePath("VBoxContainer/开始游戏")
-"加载存档" = NodePath("VBoxContainer/继续游戏")
-"设置" = NodePath("VBoxContainer/设置")
-"退出" = NodePath("VBoxContainer/退出")
+"新游戏" = NodePath("按钮组/开始游戏")
+"新游戏Label" = NodePath("按钮组/开始游戏/Label")
+"继续游戏" = NodePath("按钮组/继续游戏")
+"继续游戏Label" = NodePath("按钮组/继续游戏/Label")
+"设置" = NodePath("按钮组/设置")
+"设置Label" = NodePath("按钮组/设置/Label")
+"退出" = NodePath("按钮组/退出")
+"退出Label" = NodePath("按钮组/退出/Label")
 "雪花" = NodePath("雪花")
-"雪花X偏移" = -50.0
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="按钮" unique_id=1588682671]
+[node name="按钮组" type="VBoxContainer" parent="按钮" unique_id=1588682671]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -1.268858
@@ -320,7 +323,7 @@ grow_vertical = 2
 scale = Vector2(0.245, 0.245)
 theme_override_constants/separation = 100
 
-[node name="开始游戏" type="Button" parent="按钮/VBoxContainer" unique_id=1405177826]
+[node name="开始游戏" type="Button" parent="按钮/按钮组" unique_id=1405177826]
 custom_minimum_size = Vector2(1172, 253)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qa8wy")
@@ -329,7 +332,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_u26cn")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_186iu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kem31")
 
-[node name="Label" type="Label" parent="按钮/VBoxContainer/开始游戏" unique_id=2070022099]
+[node name="Label" type="Label" parent="按钮/按钮组/开始游戏" unique_id=2070022099]
 material = SubResource("ShaderMaterial_geguo")
 layout_mode = 1
 anchors_preset = -1
@@ -353,7 +356,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="继续游戏" type="Button" parent="按钮/VBoxContainer" unique_id=826505075]
+[node name="继续游戏" type="Button" parent="按钮/按钮组" unique_id=826505075]
 custom_minimum_size = Vector2(1172, 253)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qa8wy")
@@ -362,7 +365,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_u26cn")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_186iu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kem31")
 
-[node name="Label" type="Label" parent="按钮/VBoxContainer/继续游戏" unique_id=571108635]
+[node name="Label" type="Label" parent="按钮/按钮组/继续游戏" unique_id=571108635]
 material = SubResource("ShaderMaterial_geguo")
 layout_mode = 1
 anchors_preset = -1
@@ -386,7 +389,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="设置" type="Button" parent="按钮/VBoxContainer" unique_id=1198894227]
+[node name="设置" type="Button" parent="按钮/按钮组" unique_id=1198894227]
 custom_minimum_size = Vector2(1172, 253)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qa8wy")
@@ -395,7 +398,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_u26cn")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_186iu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kem31")
 
-[node name="Label" type="Label" parent="按钮/VBoxContainer/设置" unique_id=444140538]
+[node name="Label" type="Label" parent="按钮/按钮组/设置" unique_id=444140538]
 material = SubResource("ShaderMaterial_geguo")
 layout_mode = 1
 anchors_preset = -1
@@ -419,7 +422,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="退出" type="Button" parent="按钮/VBoxContainer" unique_id=1317754667]
+[node name="退出" type="Button" parent="按钮/按钮组" unique_id=1317754667]
 custom_minimum_size = Vector2(1172, 253)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qa8wy")
@@ -428,7 +431,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_u26cn")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_186iu")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_kem31")
 
-[node name="Label" type="Label" parent="按钮/VBoxContainer/退出" unique_id=509179829]
+[node name="Label" type="Label" parent="按钮/按钮组/退出" unique_id=509179829]
 material = SubResource("ShaderMaterial_geguo")
 layout_mode = 1
 anchors_preset = -1
@@ -452,7 +455,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="新游戏2" type="TextureButton" parent="按钮/VBoxContainer" unique_id=36984723]
+[node name="新游戏2" type="TextureButton" parent="按钮/按钮组" unique_id=36984723]
 visible = false
 layout_mode = 2
 offset_transform_enabled = true
@@ -461,7 +464,7 @@ texture_normal = ExtResource("4_cwkh2")
 texture_hover = ExtResource("5_cwkh2")
 metadata/_edit_use_anchors_ = true
 
-[node name="加载存档2" type="TextureButton" parent="按钮/VBoxContainer" unique_id=2007528563]
+[node name="加载存档2" type="TextureButton" parent="按钮/按钮组" unique_id=2007528563]
 visible = false
 layout_mode = 2
 offset_transform_enabled = true
@@ -470,7 +473,7 @@ texture_normal = ExtResource("4_u1ukt")
 texture_hover = ExtResource("4_es7vd")
 metadata/_edit_use_anchors_ = true
 
-[node name="退出2" type="TextureButton" parent="按钮/VBoxContainer" unique_id=1489962747]
+[node name="退出2" type="TextureButton" parent="按钮/按钮组" unique_id=1489962747]
 visible = false
 layout_mode = 2
 offset_transform_enabled = true
@@ -485,23 +488,15 @@ anchor_left = -0.15432525
 anchor_top = 0.027272727
 anchor_right = -0.0034616434
 anchor_bottom = 0.17407264
-offset_left = 0.55555534
-offset_right = 686.1116
-offset_bottom = 685.556
+offset_left = 17.555557
+offset_top = -7.0
+offset_right = 703.1116
+offset_bottom = 678.556
 scale = Vector2(0.066, 0.066)
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 150)
 texture = ExtResource("6_u1ukt")
 metadata/_edit_use_anchors_ = true
-
-[node name="遮罩" type="ColorRect" parent="." unique_id=1328901426]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
 [node name="调试" type="Control" parent="." unique_id=1444531706]
 visible = false
@@ -523,9 +518,12 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="logo" type="Control" parent="." unique_id=556381867]
+[node name="动画" type="AnimationPlayer" parent="." unique_id=204119852]
+libraries/ = SubResource("AnimationLibrary_xt34k")
+
+[node name="logo" type="Control" parent="动画" unique_id=556381867]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -533,7 +531,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="背景" type="TextureRect" parent="logo" unique_id=1400147294]
+[node name="背景" type="TextureRect" parent="动画/logo" unique_id=1400147294]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -543,7 +541,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture1D_illsk")
 metadata/_edit_use_anchors_ = true
 
-[node name="遮罩" type="ColorRect" parent="logo" unique_id=364929344]
+[node name="遮罩" type="ColorRect" parent="动画/logo" unique_id=364929344]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -553,7 +551,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="logo" type="TextureRect" parent="logo" unique_id=1062703028]
+[node name="logo" type="TextureRect" parent="动画/logo" unique_id=1062703028]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -571,31 +569,39 @@ scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(632, 474)
 texture = ExtResource("12_xt34k")
 
-[node name="动画" type="AnimationPlayer" parent="." unique_id=204119852]
-libraries/ = SubResource("AnimationLibrary_xt34k")
-
 [node name="背景音乐" type="AudioStreamPlayer" parent="." unique_id=199618337]
 stream = ExtResource("13_weg6c")
 volume_db = -20.0
 
-[connection signal="mouse_entered" from="按钮/VBoxContainer/开始游戏" to="按钮" method="当_新游戏_被鼠标碰到"]
-[connection signal="mouse_exited" from="按钮/VBoxContainer/开始游戏" to="按钮" method="当_退出_不再被鼠标碰到"]
-[connection signal="pressed" from="按钮/VBoxContainer/开始游戏" to="按钮" method="_新游戏"]
-[connection signal="mouse_entered" from="按钮/VBoxContainer/继续游戏" to="按钮" method="当_加载_被鼠标碰到"]
-[connection signal="mouse_exited" from="按钮/VBoxContainer/继续游戏" to="按钮" method="当_加载_不再被鼠标碰到"]
-[connection signal="pressed" from="按钮/VBoxContainer/继续游戏" to="按钮" method="_加载存档"]
-[connection signal="mouse_entered" from="按钮/VBoxContainer/设置" to="按钮" method="当_设置_被鼠标碰到"]
-[connection signal="mouse_exited" from="按钮/VBoxContainer/设置" to="按钮" method="当_设置_不再被鼠标碰到"]
-[connection signal="pressed" from="按钮/VBoxContainer/设置" to="按钮" method="_打开设置"]
-[connection signal="mouse_entered" from="按钮/VBoxContainer/退出" to="按钮" method="当_退出_被鼠标碰到"]
-[connection signal="mouse_exited" from="按钮/VBoxContainer/退出" to="按钮" method="当_退出_不再被鼠标碰到"]
-[connection signal="pressed" from="按钮/VBoxContainer/退出" to="按钮" method="_on_退出_pressed"]
-[connection signal="mouse_entered" from="按钮/VBoxContainer/新游戏2" to="按钮" method="当_新游戏_被鼠标碰到"]
-[connection signal="mouse_exited" from="按钮/VBoxContainer/新游戏2" to="按钮" method="当_新游戏_不再被鼠标碰到"]
-[connection signal="pressed" from="按钮/VBoxContainer/新游戏2" to="按钮" method="_新游戏"]
-[connection signal="mouse_entered" from="按钮/VBoxContainer/加载存档2" to="按钮" method="当_加载_被鼠标碰到"]
-[connection signal="mouse_exited" from="按钮/VBoxContainer/加载存档2" to="按钮" method="当_加载_不再被鼠标碰到"]
-[connection signal="pressed" from="按钮/VBoxContainer/加载存档2" to="按钮" method="_加载存档"]
-[connection signal="mouse_entered" from="按钮/VBoxContainer/退出2" to="按钮" method="当_退出_被鼠标碰到"]
-[connection signal="mouse_exited" from="按钮/VBoxContainer/退出2" to="按钮" method="当_退出_不再被鼠标碰到"]
-[connection signal="pressed" from="按钮/VBoxContainer/退出2" to="按钮" method="_on_退出_pressed"]
+[node name="遮罩" type="ColorRect" parent="." unique_id=1328901426]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="按钮/按钮组/开始游戏" to="按钮" method="当_新游戏_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/按钮组/开始游戏" to="按钮" method="当_新游戏_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/按钮组/开始游戏" to="按钮" method="_新游戏"]
+[connection signal="mouse_entered" from="按钮/按钮组/继续游戏" to="按钮" method="当_加载_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/按钮组/继续游戏" to="按钮" method="当_加载_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/按钮组/继续游戏" to="按钮" method="_加载存档"]
+[connection signal="mouse_entered" from="按钮/按钮组/设置" to="按钮" method="当_设置_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/按钮组/设置" to="按钮" method="当_设置_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/按钮组/设置" to="按钮" method="_打开设置"]
+[connection signal="mouse_entered" from="按钮/按钮组/退出" to="按钮" method="当_退出_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/按钮组/退出" to="按钮" method="当_退出_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/按钮组/退出" to="按钮" method="_on_退出_pressed"]
+[connection signal="mouse_entered" from="按钮/按钮组/新游戏2" to="按钮" method="当_新游戏_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/按钮组/新游戏2" to="按钮" method="当_新游戏_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/按钮组/新游戏2" to="按钮" method="_新游戏"]
+[connection signal="mouse_entered" from="按钮/按钮组/加载存档2" to="按钮" method="当_加载_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/按钮组/加载存档2" to="按钮" method="当_加载_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/按钮组/加载存档2" to="按钮" method="_加载存档"]
+[connection signal="mouse_entered" from="按钮/按钮组/退出2" to="按钮" method="当_退出_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/按钮组/退出2" to="按钮" method="当_退出_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/按钮组/退出2" to="按钮" method="_on_退出_pressed"]
