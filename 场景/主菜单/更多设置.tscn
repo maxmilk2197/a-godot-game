@@ -65,7 +65,9 @@ theme_override_font_sizes/font_size = 30
 text = "聊天显示对方头像"
 
 [node name="头像开关" type="CheckButton" parent="开关区/头像行" unique_id=746877975]
+custom_minimum_size = Vector2(80, 60)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 
 [node name="自动继续行" type="HBoxContainer" parent="开关区" unique_id=1808692439]
 layout_mode = 0
@@ -83,7 +85,9 @@ theme_override_font_sizes/font_size = 30
 text = "对话自动继续"
 
 [node name="自动继续开关" type="CheckButton" parent="开关区/自动继续行" unique_id=1281234005]
+custom_minimum_size = Vector2(80, 60)
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 
 [node name="速度区" type="Control" parent="." unique_id=69999184]
 anchors_preset = 0

@@ -267,7 +267,7 @@ texture = ExtResource("1_weg6c")
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 433.0
+offset_right = 455.0
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_j2inh")
 
