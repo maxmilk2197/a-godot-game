@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://gw0vg4kxiha2"]
+[gd_scene format=3 uid="uid://ctg7yxw5i47qm"]
 
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
-[ext_resource type="Script" uid="uid://dsux7m1dj4kwj" path="res://脚本/主菜单/关于.gd" id="1_scpt"]
+[ext_resource type="Script" path="res://脚本/主菜单/关于.gd" id="1_scpt"]
 
 [node name="关于" type="Control" unique_id=659054937]
 layout_mode = 3
