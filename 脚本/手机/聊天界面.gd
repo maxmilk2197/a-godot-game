@@ -1,10 +1,5 @@
 extends Control
 
-## 是否显示聊天里对方消息旁的头像。
-## true  = 对方消息左侧显示圆形头像（用联系人的 头像颜色 + 头像文字）
-## false = 不显示对方头像，气泡直接靠左对齐（不留空位）
-const 显示对方头像 := true
-
 var 当前联系人: String = ""
 var ai等待中: bool = false
 var 等待回复的联系人: String = ""
@@ -136,9 +131,9 @@ func _创建气泡(msg: Dictionary) -> Control:
 
 	bg.size = Vector2(bg_width, bubble_height)
 
-	# 对方消息左侧的头像（可用 显示对方头像 开关）
+	# 对方消息左侧的头像（由设置里的“显示对方头像”开关控制）
 	var 对方头像: Control = null
-	if not is_me and 显示对方头像:
+	if not is_me and Settings.显示对方头像:
 		对方头像 = _创建对方头像()
 		row.add_child(对方头像)
 
@@ -157,7 +152,7 @@ func _创建气泡(msg: Dictionary) -> Control:
 		label.offset_top = 14
 		label.offset_bottom = bubble_height - 6
 	else:
-		if 显示对方头像:
+		if Settings.显示对方头像:
 			# 显示头像：头像占左 52px，气泡再往右排
 			bg.position = Vector2(52, 4)
 			label.position = Vector2(64, 10)

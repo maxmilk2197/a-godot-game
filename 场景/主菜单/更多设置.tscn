@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://cwsg2p5nd0gjw"]
+
+[ext_resource type="Script" path="res://脚本/主菜单/更多设置.gd" id="1_scpt"]
+[ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
+
+[node name="更多设置" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_scpt")
+
+[node name="背景" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.09, 0.12, 1)
+
+[node name="标题" type="Label" parent="."]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 1280.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 56
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "更多设置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="返回按钮" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 160.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 28
+text = "← 返回"
+
+[node name="开关区" type="Control" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 200.0
+offset_right = 940.0
+offset_bottom = 400.0
+
+[node name="头像行" type="HBoxContainer" parent="开关区"]
+layout_mode = 0
+offset_top = 0.0
+offset_right = 600.0
+offset_bottom = 60.0
+theme_override_constants/separation = 24
+
+[node name="头像标签" type="Label" parent="开关区/头像行"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "聊天显示对方头像"
+
+[node name="头像开关" type="CheckButton" parent="开关区/头像行"]
+layout_mode = 2
+
+[node name="自动继续行" type="HBoxContainer" parent="开关区"]
+layout_mode = 0
+offset_top = 90.0
+offset_right = 600.0
+offset_bottom = 150.0
+theme_override_constants/separation = 24
+
+[node name="自动继续标签" type="Label" parent="开关区/自动继续行"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "对话自动继续"
+
+[node name="自动继续开关" type="CheckButton" parent="开关区/自动继续行"]
+layout_mode = 2
+
+[node name="速度区" type="Control" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 440.0
+offset_right = 940.0
+offset_bottom = 560.0
+
+[node name="速度标题" type="Label" parent="速度区"]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(0.83, 0.87, 0.93, 1)
+text = "对话文字速度"
+
+[node name="速度行" type="HBoxContainer" parent="速度区"]
+layout_mode = 0
+offset_top = 70.0
+offset_right = 600.0
+offset_bottom = 130.0
+theme_override_constants/separation = 24
+
+[node name="慢" type="Button" parent="速度区/速度行"]
+layout_mode = 2
+custom_minimum_size = Vector2(150, 60)
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 28
+text = "慢"
+
+[node name="中" type="Button" parent="速度区/速度行"]
+layout_mode = 2
+custom_minimum_size = Vector2(150, 60)
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 28
+text = "中"
+
+[node name="快" type="Button" parent="速度区/速度行"]
+layout_mode = 2
+custom_minimum_size = Vector2(150, 60)
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 28
+text = "快"
+
+[connection signal="toggled" from="开关区/头像行/头像开关" to="." method="_头像开关_toggled"]
+[connection signal="toggled" from="开关区/自动继续行/自动继续开关" to="." method="_自动继续开关_toggled"]
+[connection signal="pressed" from="速度区/速度行/慢" to="." method="_慢_pressed"]
+[connection signal="pressed" from="速度区/速度行/中" to="." method="_中_pressed"]
+[connection signal="pressed" from="速度区/速度行/快" to="." method="_快_pressed"]
+[connection signal="pressed" from="返回按钮" to="." method="_返回设置"]

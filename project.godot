@@ -26,6 +26,7 @@ AIChat="*res://脚本/全局/AI对话管理器.gd"
 Raise="*res://脚本/全局/养成管理器.gd"
 Audio="*res://脚本/全局/音量设置.gd"
 Settings="*res://脚本/全局/设置数据.gd"
+SceneNav="*res://脚本/全局/场景导航.gd"
 
 [dialogic]
 

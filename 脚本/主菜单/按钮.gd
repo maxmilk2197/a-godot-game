@@ -19,10 +19,15 @@ var 雪花移动补间 : Tween
 #endregion
 
 func _ready():
-	$"../动画/logo".show()
-	$"../动画".play("logo")
-	await $"../动画".animation_finished
-	$"../动画/logo".queue_free()
+	# 从“设置/关于”返回时可跳过 logo 动画，直接显示主菜单
+	if Settings.跳过主菜单logo:
+		Settings.跳过主菜单logo = false
+		$"../动画/logo".queue_free()
+	else:
+		$"../动画/logo".show()
+		$"../动画".play("logo")
+		await $"../动画".animation_finished
+		$"../动画/logo".queue_free()
 	新游戏.offset_transform_enabled = true
 	退出.offset_transform_enabled = true
 	继续游戏.offset_transform_enabled = true
@@ -85,9 +90,8 @@ func _on_退出_pressed() -> void:
 	get_tree().quit()
 
 func _打开设置() -> void:
-	pass
-	#计划：
-	#准备打开res://场景/主菜单/设置.tscn，并且设置里有<关于>选项，可进入关于，并且可以微调部分，例如开关聊天界面中对方头像
+	# 静态跳转到设置页（统一走 SceneNav 预加载场景，避免循环 preload）
+	get_tree().change_scene_to_packed(SceneNav.设置)
 	
 #endregion
 
