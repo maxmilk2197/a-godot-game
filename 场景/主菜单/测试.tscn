@@ -151,37 +151,23 @@ position = Vector2(619, 330.00003)
 scale = Vector2(0.45780593, 0.4578059)
 texture = ExtResource("2_6twhm")
 
-[node name="Button3" type="Button" parent="." unique_id=1414391579]
+[node name="开始游戏" type="Button" parent="." unique_id=1414391579]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 228.0
-offset_right = 284.0
-offset_bottom = 312.0
+offset_left = 273.0
+offset_top = 189.0
+offset_right = 517.0
+offset_bottom = 273.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hxb8f")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_3str8")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_a0vim")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_nhocf")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3b6r8")
 
-[node name="ColorRect" type="ColorRect" parent="Button3" unique_id=512445029]
-visible = false
-self_modulate = Color(0.4862745, 0.56078434, 0.7411765, 1)
-clip_children = 2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Button3" unique_id=394341827]
+[node name="Label" type="Label" parent="开始游戏" unique_id=394341827]
 material = SubResource("ShaderMaterial_npl5c")
 layout_mode = 0
-offset_left = -51.0
-offset_top = 8.0
-offset_right = 149.0
-offset_bottom = 77.0
+offset_right = 200.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0.4862745, 0.56078434, 0.7411765, 1)
 theme_override_colors/font_shadow_color = Color(0.5882353, 0.627451, 0.83137256, 1)
 theme_override_colors/font_outline_color = Color(0.84705883, 0.84705883, 0.85490197, 1)
@@ -191,26 +177,7 @@ theme_override_constants/outline_size = 8
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("3_nqqtx")
 theme_override_font_sizes/font_size = 50
-text = "开始"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Button3" unique_id=969242397]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 9.0
-offset_right = 254.0
-offset_bottom = 78.0
-theme_override_colors/font_color = Color(0.4862745, 0.56078434, 0.7411765, 1)
-theme_override_colors/font_shadow_color = Color(0.5882353, 0.627451, 0.83137256, 1)
-theme_override_colors/font_outline_color = Color(0.84705883, 0.84705883, 0.85490197, 1)
-theme_override_constants/shadow_offset_x = -2
-theme_override_constants/shadow_offset_y = -2
-theme_override_constants/outline_size = 8
-theme_override_constants/shadow_outline_size = 4
-theme_override_fonts/font = ExtResource("3_nqqtx")
-theme_override_font_sizes/font_size = 50
-text = "游戏"
+text = "开始游戏"
 horizontal_alignment = 1
 vertical_alignment = 1
 

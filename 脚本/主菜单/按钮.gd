@@ -1,15 +1,16 @@
-extends NinePatchRect
+extends Control
 #region 声明变量
 var 新游戏补间: Tween
 var 退出补间: Tween
 var 加载存档补间: Tween
 var 雪花移动补间 : Tween
 @onready var 遮罩 = $"../遮罩"
-@export var 加载存档 : TextureButton
-@export var 新游戏 : TextureButton
-@export var 退出 : TextureButton
+@export var 新游戏 : Button
+@export var 加载存档 : Button
+@export var 退出 : Button
 @export var 雪花 : TextureRect
 @export var 按钮移动 : bool = false
+@export_range(-200, 200, 1) var 雪花X偏移 : float = -30   ## 雪花离 VBox 左缘的额外偏移（负数往左、正数往右）
 #endregion
 
 func _ready():
@@ -24,7 +25,7 @@ func _ready():
 		print("[存档]","发现现存档")
 	else:
 		print("[存档]","未发现存档")
-		雪花.position = Vector2(-17, 124.0)  
+		雪花.position = Vector2(VBox左缘X(), 按钮局部Y(新游戏))  
 
 func _on_signal_event(argument: Variant):
 	if argument == "进入客厅场景":
@@ -66,7 +67,7 @@ func 渐变动画() :
 	
 #region 按钮动画
 func 当_加载_被鼠标碰到() -> void:
-	移动雪花(Vector2(-17, 124.0))
+	移动雪花(Vector2(VBox左缘X(), 按钮局部Y(加载存档)))
 	if 按钮移动:
 		加载存档补间 = 播放按钮动画(加载存档, Vector2(20, 0), 加载存档补间)
 
@@ -77,7 +78,7 @@ func 当_加载_不再被鼠标碰到() -> void:
 
 
 func 当_新游戏_被鼠标碰到() -> void:
-	移动雪花(Vector2(-17, 36.0 ))
+	移动雪花(Vector2(VBox左缘X(), 按钮局部Y(新游戏)))
 	if 按钮移动:
 		新游戏补间 = 播放按钮动画(新游戏, Vector2(20, 0), 新游戏补间)
 
@@ -86,13 +87,25 @@ func 当_新游戏_不再被鼠标碰到() -> void:
 		新游戏补间 = 播放按钮动画(新游戏, Vector2(0, 0), 新游戏补间)
 
 func 当_退出_被鼠标碰到() -> void:
-	移动雪花(Vector2(-17, 228.0),)
+	移动雪花(Vector2(VBox左缘X(), 按钮局部Y(退出)))
 	if 按钮移动:
 		退出补间 = 播放按钮动画(退出, Vector2(20, 0), 退出补间)
 
 func 当_退出_不再被鼠标碰到() -> void:
 	if 按钮移动:
 		退出补间 = 播放按钮动画(退出, Vector2(0, 0), 退出补间)
+
+
+## 把按钮的全局 Y 换算回“按钮”根节点的局部 Y，
+## 因为雪花是根的子节点，而按钮在带缩放的 VBoxContainer 里，直接取 position.y 会偏移/放大。
+func 按钮局部Y(目标按钮: Control) -> float:
+	return 目标按钮.global_position.y - global_position.y
+
+
+## VBoxContainer 左边缘（根节点局部 X），雪花自动贴住 VBox 左侧、不写死数值
+func VBox左缘X() -> float:
+	var vbox := $"VBoxContainer" as Control
+	return vbox.global_position.x - global_position.x + 雪花X偏移
 
 func 播放按钮动画(按钮: Control, 目标位置: Vector2, 旧补间: Tween = null) -> Tween:
 	if 旧补间 and 旧补间.is_valid():

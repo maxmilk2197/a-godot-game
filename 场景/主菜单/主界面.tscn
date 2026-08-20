@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bwjo7vq1dql03" path="res://资源/纹理/按钮/9743C05AAEDA22FD300E7FC9A54CBAAD.png" id="4_cwkh2"]
 [ext_resource type="Texture2D" uid="uid://dms6ui58f672s" path="res://资源/纹理/按钮/852FFBA92C105BED3D77DDF1A8BD7654.png" id="4_es7vd"]
 [ext_resource type="Texture2D" uid="uid://vr5leyy2hg21" path="res://资源/纹理/按钮/467A2222AA63BE8BA1FDDD4ECB8E4619.png" id="4_u1ukt"]
+[ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="4_x6ux0"]
 [ext_resource type="Texture2D" uid="uid://ctfom23mscw02" path="res://资源/纹理/按钮/346FEAED1439D9C38C7FB62C413634A5.png" id="5_cwkh2"]
 [ext_resource type="Script" uid="uid://b1wbxu73hme45" path="res://脚本/主菜单/调试.gd" id="5_pyy4s"]
 [ext_resource type="Texture2D" uid="uid://b45sqqubjc783" path="res://资源/纹理/按钮/32596F670361BEB8232E5A21025F56A0.png" id="6_u1ukt"]
@@ -22,6 +23,18 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_illsk")
 
 [sub_resource type="Theme" id="Theme_ajy4o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qa8wy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_boq8e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u26cn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_186iu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kem31"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_geguo"]
 
 [sub_resource type="Gradient" id="Gradient_weg6c"]
 offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
@@ -274,84 +287,205 @@ offset_transform_position = Vector2(0, -183.88625)
 texture = ExtResource("2_weg6c")
 metadata/_edit_use_anchors_ = true
 
-[node name="按钮" type="NinePatchRect" parent="." unique_id=910123976 node_paths=PackedStringArray("加载存档", "新游戏", "退出", "雪花")]
+[node name="按钮" type="Control" parent="." unique_id=438225853 node_paths=PackedStringArray("新游戏", "加载存档", "退出", "雪花")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.019965278
-anchor_top = 0.45555556
-anchor_right = 0.27083334
-anchor_bottom = 0.9138889
-offset_bottom = 1.5258789e-05
+anchor_left = 0.04140625
+anchor_top = 0.42222223
+anchor_right = 0.29227433
+anchor_bottom = 0.88055557
 offset_transform_enabled = true
 theme = SubResource("Theme_ajy4o")
-draw_center = false
 script = ExtResource("2_bi7fr")
-"加载存档" = NodePath("加载存档2")
-"新游戏" = NodePath("新游戏2")
-"退出" = NodePath("退出2")
+"新游戏" = NodePath("VBoxContainer/开始游戏")
+"加载存档" = NodePath("VBoxContainer/继续游戏")
+"退出" = NodePath("VBoxContainer/退出")
 "雪花" = NodePath("雪花")
+"雪花X偏移" = -50.0
 metadata/_edit_use_anchors_ = true
 
-[node name="加载存档2" type="TextureButton" parent="按钮" unique_id=2007528563]
+[node name="VBoxContainer" type="VBoxContainer" parent="按钮" unique_id=1588682671]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.11833909
-anchor_top = 0.38787878
-anchor_right = 0.8588926
-anchor_bottom = 0.53575766
-offset_right = 951.2
-offset_bottom = 195.19998
-grow_horizontal = 2
-scale = Vector2(0.2, 0.2)
-offset_transform_enabled = true
-offset_transform_visual_only = false
-texture_normal = ExtResource("4_u1ukt")
-texture_hover = ExtResource("4_es7vd")
-metadata/_edit_use_anchors_ = true
+anchor_left = -1.268858
+anchor_top = -1.4818182
+anchor_right = -0.37465048
+anchor_bottom = -0.50775737
+offset_left = 425.44443
+offset_top = 491.0
+offset_right = 1310.3044
+offset_bottom = 1481.5599
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.245, 0.245)
+theme_override_constants/separation = 100
 
-[node name="新游戏2" type="TextureButton" parent="按钮" unique_id=36984723]
+[node name="开始游戏" type="Button" parent="按钮/VBoxContainer" unique_id=1405177826]
+custom_minimum_size = Vector2(1172, 253)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qa8wy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_boq8e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u26cn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_186iu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kem31")
+
+[node name="Label" type="Label" parent="按钮/VBoxContainer/开始游戏" unique_id=2070022099]
+material = SubResource("ShaderMaterial_geguo")
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.11833909
-anchor_top = 0.37575758
-anchor_right = 0.8476816
-anchor_bottom = 0.5315151
-offset_top = -88.0
-offset_right = 936.8
-offset_bottom = 117.600006
+anchor_left = -0.017413108
+anchor_top = -0.0645318
+anchor_right = 0.98258686
+anchor_bottom = 1.1884327
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.2, 0.2)
+theme_override_colors/font_color = Color(0.4862745, 0.56078434, 0.7411765, 1)
+theme_override_colors/font_shadow_color = Color(0.5882353, 0.627451, 0.83137256, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.84705883, 0.85490197, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 18
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("4_x6ux0")
+theme_override_font_sizes/font_size = 270
+text = "新游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="继续游戏" type="Button" parent="按钮/VBoxContainer" unique_id=826505075]
+custom_minimum_size = Vector2(1172, 253)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qa8wy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_boq8e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u26cn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_186iu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kem31")
+
+[node name="Label" type="Label" parent="按钮/VBoxContainer/继续游戏" unique_id=571108635]
+material = SubResource("ShaderMaterial_geguo")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.017413108
+anchor_top = -0.0645318
+anchor_right = 0.98258686
+anchor_bottom = 1.1884327
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4862745, 0.56078434, 0.7411765, 1)
+theme_override_colors/font_shadow_color = Color(0.5882353, 0.627451, 0.83137256, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.84705883, 0.85490197, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 18
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("4_x6ux0")
+theme_override_font_sizes/font_size = 270
+text = "继续游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="设置" type="Button" parent="按钮/VBoxContainer" unique_id=1198894227]
+custom_minimum_size = Vector2(1172, 253)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qa8wy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_boq8e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u26cn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_186iu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kem31")
+
+[node name="Label" type="Label" parent="按钮/VBoxContainer/设置" unique_id=444140538]
+material = SubResource("ShaderMaterial_geguo")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.017413108
+anchor_top = -0.0645318
+anchor_right = 0.98258686
+anchor_bottom = 1.1884327
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4862745, 0.56078434, 0.7411765, 1)
+theme_override_colors/font_shadow_color = Color(0.5882353, 0.627451, 0.83137256, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.84705883, 0.85490197, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 18
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("4_x6ux0")
+theme_override_font_sizes/font_size = 270
+text = "设置"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="退出" type="Button" parent="按钮/VBoxContainer" unique_id=1317754667]
+custom_minimum_size = Vector2(1172, 253)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qa8wy")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_boq8e")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u26cn")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_186iu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kem31")
+
+[node name="Label" type="Label" parent="按钮/VBoxContainer/退出" unique_id=509179829]
+material = SubResource("ShaderMaterial_geguo")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.017413108
+anchor_top = -0.0645318
+anchor_right = 0.98258686
+anchor_bottom = 1.1884327
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.4862745, 0.56078434, 0.7411765, 1)
+theme_override_colors/font_shadow_color = Color(0.5882353, 0.627451, 0.83137256, 1)
+theme_override_colors/font_outline_color = Color(0.84705883, 0.84705883, 0.85490197, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 18
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("4_x6ux0")
+theme_override_font_sizes/font_size = 270
+text = "退出"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="新游戏2" type="TextureButton" parent="按钮/VBoxContainer" unique_id=36984723]
+visible = false
+layout_mode = 2
 offset_transform_enabled = true
 offset_transform_visual_only = false
 texture_normal = ExtResource("4_cwkh2")
 texture_hover = ExtResource("5_cwkh2")
 metadata/_edit_use_anchors_ = true
 
-[node name="退出2" type="TextureButton" parent="按钮" unique_id=1489962747]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.11833909
-anchor_top = 0.6909091
-anchor_right = 0.81529397
-anchor_bottom = 0.83393943
-offset_right = 895.2
-offset_bottom = 188.79999
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.2, 0.2)
+[node name="加载存档2" type="TextureButton" parent="按钮/VBoxContainer" unique_id=2007528563]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_visual_only = false
+texture_normal = ExtResource("4_u1ukt")
+texture_hover = ExtResource("4_es7vd")
+metadata/_edit_use_anchors_ = true
+
+[node name="退出2" type="TextureButton" parent="按钮/VBoxContainer" unique_id=1489962747]
+visible = false
+layout_mode = 2
 offset_transform_enabled = true
 texture_normal = ExtResource("6_vutqo")
 texture_hover = ExtResource("8_xt34k")
 metadata/_edit_use_anchors_ = true
 
 [node name="雪花" type="TextureRect" parent="按钮" unique_id=878624343]
-layout_mode = 0
-anchor_left = -0.054671273
-anchor_top = 0.10909091
-anchor_right = 0.09619238
-anchor_bottom = 0.2558909
-offset_right = 685.556
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.15432525
+anchor_top = 0.027272727
+anchor_right = -0.0034616434
+anchor_bottom = 0.17407264
+offset_left = 0.55555534
+offset_right = 686.1116
 offset_bottom = 685.556
 scale = Vector2(0.066, 0.066)
 texture = ExtResource("6_u1ukt")
@@ -443,15 +577,21 @@ libraries/ = SubResource("AnimationLibrary_xt34k")
 stream = ExtResource("13_weg6c")
 volume_db = -20.0
 
-[connection signal="focus_entered" from="按钮/加载存档2" to="按钮" method="_on_加载存档_获得焦点"]
-[connection signal="mouse_entered" from="按钮/加载存档2" to="按钮" method="当_加载_被鼠标碰到"]
-[connection signal="mouse_exited" from="按钮/加载存档2" to="按钮" method="当_加载_不再被鼠标碰到"]
-[connection signal="pressed" from="按钮/加载存档2" to="按钮" method="_加载存档"]
-[connection signal="focus_entered" from="按钮/新游戏2" to="按钮" method="_on_新游戏_获得焦点"]
-[connection signal="mouse_entered" from="按钮/新游戏2" to="按钮" method="当_新游戏_被鼠标碰到"]
-[connection signal="mouse_exited" from="按钮/新游戏2" to="按钮" method="当_新游戏_不再被鼠标碰到"]
-[connection signal="pressed" from="按钮/新游戏2" to="按钮" method="_新游戏"]
-[connection signal="focus_entered" from="按钮/退出2" to="按钮" method="_on_退出_获得焦点"]
-[connection signal="mouse_entered" from="按钮/退出2" to="按钮" method="当_退出_被鼠标碰到"]
-[connection signal="mouse_exited" from="按钮/退出2" to="按钮" method="当_退出_不再被鼠标碰到"]
-[connection signal="pressed" from="按钮/退出2" to="按钮" method="_on_退出_pressed"]
+[connection signal="mouse_entered" from="按钮/VBoxContainer/开始游戏" to="按钮" method="当_新游戏_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/VBoxContainer/开始游戏" to="按钮" method="当_退出_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/VBoxContainer/开始游戏" to="按钮" method="_新游戏"]
+[connection signal="mouse_entered" from="按钮/VBoxContainer/继续游戏" to="按钮" method="当_加载_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/VBoxContainer/继续游戏" to="按钮" method="当_加载_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/VBoxContainer/继续游戏" to="按钮" method="_加载存档"]
+[connection signal="mouse_entered" from="按钮/VBoxContainer/退出" to="按钮" method="当_退出_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/VBoxContainer/退出" to="按钮" method="当_退出_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/VBoxContainer/退出" to="按钮" method="_on_退出_pressed"]
+[connection signal="mouse_entered" from="按钮/VBoxContainer/新游戏2" to="按钮" method="当_新游戏_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/VBoxContainer/新游戏2" to="按钮" method="当_新游戏_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/VBoxContainer/新游戏2" to="按钮" method="_新游戏"]
+[connection signal="mouse_entered" from="按钮/VBoxContainer/加载存档2" to="按钮" method="当_加载_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/VBoxContainer/加载存档2" to="按钮" method="当_加载_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/VBoxContainer/加载存档2" to="按钮" method="_加载存档"]
+[connection signal="mouse_entered" from="按钮/VBoxContainer/退出2" to="按钮" method="当_退出_被鼠标碰到"]
+[connection signal="mouse_exited" from="按钮/VBoxContainer/退出2" to="按钮" method="当_退出_不再被鼠标碰到"]
+[connection signal="pressed" from="按钮/VBoxContainer/退出2" to="按钮" method="_on_退出_pressed"]
