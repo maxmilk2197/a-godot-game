@@ -24,6 +24,7 @@ save="*res://脚本/全局/存档.gd"
 info="*res://脚本/全局/全局变量.gd"
 AIChat="*res://脚本/全局/AI对话管理器.gd"
 Raise="*res://脚本/全局/养成管理器.gd"
+Audio="*res://脚本/全局/音量设置.gd"
 
 [dialogic]
 
@@ -70,7 +71,7 @@ audio/channel_defaults={
 "volume": 0.0
 },
 "music": {
-"audio_bus": "",
+"audio_bus": "Music",
 "fade_length": 0.0,
 "loop": true,
 "volume": 0.0
