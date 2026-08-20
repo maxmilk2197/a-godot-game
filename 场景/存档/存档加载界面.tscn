@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc1oyd6jk2qqg"]
 
 [ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
-[ext_resource type="Script" uid="uid://br1wglh18o6p5" path="res://脚本/存档界面/存档加载界面.gd" id="1_yedrk"]
+[ext_resource type="Script" uid="uid://cjdauvd4kc7x" path="res://脚本/存档界面/存档加载界面.gd" id="1_yedrk"]
 [ext_resource type="PackedScene" uid="uid://bbyxssg0k1p6d" path="res://场景/存档/保存加载按钮.tscn" id="2_dsnkd"]
 
 [node name="存档" type="Control" unique_id=818469670]

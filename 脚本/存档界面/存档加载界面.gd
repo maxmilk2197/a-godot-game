@@ -55,4 +55,8 @@ func 读取存档(槽位: int) -> void:
 	if 数据字典.is_empty():
 		printerr("加载的存档为空或无效")
 		return
-	get_tree().change_scene_to_file(数据字典["最后游玩场景"])
+	# 防旧档/异常档：最后游玩场景为空时回退到家场景，避免空路径报错
+	var 目标场景: String = 数据字典.get("最后游玩场景", "")
+	if 目标场景.is_empty() or not ResourceLoader.exists(目标场景):
+		目标场景 = "res://场景/家/家.tscn"
+	get_tree().change_scene_to_file(目标场景)

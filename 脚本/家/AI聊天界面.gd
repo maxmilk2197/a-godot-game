@@ -79,14 +79,21 @@ func _发送消息() -> void:
 	AIChat.发送消息(text)
 
 func _on_AI回复(回复内容: String) -> void:
-	if not visible:
-		return
+	# 无论窗口是否可见，都必须复位等待状态并保存记忆，否则会永久卡在“等待回复”
+	_等待中 = false
 	_save_memory()
+	if not visible:
+		_状态标签.text = "已配置 - " + AIChat.模型
+		return
 	_show_dialog(_上一条用户消息, 回复内容)
 	_状态标签.text = "已配置 - " + AIChat.模型
 
 func _on_AI出错(错误信息: String) -> void:
+	# 出错时同样复位等待状态，避免输入框被永久锁定
+	_等待中 = false
+	_save_memory()
 	if not visible:
+		_状态标签.text = "发生错误"
 		return
 	_show_dialog(_上一条用户消息, "（" + 错误信息 + "）")
 	_状态标签.text = "发生错误"

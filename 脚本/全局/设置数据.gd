@@ -21,34 +21,42 @@ const 文字速度档位 := {
 var 显示对方头像: bool = true:
 	set(值):
 		显示对方头像 = 值
-		保存()
+		if not _读取中:
+			保存()
 
 ## 对话文字速度分档（0=慢 1=中 2=快）
 var 文字速度: int = 1:
 	set(值):
 		文字速度 = clampi(值, 0, 2)
-		保存()
+		if not _读取中:
+			保存()
 
 ## 是否自动继续对话（逐句前进，不用每次点击）
 var 自动继续: bool = false:
 	set(值):
 		自动继续 = 值
-		保存()
+		if not _读取中:
+			保存()
 
 ## 手机状态栏在「白天」时段显示的时间（HH:MM，可编辑）
 var 白天时间: String = "12:00":
 	set(值):
 		白天时间 = 值
-		保存()
+		if not _读取中:
+			保存()
 
 ## 手机状态栏在「晚上」时段显示的时间（HH:MM，可编辑）
 var 晚上时间: String = "21:00":
 	set(值):
 		晚上时间 = 值
-		保存()
+		if not _读取中:
+			保存()
 
 ## 临时导航标志：从“设置/关于”返回主菜单时，跳过一次性的主菜单 logo 动画（不持久化）
 var 跳过主菜单logo: bool = false
+
+## 读取配置期间置真，避免 setter 逐个触发重复写文件
+var _读取中: bool = false
 
 
 func _ready() -> void:
@@ -57,14 +65,17 @@ func _ready() -> void:
 
 ## 从配置文件恢复所有设置项
 func 读取() -> void:
+	_读取中 = true
 	var cfg := ConfigFile.new()
 	if cfg.load(设置路径) != OK:
+		_读取中 = false
 		return
 	显示对方头像 = cfg.get_value("聊天", "显示对方头像", true)
 	文字速度 = cfg.get_value("对话", "文字速度", 1)
 	自动继续 = cfg.get_value("对话", "自动继续", false)
 	白天时间 = cfg.get_value("手机", "白天时间", "12:00")
 	晚上时间 = cfg.get_value("手机", "晚上时间", "21:00")
+	_读取中 = false
 
 
 ## 把当前所有设置项写入配置文件
