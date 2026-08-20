@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://buy2xfbsqkcno"]
+[gd_scene format=3 uid="uid://buy2xfbsqkcno"]
 
-[ext_resource type="Script" path="res://脚本/主菜单/设置.gd" id="1_scpt"]
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
+[ext_resource type="Script" uid="uid://co4ymw0hw4fl4" path="res://脚本/主菜单/设置.gd" id="1_scpt"]
 
-[node name="设置" type="Control"]
+[node name="设置" type="Control" unique_id=1172313393]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_scpt")
 
-[node name="背景" type="ColorRect" parent="."]
+[node name="背景" type="ColorRect" parent="." unique_id=349790641]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,20 +21,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.08, 0.09, 0.12, 1)
 
-[node name="标题" type="Label" parent="."]
+[node name="标题" type="Label" parent="." unique_id=2049755668]
 layout_mode = 0
-offset_left = 0.0
-offset_top = 60.0
+offset_left = 301.0
 offset_right = 1280.0
-offset_bottom = 170.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 72
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "设置"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="返回按钮" type="Button" parent="."]
+[node name="返回按钮" type="Button" parent="." unique_id=1342331151]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 40.0
@@ -44,24 +43,23 @@ theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "← 返回"
 
-[node name="音量区" type="Control" parent="."]
-layout_mode = 0
-offset_left = 320.0
-offset_top = 210.0
-offset_right = 960.0
-offset_bottom = 400.0
+[node name="音量区" type="Control" parent="." unique_id=1204594774]
+anchors_preset = 0
+offset_top = 110.0
+offset_right = 640.0
+offset_bottom = 300.0
 
-[node name="标题" type="Label" parent="音量区"]
+[node name="标题" type="Label" parent="音量区" unique_id=1795252510]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.83, 0.87, 0.93, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 36
-theme_override_colors/font_color = Color(0.83, 0.87, 0.93, 1)
 text = "音量"
 horizontal_alignment = 1
 
-[node name="音乐行" type="HBoxContainer" parent="音量区"]
+[node name="音乐行" type="HBoxContainer" parent="音量区" unique_id=427699838]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 70.0
@@ -69,24 +67,23 @@ offset_right = 600.0
 offset_bottom = 120.0
 theme_override_constants/separation = 20
 
-[node name="音乐标签" type="Label" parent="音量区/音乐行"]
-layout_mode = 2
+[node name="音乐标签" type="Label" parent="音量区/音乐行" unique_id=771125315]
 custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 26
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "音乐"
 
-[node name="音量滑块" type="HSlider" parent="音量区/音乐行"]
+[node name="音量滑块" type="HSlider" parent="音量区/音乐行" unique_id=2142869311]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-min_value = 0.0
 max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="音效行" type="HBoxContainer" parent="音量区"]
+[node name="音效行" type="HBoxContainer" parent="音量区" unique_id=1073794269]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 140.0
@@ -94,45 +91,43 @@ offset_right = 600.0
 offset_bottom = 190.0
 theme_override_constants/separation = 20
 
-[node name="音效标签" type="Label" parent="音量区/音效行"]
-layout_mode = 2
+[node name="音效标签" type="Label" parent="音量区/音效行" unique_id=91615080]
 custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 26
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "音效"
 
-[node name="音量滑块" type="HSlider" parent="音量区/音效行"]
-unique_name_in_owner = true
+[node name="音量滑块" type="HSlider" parent="音量区/音效行" unique_id=2094478147]
 layout_mode = 2
 size_flags_horizontal = 3
-min_value = 0.0
 max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="更多设置按钮" type="Button" parent="."]
+[node name="更多设置按钮" type="Button" parent="." unique_id=2024754719]
 layout_mode = 0
-offset_left = 400.0
-offset_top = 440.0
-offset_right = 880.0
-offset_bottom = 530.0
+offset_left = 880.0
+offset_top = 462.0
+offset_right = 1277.0
+offset_bottom = 549.0
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 36
 text = "更多设置"
 
-[node name="关于按钮" type="Button" parent="."]
+[node name="关于按钮" type="Button" parent="." unique_id=1379103144]
 layout_mode = 0
-offset_left = 400.0
-offset_top = 560.0
-offset_right = 880.0
-offset_bottom = 650.0
+offset_left = 880.0
+offset_top = 572.0
+offset_right = 1276.0
+offset_bottom = 662.0
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 36
 text = "关于"
 
+[connection signal="pressed" from="返回按钮" to="." method="_返回主菜单"]
 [connection signal="value_changed" from="音量区/音乐行/音量滑块" to="." method="_音乐滑块_changed"]
 [connection signal="value_changed" from="音量区/音效行/音量滑块" to="." method="_音效滑块_changed"]
 [connection signal="pressed" from="更多设置按钮" to="." method="_开更多设置"]
 [connection signal="pressed" from="关于按钮" to="." method="_开关于"]
-[connection signal="pressed" from="返回按钮" to="." method="_返回主菜单"]
