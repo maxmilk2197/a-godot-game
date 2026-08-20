@@ -15,6 +15,12 @@
 [sub_resource type="Resource" id="Resource_r8d6y"]
 script = ExtResource("2_1bwdi")
 scene = ExtResource("1_rfxu0")
+overrides = {
+"global_bg_color": "Color(0.99607843, 0.97254902, 0.94117647, 0.92)",
+"global_font_color": "Color(0.35, 0.27, 0.3, 1)",
+"global_font": "res://资源/字体/LXGWWenKaiMono-Medium.ttf",
+"global_font_size": "18"
+}
 
 [sub_resource type="Resource" id="Resource_d7rje"]
 script = ExtResource("2_1bwdi")

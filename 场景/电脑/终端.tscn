@@ -1,19 +1,28 @@
-﻿[gd_scene format=3 uid="uid://8x0nfbbrqaw7"]
+[gd_scene format=3 uid="uid://8x0nfbbrqaw7"]
 
 [ext_resource type="PackedScene" uid="uid://bmooiueddrl71" path="res://场景/电脑/窗口.tscn" id="1_pwgau"]
 [ext_resource type="Script" uid="uid://blb4wsc5goc5s" path="res://脚本/电脑/终端.gd" id="2_ea1ky"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwgau"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+bg_color = Color(0.99607843, 0.97254902, 0.94117647, 1)
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ea1ky"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.15, 0.13, 0.15, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.3, 0.33, 0.8)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 corner_detail = 5
 
 [node name="窗口" unique_id=464597521 instance=ExtResource("1_pwgau")]

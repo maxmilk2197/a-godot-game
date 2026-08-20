@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://s61bgp0vm2bf" path="res://资源/着色器/亚克力.gdshader" id="1_shader"]
 [ext_resource type="Texture2D" uid="uid://flqa8iodbcsp" path="res://资源/纹理/主界面/主界面.png" id="2_wallpaper"]
+[ext_resource type="Texture2D" path="res://资源/纹理/手机照片_上传.jpg" id="6_photo"]
 [ext_resource type="Script" uid="uid://b4u2jnr57ghth" path="res://脚本/手机/主界面.gd" id="3_script"]
 [ext_resource type="Texture2D" uid="uid://d3vmtedflhx7b" path="res://资源/纹理/亚克力噪点.tres" id="4_noise"]
 [ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="5_font"]
@@ -21,18 +22,18 @@ corner_radius_bottom_left = 40
 [sub_resource type="ShaderMaterial" id="blur_mat"]
 shader = ExtResource("1_shader")
 shader_parameter/noise_texture = ExtResource("4_noise")
-shader_parameter/strength = 3.3
-shader_parameter/opacity = 0.75
-shader_parameter/tint_color = Color(0, 0, 0, 0.15)
-shader_parameter/noise_amount = 0.03
+shader_parameter/strength = 2.0
+shader_parameter/opacity = 0.35
+shader_parameter/tint_color = Color(0.96, 0.9, 0.88, 0.2)
+shader_parameter/noise_amount = 0.02
 shader_parameter/noise_scale = 4.0
 
 [sub_resource type="StyleBoxFlat" id="icon_green"]
-bg_color = Color(0.027451, 0.756863, 0.376471, 1)
-corner_radius_top_left = 14
-corner_radius_top_right = 14
-corner_radius_bottom_right = 14
-corner_radius_bottom_left = 14
+bg_color = Color(0.9372549, 0.56078431, 0.63921569, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [sub_resource type="StyleBoxFlat" id="dock_bg"]
 bg_color = Color(0.95, 0.95, 0.97, 0.85)
@@ -76,14 +77,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="壁纸" type="TextureRect" parent="屏幕显示" unique_id=580932231]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_wallpaper")
+texture = ExtResource("6_photo")
 expand_mode = 1
 stretch_mode = 5
 
