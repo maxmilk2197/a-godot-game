@@ -123,7 +123,24 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_6twhm")
 text = "Button"
 metadata/_edit_use_anchors_ = true
 
+[node name="Button3" type="Button" parent="." unique_id=1754002980]
+layout_mode = 0
+anchor_left = 0.03984375
+anchor_top = 0.16944444
+anchor_right = 0.190625
+anchor_bottom = 0.25138888
+offset_bottom = 1.5258789e-05
+theme_override_fonts/font = ExtResource("1_g85eo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g85eo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wakdm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g85eo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nvm03")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6twhm")
+text = "Button"
+metadata/_edit_use_anchors_ = true
+
 [node name="Button2" type="Button" parent="." unique_id=588874953]
+visible = false
 material = SubResource("ShaderMaterial_pyy4s")
 layout_mode = 1
 anchors_preset = -1

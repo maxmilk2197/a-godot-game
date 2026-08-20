@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ctg7yxw5i47qm"]
 
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
-[ext_resource type="Script" path="res://脚本/主菜单/关于.gd" id="1_scpt"]
+[ext_resource type="Script" uid="uid://t1k4waiahxpn" path="res://脚本/主菜单/关于.gd" id="1_scpt"]
 
 [node name="关于" type="Control" unique_id=659054937]
 layout_mode = 3
@@ -105,7 +105,7 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.85, 0.88, 0.92, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 35
 text = "Fisher"
 horizontal_alignment = 1
 
