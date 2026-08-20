@@ -23,6 +23,9 @@ func _ready():
 	退出.offset_transform_enabled = true
 	加载存档.offset_transform_enabled = true
 
+	# 给所有文字按钮挂上悬停高亮（字体变 #5476d6）——必须在 _ready 里调用，否则从不生效
+	初始化按钮高亮()
+
 	if save.是否有任意存档():
 		print("[存档]","发现现存档")
 	else:
