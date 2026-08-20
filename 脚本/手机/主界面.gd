@@ -9,10 +9,12 @@ var 当前应用: Control = null
 func _ready() -> void:
 	_更新时间()
 	app容器.hide()
-
-
-func _process(_delta: float) -> void:
-	_更新时间()
+	# 每分钟刷新一次时间即可，不必每帧刷
+	var 时间定时器 := Timer.new()
+	时间定时器.wait_time = 60.0
+	时间定时器.autostart = true
+	时间定时器.timeout.connect(_更新时间)
+	add_child(时间定时器)
 
 
 func _input(event: InputEvent) -> void:

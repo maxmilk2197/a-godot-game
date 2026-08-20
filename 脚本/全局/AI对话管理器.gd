@@ -1,6 +1,7 @@
 extends Node
 
 const 配置路径 := "user://aisettings.cfg"
+const 最大记忆条数 := 30   ## 保留最近 N 条消息（含系统提示），防止超 API 上下文上限
 
 var 接口地址: String = "https://api.openai.com"
 var 密钥: String = ""
@@ -56,6 +57,18 @@ func 清除历史() -> void:
 	if 系统消息:
 		对话记录.append(系统消息)
 
+
+## 对话记录超长时只保留系统提示 + 最近 N 条，防止超 API 上下文上限
+func _裁剪对话记录() -> void:
+	if 对话记录.size() <= 最大记忆条数:
+		return
+	var 系统消息: Array = []
+	if not 对话记录.is_empty() and 对话记录[0].get("role", "") == "system":
+		系统消息 = [对话记录[0]]
+	var 保留条数 := 最大记忆条数 - 系统消息.size()
+	var 起始 := 对话记录.size() - 保留条数
+	对话记录 = 系统消息 + 对话记录.slice(起始)
+
 func 发送消息(用户消息: String) -> void:
 	if not 已配置 or 密钥.is_empty():
 		AI出错.emit("请先配置 AI API")
@@ -64,6 +77,7 @@ func 发送消息(用户消息: String) -> void:
 		return
 
 	对话记录.append({"role": "user", "content": 用户消息})
+	_裁剪对话记录()
 	等待中 = true
 
 	if _网络请求:
@@ -121,4 +135,5 @@ func 收到回应(结果: int, 状态码: int, _响应头: PackedStringArray, �
 
 	var 回复: String = 解析结果["choices"][0]["message"]["content"]
 	对话记录.append({"role": "assistant", "content": 回复})
+	_裁剪对话记录()
 	收到AI回复.emit(回复)

@@ -135,6 +135,7 @@ static func _加载AI记忆到AIChat(联系人名: String) -> void:
 	var mem = save.读取角色AI记忆(当前槽位, 联系人名)
 	if mem.size() > 0:
 		AIChat.对话记录 = mem.duplicate(true)
+		AIChat._裁剪对话记录()
 
 
 static func _初次种子AI记忆(联系人名: String) -> void:

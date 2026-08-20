@@ -30,4 +30,3 @@ yun: 哥哥起床了！
 yun: 哥哥？
 [background arg="res://资源/纹理/过渡/存档保存中.png" fade="0.3" wait="true"]
 [signal arg="进入客厅场景"]
-jump 01/

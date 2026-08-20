@@ -172,13 +172,11 @@ func _创建气泡(msg: Dictionary) -> Control:
 
 
 func _估算文字宽度(text: String) -> int:
-	return min(text.length() * 15 + 20, 200)
+	return int(ThemeDB.fallback_font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, 200, 14).x)
 
 
 func _估算文字高度(text: String, width: int) -> int:
-	var chars_per_line = max(1.0, width / 14.0)
-	var lines = max(1.0, ceil(text.length() / chars_per_line))
-	return int(lines * 22)
+	return int(ThemeDB.fallback_font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, width, 14).y)
 
 
 func _on_联系人_妹妹_pressed() -> void:

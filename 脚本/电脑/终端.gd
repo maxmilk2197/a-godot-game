@@ -11,6 +11,7 @@ var 输入起始行: int = 0
 var 输入起始列: int = 0
 
 var SSH可用: bool = false
+var _ssh线程: Thread = null
 
 @onready var 显示区: TextEdit = $"终端"
 
@@ -62,15 +63,13 @@ func 执行SSH(args: Array) -> void:
 		输出("usage: ssh user@host command\n")
 		return
 
+	if _ssh线程 and _ssh线程.is_started():
+		输出("ssh is already running...\n")
+		return
+
 	var target: String = str(args[0])
 
-	var command := ""
-
-	for i in range(1, args.size()):
-		command += str(args[i])
-
-		if i < args.size() - 1:
-			command += " "
+	var command := " ".join(args.slice(1))
 
 	var ssh_args := PackedStringArray([
 		"-o",
@@ -81,19 +80,29 @@ func 执行SSH(args: Array) -> void:
 		command
 	])
 
+	# 放后台线程执行，避免网络无响应时阻塞主线程把游戏卡死
+	_ssh线程 = Thread.new()
+	_ssh线程.start(_跑SSH.bind(ssh_args))
+
+
+func _跑SSH(ssh_args: PackedStringArray) -> void:
 	var output: Array = []
+	var exit_code := OS.execute("ssh", ssh_args, output, true)
 
-	var exit_code := OS.execute(
-		"ssh",
-		ssh_args,
-		output,
-		true
-	)
-
+	var 结果文本 := ""
 	if output.size() > 0:
-		输出(str(output[0]) + "\n")
+		结果文本 = str(output[0]) + "\n"
 	else:
-		输出("ssh exited with code %d\n" % exit_code)
+		结果文本 = "ssh exited with code %d\n" % exit_code
+
+	call_deferred("_收尾SSH", 结果文本)
+
+
+func _收尾SSH(结果文本: String) -> void:
+	if _ssh线程 and _ssh线程.is_started():
+		_ssh线程.wait_to_finish()
+		_ssh线程 = null
+	输出(结果文本)
 
 # =========================
 # 输出
