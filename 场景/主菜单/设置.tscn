@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://buy2xfbsqkcno"]
 
+[ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
 [ext_resource type="Script" uid="uid://co4ymw0hw4fl4" path="res://脚本/主菜单/设置.gd" id="1_scpt"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("0_warmth")
 script = ExtResource("1_scpt")
 
 [node name="背景" type="ColorRect" parent="." unique_id=349790641]
@@ -19,14 +21,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.08, 0.09, 0.12, 1)
+color = Color(0.99607843, 0.97254902, 0.94117647, 1)
 
 [node name="标题" type="Label" parent="." unique_id=2049755668]
 layout_mode = 0
 offset_left = 301.0
 offset_right = 1280.0
 offset_bottom = 110.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 72
 text = "设置"
@@ -53,7 +55,7 @@ offset_bottom = 300.0
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 50.0
-theme_override_colors/font_color = Color(0.83, 0.87, 0.93, 1)
+theme_override_colors/font_color = Color(0.45, 0.36, 0.37, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 36
 text = "音量"
@@ -70,7 +72,7 @@ theme_override_constants/separation = 20
 [node name="音乐标签" type="Label" parent="音量区/音乐行" unique_id=771125315]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.4, 0.31, 0.32, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 26
 text = "音乐"
@@ -94,7 +96,7 @@ theme_override_constants/separation = 20
 [node name="音效标签" type="Label" parent="音量区/音效行" unique_id=91615080]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.4, 0.31, 0.32, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 26
 text = "音效"
