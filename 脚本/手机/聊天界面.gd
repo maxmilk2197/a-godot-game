@@ -1,5 +1,10 @@
 extends Control
 
+## 是否显示聊天里对方消息旁的头像。
+## true  = 对方消息左侧显示圆形头像（用联系人的 头像颜色 + 头像文字）
+## false = 不显示对方头像，气泡直接靠左对齐（不留空位）
+const 显示对方头像 := true
+
 var 当前联系人: String = ""
 var ai等待中: bool = false
 var 等待回复的联系人: String = ""
@@ -124,11 +129,18 @@ func _创建气泡(msg: Dictionary) -> Control:
 	if is_me:
 		sb.bg_color = Color(0.584, 0.925, 0.412, 1)
 	else:
-		sb.bg_color = Color(1, 1, 1, 1)
+		# 对方气泡用浅灰，和白色聊天背景区分开（纯白会跟白底融为一体看不见）
+		sb.bg_color = Color(0.929, 0.933, 0.945, 1)
 	sb.set_corner_radius_all(6)
 	bg.add_theme_stylebox_override("panel", sb)
 
 	bg.size = Vector2(bg_width, bubble_height)
+
+	# 对方消息左侧的头像（可用 显示对方头像 开关）
+	var 对方头像: Control = null
+	if not is_me and 显示对方头像:
+		对方头像 = _创建对方头像()
+		row.add_child(对方头像)
 
 	if is_me:
 		bg.layout_mode = 1
@@ -145,8 +157,14 @@ func _创建气泡(msg: Dictionary) -> Control:
 		label.offset_top = 14
 		label.offset_bottom = bubble_height - 6
 	else:
-		bg.position = Vector2(52, 4)
-		label.position = Vector2(64, 10)
+		if 显示对方头像:
+			# 显示头像：头像占左 52px，气泡再往右排
+			bg.position = Vector2(52, 4)
+			label.position = Vector2(64, 10)
+		else:
+			# 不显示头像：气泡直接靠左，不留空位
+			bg.position = Vector2(12, 4)
+			label.position = Vector2(24, 10)
 		label.size = Vector2(max_text_width, bubble_height - 14)
 
 	var time_label = Label.new()
@@ -169,6 +187,31 @@ func _创建气泡(msg: Dictionary) -> Control:
 	row.add_child(time_label)
 
 	return row
+
+
+## 创建对方头像：圆形（用联系人的 头像颜色 + 头像文字），放在左侧
+func _创建对方头像() -> Control:
+	var 联系人 := 聊天数据.获取联系人(当前联系人)
+	var 头像 := Panel.new()
+	头像.size = Vector2(36, 36)
+	头像.position = Vector2(8, 4)
+
+	var sb := StyleBoxFlat.new()
+	sb.bg_color = 联系人.get("头像颜色", Color(0.6, 0.6, 0.6, 1))
+	sb.set_corner_radius_all(18)   # 圆形
+	sb.set_content_margin_all(0)
+	头像.add_theme_stylebox_override("panel", sb)
+
+	var 文字 := Label.new()
+	文字.text = str(联系人.get("头像文字", "?"))
+	文字.add_theme_color_override("font_color", Color.WHITE)
+	文字.add_theme_font_size_override("font_size", 16)
+	文字.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	文字.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	文字.size = 头像.size
+	头像.add_child(文字)
+
+	return 头像
 
 
 func _估算文字宽度(text: String) -> int:
