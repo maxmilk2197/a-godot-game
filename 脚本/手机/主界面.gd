@@ -3,9 +3,9 @@ extends Control
 var 当前应用: Control = null
 var 正在编辑时间: bool = false
 
-@onready var 时间标签 = $"屏幕显示/状态栏/时间"
-@onready var 时间输入 = $"屏幕显示/状态栏/时间输入"
-@onready var app容器 = $"屏幕显示/App容器"
+@onready var 时间标签: Label = $"屏幕显示/状态栏/时间"
+@onready var 时间输入: LineEdit = $"屏幕显示/状态栏/时间输入"
+@onready var app容器: Control = $"屏幕显示/App容器"
 
 
 func _ready() -> void:
@@ -108,6 +108,16 @@ func _input(event: InputEvent) -> void:
 
 func _关闭手机() -> void:
 	queue_free()
+
+
+## 点壁纸区域的隐形跳转：打开相册应用
+func _打开相册() -> void:
+	if 当前应用:
+		当前应用.queue_free()
+	var 相册场景 = load("res://场景/手机/相册界面.tscn")
+	当前应用 = 相册场景.instantiate()
+	app容器.add_child(当前应用)
+	app容器.show()
 
 
 func _打开聊天() -> void:
