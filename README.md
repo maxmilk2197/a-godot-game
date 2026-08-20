@@ -231,14 +231,12 @@ a-godot-game/
 - Some images (backgrounds / portraits / buttons) come from public asset packs and the web — **for study & sharing only**; do not use them for commercial release.
 - Fonts: HarmonyOS Sans, LXGW WenKai Mono, GenSenRounded, etc. — respect each license.
 - AI chat requires you to configure a working API key yourself; the game ships no key.
-- The AI "prompt" contains an adult-oriented setting with an **optional toggle** string in the source (you can delete/modify it). Please mind content ratings and compliance.
 - Test build may contain unfinished scenes (e.g., the outside world only offers "go home").
 
 **中文**
 - 本游戏使用到的部分图片素材（背景/立绘/按钮）来自公开素材包与网络，**仅用于学习交流**；请勿将资源用于商业发布。
 - 字体：HarmonyOS Sans、LXGW WenKai Mono、GenSenRounded 等，请按各自许可证使用。
 - AI 聊天需要自行配置可用的 API 密钥，游戏本身不内置任何密钥。
-- 涉及 AI 对话的「提示词」中带有成人向设定的**可选开关**字符（项目源码中可自行删除/修改），请注意内容分级与合规。
 - 测试版可能存在未完成场景（如屋外世界目前仅「回家」）。
 
 ---
