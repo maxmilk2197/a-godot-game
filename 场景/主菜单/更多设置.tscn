@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
-[ext_resource type="Script" uid="uid://dbh3m2d5i5xrp" path="res://脚本/主菜单/更多设置.gd" id="1_scpt"]
+[ext_resource type="Script" uid="uid://c76r4354a06qh" path="res://脚本/主菜单/更多设置.gd" id="1_scpt"]
 
 [node name="更多设置" type="Control" unique_id=1760460604]
 layout_mode = 3
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.99607843, 0.97254902, 0.94117647, 0.72)
+color = Color(0.99607843, 0.972549, 0.9411765, 1)
 
 [node name="标题" type="Label" parent="." unique_id=241861620]
 layout_mode = 0

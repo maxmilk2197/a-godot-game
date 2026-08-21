@@ -572,7 +572,6 @@ texture = ExtResource("12_xt34k")
 [node name="背景音乐" type="AudioStreamPlayer" parent="." unique_id=199618337]
 stream = ExtResource("13_weg6c")
 volume_db = -20.0
-bus = &"Music"
 
 [node name="遮罩" type="ColorRect" parent="." unique_id=1328901426]
 visible = false
