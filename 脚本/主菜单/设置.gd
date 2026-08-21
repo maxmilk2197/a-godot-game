@@ -1,8 +1,9 @@
 extends Control
 ## ============================================================
-## 设置首页脚本。对应的场景：res://场景/主菜单/设置.tscn
-## 所有 UI 节点都在场景里静态建好，这里只用 @onready 引用。
-## 场景跳转统一走 SceneNav（preload，单向依赖，避免循环引用）。
+## 设置弹层脚本。对应场景：res://场景/主菜单/设置.tscn
+## 以“叠加弹层”方式盖在当前主界面上（不切场景、不销毁主界面，音乐不断）。
+## 打开子页：把子页弹层叠加到当前场景顶层，自己不关（可返回）。
+## 返回：queue_free 关闭自己，露出下层。
 ## ============================================================
 
 @onready var 音乐滑块: HSlider = $"音量区/音乐行/音量滑块"
@@ -16,7 +17,7 @@ func _ready() -> void:
 
 
 # =========================
-# 音量滑块（首页顶部直接放，拖动即生效并保存）
+# 音量滑块（拖动即生效并保存）
 # =========================
 func _音乐滑块_changed(值: float) -> void:
 	Audio.音乐音量 = 值
@@ -27,17 +28,21 @@ func _音效滑块_changed(值: float) -> void:
 
 
 # =========================
-# 导航（静态场景跳转）
+# 导航（弹层叠加，不切场景）
 # =========================
+## 打开一个新弹层并叠加到当前场景顶层（当前弹层保留）
+func _打开弹层(场景: PackedScene) -> void:
+	var 实例 = 场景.instantiate()
+	get_tree().current_scene.add_child(实例)
+
+
 func _开更多设置() -> void:
-	get_tree().change_scene_to_packed(SceneNav.更多设置)
+	_打开弹层(SceneNav.更多设置)
 
 
 func _开关于() -> void:
-	get_tree().change_scene_to_packed(SceneNav.关于)
+	_打开弹层(SceneNav.关于)
 
 
 func _返回主菜单() -> void:
-	# 返回主菜单时跳过 logo 动画
-	Settings.跳过主菜单logo = true
-	get_tree().change_scene_to_packed(SceneNav.主界面)
+	queue_free()

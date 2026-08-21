@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.08, 0.09, 0.12, 1)
+color = Color(0.08, 0.09, 0.12, 0.55)
 
 [node name="返回按钮" type="Button" parent="." unique_id=723595552]
 layout_mode = 0

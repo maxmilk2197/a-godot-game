@@ -65,7 +65,7 @@ func _刷新速度高亮() -> void:
 
 
 # =========================
-# 返回
+# 返回（弹层：直接关闭自己，露出下层设置/主界面）
 # =========================
 func _返回设置() -> void:
-	get_tree().change_scene_to_packed(SceneNav.设置)
+	queue_free()

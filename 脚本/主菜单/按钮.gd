@@ -92,8 +92,9 @@ func _on_退出_pressed() -> void:
 	get_tree().quit()
 
 func _打开设置() -> void:
-	# 静态跳转到设置页（统一走 SceneNav 预加载场景，避免循环 preload）
-	get_tree().change_scene_to_packed(SceneNav.设置)
+	# 弹层方式打开设置：叠加到当前主场景上，不切场景、不销毁主界面，音乐不断
+	var 设置实例 = SceneNav.设置.instantiate()
+	get_tree().current_scene.add_child(设置实例)
 	
 #endregion
 

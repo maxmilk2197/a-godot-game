@@ -4,4 +4,4 @@ extends Control
 ## ============================================================
 
 func _返回设置() -> void:
-	get_tree().change_scene_to_packed(SceneNav.设置)
+	queue_free()

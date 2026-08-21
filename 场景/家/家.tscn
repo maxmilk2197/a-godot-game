@@ -162,6 +162,7 @@ text = "Button"
 
 [node name="背景音乐" type="AudioStreamPlayer" parent="." unique_id=1891284887]
 stream = ExtResource("7_u4jm0")
+bus = &"Music"
 
 [node name="养成面板" type="Control" parent="." unique_id=1717000001]
 layout_mode = 1

@@ -21,11 +21,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.99607843, 0.97254902, 0.94117647, 1)
 
 [node name="标题" type="Label" parent="." unique_id=2049755668]
 layout_mode = 0
-offset_left = 301.0
+offset_left = 178.0
 offset_right = 1280.0
 offset_bottom = 110.0
 theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
