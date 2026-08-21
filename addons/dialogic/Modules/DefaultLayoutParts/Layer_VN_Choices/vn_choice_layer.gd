@@ -13,11 +13,11 @@ extends DialogicLayoutLayer
 @export var font_size_custom: int = 16
 @export_subgroup('Color')
 @export var text_color_use_global: bool = true
-@export var text_color_custom: Color = Color.WHITE
-@export var text_color_pressed: Color = Color.WHITE
-@export var text_color_hovered: Color = Color.GRAY
-@export var text_color_disabled: Color = Color.DARK_GRAY
-@export var text_color_focused: Color = Color.WHITE
+@export var text_color_custom: Color = Color(0.35, 0.27, 0.3)
+@export var text_color_pressed: Color = Color(0.45, 0.24, 0.3)
+@export var text_color_hovered: Color = Color(0.85, 0.35, 0.47)
+@export var text_color_disabled: Color = Color(0.7, 0.68, 0.68)
+@export var text_color_focused: Color = Color(0.45, 0.27, 0.32)
 
 @export_group('Boxes')
 @export_subgroup('Panels')

@@ -29,7 +29,12 @@ func _补全默认键(数据: Dictionary) -> void:
 
 
 func _写文件(路径: String, 数据: Dictionary) -> bool:
-	DirAccess.make_dir_recursive_absolute(存档目录)
+	# 确保存档目录存在（user:// 是虚拟路径，要用 DirAccess 在 user:// 下建目录）
+	var dir := DirAccess.open("user://")
+	if dir == null:
+		printerr("[错误]无法打开用户数据目录")
+		return false
+	dir.make_dir_recursive("Saves")
 	var json_text = JSON.stringify(数据)
 	var file = FileAccess.open(路径, FileAccess.WRITE)
 	if file == null:

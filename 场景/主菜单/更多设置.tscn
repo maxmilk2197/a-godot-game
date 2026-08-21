@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c000v0vrmxtlq"]
 
+[ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
 [ext_resource type="Script" uid="uid://dbh3m2d5i5xrp" path="res://脚本/主菜单/更多设置.gd" id="1_scpt"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("0_warmth")
 script = ExtResource("1_scpt")
 
 [node name="背景" type="ColorRect" parent="." unique_id=469900954]
@@ -19,13 +21,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.08, 0.09, 0.12, 1)
+color = Color(0.99607843, 0.97254902, 0.94117647, 1)
 
 [node name="标题" type="Label" parent="." unique_id=241861620]
 layout_mode = 0
 offset_right = 1280.0
-offset_bottom = 90.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 56
 text = "更多设置"
@@ -58,7 +60,7 @@ theme_override_constants/separation = 24
 [node name="头像标签" type="Label" parent="开关区/头像行" unique_id=1332949076]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 30
 text = "聊天显示对方头像"
@@ -78,7 +80,7 @@ theme_override_constants/separation = 24
 [node name="自动继续标签" type="Label" parent="开关区/自动继续行" unique_id=1843270928]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 30
 text = "对话自动继续"
@@ -99,7 +101,7 @@ offset_bottom = 560.0
 layout_mode = 0
 offset_right = 600.0
 offset_bottom = 50.0
-theme_override_colors/font_color = Color(0.83, 0.87, 0.93, 1)
+theme_override_colors/font_color = Color(0.48, 0.39, 0.4, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 30
 text = "对话文字速度"

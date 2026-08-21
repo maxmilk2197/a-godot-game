@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://c8q6xalbdw2aye"]
+
+[ext_resource type="Script" uid="uid://c4ghaao586x48" path="res://脚本/手机/相册界面.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://资源/纹理/手机照片_上传.jpg" id="2_photo"]
+[ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="3_font"]
+
+[sub_resource type="StyleBoxFlat" id="sb_bg"]
+bg_color = Color(0.05, 0.045, 0.05, 1)
+
+[sub_resource type="StyleBoxFlat" id="sb_transparent"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="相册应用" type="Control" unique_id=888000001]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+metadata/_edit_use_anchors_ = true
+
+[node name="背景" type="Panel" parent="." unique_id=888000002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("sb_bg")
+metadata/_edit_use_anchors_ = true
+
+[node name="相片" type="TextureRect" parent="." unique_id=888000003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 48.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_photo")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="空白提示" type="Label" parent="." unique_id=888000004]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -20.0
+offset_right = 120.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.6)
+theme_override_font_sizes/font_size = 16
+text = "相册暂无照片"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="顶栏" type="Panel" parent="." unique_id=888000005]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("sb_transparent")
+metadata/_edit_use_anchors_ = true
+
+[node name="返回按钮" type="Button" parent="顶栏" unique_id=888000006]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 44.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("sb_transparent")
+theme_override_styles/pressed = SubResource("sb_transparent")
+theme_override_styles/hover = SubResource("sb_transparent")
+text = "<"
+
+[node name="标题" type="Label" parent="顶栏" unique_id=888000007]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_right = 60.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 17
+text = "相册"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="关闭按钮" type="Button" parent="顶栏" unique_id=888000008]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -44.0
+offset_top = 6.0
+offset_right = -8.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("sb_transparent")
+theme_override_styles/pressed = SubResource("sb_transparent")
+theme_override_styles/hover = SubResource("sb_transparent")
+text = "X"
+
+[connection signal="pressed" from="顶栏/返回按钮" to="." method="_on_关闭按钮_pressed"]
+[connection signal="pressed" from="顶栏/关闭按钮" to="." method="_on_关闭按钮_pressed"]

@@ -1,5 +1,6 @@
-﻿[gd_scene format=3 uid="uid://cpmvl10438qj2"]
+[gd_scene format=3 uid="uid://cpmvl10438qj2"]
 
+[ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
 [ext_resource type="Script" uid="uid://b5f0lmphw3aco" path="res://脚本/存档界面/存档保存界面.gd" id="1_7vdbx"]
 [ext_resource type="PackedScene" uid="uid://bbyxssg0k1p6d" path="res://场景/存档/保存加载按钮.tscn" id="2_b36ll"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("0_warmth")
 script = ExtResource("1_7vdbx")
 "缓动类型" = 0
 

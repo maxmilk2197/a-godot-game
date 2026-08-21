@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ctg7yxw5i47qm"]
 
+[ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
 [ext_resource type="Script" uid="uid://dsux7m1dj4kwj" path="res://脚本/主菜单/关于.gd" id="1_scpt"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("0_warmth")
 script = ExtResource("1_scpt")
 
 [node name="背景" type="ColorRect" parent="." unique_id=1009605657]
@@ -21,18 +23,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.08, 0.09, 0.12, 1)
 
-[node name="标题" type="Label" parent="." unique_id=1804927674]
-layout_mode = 0
-offset_top = -2.0
-offset_right = 1280.0
-offset_bottom = 88.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 56
-text = "关于"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="返回按钮" type="Button" parent="." unique_id=723595552]
 layout_mode = 0
 offset_left = 40.0
@@ -42,6 +32,18 @@ offset_bottom = 90.0
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "← 返回"
+
+[node name="标题" type="Label" parent="." unique_id=1804927674]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 1280.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 56
+text = "关于"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1344003691]
 layout_mode = 1
@@ -55,7 +57,7 @@ grow_vertical = 2
 [node name="游戏名" type="Label" parent="VBoxContainer" unique_id=1009240386]
 visible = false
 layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 48
 text = "眠冬与你"
@@ -63,7 +65,7 @@ horizontal_alignment = 1
 
 [node name="版本" type="Label" parent="VBoxContainer" unique_id=62797397]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.75, 0.8, 0.88, 1)
+theme_override_colors/font_color = Color(0.55, 0.48, 0.5, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "版本 0.05"
@@ -71,7 +73,7 @@ horizontal_alignment = 1
 
 [node name="感谢以下所有人" type="Label" parent="VBoxContainer" unique_id=1943816886]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.75, 0.8, 0.88, 1)
+theme_override_colors/font_color = Color(0.55, 0.48, 0.5, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "感谢以下付出的 所有人"
@@ -80,14 +82,14 @@ vertical_alignment = 1
 
 [node name="程序" type="Label" parent="VBoxContainer" unique_id=1802245407]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.75, 0.8, 0.88, 1)
+theme_override_colors/font_color = Color(0.5, 0.4, 0.42, 1)
 theme_override_font_sizes/font_size = 42
 text = "程序"
 horizontal_alignment = 1
 
 [node name="程序人员" type="Label" parent="VBoxContainer" unique_id=1583677961]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85, 0.88, 0.92, 1)
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "dsshhgg 
@@ -96,7 +98,7 @@ horizontal_alignment = 1
 
 [node name="音乐" type="Label" parent="VBoxContainer" unique_id=450096584]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.75, 0.8, 0.88, 1)
+theme_override_colors/font_color = Color(0.5, 0.4, 0.42, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 40
 text = "音乐"
@@ -104,7 +106,7 @@ horizontal_alignment = 1
 
 [node name="程序人员2" type="Label" parent="VBoxContainer" unique_id=357328544]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85, 0.88, 0.92, 1)
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 35
 text = "Fisher"
@@ -112,7 +114,7 @@ horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1929012489]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.75, 0.8, 0.88, 1)
+theme_override_colors/font_color = Color(0.55, 0.48, 0.5, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "以及所用的部分音乐"
@@ -121,7 +123,7 @@ vertical_alignment = 1
 
 [node name="程序人员3" type="Label" parent="VBoxContainer" unique_id=865088239]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.85, 0.88, 0.92, 1)
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "なぐもりずの音楽室"
@@ -136,7 +138,7 @@ text = "
 
 [node name="致谢" type="Label" parent="VBoxContainer" unique_id=928562715]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.7, 0.75, 0.82, 1)
+theme_override_colors/font_color = Color(0.5, 0.42, 0.44, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 22
 text = "技术：Godot 4 / Dialogic 2
