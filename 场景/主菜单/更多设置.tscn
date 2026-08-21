@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c000v0vrmxtlq"]
 
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
-[ext_resource type="Script" path="res://脚本/主菜单/更多设置.gd" id="1_scpt"]
+[ext_resource type="Script" uid="uid://dbh3m2d5i5xrp" path="res://脚本/主菜单/更多设置.gd" id="1_scpt"]
 
 [node name="更多设置" type="Control" unique_id=1760460604]
 layout_mode = 3
@@ -23,9 +23,8 @@ color = Color(0.08, 0.09, 0.12, 1)
 
 [node name="标题" type="Label" parent="." unique_id=241861620]
 layout_mode = 0
-offset_top = 40.0
 offset_right = 1280.0
-offset_bottom = 130.0
+offset_bottom = 90.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 56

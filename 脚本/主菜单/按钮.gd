@@ -23,11 +23,13 @@ func _ready():
 	if Settings.跳过主菜单logo:
 		Settings.跳过主菜单logo = false
 		$"../动画/logo".queue_free()
+		$"../背景音乐".play()
 	else:
 		$"../动画/logo".show()
 		$"../动画".play("logo")
 		await $"../动画".animation_finished
 		$"../动画/logo".queue_free()
+		
 	新游戏.offset_transform_enabled = true
 	退出.offset_transform_enabled = true
 	继续游戏.offset_transform_enabled = true
