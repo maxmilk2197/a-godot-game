@@ -20,7 +20,7 @@ var 最大页数 : int = 6
 @export_range(0.05, 0.5, 0.01) var 渐变时长 : float = 0.18   ## 按钮淡入淡出时间
 @export_range(0.0, 0.3, 0.01) var 按钮动画间隔 : float = 0.06 ## 三个按钮错峰的间隔（越大越有层次）
 
-# 滚轮翻页采用“目标页”队列模型：动画进行中滚动不丢失，翻完自动补翻，跟手不掉
+# 翻页状态：动画播放中不接受新的滚动，动画结束后才能翻下一页
 var 目标页 : int = 0
 var 正在翻页 : bool = false
 
@@ -132,11 +132,15 @@ func _input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 			return
 
-		# 滚轮翻页：带时间去抖，同一波连续滚动只翻一页，避免连翻、跟手不掉
+		# 滚轮翻页：动画没播完时滚动无效；带时间去抖，同一波连续滚动只翻一页
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP or event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			if not event.pressed:
 				return
 			get_viewport().set_input_as_handled()
+
+			# 上一次翻页动画还没播完：忽略本次滚动
+			if 正在翻页:
+				return
 
 			var 现在 := Time.get_ticks_msec() / 1000.0
 
@@ -151,14 +155,14 @@ func _input(event: InputEvent) -> void:
 
 			本波已翻页 = true
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-				目标页 = max(0, 目标页 - 1)
+				目标页 = max(0, 当前页数 - 1)
 			else:
-				目标页 = min(最大页数, 目标页 + 1)
+				目标页 = min(最大页数, 当前页数 + 1)
 			推进翻页()
 
 
 # =========================
-# 翻页逻辑（目标页队列：连翻不掉）
+# 翻页逻辑
 # =========================
 func 推进翻页() -> void:
 	# 正在翻页时：目标页已记录，等当前这页放完会自动继续
@@ -181,7 +185,7 @@ func 推进翻页() -> void:
 		return
 
 	正在翻页 = false
-	# 动画期间可能又有新的滚动目标，继续补翻直到与目标一致
+	# 保险：正常情况下动画期间滚动被锁，目标页不会变；万一不一致就补翻到一致
 	if 目标页 != 当前页数:
 		推进翻页()
 

@@ -35,13 +35,14 @@ text = "← 返回"
 
 [node name="标题" type="Label" parent="." unique_id=1804927674]
 layout_mode = 0
+offset_left = 180.0
+offset_top = 40.0
 offset_right = 1281.0
-offset_bottom = 90.0
+offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 44
 text = "关于"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1344003691]

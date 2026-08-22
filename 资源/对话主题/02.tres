@@ -38,7 +38,9 @@ scene = ExtResource("5_lnqx4")
 script = ExtResource("2_1bwdi")
 scene = ExtResource("6_if85n")
 overrides = {
-"box_size": "Vector2(850, 150)"
+"box_panel": "res://资源/对话主题/对话框.tres",
+"box_size": "Vector2(1080, 170)",
+"name_label_box_panel": "res://资源/对话主题/名字牌.tres"
 }
 
 [sub_resource type="Resource" id="Resource_8opbe"]
@@ -48,6 +50,11 @@ scene = ExtResource("7_kqj2q")
 [sub_resource type="Resource" id="Resource_sxi2j"]
 script = ExtResource("2_1bwdi")
 scene = ExtResource("8_bemuc")
+overrides = {
+"boxes_stylebox_focused": "res://资源/对话主题/选项_聚焦.tres",
+"boxes_stylebox_hovered": "res://资源/对话主题/选项_悬停.tres",
+"boxes_stylebox_normal": "res://资源/对话主题/选项_常态.tres"
+}
 
 [sub_resource type="Resource" id="Resource_noplf"]
 script = ExtResource("2_1bwdi")

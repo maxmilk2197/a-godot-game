@@ -24,14 +24,14 @@ grow_vertical = 2
 
 [node name="标题" type="Label" parent="." unique_id=2049755668]
 layout_mode = 0
-offset_left = 178.0
+offset_left = 180.0
+offset_top = 40.0
 offset_right = 1280.0
-offset_bottom = 110.0
+offset_bottom = 100.0
 theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 44
 text = "设置"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="返回按钮" type="Button" parent="." unique_id=1342331151]
@@ -56,9 +56,8 @@ offset_right = 640.0
 offset_bottom = 50.0
 theme_override_colors/font_color = Color(0.45, 0.36, 0.37, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 28
 text = "音量"
-horizontal_alignment = 1
 
 [node name="音乐行" type="HBoxContainer" parent="音量区" unique_id=427699838]
 layout_mode = 0
