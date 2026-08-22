@@ -1,4 +1,13 @@
 extends Node
+## ============================================================
+## 存档管理（全局唯一，autoload 注册名：save）
+## 负责 user://Saves/ 下多槽位 JSON 存档的读写、删除、槽位切换，
+## 以及各角色聊天记录 / AI 记忆的存取。槽位 0 固定为自动存档。
+## 用法：
+##   save.保存(数据)          # 合并写入当前槽位
+##   save.加载()              # 读当前槽位，无档返回默认值
+##   save.切换槽位(2)          # 切到槽位 2（自动更新路径）
+## ============================================================
 
 @export var 当前存档: int = 0
 @export var 存档目录: String = "user://Saves/"
@@ -54,17 +63,13 @@ func _读文件(路径: String) -> Dictionary:
 	var text = file.get_as_text()
 	file.close()
 	var result = JSON.parse_string(text)
+	if result == null and not text.is_empty():
+		printerr("[存档] JSON 解析失败，按无存档处理: ", 路径)
 	return result if result is Dictionary else {}
 
 
 func 保存(存档数据: Dictionary) -> bool:
-	var 现有 = _读文件(完整路径)
-	for key in 存档数据:
-		现有[key] = 存档数据[key]
-	var ok = _写文件(完整路径, 现有)
-	if ok:
-		print("[信息]成功保存到槽位 ", 当前存档)
-	return ok
+	return 保存指定槽位(当前存档, 存档数据)
 
 
 func 保存指定槽位(槽位编号: int, 存档数据: Dictionary) -> bool:

@@ -31,7 +31,6 @@ SceneNav="*res://脚本/全局/场景导航.gd"
 [dialogic]
 
 directories/dch_directory={
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch",
 "yun": "res://角色/yun.dch",
 "你": "res://角色/你.dch",
 "旁白": "res://角色/旁白.dch"

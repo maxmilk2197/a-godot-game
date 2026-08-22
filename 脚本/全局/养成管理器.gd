@@ -22,6 +22,23 @@ const 上限 := 100
 const 下限 := 0
 const 每时段行动次数 := 3
 const 睡觉恢复体力 := 70
+const 保存延迟 := 0.5  ## 对话里数值连续变化，停手 0.5 秒后合并写一次盘
+
+var _保存定时器: Timer
+
+
+func _ready() -> void:
+	_保存定时器 = Timer.new()
+	_保存定时器.one_shot = true
+	_保存定时器.wait_time = 保存延迟
+	_保存定时器.timeout.connect(_立刻保存)
+	add_child(_保存定时器)
+
+
+func _exit_tree() -> void:
+	# 退出游戏时若还有未落盘的改动，立即保存
+	if _保存定时器 and not _保存定时器.is_stopped():
+		_立刻保存()
 
 
 ## 读取存档里的养成数据；没有存档就按默认值开始并保存
@@ -55,8 +72,16 @@ func 读取存档(数据: Dictionary) -> void:
 	剩余行动点 = int(数据.get("剩余行动点", 每时段行动次数))
 
 
-## 把当前属性存进 JSON 存档
+## 把当前属性存进 JSON 存档（数值连续变化时延迟合并，停手后一次写盘）
 func 保存() -> void:
+	if _保存定时器 == null:   # _ready 之前就被调用的情况，直接落盘
+		_立刻保存()
+		return
+	_保存定时器.stop()
+	_保存定时器.start()
+
+
+func _立刻保存() -> void:
 	var 数据 = {
 		"心情": 心情,
 		"好感": 好感,

@@ -1,4 +1,13 @@
 extends Node
+## ============================================================
+## AI 对话管理器（全局唯一，autoload 注册名：AIChat）
+## 通过 HTTP 调用兼容 OpenAI 格式的 API（/v1/chat/completions），
+## 维护对话记录（裁剪到最近 N 条）并把回复用信号发回界面。
+## 配置持久化在 user://aisettings.cfg（url / key / model）。
+## 用法：
+##   AIChat.发送消息("你好")
+##   AIChat.收到AI回复.connect(func(回复): ...)
+## ============================================================
 
 const 配置路径 := "user://aisettings.cfg"
 const 最大记忆条数 := 30   ## 保留最近 N 条消息（含系统提示），防止超 API 上下文上限
@@ -20,8 +29,11 @@ func _ready() -> void:
 	加载配置()
 
 func _聊天接口() -> String:
+	# 兼容三种填法：完整端点 / 带 v1 的基地址 / 纯基地址
 	if 接口地址.ends_with("/chat/completions"):
 		return 接口地址
+	if 接口地址.ends_with("/v1"):
+		return 接口地址 + "/chat/completions"
 	return 接口地址 + "/v1/chat/completions"
 
 func 加载配置() -> void:
@@ -83,6 +95,7 @@ func 发送消息(用户消息: String) -> void:
 	if _网络请求:
 		_网络请求.queue_free()
 	_网络请求 = HTTPRequest.new()
+	_网络请求.timeout = 30   # 不设的话默认无限等待，界面会一直卡在"等待中"
 	add_child(_网络请求)
 
 	var 请求体 := JSON.stringify({
