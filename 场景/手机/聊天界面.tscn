@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://brn1kvt06lkh2"]
 
+[ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
 [ext_resource type="Script" uid="uid://cqg7yewlk2rff" path="res://脚本/手机/聊天界面.gd" id="1_script"]
 [ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="2_font"]
 
@@ -7,7 +8,7 @@
 bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="sb_topbar"]
-bg_color = Color(0.027451, 0.756863, 0.376471, 1)
+bg_color = Color(0.94901961, 0.62352941, 0.68627451, 1)
 corner_radius_top_left = 28
 corner_radius_top_right = 28
 
@@ -29,12 +30,12 @@ corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
 [sub_resource type="StyleBoxFlat" id="sb_bottombar"]
-bg_color = Color(0.968627, 0.968627, 0.968627, 1)
+bg_color = Color(0.99607843, 0.97254902, 0.95294118, 1)
 corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
 
 [sub_resource type="StyleBoxFlat" id="sb_inputbar"]
-bg_color = Color(0.968627, 0.968627, 0.968627, 1)
+bg_color = Color(0.99607843, 0.97254902, 0.95294118, 1)
 corner_radius_bottom_right = 35
 corner_radius_bottom_left = 35
 
@@ -44,18 +45,18 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.878431, 0.878431, 0.878431, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+border_color = Color(0.94901961, 0.80392157, 0.81568627, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="sb_send"]
-bg_color = Color(0.027451, 0.756863, 0.376471, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+bg_color = Color(0.94901961, 0.62352941, 0.68627451, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="聊天应用" type="Control" unique_id=675123890]
 layout_mode = 3
@@ -64,6 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("0_warmth")
 script = ExtResource("1_script")
 metadata/_edit_use_anchors_ = true
 
@@ -327,7 +329,7 @@ alignment = 1
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.027451, 0.756863, 0.376471, 1)
+theme_override_colors/font_color = Color(0.94901961, 0.45, 0.55, 1)
 theme_override_font_sizes/font_size = 12
 text = "消息"
 horizontal_alignment = 1
