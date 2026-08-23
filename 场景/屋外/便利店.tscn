@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://c7bniw3k9bpq1"]
+
+[ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
+[ext_resource type="Script" path="res://脚本/屋外/便利店.gd" id="1_shop"]
+[ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="2_fnt"]
+
+[sub_resource type="StyleBoxFlat" id="panel_bg"]
+bg_color = Color(0.99607843, 0.97254902, 0.94117647, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0.55, 0.42, 0.46, 0.18)
+shadow_size = 10
+shadow_offset = Vector2(0, 4)
+
+[node name="便利店" type="Control" unique_id=990000001]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("0_warmth")
+script = ExtResource("1_shop")
+
+[node name="背景" type="ColorRect" parent="." unique_id=990000002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.93, 0.85, 0.8, 1)
+
+[node name="界面" type="Panel" parent="." unique_id=990000003]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -260.0
+offset_right = 360.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("panel_bg")
+
+[node name="标题" type="Label" parent="界面" unique_id=990000004]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 28.0
+offset_right = 640.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
+theme_override_fonts/font = ExtResource("2_fnt")
+theme_override_font_sizes/font_size = 42
+text = "🏪 便利店"
+horizontal_alignment = 1
+
+[node name="余额" type="Label" parent="界面" unique_id=990000005]
+layout_mode = 0
+anchor_right = 1.0
+offset_left = 60.0
+offset_top = 104.0
+offset_right = -40.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0.62, 0.36, 0.4, 1)
+theme_override_fonts/font = ExtResource("2_fnt")
+theme_override_font_sizes/font_size = 26
+text = "金币：0"
+horizontal_alignment = 2
+
+[node name="商品区" type="PanelContainer" parent="界面" unique_id=990000006]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 168.0
+offset_right = -40.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="商品列表" type="VBoxContainer" parent="界面/商品区" unique_id=990000007]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="结果" type="Label" parent="界面" unique_id=990000008]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -70.0
+offset_right = -40.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.45, 0.36, 0.37, 1)
+theme_override_fonts/font = ExtResource("2_fnt")
+theme_override_font_sizes/font_size = 20
+text = ""
+horizontal_alignment = 1
+
+[node name="返回按钮" type="Button" parent="界面" unique_id=990000009]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -70.0
+offset_right = -40.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_fnt")
+theme_override_font_sizes/font_size = 22
+text = "返回"
+
+[connection signal="pressed" from="界面/返回按钮" to="." method="_on_返回按钮_pressed"]
