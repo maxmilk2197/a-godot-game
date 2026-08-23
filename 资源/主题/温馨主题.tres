@@ -110,8 +110,8 @@ content_margin_top = 8.0
 content_margin_right = 16.0
 content_margin_bottom = 8.0
 bg_color = Color(0.96862745, 0.6666667, 0.72156864, 0.95)
-corner_radius_bottom_left = 10
 corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="tab_normal"]
 content_margin_left = 16.0
@@ -119,8 +119,8 @@ content_margin_top = 8.0
 content_margin_right = 16.0
 content_margin_bottom = 8.0
 bg_color = Color(0.99607843, 0.9490196, 0.92941177, 0.6)
-corner_radius_bottom_left = 10
 corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [resource]
 default_font_size = 20
