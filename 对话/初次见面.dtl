@@ -3,7 +3,6 @@
 开始？
 audio music "res://资源/音频/音乐/木漏れ日の調べ.mp3"
 数天前的晚上
-[voice path="res://资源/音频/音效/敲门声.mp3" volume="0.0"]
 (咚咚咚)
 join yun (默认) rightmost
 yun: 是哥哥吗？
@@ -28,5 +27,5 @@ yun: 哥哥起床了！
 你: （又梦到那一天了啊）
 你: （总之，这就是妹妹的来历了）
 yun: 哥哥？
-[background arg="res://资源/纹理/过渡/存档保存中.png" fade="0.3" wait="true"]
+[background arg="res://资源/纹理/按钮/存档保存中.png" fade="0.3" wait="true"]
 [signal arg="进入客厅场景"]
