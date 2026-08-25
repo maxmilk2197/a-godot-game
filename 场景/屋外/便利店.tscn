@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c7bniw3k9bpq1"]
+[gd_scene format=3 uid="uid://c7bniw3labpq1"]
 
 [ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
 [ext_resource type="Script" path="res://脚本/屋外/便利店.gd" id="1_shop"]
