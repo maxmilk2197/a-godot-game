@@ -42,7 +42,8 @@ directories/dtl_directory={
 "卧室": "res://对话/卧室.dtl"
 }
 layout/style_directory={
-"02": "res://资源/对话主题/02.tres"
+"02": "res://资源/对话主题/02.tres",
+"默认": "res://资源/对话主题/默认.tres"
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
