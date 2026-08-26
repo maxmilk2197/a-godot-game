@@ -74,7 +74,7 @@ func initialize_ui() -> void:
 	%ToggleBodyVisibilityButton.add_theme_stylebox_override('hover_pressed', StyleBoxEmpty.new())
 
 	# Icon Panel
-	%IconPanel.tooltip_text = resource.event_name
+	%IconPanel.tooltip_text = DialogicUtil.localize_event_name(resource.event_name)
 	%IconPanel.self_modulate = resource.event_color
 
 	# Event Icon

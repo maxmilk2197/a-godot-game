@@ -12,30 +12,30 @@ var current_value: Variant
 
 func _ready() -> void:
 	%ValueType.options = [{
-			'label': 'String',
+			'label': '字符串',
 			'icon': ["String", "EditorIcons"],
 			'value': TYPE_STRING
 		},{
-			'label': 'Number (int)',
+			'label': '整数',
 			'icon': ["int", "EditorIcons"],
 			'value': TYPE_INT
 		},{
-			'label': 'Number (float)',
+			'label': '浮点数',
 			'icon': ["float", "EditorIcons"],
 			'value': TYPE_FLOAT
 		},{
-			'label': 'Boolean',
+			'label': '布尔',
 			'icon': ["bool", "EditorIcons"],
 			'value': TYPE_BOOL
 		},{
-			'label': 'Expression',
+			'label': '表达式',
 			'icon': ["Variant", "EditorIcons"],
 			'value': TYPE_MAX
 		}
 		]
 	%ValueType.symbol_only = true
 	%ValueType.value_changed.connect(_on_type_changed.bind())
-	%ValueType.tooltip_text = "Change type"
+	%ValueType.tooltip_text = "更改类型"
 
 
 func set_value(value:Variant):

@@ -1,11 +1,11 @@
-Dialogic variables can be changed from timelines [b]and[/b] scripts! They can be used in conditions and inside of texts!; editor://VariablesEditor
-You can create [b]custom modules[/b] for dialogic, including events, subsystems, text effects, ui layouts and even editors!; editor://Settings->General
-If there are events you never need, you can hide them from the list in the editor!; editor://Settings->Modules
-Did you know that dialogic supports translations? It does!; editor://Settings->Translations
-You can use [b]bbcode effects[/b] in text events! What are they though???; https://docs.godotengine.org/en/latest/tutorials/ui/bbcode_in_richtextlabel.html
-Writing [/i]<Oh hi/Hello you/Well, well>[i] in a text event will pick a random one of the three strings!
-There are a number of cool text effects like [pause=x], [speed=x] and [portrait=x]. Try them out!;
-You can use scenes as portraits! This gives you basically limitless freedom.; https://dialogic-docs.coppolaemilio.com/custom-portraits.html
-You can use scenes as backgrounds. This way they can be animated or whatever you want!
-Dialogic has a built in save and load system! It's pretty powerful!; editor://Settings->Saving
-You can add multiple glossary files, each containing words that can be hovered for information!; editor://GlossaryEditor
+Dialogic 变量可以在时间线和[b]脚本[/b]中更改！它们可以用于条件和文本中！; editor://VariablesEditor
+你可以为 dialogic 创建[b]自定义模块[/b]，包括事件、子系统、文本效果、UI 布局甚至编辑器！; editor://Settings->General
+如果有你从不使用的事件，你可以在编辑器中把它们从列表里隐藏！; editor://Settings->Modules
+你知道吗，dialogic 支持翻译？确实支持！; editor://Settings->Translations
+你可以在文本事件中使用[b]bbcode 效果[/b]！但它们到底是什么呢？？？; https://docs.godotengine.org/en/latest/tutorials/ui/bbcode_in_richtextlabel.html
+在文本事件中写 [/i]<哦嗨/你好呀/好吧，好吧>[i] 会从这三个字符串中随机选一个！
+有许多很酷的文本效果，比如 [pause=x]、[speed=x] 和 [portrait=x]。试试吧！;
+你可以使用场景作为立绘！这基本上给了你无限的自由。; https://dialogic-docs.coppolaemilio.com/custom-portraits.html
+你可以使用场景作为背景。这样它们就可以是动画的，或者任何你想要的样子！
+Dialogic 内置了保存和加载系统！它相当强大！; editor://Settings->Saving
+你可以添加多个词条文件，每个文件包含可以悬停查看信息的单词！; editor://GlossaryEditor

@@ -6,7 +6,7 @@ extends DialogicCharacterEditorMainSection
 var loading := false
 
 func _get_title() -> String:
-	return "Portraits"
+	return "立绘"
 
 
 func _ready() -> void:

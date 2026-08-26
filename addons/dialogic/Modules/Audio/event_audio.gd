@@ -74,7 +74,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Audio"
-	event_description = "Plays an audio file (sound effect or music) on one of the audio layers (configured in the settings)."
+	event_description = "在某个音频层（在设置中配置）上播放音频文件（音效或音乐）。"
 	set_default_color('Color7')
 	event_category = "Audio"
 	event_sorting_index = 2
@@ -266,21 +266,21 @@ func _sound_from_text(string:String) -> void:
 
 func build_event_editor() -> void:
 	add_header_edit('file_path', ValueType.FILE, {
-			'left_text'		: 'Play',
+			'left_text'		: '播放',
 			'file_filter' 	: "*.mp3, *.ogg, *.wav; Supported Audio Files",
-			'placeholder' 	: "Nothing",
+			'placeholder' 	: "无",
 			'editor_icon' 	: ["AudioStreamMP3", "EditorIcons"],
 			"type": "Audio, Asset"})
 	add_header_edit('file_path', ValueType.AUDIO_PREVIEW)
 
 	add_header_edit('channel_name', ValueType.DYNAMIC_OPTIONS, {
-		'left_text'			:"on",
-		"right_text"		: "channel.",
-		'placeholder'		: '(One-Shot SFX)',
+		'left_text'			:"在",
+		"right_text"		: "通道。",
+		'placeholder'		: '（一次性音效）',
 		'mode'				: 3,
 		'suggestions_func' 	: get_audio_channel_suggestions,
 		'validation_func'	: DialogicUtil.validate_audio_channel_name,
-		'tooltip'			: 'Use an existing channel or type the name for a new channel.',
+		'tooltip'			: '使用现有通道，或输入新通道的名称。',
 	})
 
 	add_header_button('', _open_audio_settings, 'Edit Audio Channels',
@@ -288,46 +288,46 @@ func build_event_editor() -> void:
 
 	add_body_edit("set_fade_length", ValueType.BOOL_BUTTON,{
 			"editor_icon"	: ["FadeCross", "EditorIcons"],
-			"tooltip"		: "Overwrite Fade Length"
+			"tooltip"		: "覆盖淡入淡出时长"
 			},"!channel_name.is_empty() and has_channel_defaults()")
-	add_body_edit('fade_length', ValueType.NUMBER, {'left_text':'Fade Time:'},
+	add_body_edit('fade_length', ValueType.NUMBER, {'left_text':'淡入淡出时长：'},
 	'!channel_name.is_empty() and (not has_channel_defaults() or set_fade_length)')
 
 	add_body_edit("set_volume", ValueType.BOOL_BUTTON,{
 			"editor_icon"	: ["AudioStreamPlayer", "EditorIcons"],
-			"tooltip"		: "Overwrite Volume"
+			"tooltip"		: "覆盖音量"
 			},"!file_path.is_empty() and has_channel_defaults()")
-	add_body_edit('volume', ValueType.NUMBER, {'left_text':'Volume:', 'mode':2},
+	add_body_edit('volume', ValueType.NUMBER, {'left_text':'音量：', 'mode':2},
 		'!file_path.is_empty() and (not has_channel_defaults() or set_volume)')
 	add_body_edit("set_audio_bus", ValueType.BOOL_BUTTON,{
 			"editor_icon"	: ["AudioBusBypass", "EditorIcons"],
-			"tooltip"		: "Overwrite Audio Bus"
+			"tooltip"		: "覆盖音频总线"
 			},"!file_path.is_empty() and has_channel_defaults()")
 	add_body_edit('audio_bus', ValueType.DYNAMIC_OPTIONS, {
-		'left_text':'Audio Bus:',
-		'placeholder'		: 'Master',
+		'left_text':'音频总线：',
+		'placeholder'		: '主输出',
 		'mode'				: 2,
 		'suggestions_func' 	: DialogicUtil.get_audio_bus_suggestions,
 	}, '!file_path.is_empty() and (not has_channel_defaults() or set_audio_bus)')
 	add_body_edit("set_loop", ValueType.BOOL_BUTTON,{
 			"editor_icon"	: ["Loop", "EditorIcons"],
-			"tooltip"		: "Overwrite Loop"
+			"tooltip"		: "覆盖循环"
 			},"!channel_name.is_empty() and !file_path.is_empty() and has_channel_defaults()")
-	add_body_edit('loop', ValueType.BOOL, {'left_text':'Loop:'},
+	add_body_edit('loop', ValueType.BOOL, {'left_text':'循环：'},
 		'!channel_name.is_empty() and !file_path.is_empty() and (not has_channel_defaults() or set_loop)')
 	add_body_line_break("!channel_name.is_empty() and !file_path.is_empty()")
 	add_body_edit("set_sync_channel", ValueType.BOOL_BUTTON,{
 			"editor_icon"	: ["TransitionSync", "EditorIcons"],
-			"tooltip"		: "Enable Syncing"
+			"tooltip"		: "启用同步"
 			},"!channel_name.is_empty() and !file_path.is_empty()")
 
 	add_body_edit('sync_channel', ValueType.DYNAMIC_OPTIONS, {
-		'left_text'			:'Sync with:',
-		'placeholder'		: '(No Sync)',
+		'left_text'			:'与…同步：',
+		'placeholder'		: '（不同步）',
 		'mode'				: 3,
 		'suggestions_func' 	: get_sync_audio_channel_suggestions,
 		'validation_func'	: DialogicUtil.validate_audio_channel_name,
-		'tooltip'			: "Use an existing channel or type the name for a new channel. If channel doesn't exist, this setting will be ignored.",
+		'tooltip'			: "使用现有通道，或输入新通道的名称。如果通道不存在，此设置将被忽略。",
 	}, '!channel_name.is_empty() and !file_path.is_empty() and set_sync_channel')
 
 
@@ -348,7 +348,7 @@ func get_audio_channel_suggestions(filter:String) -> Dictionary:
 	var suggestions := {}
 	suggestions["(One-Shot SFX)"] = {
 		"value":"",
-		"tooltip": "Used for one shot sounds effects. Plays each sound in its own AudioStreamPlayer.",
+		"tooltip": "用于一次性音效。每个音效都会在各自的 AudioStreamPlayer 中播放。",
 		"editor_icon": ["GuiRadioUnchecked", "EditorIcons"]
 		}
 	# TODO use .merged after dropping 4.2 support

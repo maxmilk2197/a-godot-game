@@ -15,7 +15,7 @@ data = {
 [sub_resource type="ImageTexture" id="ImageTexture_irr0a"]
 image = SubResource("Image_cvlu0")
 
-[node name="History" type="PanelContainer"]
+[node name="历史" type="PanelContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,22 +32,20 @@ size_flags_horizontal = 3
 [node name="Title3" type="Label" parent="HistoryOptions"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Simple History"
+text = "简单历史"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HistoryOptions"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="HistoryOptions/HBoxContainer"]
 layout_mode = 2
-text = "Enabled"
+text = "已启用"
 
 [node name="HintTooltip" parent="HistoryOptions/HBoxContainer" instance=ExtResource("2_wefye")]
 layout_mode = 2
-tooltip_text = "When enabled, some events (Text, Join, Leave, Choice) will store a log.
-Also, the default layout will feature the log panel option."
+tooltip_text = "启用后，部分事件（文本、加入、离开、选项）将记录日志。\n同时，默认布局将包含日志面板选项。"
 texture = SubResource("ImageTexture_irr0a")
-hint_text = "When enabled, some events (Text, Join, Leave, Choice) will store a log.
-Also, the default layout will feature the log panel option."
+hint_text = "启用后，部分事件（文本、加入、离开、选项）将记录日志。\n同时，默认布局将包含日志面板选项。"
 
 [node name="SimpleHistoryEnabled" type="CheckBox" parent="HistoryOptions/HBoxContainer"]
 unique_name_in_owner = true
@@ -58,13 +56,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HistoryOptions/HBoxContainer2"]
 layout_mode = 2
-text = "Save and Load"
+text = "保存与加载"
 
 [node name="HintTooltip" parent="HistoryOptions/HBoxContainer2" instance=ExtResource("2_wefye")]
 layout_mode = 2
-tooltip_text = "When enabled, the simple history is included in the savegame."
+tooltip_text = "启用后，简单历史将包含在存档中。"
 texture = SubResource("ImageTexture_irr0a")
-hint_text = "When enabled, the simple history is included in the savegame. Also, it is reset on Dialogic.clear(FULL_CLEAR)."
+hint_text = "启用后，简单历史将包含在存档中。同时，它会在 Dialogic.clear(FULL_CLEAR) 时被重置。"
 
 [node name="SimpleHistorySave" type="CheckBox" parent="HistoryOptions/HBoxContainer2"]
 unique_name_in_owner = true
@@ -73,20 +71,20 @@ layout_mode = 2
 [node name="Title" type="Label" parent="HistoryOptions"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Full History"
+text = "完整历史"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="HistoryOptions"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="HistoryOptions/HBoxContainer5"]
 layout_mode = 2
-text = "Enabled"
+text = "已启用"
 
 [node name="HintTooltip" parent="HistoryOptions/HBoxContainer5" instance=ExtResource("2_wefye")]
 layout_mode = 2
-tooltip_text = "When enabled, stores a copy of each event."
+tooltip_text = "启用后，会存储每个事件的副本。"
 texture = SubResource("ImageTexture_irr0a")
-hint_text = "When enabled, stores a copy of each event."
+hint_text = "启用后，会存储每个事件的副本。"
 
 [node name="FullHistoryEnabled" type="CheckBox" parent="HistoryOptions/HBoxContainer5"]
 unique_name_in_owner = true
@@ -97,13 +95,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HistoryOptions/HBoxContainer6"]
 layout_mode = 2
-text = "Save and Load"
+text = "保存与加载"
 
 [node name="HintTooltip" parent="HistoryOptions/HBoxContainer6" instance=ExtResource("2_wefye")]
 layout_mode = 2
-tooltip_text = "When enabled, the full history is included in the savegame."
+tooltip_text = "启用后，完整历史将包含在存档中。"
 texture = SubResource("ImageTexture_irr0a")
-hint_text = "When enabled, the full history is included in the savegame. Also, it is reset on Dialogic.clear(FULL_CLEAR)."
+hint_text = "启用后，完整历史将包含在存档中。同时，它会在 Dialogic.clear(FULL_CLEAR) 时被重置。"
 
 [node name="FullHistorySave" type="CheckBox" parent="HistoryOptions/HBoxContainer6"]
 unique_name_in_owner = true
@@ -112,24 +110,20 @@ layout_mode = 2
 [node name="Title2" type="Label" parent="HistoryOptions"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Seen Events History"
+text = "已见事件历史"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="HistoryOptions"]
 layout_mode = 2
 
 [node name="EnabledLabel" type="Label" parent="HistoryOptions/HBoxContainer4"]
 layout_mode = 2
-text = "Enabled"
+text = "已启用"
 
 [node name="HintTooltip" parent="HistoryOptions/HBoxContainer4" instance=ExtResource("2_wefye")]
 layout_mode = 2
-tooltip_text = "Remembers whether events were already met in the timeline.
-When enabled the signals \"Dialogic.History.visited_event\" and \"Dialogic.History.unvisited_event\" are emitted.
-"
+tooltip_text = "记录时间线中的事件是否已经出现过。\n启用后，将发出 \"Dialogic.History.visited_event\" 和 \"Dialogic.History.unvisited_event\" 信号。"
 texture = SubResource("ImageTexture_irr0a")
-hint_text = "Remembers whether events were already met in the timeline.
-When enabled the signals \"Dialogic.History.visited_event\" and \"Dialogic.History.unvisited_event\" are emitted.
-"
+hint_text = "记录时间线中的事件是否已经出现过。\n启用后，将发出 \"Dialogic.History.visited_event\" 和 \"Dialogic.History.unvisited_event\" 信号。"
 
 [node name="AlreadyReadHistoryEnabled" type="CheckBox" parent="HistoryOptions/HBoxContainer4"]
 unique_name_in_owner = true
@@ -140,15 +134,13 @@ layout_mode = 2
 
 [node name="EnabledLabel" type="Label" parent="HistoryOptions/HBoxContainerSaveOnAutoSave"]
 layout_mode = 2
-text = "Save on Auto-Save signal"
+text = "在自动保存信号时保存"
 
 [node name="HintTooltip" parent="HistoryOptions/HBoxContainerSaveOnAutoSave" instance=ExtResource("2_wefye")]
 layout_mode = 2
-tooltip_text = "Stores the already-visited history in a global save file when an Auto-Save occurs.
-The Auto-Save is part of the Save settings."
+tooltip_text = "发生自动保存时，将已访问的历史存储到全局存档文件中。\n自动保存属于保存设置的一部分。"
 texture = SubResource("ImageTexture_irr0a")
-hint_text = "Stores the already-visited history in a global save file when an Auto-Save occurs.
-The Auto-Save is part of the Save settings."
+hint_text = "发生自动保存时，将已访问的历史存储到全局存档文件中。\n自动保存属于保存设置的一部分。"
 
 [node name="SaveOnAutoSaveToggle" type="CheckBox" parent="HistoryOptions/HBoxContainerSaveOnAutoSave"]
 unique_name_in_owner = true
@@ -159,17 +151,13 @@ layout_mode = 2
 
 [node name="EnabledLabel" type="Label" parent="HistoryOptions/HBoxContainerSaveOnSave"]
 layout_mode = 2
-text = "Save on Save signal"
+text = "在保存信号时保存"
 
 [node name="HintTooltip" parent="HistoryOptions/HBoxContainerSaveOnSave" instance=ExtResource("2_wefye")]
 layout_mode = 2
-tooltip_text = "Stores the already-visited history in a global save file when a normal Save occurs.
-This can be done via the Dialogic.Save.save method.
-This setting ignores Auto-Saves."
+tooltip_text = "正常保存时，将已访问的历史存储到全局存档文件中。\n这可以通过 Dialogic.Save.save 方法完成。\n此设置忽略自动保存。"
 texture = SubResource("ImageTexture_irr0a")
-hint_text = "Stores the already-visited history in a global save file when a normal Save occurs.
-This can be done via the Dialogic.Save.save method.
-This setting ignores Auto-Saves."
+hint_text = "正常保存时，将已访问的历史存储到全局存档文件中。\n这可以通过 Dialogic.Save.save 方法完成。\n此设置忽略自动保存。"
 
 [node name="SaveOnSaveToggle" type="CheckBox" parent="HistoryOptions/HBoxContainerSaveOnSave"]
 unique_name_in_owner = true

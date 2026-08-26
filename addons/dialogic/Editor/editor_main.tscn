@@ -98,17 +98,17 @@ theme_type_variation = &"DialogicTabs"
 current_tab = 0
 tab_count = 7
 tab_0/icon = ExtResource("2_scwcl")
-tab_1/title = "Timeline"
+tab_1/title = "时间线"
 tab_1/icon = SubResource("ImageTexture_drcn6")
-tab_2/title = "Character"
+tab_2/title = "角色"
 tab_2/icon = ExtResource("6_8yp76")
-tab_3/title = "Glossary"
+tab_3/title = "词条"
 tab_3/icon = ExtResource("7_45ytg")
-tab_4/title = "Layouts"
+tab_4/title = "布局"
 tab_4/icon = ExtResource("8_jj1i6")
-tab_5/title = "Variables"
+tab_5/title = "变量"
 tab_5/icon = ExtResource("9_k4reh")
-tab_6/title = "Settings"
+tab_6/title = "设置"
 tab_6/icon = SubResource("ImageTexture_drcn6")
 
 [node name="CustomButtons" type="HBoxContainer" parent="EditorsManager/HSplit/VBox/Toolbar" unique_id=751359760]
@@ -126,16 +126,16 @@ script = ExtResource("11_fyce4")
 size = Vector2i(207, 100)
 
 [node name="ResourceRenameWarning" type="AcceptDialog" parent="." unique_id=811497494]
-title = "Dialogic resource renamed!"
+title = "Dialogic 资源已重命名！"
 initial_position = 5
 size = Vector2i(494, 135)
-ok_button_text = "Show Unique Identifiers"
-dialog_text = "You renamed a dialogic resource. This does NOT automatically rename the unique identifier for this resource. Consider checking in the Reference Manager if the identifiers are still the way you want them."
+ok_button_text = "显示唯一标识符"
+dialog_text = "你重命名了一个 Dialogic 资源。这不会自动重命名该资源的唯一标识符。建议在引用管理器中检查标识符是否仍然符合你的预期。"
 dialog_autowrap = true
 
 [node name="ReferenceManager" type="Window" parent="." unique_id=32733506]
 disable_3d = true
-title = "Reference Manager"
+title = "引用管理器"
 initial_position = 2
 size = Vector2i(858, 442)
 visible = false
@@ -151,7 +151,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_mevaw")
 script = ExtResource("14_l6b1p")
 
 [node name="Window" type="Window" parent="UpdateManager" unique_id=626727998]
-title = "Dialogic Update Checker"
+title = "Dialogic 更新检查器"
 initial_position = 2
 size = Vector2i(600, 400)
 visible = false

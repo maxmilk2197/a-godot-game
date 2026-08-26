@@ -27,19 +27,19 @@ layout_mode = 2
 [node name="SectionPaletteTitle" type="Label" parent="PaletteTitle" unique_id=1363742507]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Color Palette"
+text = "调色板"
 
 [node name="HintTooltip" parent="PaletteTitle" unique_id=1435911909 instance=ExtResource("2_ey6hj")]
 layout_mode = 2
-tooltip_text = "These colors are used for the events."
+tooltip_text = "这些颜色用于事件。"
 texture = null
-hint_text = "These colors are used for the events."
+hint_text = "这些颜色用于事件。"
 
 [node name="ResetColorsButton" type="Button" parent="PaletteTitle" unique_id=1870170187]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
-tooltip_text = "Reset Colors to default"
+tooltip_text = "将颜色重置为默认"
 icon = SubResource("DPITexture_1n4qk")
 flat = true
 
@@ -62,24 +62,24 @@ layout_mode = 2
 [node name="SectionTimelineTitle" type="Label" parent="TimelineTitle" unique_id=1907156909]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Visual Events"
+text = "可视化事件"
 
 [node name="HintTooltip" parent="TimelineTitle" unique_id=1668214215 instance=ExtResource("2_ey6hj")]
 layout_mode = 2
 texture = null
-hint_text = "These settings affect the visual timeline editor."
+hint_text = "这些设置影响可视化时间线编辑器。"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1886023306]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=217792898]
 layout_mode = 2
-text = "Image preview height"
+text = "图片预览高度"
 
 [node name="HintTooltip" parent="HBoxContainer" unique_id=862001461 instance=ExtResource("2_ey6hj")]
 layout_mode = 2
 texture = null
-hint_text = "If set to 0, image previews will be disabled."
+hint_text = "设为 0 时，将禁用图片预览。"
 
 [node name="ImagePreviewHeight" type="SpinBox" parent="HBoxContainer" unique_id=1027247449]
 unique_name_in_owner = true
@@ -95,12 +95,12 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer2" unique_id=670998033]
 layout_mode = 2
-text = "Event block bottom margin"
+text = "事件块底部边距"
 
 [node name="HintTooltip" parent="HBoxContainer2" unique_id=908718778 instance=ExtResource("2_ey6hj")]
 layout_mode = 2
 texture = null
-hint_text = "This adds extra space at the bottom of event blocks."
+hint_text = "这会在事件块底部增加额外空间。"
 
 [node name="EventBlockMargin" type="SpinBox" parent="HBoxContainer2" unique_id=70188244]
 unique_name_in_owner = true
@@ -116,12 +116,12 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer3" unique_id=721551439]
 layout_mode = 2
-text = "Show event names"
+text = "显示事件名称"
 
 [node name="HintTooltip" parent="HBoxContainer3" unique_id=2082656670 instance=ExtResource("2_ey6hj")]
 layout_mode = 2
 texture = null
-hint_text = "Enabling this prepends the event name at the beginning of event blocks."
+hint_text = "启用后，会在事件块开头加上事件名称。"
 
 [node name="ShowEventNames" type="CheckButton" parent="HBoxContainer3" unique_id=1287811586]
 unique_name_in_owner = true
@@ -136,13 +136,13 @@ layout_mode = 2
 [node name="SectionSections" type="Label" parent="HBoxContainer4" unique_id=1655583662]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Section Order"
+text = "分区顺序"
 
 [node name="HintTooltip" parent="HBoxContainer4" unique_id=1476589096 instance=ExtResource("2_ey6hj")]
 layout_mode = 2
-tooltip_text = "You can change the order of the event sections here. "
+tooltip_text = "你可以在此更改事件分区的顺序。"
 texture = null
-hint_text = "You can change the order of the event sections here. "
+hint_text = "你可以在此更改事件分区的顺序。"
 
 [node name="SectionList" type="Tree" parent="." unique_id=1717025163]
 unique_name_in_owner = true

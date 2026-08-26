@@ -49,7 +49,7 @@ func _is_branch_starter() -> bool:
 
 func _init() -> void:
 	event_name = "Choice"
-	event_description = "Shows a clickable option. Should be grouped together with other choices. Contains events that are played when chosen. Can have a condition."
+	event_description = "显示一个可点击的选项。应与其他选项组合在一起。包含被选中时要播放的事件。可以有条件。"
 	set_default_color('Color3')
 	event_category = "Flow"
 	event_sorting_index = 0
@@ -110,9 +110,9 @@ func get_shortcode_parameters() -> Dictionary:
 	return {
 		"else"			: {"property": "else_action", 		"default": ElseActions.DEFAULT,
 									"suggestions": func(): return {
-										"Default"	:{'value':ElseActions.DEFAULT, 'text_alt':['default']},
-										"Hide"		:{'value':ElseActions.HIDE,'text_alt':['hide'] },
-										"Disable"	:{'value':ElseActions.DISABLE,'text_alt':['disable']}}},
+										"默认"	:{'value':ElseActions.DEFAULT, 'text_alt':['default']},
+										"隐藏"		:{'value':ElseActions.HIDE,'text_alt':['hide'] },
+										"禁用"	:{'value':ElseActions.DISABLE,'text_alt':['disable']}}},
 		"alt_text"		: {"property": "disabled_text", 	"default": ""},
 		"extra_data"	: {"property": "extra_data", 		"default": {}, "custom_stored":true},
 		}
@@ -148,29 +148,29 @@ func _get_property_original_translation(property:String) -> String:
 func build_event_editor() -> void:
 	add_header_edit("text", ValueType.SINGLELINE_TEXT, {'autofocus':true})
 	add_body_edit("", ValueType.LABEL, {"text":"Condition:"})
-	add_body_edit("_has_condition", ValueType.BOOL_BUTTON, {"editor_icon":["Add", "EditorIcons"], "tooltip":"Add Condition"}, "not _has_condition")
+	add_body_edit("_has_condition", ValueType.BOOL_BUTTON, {"editor_icon":["Add", "EditorIcons"], "tooltip":"添加条件"}, "not _has_condition")
 	add_body_edit("condition", ValueType.CONDITION, {}, "_has_condition")
-	add_body_edit("_has_condition", ValueType.BOOL_BUTTON, {"editor_icon":["Remove", "EditorIcons"], "tooltip":"Remove Condition"}, "_has_condition")
-	add_body_edit("else_action", ValueType.FIXED_OPTIONS, {'left_text':'Else:',
+	add_body_edit("_has_condition", ValueType.BOOL_BUTTON, {"editor_icon":["Remove", "EditorIcons"], "tooltip":"移除条件"}, "_has_condition")
+	add_body_edit("else_action", ValueType.FIXED_OPTIONS, {'left_text':'否则：',
 		'options': [
 			{
-				'label': 'Default',
+				'label': '默认',
 				'value': ElseActions.DEFAULT,
 			},
 			{
-				'label': 'Hide',
+				'label': '隐藏',
 				'value': ElseActions.HIDE,
 			},
 			{
-				'label': 'Disable',
+				'label': '禁用',
 				'value': ElseActions.DISABLE,
 			}
 		]}, '_has_condition')
 	add_body_edit("disabled_text", ValueType.SINGLELINE_TEXT, {
-			'left_text':'Disabled text:',
-			'placeholder':'(Empty for same)'}, 'allow_alt_text()')
+			'left_text':'禁用文本：',
+			'placeholder':'（留空则相同）'}, 'allow_alt_text()')
 	add_body_line_break()
-	add_body_edit("extra_data", ValueType.DICTIONARY, {"left_text":"Extra Data:"})
+	add_body_edit("extra_data", ValueType.DICTIONARY, {"left_text":"附加数据："})
 
 
 func allow_alt_text() -> bool:

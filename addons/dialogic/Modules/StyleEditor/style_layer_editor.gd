@@ -89,7 +89,7 @@ func setup_layer_tree_item(info:Dictionary, item:TreeItem) -> void:
 	else:
 		item.set_text(0, clean_scene_name(info.path))
 		item.add_button(0, get_theme_icon("PackedScene", "EditorIcons"))
-		item.set_button_tooltip_text(0, 0, "Open Scene")
+		item.set_button_tooltip_text(0, 0, "打开场景")
 	item.set_meta("scene", info.path)
 	item.set_meta("id", info.id)
 
@@ -106,10 +106,10 @@ func load_layer(layer_id:=""):
 	var layer_info := current_style.get_layer_inherited_info(layer_id)
 
 	%SmallLayerPreview.hide()
-	if %StyleBrowser.is_premade_style_part(layer_info.get("path", "Unkown Layer")):
+	if %StyleBrowser.is_premade_style_part(layer_info.get("path", "未知图层")):
 		var premade_infos = %StyleBrowser.premade_scenes_reference[layer_info.get("path")]
-		%LayerName.text = premade_infos.get("name", "Unknown Layer")
-		%SmallLayerAuthor.text = "by "+premade_infos.get("author", "")
+		%LayerName.text = premade_infos.get("name", "未知图层")
+		%SmallLayerAuthor.text = "由 "+premade_infos.get("author", "")
 		%SmallLayerDescription.text = premade_infos.get("description", "")
 
 		if premade_infos.get("preview_image", null) and ResourceLoader.exists(premade_infos.get("preview_image")[0]):
@@ -118,7 +118,7 @@ func load_layer(layer_id:=""):
 
 	else:
 		%LayerName.text = clean_scene_name(layer_info.get("path", "Unkown Layer"))
-		%SmallLayerAuthor.text = "Custom Layer"
+		%SmallLayerAuthor.text = "自定义图层"
 		%SmallLayerDescription.text = layer_info.get("path", "Unkown Layer")
 
 	%DeleteLayerButton.disabled = layer_id == "" or current_style.inherits_anything()
@@ -178,9 +178,9 @@ func _on_add_layer_menu_pressed(index:int) -> void:
 	else:
 		find_parent("EditorView").godot_file_dialog(
 			_on_add_custom_layer_file_selected,
-			"*.tscn, Scenes",
+			"*.tscn，场景",
 			EditorFileDialog.FILE_MODE_OPEN_FILE,
-			"Open custom layer scene")
+			"打开自定义图层场景")
 
 
 func _on_replace_layer_menu_pressed(index:int) -> void:
@@ -228,14 +228,14 @@ func _on_make_custom_menu_pressed(index:int) -> void:
 			_on_make_custom_layer_file_selected,
 			"",
 			EditorFileDialog.FILE_MODE_OPEN_DIR,
-			"Select folder for new copy of layer")
+			"为新图层副本选择文件夹")
 	# The full layout
 	if index == 3:
 		find_parent("EditorView").godot_file_dialog(
 			_on_make_custom_layout_file_selected,
 			"",
 			EditorFileDialog.FILE_MODE_OPEN_DIR,
-			"Select folder for new layout scene")
+			"为新布局场景选择文件夹")
 
 
 func _on_make_custom_layer_file_selected(file:String) -> void:
@@ -346,7 +346,7 @@ func load_layout_scene_customization(custom_scene_path:String, overrides:Diction
 	if settings.is_empty():
 		var note := Label.new()
 		note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		note.text = "This layer has no exposed settings."
+		note.text = "此图层没有可暴露的设置。"
 		if not %StyleBrowser.is_premade_style_part(custom_scene_path):
 			note.text += "\n\nIf you want to add settings, make sure to have a root script in @tool mode and expose some @exported variables to show up here."
 		note.theme_type_variation = "DialogicHintText2"
@@ -428,7 +428,7 @@ func load_layout_scene_customization(custom_scene_path:String, overrides:Diction
 				var reset := Button.new()
 				reset.flat = true
 				reset.icon = get_theme_icon("Reload", "EditorIcons")
-				reset.tooltip_text = "Remove customization"
+				reset.tooltip_text = "移除自定义"
 				customization_editor_info[i["name"]]["reset"] = reset
 				reset.disabled = current_value == customization_editor_info[i["name"]]["orig"]
 				current_grid.add_child(reset)

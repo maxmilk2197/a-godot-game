@@ -8,6 +8,6 @@ offset_bottom = 43.0
 focus_mode = 2
 theme_type_variation = &"DialogicEventEdit"
 theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 1)
-text = "Placeholder Text"
+text = "占位文本"
 flat = false
 script = ExtResource("1")

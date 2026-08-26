@@ -10,14 +10,14 @@ script = ExtResource("1_sh52m")
 [node name="Label" type="Label" parent="." unique_id=573368376]
 visible = false
 layout_mode = 2
-text = "End of condition X"
+text = "条件 X 结束"
 
 [node name="AddElif" type="Button" parent="." unique_id=375367039]
 layout_mode = 2
 theme_type_variation = &"FlatButton"
-text = "Add Elif"
+text = "添加 Elif"
 
 [node name="AddElse" type="Button" parent="." unique_id=434472256]
 layout_mode = 2
 theme_type_variation = &"FlatButton"
-text = "Add Else"
+text = "添加 Else"

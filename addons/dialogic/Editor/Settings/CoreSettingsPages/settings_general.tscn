@@ -20,7 +20,7 @@ layout_mode = 2
 [node name="SectionToolsTitle" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Tools"
+text = "工具"
 
 [node name="Tools" type="Node" parent="."]
 script = ExtResource("2_3xeuv")
@@ -48,26 +48,20 @@ layout_mode = 2
 [node name="SectionBehaviourTitle" type="Label" parent="HBoxContainer5"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Layout Node Behaviour"
+text = "布局节点行为"
 
 [node name="HintTooltip" parent="HBoxContainer5" instance=ExtResource("2_kqhx5")]
 layout_mode = 2
-tooltip_text = "The layout scene configured in the Layout editor is automatically 
-instanced when calling Dialogic.start(). Depending on your game, 
-you might want it to be deleted after the dialogue, be hidden 
-(as reinstancing often is wasting resources) or kept visible. "
+tooltip_text = "在布局编辑器中配置的布局场景会在调用 Dialogic.start() 时自动实例化。\n根据你的游戏需求，你可能希望它在对话结束后被删除、被隐藏\n（因为重复实例化往往浪费资源）或保持可见。"
 texture = null
-hint_text = "The layout scene configured in the Layout editor is automatically 
-instanced when calling Dialogic.start(). Depending on your game, 
-you might want it to be deleted after the dialogue, be hidden 
-(as reinstancing often is wasting resources) or kept visible. "
+hint_text = "在布局编辑器中配置的布局场景会在调用 Dialogic.start() 时自动实例化。\n根据你的游戏需求，你可能希望它在对话结束后被删除、被隐藏\n（因为重复实例化往往浪费资源）或保持可见。"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer3"]
 layout_mode = 2
-text = "On timeline end"
+text = "时间线结束时"
 
 [node name="LayoutNodeEndBehaviour" type="OptionButton" parent="HBoxContainer3"]
 unique_name_in_owner = true
@@ -75,10 +69,11 @@ layout_mode = 2
 selected = 0
 fit_to_longest_item = false
 item_count = 3
-popup/item_0/text = "Delete Layout Node"
-popup/item_1/text = "Hide Layout Node"
+popup/item_0/text = "删除布局节点"
+popup/item_0/id = 0
+popup/item_1/text = "隐藏布局节点"
 popup/item_1/id = 1
-popup/item_2/text = "Keep Layout Node"
+popup/item_2/text = "保留布局节点"
 popup/item_2/id = 2
 
 [node name="HSeparator4" type="HSeparator" parent="."]
@@ -97,21 +92,17 @@ layout_mode = 2
 [node name="SectionExtensionsTitle" type="Label" parent="HBoxContainer6/HBoxContainer4/HBoxContainer5"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Extensions"
+text = "扩展"
 
 [node name="HintTooltip" parent="HBoxContainer6/HBoxContainer4/HBoxContainer5" instance=ExtResource("2_kqhx5")]
 layout_mode = 2
-tooltip_text = "Configure where dialogic looks for custom modules.
-
-You will have to restart the project to see the change take action."
+tooltip_text = "配置 Dialogic 查找自定义模块的位置。\n\n你需要重启项目才能使更改生效。"
 texture = null
-hint_text = "Configure where dialogic looks for custom modules.
-
-You will have to restart the project to see the change take action."
+hint_text = "配置 Dialogic 查找自定义模块的位置。\n\n你需要重启项目才能使更改生效。"
 
 [node name="Reload" type="Button" parent="HBoxContainer6/HBoxContainer4/HBoxContainer5"]
 layout_mode = 2
-text = "Reload"
+text = "重新加载"
 flat = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer6/HBoxContainer4"]
@@ -119,7 +110,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer6/HBoxContainer4/HBoxContainer"]
 layout_mode = 2
-text = "Extensions folder"
+text = "扩展文件夹"
 
 [node name="ExtensionsFolderPicker" parent="HBoxContainer6/HBoxContainer4/HBoxContainer" instance=ExtResource("3_i7rug")]
 unique_name_in_owner = true
@@ -146,18 +137,18 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer6/ExtensionsPanel/VBox/HBoxContainer6"]
 layout_mode = 2
 theme_type_variation = &"DialogicSubTitle"
-text = "Extension Creator "
+text = "扩展创建器 "
 
 [node name="HintTooltip" parent="HBoxContainer6/ExtensionsPanel/VBox/HBoxContainer6" instance=ExtResource("2_kqhx5")]
 layout_mode = 2
-tooltip_text = "Use the Exension Creator to quickly setup custom modules!"
+tooltip_text = "使用扩展创建器快速搭建自定义模块！"
 texture = null
-hint_text = "Use the Exension Creator to quickly setup custom modules!"
+hint_text = "使用扩展创建器快速搭建自定义模块！"
 
 [node name="CreateExtensionButton" type="Button" parent="HBoxContainer6/ExtensionsPanel/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Create New Extension"
+text = "创建新扩展"
 
 [node name="ExtensionCreator" type="VBoxContainer" parent="HBoxContainer6/ExtensionsPanel/VBox"]
 unique_name_in_owner = true
@@ -170,35 +161,44 @@ columns = 2
 
 [node name="NameLabel" type="Label" parent="HBoxContainer6/ExtensionsPanel/VBox/ExtensionCreator/ExtensionCreatorOptions"]
 layout_mode = 2
-text = "Name:"
+text = "名称："
 
 [node name="NameEdit" type="LineEdit" parent="HBoxContainer6/ExtensionsPanel/VBox/ExtensionCreator/ExtensionCreatorOptions"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "e.g. \"Print\", \"Item\", \"Door\", \"Quest\""
+placeholder_text = "例如：“Print”、“Item”、“Door”、“Quest”"
 
 [node name="ModeLabel" type="Label" parent="HBoxContainer6/ExtensionsPanel/VBox/ExtensionCreator/ExtensionCreatorOptions"]
 layout_mode = 2
-text = "Setup mode:"
+text = "设置模式："
 
 [node name="ExtensionMode" type="OptionButton" parent="HBoxContainer6/ExtensionsPanel/VBox/ExtensionCreator/ExtensionCreatorOptions"]
 unique_name_in_owner = true
 layout_mode = 2
 selected = 0
 item_count = 4
-popup/item_0/text = "Event only"
-popup/item_1/text = "Event+Subsystem"
+popup/item_0/text = "仅事件"
+popup/item_0/id = 0
+popup/item_1/text = "事件+子系统"
 popup/item_1/id = 1
-popup/item_2/text = "Subsystem only"
+popup/item_2/text = "仅子系统"
 popup/item_2/id = 2
-popup/item_3/text = "Complex"
+popup/item_3/text = "复杂"
 popup/item_3/id = 3
 
 [node name="SubmitExtensionButton" type="Button" parent="HBoxContainer6/ExtensionsPanel/VBox/ExtensionCreator"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Create"
+text = "创建"
+
+[node name="WarningMessage" type="RichTextLabel" parent="HBoxContainer6/ExtensionsPanel/VBox/ExtensionCreator"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=yellow]警告：扩展 <name> 与现有子系统同名。如果你不打算覆盖基础子系统，请换一个新名称。"
+fit_content = true
 
 [node name="HSeparator2" type="HSeparator" parent="."]
 layout_mode = 2
@@ -209,20 +209,20 @@ layout_mode = 2
 [node name="TimerTitle" type="Label" parent="HBoxContainer7"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Timer processing"
+text = "计时器处理"
 
 [node name="HintTooltip" parent="HBoxContainer7" instance=ExtResource("2_kqhx5")]
 layout_mode = 2
-tooltip_text = "Change whether dialogics timers process in physics_process (frame-rate independent) or process."
+tooltip_text = "更改 Dialogic 的计时器在 physics_process（与帧率无关）还是 process 中运行。"
 texture = null
-hint_text = "Change whether dialogics timers process in physics_process (frame-rate independent) or process."
+hint_text = "更改 Dialogic 的计时器在 physics_process（与帧率无关）还是 process 中运行。"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer4"]
 layout_mode = 2
-text = "Process timers in physics_process"
+text = "在 physics_process 中处理计时器"
 
 [node name="PhysicsTimerButton" type="CheckBox" parent="HBoxContainer4"]
 unique_name_in_owner = true

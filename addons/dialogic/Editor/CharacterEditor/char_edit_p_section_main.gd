@@ -4,7 +4,7 @@ extends DialogicCharacterEditorPortraitSection
 ## Tab that allows setting a custom scene for a portrait.
 
 func _get_title() -> String:
-	return "Scene"
+	return "场景"
 
 func _init() -> void:
 	hint_text = "You can use a custom scene for this portrait."
@@ -85,8 +85,8 @@ func reload_ui(data: Dictionary) -> void:
 	%OpenSceneButton.hide()
 
 	if path.is_empty():
-		%SceneLabel.text = "Default Portrait Scene"
-		%SceneLabel.tooltip_text = "Can be changed in the settings."
+		%SceneLabel.text = "默认立绘场景"
+		%SceneLabel.tooltip_text = "可以在设置中更改。"
 		%SceneLabel.add_theme_color_override("font_color", get_theme_color("readonly_color", "Editor"))
 
 	elif %PortraitSceneBrowser.is_premade_portrait_scene(path):

@@ -2,10 +2,10 @@
 extends DialogicSettingsPage
 
 ## Settings tab that holds genreal dialogic settings.
-
+var DIALOGIC_RESERVED_WORDS : Array[String] = []
 
 func _get_title() -> String:
-	return "General"
+	return "常规"
 
 
 func _get_priority() -> int:
@@ -22,9 +22,15 @@ func _ready() -> void:
 	%ExtensionsFolderPicker.value_changed.connect(_on_ExtensionsFolder_value_changed)
 	%PhysicsTimerButton.toggled.connect(_on_physics_timer_button_toggled)
 
+	%NameEdit.text_changed.connect(_on_name_edit_changed)
 
 	# Extension creator
 	%ExtensionCreator.hide()
+	
+	# Grab subsystems that exist for later use
+	for indexer in DialogicUtil.get_indexers():
+		for sub in indexer._get_subsystems():
+			DIALOGIC_RESERVED_WORDS.append(sub.name)
 
 
 func _refresh() -> void:
@@ -66,7 +72,7 @@ func _on_create_extension_button_pressed() -> void:
 func _on_submit_extension_button_pressed() -> void:
 	if %NameEdit.text.is_empty():
 		return
-
+	
 	var extensions_folder: String = ProjectSettings.get_setting('dialogic/extensions_folder', 'res://addons/dialogic_additions')
 
 	extensions_folder = extensions_folder.path_join(%NameEdit.text.to_pascal_case())
@@ -175,3 +181,12 @@ func force_event_button_list_reload() -> void:
 
 func _on_reload_pressed() -> void:
 	DialogicUtil._update_autoload_subsystem_access()
+
+
+func _on_name_edit_changed(new_text: String) -> void:
+		if new_text in DIALOGIC_RESERVED_WORDS:
+			%WarningMessage.text = "[color=yellow]警告：扩展 "+new_text+" 与现有子系统同名。如果你不打算覆盖基础子系统，请换一个新名称。"
+			%WarningMessage.visible = true
+		else:
+			%WarningMessage.visible = false
+			

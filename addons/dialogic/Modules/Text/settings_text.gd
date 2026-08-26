@@ -35,7 +35,7 @@ func _get_priority() -> int:
 
 
 func _get_title() -> String:
-	return "Text"
+	return "文本"
 
 
 func _ready() -> void:
@@ -224,7 +224,7 @@ func add_autopause_set(text: String, time: float) -> void:
 	var info := {}
 	var line_edit := LineEdit.new()
 	line_edit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	line_edit.placeholder_text = 'e.g. "?!.,;:"'
+	line_edit.placeholder_text = '例如：“?!.,;:”'
 	line_edit.text = text
 	info['text'] = line_edit
 	%AutoPauseSets.add_child(line_edit)

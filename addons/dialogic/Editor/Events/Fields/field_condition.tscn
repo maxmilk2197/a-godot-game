@@ -31,7 +31,7 @@ layout_mode = 2
 [node name="Value1Type" parent="SimpleEditor" instance=ExtResource("2_f6v80")]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Change type"
+tooltip_text = "更改类型"
 text = ""
 
 [node name="Value1Text" parent="SimpleEditor" instance=ExtResource("3_3kfwc")]
@@ -49,7 +49,7 @@ layout_mode = 2
 [node name="Value1Variable" parent="SimpleEditor" instance=ExtResource("6_5a2xd")]
 unique_name_in_owner = true
 layout_mode = 2
-placeholder_text = "Variable"
+placeholder_text = "变量"
 
 [node name="Operator" parent="SimpleEditor" instance=ExtResource("2_f6v80")]
 unique_name_in_owner = true
@@ -58,7 +58,7 @@ layout_mode = 2
 [node name="Value2Type" parent="SimpleEditor" instance=ExtResource("2_f6v80")]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Change type"
+tooltip_text = "更改类型"
 text = ""
 
 [node name="Value2Text" parent="SimpleEditor" instance=ExtResource("3_3kfwc")]
@@ -72,7 +72,7 @@ layout_mode = 2
 [node name="Value2Variable" parent="SimpleEditor" instance=ExtResource("6_5a2xd")]
 unique_name_in_owner = true
 layout_mode = 2
-placeholder_text = "Variable"
+placeholder_text = "变量"
 
 [node name="Value2Bool" parent="SimpleEditor" instance=ExtResource("5_1x02a")]
 unique_name_in_owner = true
@@ -86,13 +86,13 @@ layout_mode = 2
 mouse_filter = 1
 theme_type_variation = &"DialogicEventEdit"
 text = "VAR.Player.Health > 20 and VAR.Counter < 3 and randi()%3 == 2"
-placeholder_text = "Enter condition"
+placeholder_text = "输入条件"
 expand_to_text_length = true
 
 [node name="ToggleComplex" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Use complex expression"
+tooltip_text = "使用复杂表达式"
 toggle_mode = true
 icon = SubResource("ImageTexture_81s3d")
 

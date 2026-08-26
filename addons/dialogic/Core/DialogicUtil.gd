@@ -4,6 +4,59 @@ class_name DialogicUtil
 ## Script that container helper methods for both editor and game execution.
 ## Used whenever the same thing is needed in different parts of the plugin.
 
+#region LOCALIZATION
+
+## Chinese display names of the event types (the event_name stays in English internally).
+const EVENT_NAME_LOCALIZATION := {
+	"Audio": "音频",
+	"Wait for Input": "等待输入",
+	"Wait": "等待",
+	"Voice": "语音",
+	"Glossary": "词条",
+	"Call": "调用",
+	"End": "结束",
+	"Clear": "清除",
+	"Setting": "设置项",
+	"Condition": "条件",
+	"Choice": "选项",
+	"Set Variable": "设置变量",
+	"Comment": "注释",
+	"Character": "角色",
+	"Text Input": "文本输入",
+	"Save": "保存",
+	"Background": "背景",
+	"Label": "标签",
+	"History": "历史",
+	"Jump": "跳转",
+	"Return": "返回",
+	"Text": "文本",
+	"End Branch": "结束分支",
+	"Signal": "信号",
+	"Change Style": "更改样式",
+}
+
+## Chinese display names of the event categories (used for the visual editor sections).
+const EVENT_CATEGORY_LOCALIZATION := {
+	"Main": "主要",
+	"Audio": "音频",
+	"Visuals": "视觉",
+	"Flow": "流程",
+	"Logic": "逻辑",
+	"Other": "其他",
+}
+
+
+## Returns the Chinese display name of an event (or the original name if unknown).
+static func localize_event_name(event_name: String) -> String:
+	return EVENT_NAME_LOCALIZATION.get(event_name, event_name)
+
+
+## Returns the Chinese display name of an event category (or the original if unknown).
+static func localize_event_category(category: String) -> String:
+	return EVENT_CATEGORY_LOCALIZATION.get(category, category)
+
+#endregion
+
 #region EDITOR
 
 ## This method should be used instead of EditorInterface.get_editor_scale(), because if you use that
@@ -345,7 +398,7 @@ static func get_scene_export_defaults(node:Node) -> Dictionary:
 
 static func make_file_custom(original_file:String, target_folder:String, new_file_name := "", new_folder_name := "") -> String:
 	if not ResourceLoader.exists(original_file):
-		push_error("[Dialogic] Unable to make file with invalid path custom!")
+		push_error("[Dialogic] 无法创建自定义路径无效的文件！")
 		return ""
 
 	if new_folder_name:
@@ -644,10 +697,10 @@ static func get_character_suggestions(_search_text:String, current_value:Dialogi
 	var icon := load("res://addons/dialogic/Editor/Images/Resources/character.svg")
 
 	if allow_none and current_value:
-		suggestions['(No one)'] = {'value':'', 'editor_icon':["GuiRadioUnchecked", "EditorIcons"]}
+		suggestions['（无人）'] = {'value':'', 'editor_icon':["GuiRadioUnchecked", "EditorIcons"]}
 
 	if allow_all:
-		suggestions['ALL'] = {'value':'--All--', 'tooltip':'All currently joined characters leave', 'editor_icon':["GuiEllipsis", "EditorIcons"]}
+		suggestions['全部'] = {'value':'--All--', 'tooltip':'所有当前已加入的角色离开', 'editor_icon':["GuiEllipsis", "EditorIcons"]}
 
 	# Get characters in the current timeline and place them at the top of suggestions.
 	if editor_node:
@@ -671,7 +724,7 @@ static func get_character_suggestions(_search_text:String, current_value:Dialogi
 	return suggestions
 
 
-static func get_portrait_suggestions(search_text:String, character:DialogicCharacter, allow_empty := false, empty_text := "Don't Change", allow_anything:=false) -> Dictionary:
+static func get_portrait_suggestions(search_text:String, character:DialogicCharacter, allow_empty := false, empty_text := "不更改", allow_anything:=false) -> Dictionary:
 	var icon := load("res://addons/dialogic/Editor/Images/Resources/portrait.svg")
 	var suggestions := {}
 
@@ -792,11 +845,11 @@ static func get_audio_channel_suggestions(_search_text:String) -> Dictionary:
 
 		if i in channel_defaults.keys():
 			suggestions[i]["editor_icon"] = ["ProjectList", "EditorIcons"]
-			suggestions[i]["tooltip"] = "A default channel defined in the settings."
+			suggestions[i]["tooltip"] = "在设置中定义的默认通道。"
 
 		else:
 			suggestions[i]["editor_icon"] = ["AudioStreamPlayer", "EditorIcons"]
-			suggestions[i]["tooltip"] = "A temporary channel without defaults."
+			suggestions[i]["tooltip"] = "没有默认值的临时通道。"
 
 	return suggestions
 
@@ -834,6 +887,6 @@ static func validate_audio_channel_name(text: String) -> Dictionary:
 
 	if invalid_chars:
 		result['valid_text'] = channel_name_regex.sub(text, '', true)
-		result['error_tooltip'] = "Channel names cannot contain the following characters: " + "".join(invalid_chars)
+		result['error_tooltip'] = "通道名称不能包含以下字符：" + "".join(invalid_chars)
 
 	return result

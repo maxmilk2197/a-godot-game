@@ -97,7 +97,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Background"
-	event_description = "Shows or hides a background image or scene."
+	event_description = "显示或隐藏背景图片或场景。"
 	set_default_color('Color8')
 	event_category = "Visuals"
 	event_sorting_index = 0
@@ -131,15 +131,15 @@ func get_shortcode_parameters() -> Dictionary:
 
 func build_event_editor() -> void:
 	add_header_edit('_scene_type', ValueType.FIXED_OPTIONS, {
-		'left_text' :'Show',
+		'left_text' :'显示',
 		'options': [
 			{
-				'label': 'Background',
+				'label': '背景',
 				'value': SceneTypes.DEFAULT,
 				'icon': ["GuiRadioUnchecked", "EditorIcons"]
 			},
 			{
-				'label': 'Scene',
+				'label': '场景',
 				'value': SceneTypes.CUSTOM,
 				'icon': ["PackedScene", "EditorIcons"]
 			}
@@ -147,32 +147,32 @@ func build_event_editor() -> void:
 	#add_header_label("from file", "_scene_type == SceneTypes.DEFAULT")
 	add_header_edit("scene", ValueType.FILE,
 			{'file_filter':'*.tscn, *.scn; Scene Files',
-			'placeholder': "Custom scene",
+			'placeholder': "自定义场景",
 			'editor_icon': ["PackedScene", "EditorIcons"],
 			"type": "BackgroundScene, Background, Scene, Asset",
 			}, '_scene_type == SceneTypes.CUSTOM')
 	add_header_edit('_arg_type', ValueType.FIXED_OPTIONS, {
-		'left_text' : 'with',
+		'left_text' : '以',
 		'options': [
 			{
-				'label': 'Image',
+				'label': '图片',
 				'value': ArgumentTypes.IMAGE,
 				'icon': ["Image", "EditorIcons"]
 			},
 			{
-				'label': 'Color',
+				'label': '颜色',
 				'value': ArgumentTypes.COLOR,
 				'icon': ["Color", "EditorIcons"]
 			},
 			{
-				'label': 'Argument',
+				'label': '参数',
 				'value': ArgumentTypes.STRING,
 				'icon': ["String", "EditorIcons"]
 			}
 		]})
 	add_header_edit('argument', ValueType.FILE,
 			{'file_filter':'*.jpg, *.jpeg, *.png, *.webp, *.tga, *svg, *.bmp, *.dds, *.exr, *.hdr; Supported Image Files',
-			'placeholder': "No Image",
+			'placeholder': "无图片",
 			'editor_icon': ["Image", "EditorIcons"],
 			"type":"BackgroundImage, Background, Image, Asset",
 			},
@@ -180,17 +180,17 @@ func build_event_editor() -> void:
 	add_header_edit('_color_arg', ValueType.COLOR, {}, '_arg_type == ArgumentTypes.COLOR')
 	add_header_edit('argument', ValueType.SINGLELINE_TEXT, {}, '_arg_type == ArgumentTypes.STRING')
 
-	add_body_edit("argument", ValueType.IMAGE_PREVIEW, {'left_text':'Preview:'},
+	add_body_edit("argument", ValueType.IMAGE_PREVIEW, {'left_text':'预览：'},
 		'(_arg_type == ArgumentTypes.IMAGE) and !argument.is_empty()')
 	add_body_line_break('(_arg_type == ArgumentTypes.IMAGE) and !argument.is_empty()')
 
 	add_body_edit("transition", ValueType.DYNAMIC_OPTIONS,
-			{'left_text':'Transition:',
+			{'left_text':'过渡：',
 			'empty_text':'Simple Fade',
 			'suggestions_func':get_transition_suggestions,
 			'editor_icon':["PopupMenu", "EditorIcons"]})
-	add_body_edit("fade", ValueType.NUMBER, {'left_text':'Fade time:'})
-	add_body_edit("await_transition", ValueType.BOOL, {'left_text':'Await Fade:', "tooltip":"If true, will wait for the duration of the transition before continuing."})
+	add_body_edit("fade", ValueType.NUMBER, {'left_text':'淡入淡出时长：'})
+	add_body_edit("await_transition", ValueType.BOOL, {'left_text':'等待淡入淡出：', "tooltip":"若为真，将等待过渡完成后再继续。"})
 
 
 func get_transition_suggestions(_filter:String="") -> Dictionary:

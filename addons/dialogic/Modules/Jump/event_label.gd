@@ -34,7 +34,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Label"
-	event_description = "Provides a point to jump to with the jump event. Can be used to split a timeline into sections."
+	event_description = "提供跳转事件的目标点。可用于将时间线分成多个部分。"
 	set_default_color('Color4')
 	event_category = "Flow"
 	event_sorting_index = 3
@@ -99,8 +99,8 @@ func _get_property_original_translation(property_name:String) -> String:
 ################################################################################
 
 func build_event_editor() -> void:
-	add_header_edit('name', ValueType.SINGLELINE_TEXT, {'left_text':'Label', 'autofocus':true})
-	add_body_edit('display_name', ValueType.SINGLELINE_TEXT, {'left_text':'Display Name:'})
+	add_header_edit('name', ValueType.SINGLELINE_TEXT, {'left_text':'标签', 'autofocus':true})
+	add_body_edit('display_name', ValueType.SINGLELINE_TEXT, {'left_text':'显示名称：'})
 
 #endregion
 

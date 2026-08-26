@@ -55,7 +55,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Jump"
-	event_description = "Allows going to another timeline or jumping to a label event in this timeline."
+	event_description = "允许跳转到另一个时间线，或跳转到本时间线中的标签事件。"
 	set_default_color('Color4')
 	event_category = "Flow"
 	event_sorting_index = 4
@@ -109,7 +109,7 @@ func get_shortcode_parameters() -> Dictionary:
 ################################################################################
 
 func build_event_editor() -> void:
-	add_header_edit('timeline_identifier', ValueType.DYNAMIC_OPTIONS, {'left_text':'Jump to',
+	add_header_edit('timeline_identifier', ValueType.DYNAMIC_OPTIONS, {'left_text':'跳转到',
 		'file_extension': '.dtl',
 		'mode'			: 2,
 		'suggestions_func': get_timeline_suggestions,
@@ -117,8 +117,8 @@ func build_event_editor() -> void:
 		'empty_text'	: '(this timeline)',
 		'autofocus'		: true,
 		})
-	add_header_edit("label_name", ValueType.DYNAMIC_OPTIONS, {'left_text':"at",
-		'empty_text':'the beginning',
+	add_header_edit("label_name", ValueType.DYNAMIC_OPTIONS, {'left_text':"在",
+		'empty_text':'从头开始',
 		'suggestions_func':get_label_suggestions,
 		'editor_icon':["ArrowRight", "EditorIcons"]})
 
@@ -126,7 +126,7 @@ func build_event_editor() -> void:
 func get_timeline_suggestions(_filter:String= "") -> Dictionary:
 	var suggestions := {}
 
-	suggestions['(this timeline)'] = {'value':'', 'editor_icon':['GuiRadioUnchecked', 'EditorIcons']}
+	suggestions['（当前时间线）'] = {'value':'', 'editor_icon':['GuiRadioUnchecked', 'EditorIcons']}
 	for resource in  DialogicResourceUtil.get_timeline_directory().keys():
 		suggestions[resource] = {'value': resource, 'tooltip':DialogicResourceUtil.get_timeline_directory()[resource], 'editor_icon': ["TripleBar", "EditorIcons"]}
 	return suggestions
@@ -134,12 +134,12 @@ func get_timeline_suggestions(_filter:String= "") -> Dictionary:
 
 func get_label_suggestions(_filter:String="") -> Dictionary:
 	var suggestions := {}
-	suggestions['at the beginning'] = {'value':'', 'editor_icon':['GuiRadioUnchecked', 'EditorIcons'], "tooltip":"Starts the timeline from the beginning."}
+	suggestions['从头开始'] = {'value':'', 'editor_icon':['GuiRadioUnchecked', 'EditorIcons'], "tooltip":"从头开始播放时间线。"}
 	if timeline_identifier in DialogicResourceUtil.get_label_cache().keys():
 		for label in DialogicResourceUtil.get_label_cache()[timeline_identifier]:
 			suggestions[label] = {'value': label, 'tooltip':label, 'editor_icon': ["ArrowRight", "EditorIcons"]}
 	if len(suggestions) == 1:
-		suggestions["No label events found."] = {'value': "NOTHING", 'tooltip':"By adding label events to this timeline you can jump directly to them.", "disabled":true,}
+		suggestions['未找到标签事件。'] = {'value': "NOTHING", 'tooltip':"通过在此时间线中添加标签事件，可以直接跳转到它们。", "disabled":true,}
 	if _filter.begins_with("{"):
 		for var_path in DialogicUtil.list_variables(DialogicUtil.get_default_variables()):
 			suggestions["{"+var_path+"}"] = {'value':"{"+var_path+"}", 'icon':load("res://addons/dialogic/Editor/Images/Pieces/variable.svg")}

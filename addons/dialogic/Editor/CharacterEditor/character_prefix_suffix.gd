@@ -39,7 +39,7 @@ func _prefix_changed(text: String) -> void:
 
 
 func _get_title() -> String:
-	return "Character Prefix & Suffix"
+	return "角色前缀与后缀"
 
 
 func _show_title() -> bool:

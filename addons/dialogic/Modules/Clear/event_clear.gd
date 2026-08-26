@@ -15,6 +15,10 @@ extends DialogicEvent
 @export var clear_portrait_positions := true
 @export var clear_background := true
 
+## If true Dialogic will not actually switch the style if this is the last
+## event in a timeline, which is very common and unnecessarily resource intensive.
+var auto_avoid_style_change := true
+
 #region EXECUTE
 ################################################################################
 
@@ -26,14 +30,14 @@ func _execute() -> void:
 		final_time = min(time, time_per_event)
 
 	if clear_textbox and dialogic.has_subsystem("Text") and dialogic.Text.is_textbox_visible():
-		dialogic.Text.update_dialog_text('')
+		dialogic.Text.update_dialog_text("", true)
 		if step_by_step:
 			await dialogic.Text.hide_textbox(final_time == 0)
 		else:
 			dialogic.Text.hide_textbox(final_time == 0)
 		dialogic.current_state = dialogic.States.IDLE
 
-	if clear_portraits and dialogic.has_subsystem('Portraits') and len(dialogic.Portraits.get_joined_characters()) != 0:
+	if clear_portraits and dialogic.has_subsystem("Portraits") and len(dialogic.Portraits.get_joined_characters()) != 0:
 		if final_time == 0:
 			dialogic.Portraits.leave_all_characters("Instant", final_time, step_by_step)
 		else:
@@ -41,19 +45,22 @@ func _execute() -> void:
 		if step_by_step: await dialogic.get_tree().create_timer(final_time).timeout
 
 	if clear_background and dialogic.has_subsystem('Backgrounds') and dialogic.Backgrounds.has_background():
-		dialogic.Backgrounds.update_background('', '', final_time)
+		dialogic.Backgrounds.update_background("", "", final_time)
 		if step_by_step: await dialogic.get_tree().create_timer(final_time).timeout
 
-	if clear_music and dialogic.has_subsystem('Audio'):
+	if clear_music and dialogic.has_subsystem("Audio"):
 		dialogic.Audio.stop_all_one_shot_sounds()
 		if dialogic.Audio.is_any_channel_playing():
 			dialogic.Audio.stop_all_channels(final_time)
 			if step_by_step: await dialogic.get_tree().create_timer(final_time).timeout
 
-	if clear_style and dialogic.has_subsystem('Styles'):
-		dialogic.Styles.change_style()
+	if clear_style and dialogic.has_subsystem("Styles"):
+		if auto_avoid_style_change and Dialogic.current_event_idx == Dialogic.current_timeline_events.size()-1:
+			pass
+		else:
+			dialogic.Styles.change_style()
 
-	if clear_portrait_positions and dialogic.has_subsystem('Portraits'):
+	if clear_portrait_positions and dialogic.has_subsystem("Portraits"):
 		dialogic.PortraitContainers.reset_all_containers()
 
 	if not step_by_step:
@@ -69,8 +76,8 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Clear"
-	event_description = "Clears current state like text, background, portraits, style or audio."
-	set_default_color('Color9')
+	event_description = "清除当前状态，如文本、背景、立绘、样式或音频。"
+	set_default_color("Color9")
 	event_category = "Other"
 	event_sorting_index = 2
 
@@ -104,18 +111,18 @@ func get_shortcode_parameters() -> Dictionary:
 ################################################################################
 
 func build_event_editor() -> void:
-	add_header_label('Clear')
+	add_header_label('清除')
 
-	add_body_edit('time', ValueType.NUMBER, {'left_text':'Time:'})
+	add_body_edit('time', ValueType.NUMBER, {'left_text':'时间：'})
 
-	add_body_edit('step_by_step', ValueType.BOOL, {'left_text':'Step by Step:'}, 'time > 0')
+	add_body_edit('step_by_step', ValueType.BOOL, {'left_text':'逐步：'}, 'time > 0')
 	add_body_line_break()
 
-	add_body_edit('clear_textbox', ValueType.BOOL_BUTTON, {'left_text':'Clear:', 'icon':load("res://addons/dialogic/Modules/Clear/clear_textbox.svg"), 'tooltip':'Clear Textbox'})
-	add_body_edit('clear_portraits', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Clear/clear_characters.svg"), 'tooltip':'Clear Portraits'})
-	add_body_edit('clear_background', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Clear/clear_background.svg"), 'tooltip':'Clear Background'})
-	add_body_edit('clear_music', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Clear/clear_music.svg"), 'tooltip':'Clear Audio'})
-	add_body_edit('clear_style', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Clear/clear_style.svg"), 'tooltip':'Clear Style'})
-	add_body_edit('clear_portrait_positions', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Clear/clear_positions.svg"), 'tooltip':'Clear Portrait Positions'})
+	add_body_edit('clear_textbox', ValueType.BOOL_BUTTON, {'left_text':'清除：', 'icon':load("res://addons/dialogic/Modules/Clear/clear_textbox.svg"), 'tooltip':'清除文本框'})
+	add_body_edit('clear_portraits', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Clear/clear_characters.svg"), 'tooltip':'清除立绘'})
+	add_body_edit('clear_background', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Clear/clear_background.svg"), 'tooltip':'清除背景'})
+	add_body_edit('clear_music', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Clear/clear_music.svg"), 'tooltip':'清除音频'})
+	add_body_edit('clear_style', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Clear/clear_style.svg"), 'tooltip':'清除样式'})
+	add_body_edit('clear_portrait_positions', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Clear/clear_positions.svg"), 'tooltip':'清除立绘位置'})
 
 #endregion

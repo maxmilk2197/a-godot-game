@@ -5,7 +5,7 @@ var min_width := 200
 
 ## The general character settings tab
 func _get_title() -> String:
-	return "General"
+	return "常规"
 
 
 func _start_opened() -> bool:

@@ -19,7 +19,7 @@ func _ready() -> void:
 	if owner.get_parent() is SubViewport:
 		return
 
-	%TabA.text = "Broken References"
+	%TabA.text = "损坏的引用"
 	%TabA.icon = get_theme_icon("Unlinked", "EditorIcons")
 
 	owner.get_parent().visibility_changed.connect(func(): if is_visible_in_tree(): open())
@@ -196,7 +196,7 @@ func display_search_results(finds:Array[Dictionary]) -> void:
 	%ReferenceTree.visible = !finds.is_empty()
 	%Replace.disabled = finds.is_empty()
 	if finds.is_empty():
-		%State.text = "Nothing found"
+		%State.text = "未找到内容"
 	else:
 		%Replace.grab_focus()
 
@@ -320,7 +320,7 @@ func replace(timelines:Array[String], replacement_info:Array[Dictionary]) -> voi
 	replacement_info.sort_custom(func(a,b): return a.match.get_start() < b.match.get_start())
 
 	for timeline_path in timelines:
-		%State.text = "Loading '"+timeline_path+"'"
+		%State.text = "正在加载 '"+timeline_path+"'"
 
 		var timeline_file := FileAccess.open(timeline_path, FileAccess.READ_WRITE)
 		var timeline_text: String = timeline_file.get_as_text()
@@ -333,7 +333,7 @@ func replace(timelines:Array[String], replacement_info:Array[Dictionary]) -> voi
 			if replacement.timeline != timeline_path:
 				continue
 
-			%State.text = "Replacing in '"+timeline_path + "' ("+str(idx)+"/"+str(len(replacement_info))+")"
+			%State.text = "正在替换 '"+timeline_path + "' ("+str(idx)+"/"+str(len(replacement_info))+")"
 			var group := 'replace'
 			if not 'replace' in replacement.match.names:
 				group = ''
@@ -363,7 +363,7 @@ func replace(timelines:Array[String], replacement_info:Array[Dictionary]) -> voi
 
 	%Replace.disabled = true
 	%CheckButton.disabled = false
-	%State.text = "Done Replacing"
+	%State.text = "替换完成"
 
 
 func update_indicator() -> void:

@@ -30,7 +30,7 @@ func _register() -> void:
 	var add_character_button: Button = editors_manager.add_button(
 			load("res://addons/dialogic/Editor/Images/Toolbar/add-character.svg"),
 			"",
-			"New Character",
+			"新角色",
 			self, editors_manager.ButtonPlacement.SIDEBAR_LEFT_OF_FILTER)
 	add_character_button.pressed.connect(_on_create_character_button_pressed)
 	add_character_button.shortcut = Shortcut.new()
@@ -44,7 +44,7 @@ func _register() -> void:
 
 
 func _get_title() -> String:
-	return "Character"
+	return "角色"
 
 
 func _get_icon() -> Texture:
@@ -317,7 +317,7 @@ func setup_portrait_list_tab() -> void:
 func open_portrait_folder_select() -> void:
 	find_parent("EditorView").godot_file_dialog(
 		import_portraits_from_file_list, "*.svg, *.png",
-		EditorFileDialog.FILE_MODE_OPEN_FILES, "Import Images From Folder")
+		EditorFileDialog.FILE_MODE_OPEN_FILES, "从文件夹导入图片")
 
 
 func import_portraits_from_file_list(files:Array) -> void:
@@ -358,7 +358,7 @@ func import_portraits_from_file_list(files:Array) -> void:
 	something_changed()
 
 
-func add_portrait(portrait_name:String='New portrait', portrait_data:Dictionary={'scene':"", 'export_overrides':{'image':''}, 'scale':1, 'offset':Vector2(), 'mirror':false}) -> void:
+func add_portrait(portrait_name:String='新立绘', portrait_data:Dictionary={'scene':"", 'export_overrides':{'image':''}, 'scale':1, 'offset':Vector2(), 'mirror':false}) -> void:
 	var parent: TreeItem = %PortraitTree.get_root()
 	if %PortraitTree.get_selected():
 		if %PortraitTree.get_selected().get_metadata(0) and %PortraitTree.get_selected().get_metadata(0).has('group'):
@@ -525,7 +525,7 @@ func _on_item_edited() -> void:
 	selected_item = %PortraitTree.get_selected()
 	something_changed()
 	if selected_item:
-		if %PreviewLabel.text.trim_prefix('Preview of "').trim_suffix('"') == current_resource.default_portrait:
+		if %PreviewLabel.text.trim_prefix('预览："').trim_suffix('"') == current_resource.default_portrait:
 			current_resource.default_portrait = %PortraitTree.get_full_item_name(selected_item)
 		selected_item.set_editable(0, false)
 
@@ -569,7 +569,7 @@ func update_preview(force := false, ignore_settings_reload := false) -> void:
 	%ScenePreviewWarning.hide()
 
 	if selected_item and is_instance_valid(selected_item) and selected_item.get_metadata(0) != null and !selected_item.get_metadata(0).has('group'):
-		%PreviewLabel.text = 'Preview of "'+%PortraitTree.get_full_item_name(selected_item)+'"'
+		%PreviewLabel.text = '预览："'+%PortraitTree.get_full_item_name(selected_item)+'"'
 
 		var current_portrait_data: Dictionary = selected_item.get_metadata(0)
 
@@ -640,7 +640,7 @@ func update_preview(force := false, ignore_settings_reload := false) -> void:
 				else:
 					%ScenePreviewWarning.show()
 		else:
-			%PreviewLabel.text = 'Nothing to preview'
+			%PreviewLabel.text = '没有可预览的内容'
 
 		if not ignore_settings_reload:
 			for child in %PortraitSettingsSection.get_children():
@@ -648,7 +648,7 @@ func update_preview(force := false, ignore_settings_reload := false) -> void:
 					child._recheck(current_portrait_data)
 
 	else:
-		%PreviewLabel.text = 'No portrait to preview.'
+		%PreviewLabel.text = '没有可预览的立绘。'
 
 		for node in %RealPreviewPivot.get_children():
 			node.queue_free()
@@ -676,8 +676,8 @@ func _on_full_preview_available_rect_resized() -> void:
 func _on_create_character_button_pressed() -> void:
 	editors_manager.show_add_resource_dialog(
 			new_character,
-			'*.dch; DialogicCharacter',
-			'Create new character',
+			'*.dch；Dialogic 角色',
+			'创建新角色',
 			'character',
 			)
 
@@ -686,9 +686,9 @@ func _on_fit_preview_toggle_toggled(button_pressed):
 	%FitPreview_Toggle.set_pressed_no_signal(button_pressed)
 	if button_pressed:
 		%FitPreview_Toggle.icon = get_theme_icon("ScrollContainer", "EditorIcons")
-		%FitPreview_Toggle.tooltip_text = "Real scale"
+		%FitPreview_Toggle.tooltip_text = "真实比例"
 	else:
-		%FitPreview_Toggle.tooltip_text = "Fit into preview"
+		%FitPreview_Toggle.tooltip_text = "适应预览"
 		%FitPreview_Toggle.icon = get_theme_icon("CenterContainer", "EditorIcons")
 	DialogicUtil.set_editor_setting('character_preview_fit', button_pressed)
 	update_preview(false, true)

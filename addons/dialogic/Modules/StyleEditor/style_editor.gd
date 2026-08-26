@@ -17,7 +17,7 @@ var premade_style_parts := {}
 ################################################################################
 
 func _get_title() -> String:
-	return "Styles"
+	return "样式"
 
 
 func _get_icon() -> Texture:
@@ -26,7 +26,7 @@ func _get_icon() -> Texture:
 
 func _register() -> void:
 	editors_manager.register_simple_editor(self)
-	alternative_text = "Change the look of the dialog in your game"
+	alternative_text = "更改游戏中对话的外观"
 
 
 func _open(_extra_info:Variant = null) -> void:
@@ -107,7 +107,7 @@ func delete_style(style:DialogicStyle) -> void:
 	for other_style in styles:
 		if other_style.inherits == style:
 			other_style.realize_inheritance()
-			push_warning('[Dialogic] Style "',other_style.name,'" had to be realized because it inherited "', style.name,'" which was deleted!')
+			push_warning('[Dialogic] 样式 "'+other_style.name+'" 因继承的 "'+style.name+'" 已被删除而必须被实例化！')
 
 	if style.resource_path == default_style:
 		default_style = ""
@@ -168,7 +168,7 @@ func load_style_list() -> void:
 			StyleList.set_item_icon_modulate(idx, get_theme_color("warning_color", "Editor"))
 		if style.resource_path.begins_with("res://addons/dialogic"):
 			StyleList.set_item_icon_modulate(idx, get_theme_color("property_color_z", "Editor"))
-			StyleList.set_item_tooltip(idx, "This is a default style. Only edit it if you know what you are doing!")
+			StyleList.set_item_tooltip(idx, "这是默认样式。只有在你清楚自己在做什么时才编辑它！")
 			StyleList.set_item_custom_bg_color(idx, get_theme_color("property_color_z", "Editor").lerp(get_theme_color("dark_color_3", "Editor"), 0.8))
 		if style.name == latest:
 			StyleList.select(idx)
@@ -207,17 +207,17 @@ func load_style(style:DialogicStyle) -> void:
 
 	%LayoutStyleName.text = style.name
 	if style.resource_path == default_style:
-		%MakeDefaultButton.tooltip_text = "Is Default"
+		%MakeDefaultButton.tooltip_text = "已是默认"
 		%MakeDefaultButton.disabled = true
 	else:
-		%MakeDefaultButton.tooltip_text = "Make Default"
+		%MakeDefaultButton.tooltip_text = "设为默认"
 		%MakeDefaultButton.disabled = false
 
 	%StyleEditor.load_style(style)
 
 	%InheritanceButton.visible = style.inherits_anything()
 	if %InheritanceButton.visible:
-		%InheritanceButton.text = "Inherits " + style.inherits.name
+		%InheritanceButton.text = "继承自 " + style.inherits.name
 
 
 	DialogicUtil.set_editor_setting('latest_layout_style', style.name)
@@ -249,7 +249,7 @@ func _on_AddStyleMenu_selected(index:int) -> void:
 			add_style_undoable.bind(new_style),
 			'*.tres',
 			EditorFileDialog.FILE_MODE_SAVE_FILE,
-			"Select folder for new style")
+			"为新样式选择文件夹")
 
 	if index == 3:
 		if StyleList.get_selected_items().is_empty():
@@ -271,7 +271,7 @@ func _on_AddStyleMenu_selected(index:int) -> void:
 func add_style_undoable(file_path:String, style:DialogicStyle, inherits:DialogicStyle = null) -> void:
 	style.name = _get_new_name(file_path.get_file().trim_suffix('.'+file_path.get_extension()))
 	var undo_redo: EditorUndoRedoManager = DialogicUtil.get_dialogic_plugin().get_undo_redo()
-	undo_redo.create_action('Add Style', UndoRedo.MERGE_ALL)
+	undo_redo.create_action('添加样式', UndoRedo.MERGE_ALL)
 	undo_redo.add_do_method(self, "add_style", file_path, style, inherits)
 	undo_redo.add_do_method(self, "load_style_list")
 	undo_redo.add_undo_method(self, "delete_style", style)
@@ -295,7 +295,7 @@ func _on_remove_button_pressed() -> void:
 		return
 
 	if current_style.name == default_style:
-		push_warning("[Dialogic] You cannot delete the default style!")
+		push_warning("[Dialogic] 你不能删除默认样式！")
 		return
 
 	delete_style(current_style)

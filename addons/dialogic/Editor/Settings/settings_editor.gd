@@ -8,7 +8,7 @@ var registered_sections: Array[DialogicSettingsPage] = []
 
 
 func _get_title() -> String:
-	return "Settings"
+	return "设置"
 
 
 func _get_icon() -> Texture:
@@ -17,7 +17,7 @@ func _get_icon() -> Texture:
 
 func _register() -> void:
 	editors_manager.register_simple_editor(self)
-	self.alternative_text = "Customize dialogic and it's behaviour"
+	self.alternative_text = "自定义 Dialogic 及其行为"
 
 
 func _ready() -> void:
@@ -98,7 +98,7 @@ func add_registered_sections() -> void:
 			inner_vbox.get_child(-1).custom_minimum_size.y = 50
 
 			inner_vbox.add_child(title.duplicate())
-			inner_vbox.get_child(-1).text = "Information"
+			inner_vbox.get_child(-1).text = "信息"
 			var info_panel := panel.duplicate()
 			info_panel.theme_type_variation = "DialogicPanelDarkA"
 

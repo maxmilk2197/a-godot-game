@@ -19,7 +19,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "End"
-	event_description = "Ends the timeline early. Not required at the timeline end."
+	event_description = "提前结束时间线。时间线末尾不必使用。"
 	set_default_color('Color4')
 	event_category = "Flow"
 	event_sorting_index = 10
@@ -40,6 +40,6 @@ func get_shortcode() -> String:
 ################################################################################
 
 func build_event_editor() -> void:
-	add_header_label('End Timeline')
+	add_header_label('结束时间线')
 
 #endregion

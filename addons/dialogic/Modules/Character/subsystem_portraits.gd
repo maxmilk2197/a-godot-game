@@ -44,7 +44,7 @@ func _load_state(_load_flag := LoadFlags.FULL_LOAD) -> void:
 			change_character_z_index(character, character_info.get('z_index', 0))
 			character_nodes[character.get_identifier()].get_child(-1)._load_state(portrait_states.get(character.get_identifier(), {}))
 		else:
-			push_error('[Dialogic] Failed to load character "' + str(character_identifier) + '".')
+			push_error('[Dialogic] 无法加载角色 “' + str(character_identifier) + '".')
 
 	# Load Speaker Portrait
 	var speaker: Variant = dialogic.Text.speaker_identifier
@@ -153,9 +153,9 @@ func _change_portrait(character_node: Node2D, portrait: String, fade_animation:=
 				if packed_scene:
 					portrait_node = packed_scene.instantiate()
 				else:
-					push_error('[Dialogic] Portrait node "' + str(scene_path) + '" for character [' + character.display_name + '] could not be loaded. Your portrait might not show up on the screen. Confirm the path is correct.')
+					push_error('[Dialogic] 立绘节点 "'+str(scene_path)+'" 角色 ['+character.display_name+'] 加载失败。立绘可能无法显示在屏幕上。请确认路径正确。')
 			else:
-				push_error('[Dialogic] Failed to load portrait node "' + str(scene_path) + '" for character [' + character.display_name + '].')
+				push_error('[Dialogic] 立绘节点 "'+str(scene_path)+'" 角色 ['+character.display_name+'] 加载失败。')
 
 		if not portrait_node:
 			portrait_node = default_portrait_scene.instantiate()
@@ -207,7 +207,7 @@ func _change_portrait_mirror(character_node: Node2D, mirrored := false, force :=
 
 func _change_portrait_extradata(character_node: Node2D, extra_data := "") -> void:
 	if not is_instance_valid(character_node):
-		push_error("[Dialogic] Invalid character node provided.")
+		push_error("[Dialogic] 提供了无效的角色节点。")
 		return
 
 	if character_node.get_child_count() > 0:
@@ -216,7 +216,7 @@ func _change_portrait_extradata(character_node: Node2D, extra_data := "") -> voi
 		if latest_portrait and latest_portrait.has_method("_set_extra_data"):
 			latest_portrait._set_extra_data(extra_data)
 	else:
-		push_warning("[Dialogic] No portrait found for character node: " + character_node.name)
+		push_warning("[Dialogic] 未找到角色节点的立绘：" + character_node.name)
 
 func _update_character_transform(character_node:Node, time := 0.0) -> void:
 	for child in character_node.get_children():

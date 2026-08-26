@@ -6,7 +6,7 @@ extends DialogicEditor
 #region EDITOR STUFF
 
 func _get_title() -> String:
-	return "Variables"
+	return "变量"
 
 
 func _get_icon() -> Texture:
@@ -15,7 +15,7 @@ func _get_icon() -> Texture:
 
 func _register() -> void:
 	editors_manager.register_simple_editor(self)
-	alternative_text = "Create and edit dialogic variables and their default values"
+	alternative_text = "创建和编辑 Dialogic 变量及其默认值"
 
 
 func _open(_argument:Variant = null) -> void:

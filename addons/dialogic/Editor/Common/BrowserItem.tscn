@@ -101,7 +101,7 @@ offset_top = 5.0
 offset_right = -6.0
 offset_bottom = 21.0
 grow_horizontal = 0
-tooltip_text = "Currently in use"
+tooltip_text = "当前正在使用"
 stretch_mode = 2
 
 [node name="Panel" type="Panel" parent="VBox/Panel/Image"]
@@ -137,7 +137,7 @@ stretch_mode = 5
 [node name="Name" type="Label" parent="VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Dialogic Theme"
+text = "Dialogic 主题"
 horizontal_alignment = 1
 
 [node name="FocusFG" type="Panel" parent="."]

@@ -71,13 +71,13 @@ layout_mode = 2
 [node name="Title" type="Label" parent="PanelContainer/Editor/HBox" unique_id=2042431687]
 layout_mode = 2
 theme_type_variation = &"DialogicSubTitle"
-text = "Variables"
+text = "变量"
 
 [node name="Search" type="LineEdit" parent="PanelContainer/Editor" unique_id=2112236003]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Filter Variables"
+placeholder_text = "筛选变量"
 
 [node name="Tree" type="Tree" parent="PanelContainer/Editor" unique_id=913318958]
 unique_name_in_owner = true
@@ -108,28 +108,28 @@ layout_mode = 2
 [node name="String" type="Button" parent="PanelContainer/Editor/Tree/ChangeTypePopup/HBox" unique_id=592609856]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-tooltip_text = "String (Any text)"
+tooltip_text = "字符串（任意文本）"
 toggle_mode = true
 icon_alignment = 1
 
 [node name="Float" type="Button" parent="PanelContainer/Editor/Tree/ChangeTypePopup/HBox" unique_id=304875364]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-tooltip_text = "Float (Number with Decimals)"
+tooltip_text = "浮点数（带小数的数字）"
 toggle_mode = true
 icon_alignment = 1
 
 [node name="Int" type="Button" parent="PanelContainer/Editor/Tree/ChangeTypePopup/HBox" unique_id=1830794936]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-tooltip_text = "Int (Integer)"
+tooltip_text = "整数"
 toggle_mode = true
 icon_alignment = 1
 
 [node name="Bool" type="Button" parent="PanelContainer/Editor/Tree/ChangeTypePopup/HBox" unique_id=586558133]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-tooltip_text = "Bool (True/False flag)"
+tooltip_text = "布尔（真/假标志）"
 toggle_mode = true
 icon_alignment = 1
 
@@ -137,7 +137,7 @@ icon_alignment = 1
 unique_name_in_owner = true
 size = Vector2i(67, 35)
 item_count = 1
-item_0/text = "Copy"
+item_0/text = "复制"
 item_0/id = 0
 
 [node name="ReferenceInfo" type="HBoxContainer" parent="PanelContainer/Editor" unique_id=307117089]
@@ -148,12 +148,12 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0.83, 0.78, 0.62, 1)
-text = "You've made some changes to existing variables! Use the reference manager to check if something broke."
+text = "你对现有变量做了一些更改！请使用引用管理器检查是否有东西被破坏。"
 autowrap_mode = 3
 
 [node name="ReferenceManager" type="Button" parent="PanelContainer/Editor/ReferenceInfo" unique_id=1766978997]
 layout_mode = 2
-text = "Reference Manager"
+text = "引用管理器"
 
 [node name="Info" type="VBoxContainer" parent="." unique_id=227696553]
 layout_mode = 2
@@ -167,13 +167,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"DialogicSection"
-text = "How to use variables"
+text = "如何使用变量"
 
 [node name="Documentation" type="Button" parent="Info/HBox" unique_id=754140705]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"FlatButton"
-text = "Online Docs"
+text = "在线文档"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Info" unique_id=2046774878]
 layout_mode = 2
@@ -181,20 +181,7 @@ size_flags_vertical = 3
 theme_override_constants/text_highlight_h_padding = 3
 theme_override_constants/text_highlight_v_padding = 1
 bbcode_enabled = true
-text = "Variables are a good way to keep track of all kinds of things during your game: The player name, their health or the state of the world, their relationships, quests, etc. 
-
-Setup the variables and their defaults in this editor and then change them during timelines with the [b]Set Variable[/b] event.
-
-You can use variables in conditions on the [b]Condition[/b] and [b]Choice[/b] events or as expressions in texts: 
-[color=web_gray][code]Hi I'm [color=turquoise]{PlayerName}[/color].[/code][/color]
-
-If you need to access a variables value from a script, you can do so like this:
-[color=web_gray][code]print([color=goldenrod]Dialogic[/color].[color=olive_drab]VAR[/color].[color=turquoise]MyVariable[/color])
-[color=goldenrod]Dialogic[/color].[color=olive_drab]VAR[/color].[color=turquoise]AnotherVariable[/color] = 42[/code][/color]
-
-You can create variable groups with [img]res://addons/dialogic/Editor/Images/Pieces/add-folder.svg[/img]. To access a variable in a group use it's \"path\" like so: 
-[code][color=web_gray][color=turquoise]{MyGroup.MyVariable}[/color] # in some text
-[code]print([color=goldenrod]Dialogic[/color].[color=olive_drab]VAR[/color].[color=turquoise]MyGroup[/color].[color=turquoise]MyVariable[/color])[/code] # in a script[/color][/code]"
+text = "变量是跟踪游戏中各种信息的好方法：玩家名称、生命值或世界状态、人际关系、任务等。\n\n在此编辑器中设置变量及其默认值，然后在时间线中使用 [b]设置变量[/b] 事件更改它们。\n\n你可以在 [b]条件[/b] 和 [b]选项[/b] 事件的条件中使用变量，或作为文本中的表达式：\n[color=web_gray][code]你好，我是 [color=turquoise]{PlayerName}[/color]！[/code][/color]\n\n如果你需要从脚本中访问变量的值，可以这样做：\n[color=web_gray][code]print([color=goldenrod]Dialogic[/color].[color=olive_drab]VAR[/color].[color=turquoise]MyVariable[/color])\n[color=goldenrod]Dialogic[/color].[color=olive_drab]VAR[/color].[color=turquoise]AnotherVariable[/color] = 42[/code][/color]\n\n你可以使用 [img]res://addons/dialogic/Editor/Images/Pieces/add-folder.svg[/img] 创建变量分组。要访问分组中的变量，请使用它的“路径”，例如：\n[code][color=web_gray][color=turquoise]{MyGroup.MyVariable}[/color] # 在文本中\n[code]print([color=goldenrod]Dialogic[/color].[color=olive_drab]VAR[/color].[color=turquoise]MyGroup[/color].[color=turquoise]MyVariable[/color])[/code] # 在脚本中[/color][/code]"
 
 [connection signal="text_changed" from="PanelContainer/Editor/Search" to="." method="_on_search_text_changed"]
 [connection signal="button_clicked" from="PanelContainer/Editor/Tree" to="PanelContainer/Editor/Tree" method="_on_button_clicked"]

@@ -20,7 +20,7 @@ enum LimitedAlignments {LEFT=0, RIGHT=1}
 @export_file('*.ttf', '*.tres') var custom_italic_font: String = ""
 @export_file('*.ttf', '*.tres') var custom_bold_italic_font: String = ""
 
-@export_group('Name Label')
+@export_group('姓名标签')
 @export_subgroup("Color")
 enum NameLabelColorModes {GLOBAL_COLOR, CHARACTER_COLOR, CUSTOM_COLOR}
 @export var name_label_color_mode: NameLabelColorModes = NameLabelColorModes.GLOBAL_COLOR
@@ -28,7 +28,7 @@ enum NameLabelColorModes {GLOBAL_COLOR, CHARACTER_COLOR, CUSTOM_COLOR}
 @export_subgroup("Behaviour")
 @export var name_label_alignment: Alignments = Alignments.LEFT
 @export var name_label_hide_when_no_character: bool = false
-@export_subgroup("Font & Size")
+@export_subgroup("字体与大小")
 @export var name_label_use_global_size: bool = true
 @export var name_label_custom_size: int = 15
 @export var name_label_use_global_font: bool = true

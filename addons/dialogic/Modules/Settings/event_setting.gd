@@ -70,7 +70,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Setting"
-	event_description = "Advanced: Changes a setting from the Settings subsystem."
+	event_description = "高级：更改设置子系统中的一项设置。"
 	event_sorting_index = 15
 	set_default_color('Color9')
 	event_category = "Other"
@@ -153,37 +153,37 @@ func is_valid_event(string:String) -> bool:
 func build_event_editor() -> void:
 	add_header_edit('mode', ValueType.FIXED_OPTIONS, {
 		'options': [{
-				'label': 'Set',
+				'label': '设置',
 				'value': Modes.SET,
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/default.svg")
 			},{
-				'label': 'Reset',
+				'label': '重置',
 				'value': Modes.RESET,
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/update.svg")
 			},{
-				'label': 'Reset All',
+				'label': '全部重置',
 				'value': Modes.RESET_ALL,
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/update.svg")
 			},
 			]})
 
-	add_header_edit('name', ValueType.DYNAMIC_OPTIONS, {'placeholder':'Type setting', 'suggestions_func':get_settings_suggestions}, 'mode != Modes.RESET_ALL')
-	add_header_edit('_value_type', ValueType.FIXED_OPTIONS, {'left_text':'to',
+	add_header_edit('name', ValueType.DYNAMIC_OPTIONS, {'placeholder':'类型设置', 'suggestions_func':get_settings_suggestions}, 'mode != Modes.RESET_ALL')
+	add_header_edit('_value_type', ValueType.FIXED_OPTIONS, {'left_text':'到',
 		'options': [
 			{
-				'label': 'String',
+				'label': '字符串',
 				'icon': ["String", "EditorIcons"],
 				'value': SettingValueType.STRING
 			},{
-				'label': 'Number',
+				'label': '数字',
 				'icon': ["float", "EditorIcons"],
 				'value': SettingValueType.NUMBER
 			},{
-				'label': 'Variable',
+				'label': '变量',
 				'icon': ["ClassList", "EditorIcons"],
 				'value': SettingValueType.VARIABLE
 			},{
-				'label': 'Expression',
+				'label': '表达式',
 				'icon': ["Variant", "EditorIcons"],
 				'value': SettingValueType.EXPRESSION
 			}],
@@ -192,7 +192,7 @@ func build_event_editor() -> void:
 	add_header_edit('value', ValueType.SINGLELINE_TEXT, {}, '!name.is_empty() and (_value_type == SettingValueType.STRING or _value_type == SettingValueType.EXPRESSION) and mode == Modes.SET')
 	add_header_edit('value', ValueType.NUMBER, {}, '!name.is_empty()  and _value_type == SettingValueType.NUMBER and mode == Modes.SET')
 	add_header_edit('value', ValueType.DYNAMIC_OPTIONS,
-			{'suggestions_func' : get_value_suggestions, 'placeholder':'Select Variable'},
+			{'suggestions_func' : get_value_suggestions, 'placeholder':'选择变量'},
 			'!name.is_empty() and _value_type == SettingValueType.VARIABLE and mode == Modes.SET')
 
 

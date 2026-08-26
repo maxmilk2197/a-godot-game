@@ -15,7 +15,7 @@ data = {
 [sub_resource type="ImageTexture" id="ImageTexture_udy8i"]
 image = SubResource("Image_xvnnc")
 
-[node name="Choices" type="VBoxContainer"]
+[node name="选项" type="VBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,7 +30,7 @@ layout_mode = 2
 [node name="Title" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Behaviour"
+text = "行为"
 
 [node name="VBoxContainer" type="GridContainer" parent="."]
 layout_mode = 2
@@ -42,7 +42,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/AutofocusLabel"]
 layout_mode = 2
-text = "Autofocus first choice"
+text = "自动聚焦第一个选项"
 
 [node name="Autofocus" type="CheckBox" parent="VBoxContainer"]
 unique_name_in_owner = true
@@ -53,13 +53,13 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="VBoxContainer/AppearModeLabel"]
 layout_mode = 2
-text = "Choices appear"
+text = "选项出现"
 
 [node name="HintTooltip" parent="VBoxContainer/AppearModeLabel" instance=ExtResource("2_nxutt")]
 layout_mode = 2
-tooltip_text = "Choices can appear either instantly when the text finished, after a delay, a click or either."
+tooltip_text = "选项可以在文本结束后立即出现，也可以延迟、点击或两者结合后出现。"
 texture = SubResource("ImageTexture_udy8i")
-hint_text = "Choices can appear either instantly when the text finished, after a delay, a click or either."
+hint_text = "选项可以在文本结束后立即出现，也可以延迟、点击或两者结合后出现。"
 
 [node name="RevealDelayLabel" type="HBoxContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
@@ -72,19 +72,19 @@ size_flags_horizontal = 3
 item_count = 4
 selected = 0
 fit_to_longest_item = false
-popup/item_0/text = "Instantly"
+popup/item_0/text = "立即"
 popup/item_0/id = 0
-popup/item_1/text = "After delay"
+popup/item_1/text = "延迟后"
 popup/item_1/id = 1
-popup/item_2/text = "After another click"
+popup/item_2/text = "再次点击后"
 popup/item_2/id = 2
-popup/item_3/text = "After delay or click"
+popup/item_3/text = "延迟或点击后"
 popup/item_3/id = 3
 
 [node name="RevealDelay" type="SpinBox" parent="VBoxContainer/RevealDelayLabel"]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Delay after which choices will appear (in seconds)."
+tooltip_text = "选项出现前的延迟（秒）。"
 step = 0.01
 
 [node name="DelayLabel" type="HBoxContainer" parent="VBoxContainer"]
@@ -92,13 +92,13 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="VBoxContainer/DelayLabel"]
 layout_mode = 2
-text = "Delay before choices can be pressed"
+text = "选项可点击前的延迟"
 
 [node name="HintTooltip2" parent="VBoxContainer/DelayLabel" instance=ExtResource("2_nxutt")]
 layout_mode = 2
-tooltip_text = "Adding a small delay before choices can be activated can prevent accidentally choosing an option."
+tooltip_text = "在选项可点击前添加短暂延迟，可防止误触选项。"
 texture = SubResource("ImageTexture_udy8i")
-hint_text = "Adding a small delay before choices can be activated can prevent accidentally choosing an option."
+hint_text = "在选项可点击前添加短暂延迟，可防止误触选项。"
 
 [node name="Delay" type="SpinBox" parent="VBoxContainer"]
 unique_name_in_owner = true
@@ -110,26 +110,22 @@ layout_mode = 2
 
 [node name="Label3" type="Label" parent="VBoxContainer/DefaultFalseBehaviourLabel"]
 layout_mode = 2
-text = "Default behaviour for false choices"
+text = "未满足条件的选项的默认行为"
 
 [node name="HintTooltip3" parent="VBoxContainer/DefaultFalseBehaviourLabel" instance=ExtResource("2_nxutt")]
 layout_mode = 2
-tooltip_text = "Define the default behaviour (hide or disable) for choices that have a condition that isn't met.
-
-Choices can overwrite this setting individually."
+tooltip_text = "定义条件未满足的选项的默认行为（隐藏或禁用）。\n\n每个选项可以单独覆盖此设置。"
 texture = SubResource("ImageTexture_udy8i")
-hint_text = "Define the default behaviour (hide or disable) for choices that have a condition that isn't met.
-
-Choices can overwrite this setting individually."
+hint_text = "定义条件未满足的选项的默认行为（隐藏或禁用）。\n\n每个选项可以单独覆盖此设置。"
 
 [node name="FalseBehaviour" type="OptionButton" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 item_count = 2
 selected = 0
-popup/item_0/text = "Hide"
+popup/item_0/text = "隐藏"
 popup/item_0/id = 0
-popup/item_1/text = "Disable"
+popup/item_1/text = "禁用"
 popup/item_1/id = 1
 
 [node name="HSeparator" type="HSeparator" parent="."]
@@ -141,13 +137,13 @@ layout_mode = 2
 [node name="Title2" type="Label" parent="HotkeySelection"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Choice Hotkeys"
+text = "选项快捷键"
 
 [node name="HintTooltip4" parent="HotkeySelection" instance=ExtResource("2_nxutt")]
 layout_mode = 2
-tooltip_text = "You can add more complex hotkeys (or individual ones) by editing the choice buttons of your layout scene."
+tooltip_text = "你可以通过编辑布局场景中的选项按钮来添加更复杂的快捷键（或单独的快捷键）。"
 texture = SubResource("ImageTexture_udy8i")
-hint_text = "You can add more complex hotkeys (or individual ones) by editing the choice buttons of your layout scene."
+hint_text = "你可以通过编辑布局场景中的选项按钮来添加更复杂的快捷键（或单独的快捷键）。"
 
 [node name="VBoxContainer3" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -155,7 +151,7 @@ size_flags_horizontal = 3
 
 [node name="Label4" type="Label" parent="VBoxContainer3"]
 layout_mode = 2
-text = "Hotkey type"
+text = "快捷键类型"
 
 [node name="HotkeyType" type="OptionButton" parent="VBoxContainer3"]
 unique_name_in_owner = true
@@ -163,9 +159,9 @@ layout_mode = 2
 size_flags_vertical = 4
 item_count = 2
 selected = 0
-popup/item_0/text = "No Hotkeys"
+popup/item_0/text = "无快捷键"
 popup/item_0/id = 0
-popup/item_1/text = "Default (1-9)"
+popup/item_1/text = "默认（1-9）"
 popup/item_1/id = 1
 
 [connection signal="toggled" from="VBoxContainer/Autofocus" to="." method="_on_Autofocus_toggled"]

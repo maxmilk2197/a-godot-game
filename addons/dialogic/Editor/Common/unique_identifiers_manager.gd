@@ -6,7 +6,7 @@ func _ready() -> void:
 	if owner.get_parent() is SubViewport:
 		return
 
-	%TabB.text = "Unique Identifiers"
+	%TabB.text = "唯一标识符"
 	%TabB.icon = get_theme_icon("CryptoKey", "EditorIcons")
 
 	%Search.right_icon = get_theme_icon("Search", "EditorIcons")
@@ -28,8 +28,8 @@ func fill_table() -> void:
 	var t: Tree = %IdentifierTable
 	t.set_column_expand(1, true)
 	t.clear()
-	t.set_column_title(1, "Identifier")
-	t.set_column_title(0, "Resource Path")
+	t.set_column_title(1, "标识符")
+	t.set_column_title(0, "资源路径")
 	t.set_column_title_alignment(0, 0)
 	t.set_column_title_alignment(1, 0)
 	t.create_item()

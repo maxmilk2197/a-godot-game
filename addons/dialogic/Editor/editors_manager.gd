@@ -182,7 +182,7 @@ func show_add_resource_dialog(accept_callable:Callable, filter:String = "*", tit
 		title,
 		default_name,
 		true,
-		"Do not use '\"()!;:/\\*# in character or timeline names!",
+		"请勿在角色或时间线名称中使用这些字符：'\"()!;:/\\*#",
 		default_name
 	)
 

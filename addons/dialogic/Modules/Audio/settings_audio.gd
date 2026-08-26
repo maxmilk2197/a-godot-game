@@ -46,11 +46,11 @@ func load_channel_defaults(dictionary:Dictionary) -> void:
 		i.queue_free()
 
 	var column_names := [
-		"Channel Name",
-		"Volume",
-		"Audio Bus",
-		"Fade",
-		"Loop",
+		"通道名称",
+		"音量",
+		"音频总线",
+		"淡入淡出",
+		"循环",
 		""
 	]
 
@@ -128,7 +128,7 @@ func add_channel_defaults(channel_name: String, volume: float, audio_bus: String
 
 	if channel_name.is_empty():
 		var channel_label := Label.new()
-		channel_label.text = &"One-Shot SFX"
+		channel_label.text = &"一次性音效"
 		channel_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 
 		%AudioChannelDefaults.add_child(channel_label)
@@ -145,7 +145,7 @@ func add_channel_defaults(channel_name: String, volume: float, audio_bus: String
 		info.fade_length = fade_hint
 
 		var loop_hint := HintTooltip.instantiate()
-		loop_hint.hint_text = "Looping is disabled for this channel."
+		loop_hint.hint_text = "此通道已禁用循环。"
 		%AudioChannelDefaults.add_child(loop_hint)
 		%AudioChannelDefaults.move_child(loop_hint, info.loop.get_index())
 		info.loop.queue_free()

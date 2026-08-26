@@ -28,7 +28,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Change Style"
-	event_description = "Changes to one of the styles configured in the style editor."
+	event_description = "切换到样式编辑器中配置的某个样式。"
 	set_default_color('Color8')
 	event_category = "Visuals"
 	event_sorting_index = 1
@@ -56,8 +56,8 @@ func get_shortcode_parameters() -> Dictionary:
 
 func build_event_editor() -> void:
 	add_header_edit('style_name', ValueType.DYNAMIC_OPTIONS, {
-			'left_text'			:'Use style',
-			'placeholder'		: 'Default',
+			'left_text'			:'使用样式',
+			'placeholder'		: '默认',
 			'suggestions_func' 	: get_style_suggestions,
 			'editor_icon' 		: ["PopupMenu", "EditorIcons"],
 			'autofocus'			: true})
@@ -67,7 +67,7 @@ func get_style_suggestions(_filter := "") -> Dictionary:
 	var styles: Array = ProjectSettings.get_setting('dialogic/layout/style_list', [])
 
 	var suggestions := {}
-	suggestions['<Default Style>'] = {'value':'', 'editor_icon':["MenuBar", "EditorIcons"]}
+	suggestions['<默认样式>'] = {'value':'', 'editor_icon':["MenuBar", "EditorIcons"]}
 	for i in styles:
 		var style: DialogicStyle = load(i)
 		suggestions[style.name] = {'value': style.name, 'editor_icon': ["PopupMenu", "EditorIcons"]}

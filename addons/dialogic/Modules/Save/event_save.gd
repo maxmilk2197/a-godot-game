@@ -33,7 +33,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Save"
-	event_description = "Performs a save to a save slot using Dialogics built-in saving API."
+	event_description = "使用 Dialogic 内置保存 API 保存到存档位。"
 	set_default_color('Color6')
 	event_category = "Other"
 	event_sorting_index = 0
@@ -65,6 +65,6 @@ func get_shortcode_parameters() -> Dictionary:
 ################################################################################
 
 func build_event_editor() -> void:
-	add_header_edit('slot_name', ValueType.SINGLELINE_TEXT, {'left_text':'Save to slot'})
+	add_header_edit('slot_name', ValueType.SINGLELINE_TEXT, {'left_text':'保存到存档位'})
 
 #endregion

@@ -25,13 +25,13 @@ size_flags_vertical = 0
 [node name="Label2" type="Label" parent="HBox" unique_id=390789841]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Display Name"
+text = "显示名称"
 
 [node name="HintTooltip" parent="HBox" unique_id=2005979450 instance=ExtResource("2_cxfqm")]
 layout_mode = 2
-tooltip_text = "This name will be displayed on the name label. You can use a dialogic variable. E.g. :{Player.name}"
+tooltip_text = "此名称将显示在姓名标签上。可以使用 Dialogic 变量，例如：{Player.name}"
 texture = null
-hint_text = "This name will be displayed on the name label. If you want it to change, you can use a dialogic variable. E.g.: {Player.Name}"
+hint_text = "此名称将显示在姓名标签上。如果想让它动态变化，可以使用 Dialogic 变量，例如：{Player.Name}"
 
 [node name="DisplayName" type="HBoxContainer" parent="." unique_id=1051746999]
 layout_mode = 2
@@ -46,9 +46,9 @@ caret_blink_interval = 0.5
 
 [node name="HintTooltip4" parent="DisplayName" unique_id=598606526 instance=ExtResource("2_cxfqm")]
 layout_mode = 2
-tooltip_text = "This color can be used on the name label and for occurences of the characters name in text (autocolor names)."
+tooltip_text = "此颜色可用于姓名标签以及文本中角色姓名的出现位置（姓名自动着色）。"
 texture = null
-hint_text = "This color can be used on the name label and for occurences of the characters name in text (autocolor names)."
+hint_text = "此颜色可用于姓名标签以及文本中角色姓名的出现位置（姓名自动着色）。"
 
 [node name="ColorPickerButton" type="ColorPickerButton" parent="DisplayName" unique_id=1061485751]
 unique_name_in_owner = true
@@ -65,13 +65,13 @@ size_flags_vertical = 0
 [node name="Label3" type="Label" parent="HBox2" unique_id=1585220068]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Nicknames"
+text = "昵称"
 
 [node name="HintTooltip2" parent="HBox2" unique_id=1893234037 instance=ExtResource("2_cxfqm")]
 layout_mode = 2
-tooltip_text = "If autocolor names is enabled, these will be colored in the characters color as well."
+tooltip_text = "如果启用了姓名自动着色，这些也会被染上角色颜色。"
 texture = null
-hint_text = "If autocolor names is enabled, these will be colored in the characters color as well."
+hint_text = "如果启用了姓名自动着色，这些也会被染上角色颜色。"
 
 [node name="NicknameLineEdit" type="LineEdit" parent="." unique_id=888809208]
 unique_name_in_owner = true
@@ -87,13 +87,13 @@ size_flags_vertical = 0
 [node name="Label4" type="Label" parent="HBox3" unique_id=921032409]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Description"
+text = "描述"
 
 [node name="HintTooltip3" parent="HBox3" unique_id=629870151 instance=ExtResource("2_cxfqm")]
 layout_mode = 2
-tooltip_text = "No effect, just for you."
+tooltip_text = "没有实际效果，仅供你参考。"
 texture = null
-hint_text = "No effect, just for you."
+hint_text = "没有实际效果，仅供你参考。"
 
 [node name="DescriptionTextEdit" type="TextEdit" parent="." unique_id=1368503580]
 unique_name_in_owner = true

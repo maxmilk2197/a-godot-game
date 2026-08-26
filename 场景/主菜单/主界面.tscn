@@ -254,10 +254,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = -44.000008
-offset_right = 492.80835
-offset_bottom = 177.0
+offset_left = -59.0
+offset_right = 428.80835
+offset_bottom = 221.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.835, 0.835)
@@ -267,7 +266,7 @@ texture = ExtResource("1_weg6c")
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 456.0
+offset_right = 703.0
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_j2inh")
 
@@ -310,18 +309,15 @@ metadata/_edit_use_anchors_ = true
 [node name="按钮组" type="VBoxContainer" parent="按钮" unique_id=1588682671]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -1.268858
-anchor_top = -1.4818182
-anchor_right = -0.37465048
-anchor_bottom = -0.50775737
-offset_left = 425.44443
-offset_top = 491.0
-offset_right = 1310.3044
-offset_bottom = 1481.5599
-grow_horizontal = 0
+anchor_right = 0.7152248
+anchor_bottom = 0.64937377
+offset_right = 1061.6223
+offset_bottom = 990.56
+grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.245, 0.245)
 theme_override_constants/separation = 100
+metadata/_edit_use_anchors_ = true
 
 [node name="开始游戏" type="Button" parent="按钮/按钮组" unique_id=1405177826]
 custom_minimum_size = Vector2(1172, 253)

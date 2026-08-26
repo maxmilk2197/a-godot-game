@@ -238,8 +238,8 @@ func load_event_buttons() -> void:
 
 		var button: Button = button_scene.instantiate()
 		button.resource = event_resource
-		button.visible_name = event_resource.event_name
-		button.tooltip_text = event_resource.event_name + "\n" + event_resource.event_description
+		button.visible_name = DialogicUtil.localize_event_name(event_resource.event_name)
+		button.tooltip_text = DialogicUtil.localize_event_name(event_resource.event_name) + "\n" + event_resource.event_description
 		button.event_icon = event_resource._get_icon()
 		button.set_color(event_resource.event_color)
 		button.dialogic_color_name = event_resource.dialogic_color_name
@@ -253,7 +253,7 @@ func load_event_buttons() -> void:
 
 			var section_header := HBoxContainer.new()
 			section_header.add_child(Label.new())
-			section_header.get_child(0).text = event_resource.event_category
+			section_header.get_child(0).text = DialogicUtil.localize_event_category(event_resource.event_category)
 			section_header.get_child(0).size_flags_horizontal = SIZE_SHRINK_BEGIN
 			section_header.get_child(0).theme_type_variation = "DialogicSection"
 			section_header.add_child(HSeparator.new())
@@ -490,7 +490,7 @@ func add_event_with_end_branch(resource, at_index:int=-1, auto_select:bool = fal
 
 ## Adds an event (either single nodes or with end branches) to the timeline with UndoRedo support
 func add_event_undoable(event_resource: DialogicEvent, at_index: int = -1) -> void:
-		TimelineUndoRedo.create_action("[D] Add "+event_resource.event_name+" event.")
+		TimelineUndoRedo.create_action("[D] 添加 "+DialogicUtil.localize_event_name(event_resource.event_name)+" 事件。")
 		if event_resource.can_contain_events:
 			TimelineUndoRedo.add_do_method(add_event_with_end_branch.bind(event_resource, at_index, true, true))
 			TimelineUndoRedo.add_undo_method(delete_events_at_index.bind(at_index, 2))
@@ -868,7 +868,7 @@ func move_blocks_to_index(blocks:Array, index:int):
 			if c_event.resource.can_contain_events and c_event.end_node.get_index() > check_to:
 				return
 
-	TimelineUndoRedo.create_action('[D] Move events.')
+	TimelineUndoRedo.create_action('[D] 移动事件。')
 	TimelineUndoRedo.add_do_method(move_events_by_indexes.bind(do_indexes))
 	TimelineUndoRedo.add_undo_method(move_events_by_indexes.bind(undo_indexes))
 	TimelineUndoRedo.commit_action()
@@ -916,7 +916,7 @@ func offset_blocks_by_index(blocks:Array, offset:int):
 		undo_indexes[event.get_index()+offset] = event.get_index()+int(offset<0)
 
 
-	TimelineUndoRedo.create_action("[D] Move events.")
+	TimelineUndoRedo.create_action("[D] 移动事件。")
 	TimelineUndoRedo.add_do_method(move_events_by_indexes.bind(do_indexes))
 	TimelineUndoRedo.add_undo_method(move_events_by_indexes.bind(undo_indexes))
 
@@ -1029,7 +1029,7 @@ func _on_event_popup_menu_id_pressed(id:int) -> void:
 			events_indexed =  get_events_indexed(selected_items)
 		else:
 			events_indexed =  get_events_indexed([item])
-		TimelineUndoRedo.create_action("[D] Deleting 1 event.")
+		TimelineUndoRedo.create_action("[D] 删除 1 个事件。")
 		TimelineUndoRedo.add_do_method(delete_events_indexed.bind(events_indexed))
 		TimelineUndoRedo.add_undo_method(add_events_indexed.bind(events_indexed))
 		TimelineUndoRedo.commit_action()
@@ -1041,6 +1041,7 @@ func play_from_here(index:=-1) -> void:
 		if not selected_items.is_empty():
 			index = selected_items[0].get_index()
 	timeline_editor.play_timeline(index)
+
 
 func _on_right_sidebar_resized() -> void:
 	var _scale := DialogicUtil.get_editor_scale()
@@ -1095,7 +1096,7 @@ func duplicate_selected() -> void:
 	if len(selected_items) > 0:
 		var events := get_events_indexed(selected_items).values()
 		var at_index: int = selected_items[-1].get_index()+1
-		TimelineUndoRedo.create_action("[D] Duplicate "+str(len(events))+" event(s).")
+		TimelineUndoRedo.create_action("[D] 复制 "+str(len(events))+" 个事件。")
 		TimelineUndoRedo.add_do_method(add_events_at_index.bind(events, at_index))
 		TimelineUndoRedo.add_undo_method(delete_events_at_index.bind(at_index, len(events)))
 		TimelineUndoRedo.commit_action()
@@ -1152,10 +1153,13 @@ func _input(event:InputEvent) -> void:
 			_add_event_button_pressed(DialogicLabelEvent.new(), true)
 			get_viewport().set_input_as_handled()
 
-		"Ctrl+F6" when OS.get_name() != "macOS":  # Play from here
+		"Ctrl+Shift+F6" when OS.get_name() != "macOS":  # Play from here
 			play_from_here()
+			get_viewport().set_input_as_handled()
+
 		"Ctrl+Shift+B" when OS.get_name() == "macOS":  # Play from here
 			play_from_here()
+			get_viewport().set_input_as_handled()
 
 	## Some shortcuts should be disabled when writing text.
 	var focus_owner: Control = get_viewport().gui_get_focus_owner()
@@ -1194,7 +1198,7 @@ func _input(event:InputEvent) -> void:
 		"Delete":
 			if (len(selected_items) != 0):
 				var events_indexed := get_events_indexed(selected_items)
-				TimelineUndoRedo.create_action("[D] Deleting "+str(len(selected_items))+" event(s).")
+				TimelineUndoRedo.create_action("[D] 删除 "+str(len(selected_items))+" 个事件。")
 				TimelineUndoRedo.add_do_method(delete_events_indexed.bind(events_indexed))
 				TimelineUndoRedo.add_undo_method(add_events_indexed.bind(events_indexed))
 				TimelineUndoRedo.commit_action()
@@ -1223,7 +1227,7 @@ func _input(event:InputEvent) -> void:
 			else:
 				paste_position = %Timeline.get_child_count()
 			if events_list:
-				TimelineUndoRedo.create_action("[D] Pasting "+str(len(events_list))+" event(s).")
+				TimelineUndoRedo.create_action("[D] 粘贴 "+str(len(events_list))+" 个事件。")
 				TimelineUndoRedo.add_do_method(add_events_at_index.bind(events_list, paste_position))
 				TimelineUndoRedo.add_undo_method(delete_events_at_index.bind(paste_position, len(events_list)))
 				TimelineUndoRedo.commit_action()
@@ -1232,7 +1236,7 @@ func _input(event:InputEvent) -> void:
 
 		"Ctrl+X", "Command+X":
 			var events_indexed := get_events_indexed(selected_items)
-			TimelineUndoRedo.create_action("[D] Cut "+str(len(selected_items))+" event(s).")
+			TimelineUndoRedo.create_action("[D] 剪切 "+str(len(selected_items))+" 个事件。")
 			TimelineUndoRedo.add_do_method(cut_events_indexed.bind(events_indexed))
 			TimelineUndoRedo.add_undo_method(add_events_indexed.bind(events_indexed))
 			TimelineUndoRedo.commit_action()

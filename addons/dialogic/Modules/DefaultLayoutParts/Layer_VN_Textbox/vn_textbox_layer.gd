@@ -27,7 +27,7 @@ enum AnimationsNewText {NONE, WIGGLE}
 
 @export_group("Text")
 
-@export_subgroup("Alignment & Size")
+@export_subgroup("对齐与大小")
 @export var text_alignment: Alignments= Alignments.LEFT
 @export var text_use_global_size: bool = true
 @export var text_size: int = 15
@@ -53,7 +53,7 @@ enum AnimationsNewText {NONE, WIGGLE}
 @export var box_color_use_global: bool = true
 @export var box_color_custom: Color = Color.BLACK
 
-@export_subgroup("Size & Position")
+@export_subgroup("大小与位置")
 @export var box_size: Vector2 = Vector2(550, 110)
 @export var box_margin_bottom: int = 15
 
@@ -63,7 +63,7 @@ enum AnimationsNewText {NONE, WIGGLE}
 @export var box_animation_new_text: AnimationsNewText = AnimationsNewText.NONE
 
 
-@export_group("Name Label")
+@export_group("姓名标签")
 
 @export_subgroup('Color')
 @export var name_label_use_global_color: bool= true
@@ -88,7 +88,7 @@ enum AnimationsNewText {NONE, WIGGLE}
 
 @export_group("Indicators")
 
-@export_subgroup("Next Indicator")
+@export_subgroup("下一个指示器")
 @export var next_indicator_enabled: bool = true
 @export var next_indicator_show_on_questions: bool = true
 @export var next_indicator_show_on_autoadvance: bool = false

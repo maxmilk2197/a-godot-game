@@ -27,7 +27,7 @@ theme_override_constants/separation = 0
 [node name="Title" type="Label" parent="TabList/Margin/VBox"]
 layout_mode = 2
 theme_type_variation = &"DialogicSection"
-text = "Settings"
+text = "设置"
 
 [node name="SettingsTabs" type="VBoxContainer" parent="TabList/Margin/VBox"]
 unique_name_in_owner = true
@@ -43,7 +43,7 @@ layout_mode = 2
 [node name="Title2" type="Label" parent="TabList/Margin/VBox"]
 layout_mode = 2
 theme_type_variation = &"DialogicSection"
-text = "Features"
+text = "功能"
 
 [node name="FeatureTabs" type="VBoxContainer" parent="TabList/Margin/VBox"]
 unique_name_in_owner = true

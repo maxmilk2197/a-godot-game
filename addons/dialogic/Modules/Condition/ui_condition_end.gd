@@ -16,7 +16,7 @@ func refresh() -> void:
 		# hide add elif and add else button on ELSE event
 		$AddElif.visible = parent_resource.condition_type != DialogicConditionEvent.ConditionTypes.ELSE
 		$AddElse.visible = parent_resource.condition_type != DialogicConditionEvent.ConditionTypes.ELSE
-		$Label.text = "End of "+["IF", "ELIF", "ELSE"][parent_resource.condition_type]+" ("+parent_resource.condition+")"
+		$Label.text = ["IF", "ELIF", "ELSE"][parent_resource.condition_type]+" 结束（"+parent_resource.condition+"）"
 
 		# hide add add else button if followed by ELIF or ELSE event
 		var timeline_editor := find_parent('VisualEditor')
@@ -28,7 +28,7 @@ func refresh() -> void:
 					if next_event.condition_type != DialogicConditionEvent.ConditionTypes.IF:
 						$AddElse.hide()
 		if parent_resource.condition_type == DialogicConditionEvent.ConditionTypes.ELSE:
-			$Label.text = "End of ELSE"
+			$Label.text = "ELSE 结束"
 	else:
 		hide()
 

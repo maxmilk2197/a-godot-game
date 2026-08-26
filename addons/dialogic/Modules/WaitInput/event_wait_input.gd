@@ -26,7 +26,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Wait for Input"
-	event_description = "Waits until the next advance input action."
+	event_description = "等待下一次推进输入操作。"
 	set_default_color('Color5')
 	event_category = "Flow"
 	event_sorting_index = 12
@@ -49,7 +49,7 @@ func get_shortcode_parameters() -> Dictionary:
 
 
 func build_event_editor() -> void:
-	add_header_label('Wait for input')
-	add_body_edit('hide_textbox', ValueType.BOOL, {'left_text':'Hide text box:'})
+	add_header_label('等待输入')
+	add_body_edit('hide_textbox', ValueType.BOOL, {'left_text':'隐藏文本框：'})
 
 #endregion

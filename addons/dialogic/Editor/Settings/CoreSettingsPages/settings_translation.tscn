@@ -17,7 +17,7 @@ data = {
 [sub_resource type="ImageTexture" id="ImageTexture_xbph7"]
 image = SubResource("Image_4jaem")
 
-[node name="Translations" type="VBoxContainer"]
+[node name="翻译" type="VBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -37,14 +37,14 @@ size_flags_horizontal = 3
 [node name="Title" type="Label" parent="HBox/Basics"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Basics"
+text = "基础"
 
 [node name="VBox4" type="HBoxContainer" parent="HBox/Basics"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="HBox/Basics/VBox4"]
 layout_mode = 2
-text = "Enable translations"
+text = "启用翻译"
 
 [node name="TransEnabled" type="CheckBox" parent="HBox/Basics/VBox4"]
 unique_name_in_owner = true
@@ -60,24 +60,20 @@ size_flags_horizontal = 3
 [node name="Title2" type="Label" parent="HBox/Testing"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Testing"
+text = "测试"
 
 [node name="VBox3" type="HBoxContainer" parent="HBox/Testing"]
 layout_mode = 2
 
 [node name="Label3" type="Label" parent="HBox/Testing/VBox3"]
 layout_mode = 2
-text = "Testing locale"
+text = "测试语言区域"
 
 [node name="HintTooltip8" parent="HBox/Testing/VBox3" instance=ExtResource("2_k2lou")]
 layout_mode = 2
-tooltip_text = "Change this locale to test your game in a different language (only in-editor).
-Equivalent of the testing local project setting. "
+tooltip_text = "更改此语言区域，以不同语言测试你的游戏（仅限编辑器内）。\n等同于项目的测试语言区域设置。"
 texture = SubResource("ImageTexture_xbph7")
-hint_text = "Change this locale to test your game in a different language (only in-editor).
-Equivalent of the testing local project setting. 
-
-Update dropdown list via \"Collect Translation\"."
+hint_text = "更改此语言区域，以不同语言测试你的游戏（仅限编辑器内）。\n等同于项目的测试语言区域设置。\n\n通过“收集翻译”更新下拉列表。"
 
 [node name="TestingLocale" parent="HBox/Testing/VBox3" instance=ExtResource("3_dq4j2")]
 unique_name_in_owner = true
@@ -97,7 +93,7 @@ size_flags_horizontal = 3
 [node name="SettingsTitle" type="Label" parent="TranslationSettings/VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Settings"
+text = "设置"
 
 [node name="Grid" type="GridContainer" parent="TranslationSettings/VBoxContainer"]
 layout_mode = 2
@@ -108,13 +104,13 @@ layout_mode = 2
 
 [node name="Label3" type="Label" parent="TranslationSettings/VBoxContainer/Grid/VBox"]
 layout_mode = 2
-text = "Default locale"
+text = "默认语言区域"
 
 [node name="HintTooltip" parent="TranslationSettings/VBoxContainer/Grid/VBox" instance=ExtResource("2_k2lou")]
 layout_mode = 2
-tooltip_text = "The locale of the language your timelines are written in."
+tooltip_text = "你的时间线所使用的语言区域。"
 texture = SubResource("ImageTexture_xbph7")
-hint_text = "The locale of the language your timelines are written in."
+hint_text = "你的时间线所使用的语言区域。"
 
 [node name="OrigLocale" parent="TranslationSettings/VBoxContainer/Grid" instance=ExtResource("3_dq4j2")]
 unique_name_in_owner = true
@@ -125,15 +121,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="TranslationSettings/VBoxContainer/Grid/TransFile"]
 layout_mode = 2
-text = "Translation folder"
+text = "翻译文件夹"
 
 [node name="HintTooltip3" parent="TranslationSettings/VBoxContainer/Grid/TransFile" instance=ExtResource("2_k2lou")]
 layout_mode = 2
-tooltip_text = "Choose a folder to let Dialogic save CSV files in.
-Also used when saving \"Inside Translation Folder\""
+tooltip_text = "选择 Dialogic 保存 CSV 文件的文件夹。\n保存到“翻译文件夹内”时也会用到。"
 texture = SubResource("ImageTexture_xbph7")
-hint_text = "Choose a folder to let Dialogic save CSV files in.
-Also used when saving \"Inside Translation Folder\""
+hint_text = "选择 Dialogic 保存 CSV 文件的文件夹。\n保存到“翻译文件夹内”时也会用到。"
 
 [node name="TransFolderPicker" parent="TranslationSettings/VBoxContainer/Grid" instance=ExtResource("4_kvsma")]
 unique_name_in_owner = true
@@ -146,38 +140,22 @@ layout_mode = 2
 
 [node name="OutputModeLabel" type="Label" parent="TranslationSettings/VBoxContainer/Grid/VBox2"]
 layout_mode = 2
-text = "Output mode"
+text = "输出模式"
 
 [node name="OutputModeTooltip" parent="TranslationSettings/VBoxContainer/Grid/VBox2" instance=ExtResource("2_k2lou")]
 layout_mode = 2
-tooltip_text = "Decides how many CSV files will be created.
-
-• \"Per Type\": Uses one CSV file for each type of resource: Timelines, characters, and glossaries.
-For example, 10 timelines will be combined into 1 CSV file.
-
-• \"Per File\": Uses one CSV file for each resource file.
-For example, 10 timelines will result in 10 CSV files.
-
-The \"Per File\" option utilises \"Output location\", in contrast, the \"Per Type\" will always use the Translation folder."
+tooltip_text = "决定创建多少个 CSV 文件。\n\n• “按类型”：每种资源（时间线、角色和词条）使用一个 CSV 文件。\n例如，10 条时间线将合并为 1 个 CSV 文件。\n\n• “按文件”：每个资源文件使用一个 CSV 文件。\n例如，10 条时间线将生成 10 个 CSV 文件。\n\n“按文件”选项使用“输出位置”，而“按类型”始终使用翻译文件夹。"
 texture = SubResource("ImageTexture_xbph7")
-hint_text = "Decides how many CSV files will be created.
-
-• \"Per Type\": Uses one CSV file for each type of resource: Timelines, characters, and glossaries.
-For example, 10 timelines will be combined into 1 CSV file.
-
-• \"Per File\": Uses one CSV file for each resource file.
-For example, 10 timelines will result in 10 CSV files.
-
-The \"Per File\" option utilises \"Output location\", in contrast, the \"Per Type\" will always use the Translation folder."
+hint_text = "决定创建多少个 CSV 文件。\n\n• “按类型”：每种资源（时间线、角色和词条）使用一个 CSV 文件。\n例如，10 条时间线将合并为 1 个 CSV 文件。\n\n• “按文件”：每个资源文件使用一个 CSV 文件。\n例如，10 条时间线将生成 10 个 CSV 文件。\n\n“按文件”选项使用“输出位置”，而“按类型”始终使用翻译文件夹。"
 
 [node name="TransMode" type="OptionButton" parent="TranslationSettings/VBoxContainer/Grid"]
 unique_name_in_owner = true
 layout_mode = 2
 item_count = 2
 selected = 0
-popup/item_0/text = "Per Type"
+popup/item_0/text = "按类型"
 popup/item_0/id = 0
-popup/item_1/text = "Per File"
+popup/item_1/text = "按文件"
 popup/item_1/id = 1
 
 [node name="OutputLocation" type="HBoxContainer" parent="TranslationSettings/VBoxContainer/Grid"]
@@ -185,27 +163,13 @@ layout_mode = 2
 
 [node name="OutputLocationLabel" type="Label" parent="TranslationSettings/VBoxContainer/Grid/OutputLocation"]
 layout_mode = 2
-text = "Output location"
+text = "输出位置"
 
 [node name="OutputLocationTooltip" parent="TranslationSettings/VBoxContainer/Grid/OutputLocation" instance=ExtResource("2_k2lou")]
 layout_mode = 2
-tooltip_text = "Decides where to save the generated CSV files.
-
-• \"Inside Translation Folder\": Uses the \"Translation folder\".
-
-• \"Next To Timeline\": Places them in the resource type's folder.
-
-This button requires the \"Per File\" Output mode.
-A resource type can be: Timelines, characters, and glossaries."
+tooltip_text = "决定生成 CSV 文件的保存位置。\n\n• “翻译文件夹内”：使用“翻译文件夹”。\n\n• “时间线旁”：放在资源类型的文件夹中。\n\n此按钮需要“按文件”输出模式。\n资源类型可以是：时间线、角色和词条。"
 texture = SubResource("ImageTexture_xbph7")
-hint_text = "Decides where to save the generated CSV files.
-
-• \"Inside Translation Folder\": Uses the \"Translation folder\".
-
-• \"Next To Timeline\": Places them in the resource type's folder.
-
-This button requires the \"Per File\" Output mode.
-A resource type can be: Timelines, characters, and glossaries."
+hint_text = "决定生成 CSV 文件的保存位置。\n\n• “翻译文件夹内”：使用“翻译文件夹”。\n\n• “时间线旁”：放在资源类型的文件夹中。\n\n此按钮需要“按文件”输出模式。\n资源类型可以是：时间线、角色和词条。"
 
 [node name="SaveLocationMode" type="OptionButton" parent="TranslationSettings/VBoxContainer/Grid"]
 unique_name_in_owner = true
@@ -213,9 +177,9 @@ layout_mode = 2
 disabled = true
 item_count = 2
 selected = 0
-popup/item_0/text = "Inside Translation Folder"
+popup/item_0/text = "翻译文件夹内"
 popup/item_0/id = 0
-popup/item_1/text = "Next to File"
+popup/item_1/text = "文件旁"
 popup/item_1/id = 1
 
 [node name="Control" type="Control" parent="TranslationSettings/VBoxContainer/Grid"]
@@ -227,17 +191,13 @@ layout_mode = 2
 
 [node name="AddSeparatorLabel" type="Label" parent="TranslationSettings/VBoxContainer/Grid/AddSeparatorHBox"]
 layout_mode = 2
-text = "Add Separator Lines"
+text = "添加分隔线"
 
 [node name="HintAddSeparatorEnabled" parent="TranslationSettings/VBoxContainer/Grid/AddSeparatorHBox" instance=ExtResource("2_k2lou")]
 layout_mode = 2
-tooltip_text = "Adds an empty line into per-project CSVs to differentiate between sections.
-
-For example, when a new glossary item or timeline starts, an empty line will be added."
+tooltip_text = "在项目级 CSV 中添加空行以区分各部分。\n\n例如，当新的词条条目或时间线开始时，将添加一个空行。"
 texture = SubResource("ImageTexture_xbph7")
-hint_text = "Adds an empty line into per-project CSVs to differentiate between sections.
-
-For example, when a new glossary item or timeline starts, an empty line will be added."
+hint_text = "在项目级 CSV 中添加空行以区分各部分。\n\n例如，当新的词条条目或时间线开始时，将添加一个空行。"
 
 [node name="AddSeparatorEnabled" type="CheckBox" parent="TranslationSettings/VBoxContainer/Grid"]
 unique_name_in_owner = true
@@ -256,7 +216,7 @@ layout_mode = 2
 [node name="Title3" type="Label" parent="TranslationSettings/VBoxContainer2/HBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Actions"
+text = "操作"
 
 [node name="Actions" type="GridContainer" parent="TranslationSettings/VBoxContainer2"]
 layout_mode = 2
@@ -266,38 +226,26 @@ columns = 2
 unique_name_in_owner = true
 layout_mode = 2
 disabled = true
-text = "Update CSV files"
+text = "更新 CSV 文件"
 icon = SubResource("ImageTexture_xbph7")
 
 [node name="HintTooltip5" parent="TranslationSettings/VBoxContainer2/Actions" instance=ExtResource("2_k2lou")]
 layout_mode = 2
-tooltip_text = "This button will scan all timelines and generate or update their CSV files.
-
-A Dialogic CSV file will be prefixed with \"dialogic_\".
-
-This action will be disabled if the \"Translation folder\" is missing or has an invalid path."
+tooltip_text = "此按钮将扫描所有时间线并生成或更新它们的 CSV 文件。\n\nDialogic CSV 文件将以 \"dialogic_\" 为前缀。\n\n如果“翻译文件夹”缺失或路径无效，此操作将被禁用。"
 texture = SubResource("ImageTexture_xbph7")
-hint_text = "This button will scan all timelines and generate or update their CSV files.
-
-A Dialogic CSV file will be prefixed with \"dialogic_\".
-
-This action will be disabled if the \"Translation folder\" is missing or has an invalid path."
+hint_text = "此按钮将扫描所有时间线并生成或更新它们的 CSV 文件。\n\nDialogic CSV 文件将以 \"dialogic_\" 为前缀。\n\n如果“翻译文件夹”缺失或路径无效，此操作将被禁用。"
 
 [node name="CollectTranslations" type="Button" parent="TranslationSettings/VBoxContainer2/Actions"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Collect translations"
+text = "收集翻译"
 icon = SubResource("ImageTexture_xbph7")
 
 [node name="HintTooltip6" parent="TranslationSettings/VBoxContainer2/Actions" instance=ExtResource("2_k2lou")]
 layout_mode = 2
-tooltip_text = "Godot imports CSV files as \".translation\" files.
-This buttons adds them to \"Project Settings -> Localization\".
-"
+tooltip_text = "Godot 将 CSV 文件导入为 \".translation\" 文件。\n此按钮会将它们添加到“项目设置 -> 本地化”中。"
 texture = SubResource("ImageTexture_xbph7")
-hint_text = "Godot imports CSV files as \".translation\" files.
-This buttons adds them to \"Project Settings -> Localization\".
-"
+hint_text = "Godot 将 CSV 文件导入为 \".translation\" 文件。\n此按钮会将它们添加到“项目设置 -> 本地化”中。"
 
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="TranslationSettings/VBoxContainer2/Actions"]
 custom_minimum_size = Vector2(0, 31)
@@ -310,39 +258,27 @@ layout_mode = 2
 [node name="TransRemove" type="Button" parent="TranslationSettings/VBoxContainer2/Actions"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Remove translations"
+text = "移除翻译"
 icon = SubResource("ImageTexture_xbph7")
 
 [node name="HintTooltip7" parent="TranslationSettings/VBoxContainer2/Actions" instance=ExtResource("2_k2lou")]
 layout_mode = 2
-tooltip_text = "Be very careful with this button!
-
-It will try to delete any \".csv\" and \".translation\" files that are related to Dialogic.
-CSV and translation files prefixed with \"dialogic_\" are treated as Dialogic-related.
-
-Removes translation IDs (eg. #id:33) from timelines and characters."
+tooltip_text = "使用此按钮请务必小心！\n\n它将尝试删除所有与 Dialogic 相关的 \".csv\" 和 \".translation\" 文件。\n以 \"dialogic_\" 为前缀的 CSV 和翻译文件被视为与 Dialogic 相关。\n\n从时间线和角色中移除翻译 ID（例如 #id:33）。"
 texture = SubResource("ImageTexture_xbph7")
-hint_text = "Be very careful with this button!
-
-It will try to delete any \".csv\" and \".translation\" files that are related to Dialogic.
-CSV and translation files prefixed with \"dialogic_\" are treated as Dialogic-related.
-
-Removes translation IDs (eg. #id:33) from timelines and characters."
+hint_text = "使用此按钮请务必小心！\n\n它将尝试删除所有与 Dialogic 相关的 \".csv\" 和 \".translation\" 文件。\n以 \"dialogic_\" 为前缀的 CSV 和翻译文件被视为与 Dialogic 相关。\n\n从时间线和角色中移除翻译 ID（例如 #id:33）。"
 
 [node name="StatusMessage" type="Label" parent="TranslationSettings/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "⛔ Requires valid translation folder to translate character names and the project CSV file."
+text = "⛔ 需要有效的翻译文件夹才能翻译角色名称和项目 CSV 文件。"
 autowrap_mode = 3
 
 [node name="UpdateConfirmationDialog" type="ConfirmationDialog" parent="."]
 unique_name_in_owner = true
-title = "Please Decide..."
+title = "请选择…"
 size = Vector2i(490, 200)
-ok_button_text = "Delete old & Generate new"
-dialog_text = "You have previously generated CSVs and translation files with different Translation Settings!
-
-Please consider to delete the old CSVs and then generate new changes."
+ok_button_text = "删除旧的并生成新的"
+dialog_text = "你之前使用不同的翻译设置生成了 CSV 和翻译文件！\n\n请考虑删除旧的 CSV，然后生成新的更改。"
 dialog_autowrap = true
 
 [node name="EraseConfirmationDialog" type="ConfirmationDialog" parent="."]
@@ -350,14 +286,8 @@ unique_name_in_owner = true
 position = Vector2i(0, 36)
 size = Vector2i(500, 280)
 min_size = Vector2i(300, 70)
-ok_button_text = "DELETE ALL"
-dialog_text = "You are about to:
--   Delete all CSVs prefixed with \"dialogic_\".
--   Delete the related CSV import files.
--   Delete the related translation files.
--   Remove translation IDs from timelines and characters.
--   Remove all \"dialogic\" prefixed translations from \"Project Settings -> Localization\".
--   Remove the \"_translation_keys\" and \"entries\" starting with \"Glossary/\"."
+ok_button_text = "全部删除"
+dialog_text = "你即将执行以下操作：\n-   删除所有以 \"dialogic_\" 为前缀的 CSV。\n-   删除相关的 CSV 导入文件。\n-   删除相关的翻译文件。\n-   从时间线和角色中移除翻译 ID。\n-   从“项目设置 -> 本地化”中移除所有以 \"dialogic\" 为前缀的翻译。\n-   移除 \"_translation_keys\" 以及以 \"Glossary/\" 开头的 \"entries\"。"
 dialog_autowrap = true
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]

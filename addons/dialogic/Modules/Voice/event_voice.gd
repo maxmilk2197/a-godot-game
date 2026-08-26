@@ -44,7 +44,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Voice"
-	event_description = "Allows setting an audio file that will be played along the next text event."
+	event_description = "允许设置一个将在下一条文本事件中播放的音频文件。"
 	set_default_color('Color7')
 	event_category = "Audio"
 	event_sorting_index = 5
@@ -75,14 +75,14 @@ func get_shortcode_parameters() -> Dictionary:
 
 func build_event_editor() -> void:
 	add_header_edit('file_path', ValueType.FILE, {
-			'left_text'		: 'Set',
-			'right_text'	: 'as the next voice audio',
+			'left_text'		: '设置',
+			'right_text'	: '作为下一个语音音频',
 			'file_filter'	: "*.mp3, *.ogg, *.wav",
-			'placeholder' 	: "Select file",
+			'placeholder' 	: "选择文件",
 			'editor_icon' 	: ["AudioStreamPlayer", "EditorIcons"],
 			"type":["VoiceAudio", "Audio", "Asset"]})
 	add_header_edit('file_path', ValueType.AUDIO_PREVIEW)
-	add_body_edit('volume', ValueType.NUMBER, {'left_text':'Volume:', 'mode':2}, '!file_path.is_empty()')
-	add_body_edit('audio_bus', ValueType.SINGLELINE_TEXT, {'left_text':'Audio Bus:'}, '!file_path.is_empty()')
+	add_body_edit('volume', ValueType.NUMBER, {'left_text':'音量：', 'mode':2}, '!file_path.is_empty()')
+	add_body_edit('audio_bus', ValueType.SINGLELINE_TEXT, {'left_text':'音频总线：'}, '!file_path.is_empty()')
 
 #endregion

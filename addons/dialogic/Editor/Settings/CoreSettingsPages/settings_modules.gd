@@ -3,7 +3,7 @@ extends DialogicSettingsPage
 
 
 func _get_title() -> String:
-	return "Modules"
+	return "模块"
 
 func _get_priority() -> int:
 	return 0
@@ -69,10 +69,10 @@ func _on_collapse_toggled(button_pressed:bool) -> void:
 
 	if button_pressed:
 		%Collapse.icon = get_theme_icon("ExpandTree", "EditorIcons")
-		%Collapse.tooltip_text = "Expand All"
+		%Collapse.tooltip_text = "全部展开"
 	else:
 		%Collapse.icon = get_theme_icon("CollapseTree", "EditorIcons")
-		%Collapse.tooltip_text = "Collapse All"
+		%Collapse.tooltip_text = "全部折叠"
 
 
 func _on_search_text_changed(new_text:String) -> void:
@@ -133,7 +133,7 @@ func load_modules_tree() -> void:
 			event_item.set_icon(0, get_theme_icon("Favorites", "EditorIcons"))
 			for cached_event in cached_events:
 				if cached_event.get_script().resource_path == ev:
-					event_item.set_text(0, cached_event.event_name + " Event")
+					event_item.set_text(0, DialogicUtil.localize_event_name(cached_event.event_name) + " 事件")
 					event_item.set_icon_modulate(0, cached_event.event_color)
 					var is_hidden: bool = cached_event.event_name in hidden_events
 					event_item.set_metadata(0, {"type":"Event", "event":cached_event, "hidden":is_hidden})
@@ -147,7 +147,7 @@ func load_modules_tree() -> void:
 		for subsys in i._get_subsystems():
 			var subsys_item: TreeItem = %Tree.create_item(module_item)
 			subsys_item.set_icon(0, get_theme_icon("Panels1", "EditorIcons"))
-			subsys_item.set_text(0, subsys.name + " Subsystem")
+			subsys_item.set_text(0, subsys.name + " 子系统")
 			subsys_item.set_icon_modulate(0, get_theme_color("readonly_color", "Editor"))
 			subsys_item.set_metadata(0, {"type":"Subsystem", "info":subsys})
 			subsys_item.set_meta("filter_button", %Filter_Subsystems)
@@ -167,7 +167,7 @@ func load_modules_tree() -> void:
 		for effect in i._get_text_effects():
 			var effect_item: TreeItem = %Tree.create_item(module_item)
 			effect_item.set_icon(0, get_theme_icon("RichTextEffect", "EditorIcons"))
-			effect_item.set_text(0, "Text effect ["+effect.command+"]")
+			effect_item.set_text(0, "文本效果 ["+effect.command+"]")
 			effect_item.set_icon_modulate(0, get_theme_color("property_color_z", "Editor"))
 			effect_item.set_metadata(0, {"type":"Effect", "info":effect})
 			effect_item.set_meta("filter_button", %Filter_EffectsAndModifiers)
@@ -187,7 +187,7 @@ func load_modules_tree() -> void:
 		for settings in i._get_settings_pages():
 			var settings_item: TreeItem = %Tree.create_item(module_item)
 			settings_item.set_icon(0, get_theme_icon("PluginScript", "EditorIcons"))
-			settings_item.set_text(0, module_item.get_text(0) + " Settings")
+			settings_item.set_text(0, module_item.get_text(0) + " 设置")
 			settings_item.set_icon_modulate(0, get_theme_color("readonly_color", "Editor"))
 			settings_item.set_metadata(0, {"type":"Settings", "info":settings})
 			settings_item.set_meta("filter_button", %Filter_Settings)
@@ -251,7 +251,7 @@ func _on_tree_item_selected() -> void:
 	if metadata is Dictionary:
 		match metadata.type:
 			"Event":
-				%GeneralInfo.text = "Events can be used in timelines and do all kinds of things. They often interact with subsystems and dialogic nodes."
+				%GeneralInfo.text = "事件可用于时间线中，做各种事情。它们经常与子系统和 Dialogic 节点交互。"
 
 				if %EventDefaults.get_child_count():
 					%EventDefaultsPanel.show()
@@ -271,26 +271,26 @@ func _on_tree_item_selected() -> void:
 
 			# -------------------------------------------------
 			"Subsystem":
-				%GeneralInfo.text = "Subsystems hold specialized functionality. They mostly manage communication between events and dialogic nodes. Often they provide handy methods that can be accessed by the user like this: Dialogic.Subsystem.a_method()."
+				%GeneralInfo.text = "子系统持有专门的功能。它们大多管理事件与 Dialogic 节点之间的通信。它们通常提供便捷方法供用户调用，例如：Dialogic.Subsystem.a_method()。"
 			# -------------------------------------------------
 			"Effect":
-				%GeneralInfo.text = "Text effects can be used in text events. They will be executed once reached and can take a single argument."
+				%GeneralInfo.text = "文本效果可用于文本事件中。执行到该处时会触发，并且可以接受单个参数。"
 				%ShowInFileSystem.disabled = true
 				%Open.disabled = true
 			# -------------------------------------------------
 			"Modifier":
-				%GeneralInfo.text = "Modifiers can modify text from text events before it is shown."
+				%GeneralInfo.text = "修饰器可以在文本事件的内容显示之前对其进行修改。"
 				%ShowInFileSystem.disabled = true
 				%Open.disabled = true
 			# -------------------------------------------------
 			"Style":
-				%GeneralInfo.text = "Style presets can be activated and modified in the Styles editor. They provide the design of the dialog interface in your game."
+				%GeneralInfo.text = "样式预设可以在样式编辑器中激活和修改。它们决定了游戏中对话界面的外观。"
 			# -------------------------------------------------
 			"Editor":
-				%GeneralInfo.text = "Editors provide a user interface for editing dialogic data."
+				%GeneralInfo.text = "编辑器为编辑 Dialogic 数据提供用户界面。"
 			# -------------------------------------------------
 			"Settings":
-				%GeneralInfo.text = "Settings pages provide settings that are usually used by subsystems, events and dialogic nodes."
+				%GeneralInfo.text = "设置页提供通常由子系统、事件和 Dialogic 节点使用的设置。"
 			"Module":
 				%GeneralInfo.text = ""
 				%Open.disabled = true
@@ -423,7 +423,7 @@ func load_event_settings(event:DialogicEvent) -> void:
 		var reset := Button.new()
 		reset.flat = true
 		reset.icon = get_theme_icon("Reload", "EditorIcons")
-		reset.tooltip_text = "Remove customization"
+		reset.tooltip_text = "移除自定义"
 		reset.pressed.connect(_on_export_override_reset.bind(prop_name))
 		reset.disabled = typeof(current_value) == typeof(orig_value) and current_value == orig_value
 		customization_editor_info[prop_name]["reset"] = reset

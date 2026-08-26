@@ -10,7 +10,7 @@ var current_entry := {}
 ################################################################################
 
 func _get_title() -> String:
-	return "Glossary"
+	return "词条"
 
 
 func _get_icon() -> Texture:
@@ -21,7 +21,7 @@ func _get_icon() -> Texture:
 
 func _register() -> void:
 	editors_manager.register_simple_editor(self)
-	alternative_text = "Create and edit glossaries."
+	alternative_text = "创建和编辑词条。"
 
 
 func _ready() -> void:
@@ -138,7 +138,7 @@ func _on_GlossaryList_item_selected(idx: int) -> void:
 
 
 func _on_add_glossary_file_pressed() -> void:
-	find_parent('EditorView').godot_file_dialog(create_new_glossary_file, '*.tres', EditorFileDialog.FILE_MODE_SAVE_FILE, 'Create new glossary resource')
+	find_parent('EditorView').godot_file_dialog(create_new_glossary_file, '*.tres', EditorFileDialog.FILE_MODE_SAVE_FILE, '创建新词条资源')
 
 
 func create_new_glossary_file(path:String) -> void:
@@ -149,7 +149,7 @@ func create_new_glossary_file(path:String) -> void:
 
 
 func _on_load_glossary_file_pressed() -> void:
-	find_parent('EditorView').godot_file_dialog(load_glossary_files, '*.tres', EditorFileDialog.FILE_MODE_OPEN_FILES, 'Select glossary resource')
+	find_parent('EditorView').godot_file_dialog(load_glossary_files, '*.tres', EditorFileDialog.FILE_MODE_OPEN_FILES, '选择词条资源')
 
 
 func load_glossary_files(paths:Array[String]) -> void:

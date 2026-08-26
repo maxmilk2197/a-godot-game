@@ -119,7 +119,7 @@ theme_override_constants/separation = -8
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"DialogicSubTitle"
-text = "Update Available!"
+text = "有可用更新！"
 
 [node name="UpdateName" type="Label" parent="VBoxContainer/HBoxContainer2/VBox/ScrollContainer/VBoxContainer/Panel/VBox" unique_id=1703854451]
 unique_name_in_owner = true
@@ -140,8 +140,7 @@ text = "12/31/23"
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-text = "Refresh
-"
+text = "刷新\n"
 flat = true
 
 [node name="Content" type="RichTextLabel" parent="VBoxContainer/HBoxContainer2/VBox/ScrollContainer/VBoxContainer" unique_id=1067043036]
@@ -151,11 +150,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 14
 theme_override_styles/normal = SubResource("StyleBoxEmpty_j1mw2")
 bbcode_enabled = true
-text = "[font_size=25]🎉 New alpha, new stuff![/font_size]
-If you are using dialogic 2 alphas then we've got an exciting update. It's not the beta yet, but we are getting closer! As always if you have questions or feedback it's best to reach out on [url=https://discord.gg/2hHQzkf2pX]emilios discord[/url].
-
-This alpha brings a couple of very useful new features to dialogic as well as some syntax changes and a design overhaul (and many, many bug fixes).
-"
+text = "[font_size=25]🎉 新的 alpha，新的内容！[/font_size]\n如果你在使用 dialogic 2 的 alpha 版本，那么我们有一个激动人心的更新。还不是 beta，但我们越来越接近了！和往常一样，如有问题或反馈，最好到 [url=https://discord.gg/2hHQzkf2pX]emilios 的 discord[/url] 联系。\n\n本次 alpha 为 dialogic 带来了一些非常有用的新功能，以及一些语法变更和设计改版（还有大量、大量的错误修复）。"
 fit_content = true
 
 [node name="Reactions" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBox/ScrollContainer/VBoxContainer" unique_id=11798362]
@@ -208,7 +203,7 @@ text = "😂12"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
-text = "Read Full Announcement"
+text = "阅读完整公告"
 
 [node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2/VBox/ScrollContainer/VBoxContainer" unique_id=1517373925]
 custom_minimum_size = Vector2(0, 20)
@@ -253,14 +248,14 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_vertical = 4
-text = "Restart Now"
+text = "立即重启"
 flat = true
 
 [node name="Install" type="Button" parent="VBoxContainer/HBoxContainer2/VBox/ScrollContainer/VBoxContainer/HBoxContainer/PanelContainer/HBox" unique_id=1595717196]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-text = "Install"
+text = "安装"
 flat = true
 
 [node name="InstallWarning" type="PanelContainer" parent="VBoxContainer/HBoxContainer2/VBox/ScrollContainer/VBoxContainer/HBoxContainer/PanelContainer/HBox/Install" unique_id=205031465]
@@ -281,8 +276,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_utju1")
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBox/ScrollContainer/VBoxContainer/HBoxContainer/PanelContainer/HBox/Install/InstallWarning" unique_id=941681170]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
-text = "Be careful. This will delete the addons/dialogic folder and install the new version. Any custom changes in that folder will be lost.
-To be on the safe side, use version control!"
+text = "小心！这将删除 addons/dialogic 文件夹并安装新版本。该文件夹中的所有自定义修改都会丢失。\n为了安全起见，请使用版本控制！"
 autowrap_mode = 3
 
 [node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer2" unique_id=1569425188]
@@ -297,7 +291,7 @@ alignment = 1
 [node name="CloseButton" type="Button" parent="VBoxContainer/Close" unique_id=589871687]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Close"
+text = "关闭"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/VBox/ScrollContainer/VBoxContainer/Panel/Refresh" to="." method="_on_refresh_pressed"]
 [connection signal="meta_clicked" from="VBoxContainer/HBoxContainer2/VBox/ScrollContainer/VBoxContainer/Content" to="." method="_on_content_meta_clicked"]

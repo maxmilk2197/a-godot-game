@@ -50,7 +50,7 @@ func _on_DialogicTextInput_input_confirmed(input:String) -> void:
 
 func _init() -> void:
 	event_name = "Text Input"
-	event_description = "Shows a text input field and stores it to a dialogic variable."
+	event_description = "显示一个文本输入框，并将其存储到 Dialogic 变量中。"
 	set_default_color('Color6')
 	event_category = "Logic"
 	event_sorting_index = 6
@@ -97,15 +97,15 @@ func _get_property_original_translation(property_name:String) -> String:
 ################################################################################
 
 func build_event_editor() -> void:
-	add_header_label('Show an input and store it in')
+	add_header_label('显示输入框并存储到')
 	add_header_edit('variable', ValueType.DYNAMIC_OPTIONS,
 			{'suggestions_func'	: get_var_suggestions,
 			'icon'		 : load("res://addons/dialogic/Editor/Images/Pieces/variable.svg"),
-			'placeholder':'Select Variable'})
-	add_body_edit('text', ValueType.SINGLELINE_TEXT, {'left_text':'Text:'})
-	add_body_edit('placeholder', ValueType.SINGLELINE_TEXT, {'left_text':'Placeholder:'})
-	add_body_edit('default', ValueType.SINGLELINE_TEXT, {'left_text':'Default:'})
-	add_body_edit('allow_empty', ValueType.BOOL, {'left_text':'Allow empty:'})
+			'placeholder':'选择变量'})
+	add_body_edit('text', ValueType.SINGLELINE_TEXT, {'left_text':'文本：'})
+	add_body_edit('placeholder', ValueType.SINGLELINE_TEXT, {'left_text':'占位符：'})
+	add_body_edit('default', ValueType.SINGLELINE_TEXT, {'left_text':'默认：'})
+	add_body_edit('allow_empty', ValueType.BOOL, {'left_text':'允许为空：'})
 
 
 func get_var_suggestions(filter: String = "") -> Dictionary:

@@ -25,10 +25,10 @@ color = Color(0.99607843, 0.972549, 0.9411765, 1)
 
 [node name="标题" type="Label" parent="." unique_id=241861620]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 40.0
-offset_right = 1280.0
-offset_bottom = 100.0
+offset_left = 58.0
+offset_top = 48.0
+offset_right = 234.0
+offset_bottom = 108.0
 theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 44
@@ -37,65 +37,13 @@ vertical_alignment = 1
 
 [node name="返回按钮" type="Button" parent="." unique_id=379078008]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 160.0
-offset_bottom = 90.0
+offset_left = 1763.0
+offset_top = 17.0
+offset_right = 1901.0
+offset_bottom = 70.0
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "← 返回"
-
-[node name="开关区" type="Control" parent="." unique_id=1307905163]
-anchors_preset = 0
-offset_left = 340.0
-offset_top = 200.0
-offset_right = 940.0
-offset_bottom = 400.0
-
-[node name="头像行" type="HBoxContainer" parent="开关区" unique_id=1072090058]
-layout_mode = 0
-offset_right = 600.0
-offset_bottom = 60.0
-theme_override_constants/separation = 24
-
-[node name="头像标签" type="Label" parent="开关区/头像行" unique_id=1332949076]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
-theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 30
-text = "显示对方头像"
-
-[node name="头像开关" type="Button" parent="开关区/头像行" unique_id=746877975]
-custom_minimum_size = Vector2(110, 60)
-toggle_mode = true
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 30
-text = "关"
-
-[node name="自动继续行" type="HBoxContainer" parent="开关区" unique_id=1808692439]
-layout_mode = 0
-offset_top = 90.0
-offset_right = 600.0
-offset_bottom = 150.0
-theme_override_constants/separation = 24
-
-[node name="自动继续标签" type="Label" parent="开关区/自动继续行" unique_id=1843270928]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
-theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 30
-text = "对话自动继续"
-
-[node name="自动继续开关" type="Button" parent="开关区/自动继续行" unique_id=1281234005]
-custom_minimum_size = Vector2(110, 60)
-toggle_mode = true
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 30
-text = "关"
 
 [node name="速度区" type="Control" parent="." unique_id=69999184]
 anchors_preset = 0
@@ -141,9 +89,61 @@ theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "快"
 
+[node name="开关区" type="Control" parent="." unique_id=1307905163]
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 200.0
+offset_right = 940.0
+offset_bottom = 400.0
+
+[node name="头像行" type="HBoxContainer" parent="开关区" unique_id=1072090058]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 60.0
+theme_override_constants/separation = 24
+
+[node name="头像标签" type="Label" parent="开关区/头像行" unique_id=1332949076]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 30
+text = "显示对方头像"
+
+[node name="头像开关" type="Button" parent="开关区/头像行" unique_id=746877975]
+custom_minimum_size = Vector2(110, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "关"
+
+[node name="自动继续行" type="HBoxContainer" parent="开关区" unique_id=1808692439]
+layout_mode = 0
+offset_top = 90.0
+offset_right = 600.0
+offset_bottom = 150.0
+theme_override_constants/separation = 24
+
+[node name="自动继续标签" type="Label" parent="开关区/自动继续行" unique_id=1843270928]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 30
+text = "对话自动继续"
+
+[node name="自动继续开关" type="Button" parent="开关区/自动继续行" unique_id=1281234005]
+custom_minimum_size = Vector2(110, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "关"
+
 [connection signal="pressed" from="返回按钮" to="." method="_返回设置"]
-[connection signal="toggled" from="开关区/头像行/头像开关" to="." method="_头像开关_toggled"]
-[connection signal="toggled" from="开关区/自动继续行/自动继续开关" to="." method="_自动继续开关_toggled"]
 [connection signal="pressed" from="速度区/速度行/慢" to="." method="_慢_pressed"]
 [connection signal="pressed" from="速度区/速度行/中" to="." method="_中_pressed"]
 [connection signal="pressed" from="速度区/速度行/快" to="." method="_快_pressed"]
+[connection signal="toggled" from="开关区/头像行/头像开关" to="." method="_头像开关_toggled"]
+[connection signal="toggled" from="开关区/自动继续行/自动继续开关" to="." method="_自动继续开关_toggled"]

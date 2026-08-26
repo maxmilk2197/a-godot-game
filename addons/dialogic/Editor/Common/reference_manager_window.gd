@@ -22,7 +22,7 @@ func _ready() -> void:
 	icon_button = editors_manager.add_button(
 		get_theme_icon("Unlinked", "EditorIcons"),
 		"",
-		"Reference Manager",
+		"引用管理器",
 		null,
 		editors_manager.ButtonPlacement.SIDEBAR_LEFT_OF_FILTER)
 	icon_button.pressed.connect(open)

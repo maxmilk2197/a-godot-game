@@ -134,5 +134,5 @@ static func load_sounds_from_path(path:String) -> Array[AudioStream]:
 
 func _get_configuration_warnings() -> PackedStringArray:
 	if not get_parent() is DialogicNode_DialogText:
-		return ["This should be the child of a DialogText node!"]
+		return ["这应该是 DialogText 节点的子节点！"]
 	return []

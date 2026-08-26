@@ -3,7 +3,7 @@ extends DialogicCharacterEditorPortraitSection
 
 
 func _get_title() -> String:
-	return "Typing Sound Mood"
+	return "打字音效情绪"
 
 
 func _ready() -> void:

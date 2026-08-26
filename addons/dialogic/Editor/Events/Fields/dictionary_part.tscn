@@ -45,7 +45,7 @@ layout_mode = 2
 [node name="Delete" type="Button" parent="HBox"]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Remove"
+tooltip_text = "移除"
 icon = SubResource("ImageTexture_cpbga")
 flat = true
 

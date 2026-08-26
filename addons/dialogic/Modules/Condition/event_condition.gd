@@ -42,7 +42,7 @@ func _is_branch_starter() -> bool:
 
 func _init() -> void:
 	event_name = "Condition"
-	event_description = "Allows playing the contained events only if the condition is true."
+	event_description = "仅当条件为真时，才播放其包含的事件。"
 	set_default_color('Color3')
 	event_category = "Flow"
 	event_sorting_index = 1

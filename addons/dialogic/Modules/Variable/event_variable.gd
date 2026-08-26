@@ -137,7 +137,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Set Variable"
-	event_description = "Changes a dialogic variable or a variable from an autoload."
+	event_description = "更改一个 Dialogic 变量或自动加载中的变量。"
 	set_default_color('Color6')
 	event_category = "Logic"
 	event_sorting_index = 0
@@ -250,31 +250,31 @@ func get_shortcode_parameters() -> Dictionary:
 
 func build_event_editor() -> void:
 	add_header_edit('name', ValueType.DYNAMIC_OPTIONS, {
-			'left_text'		: 'Set',
+			'left_text'		: '设置',
 			'suggestions_func' 	: get_var_suggestions,
 			'icon' 					: load("res://addons/dialogic/Editor/Images/Pieces/variable.svg"),
-			'placeholder'			:'Select Variable'}
+			'placeholder'			:'选择变量'}
 			)
 	add_header_edit('operation', ValueType.FIXED_OPTIONS, {
 		'options': [
 			{
-				'label': 'to be',
+				'label': '设为',
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/set.svg"),
 				'value': Operations.SET
 			},{
-				'label': 'to itself plus',
+				'label': '自加',
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/plus.svg"),
 				'value': Operations.ADD
 			},{
-				'label': 'to itself minus',
+				'label': '自减',
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/minus.svg"),
 				'value': Operations.SUBSTRACT
 			},{
-				'label': 'to itself multiplied by',
+				'label': '自乘',
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/multiply.svg"),
 				'value': Operations.MULTIPLY
 			},{
-				'label': 'to itself divided by',
+				'label': '自除',
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/divide.svg"),
 				'value': Operations.DIVIDE
 			}
@@ -283,27 +283,27 @@ func build_event_editor() -> void:
 	add_header_edit('_value_type', ValueType.FIXED_OPTIONS, {
 		'options': [
 			{
-				'label': 'String',
+				'label': '字符串',
 				'icon': ["String", "EditorIcons"],
 				'value': VarValueType.STRING
 			},{
-				'label': 'Number',
+				'label': '数字',
 				'icon': ["float", "EditorIcons"],
 				'value': VarValueType.NUMBER
 			},{
-				'label': 'Variable',
+				'label': '变量',
 				'icon': load("res://addons/dialogic/Editor/Images/Pieces/variable.svg"),
 				'value': VarValueType.VARIABLE
 			},{
-				'label': 'Bool',
+				'label': '布尔',
 				'icon': ["bool", "EditorIcons"],
 				'value': VarValueType.BOOL
 			},{
-				'label': 'Expression',
+				'label': '表达式',
 				'icon': ["Variant", "EditorIcons"],
 				'value': VarValueType.EXPRESSION
 			},{
-				'label': 'Random Number',
+				'label': '随机数',
 				'icon': ["RandomNumberGenerator", "EditorIcons"],
 				'value': VarValueType.RANDOM_NUMBER
 			}],
@@ -313,12 +313,12 @@ func build_event_editor() -> void:
 	add_header_edit('value', ValueType.BOOL, {}, '!name.is_empty() and (_value_type == VarValueType.BOOL) ')
 	add_header_edit('value', ValueType.NUMBER, {}, '!name.is_empty()  and _value_type == VarValueType.NUMBER')
 	add_header_edit('value', ValueType.DYNAMIC_OPTIONS,
-			{'suggestions_func' : get_value_suggestions, 'placeholder':'Select Variable'},
+			{'suggestions_func' : get_value_suggestions, 'placeholder':'选择变量'},
 			'!name.is_empty() and _value_type == VarValueType.VARIABLE')
-	add_header_label('a number between', '_value_type == VarValueType.RANDOM_NUMBER')
-	add_header_edit('random_min', ValueType.NUMBER, {'right_text':'and', 'mode':1}, '!name.is_empty() and  _value_type == VarValueType.RANDOM_NUMBER')
+	add_header_label('一个介于', '_value_type == VarValueType.RANDOM_NUMBER')
+	add_header_edit('random_min', ValueType.NUMBER, {'right_text':'和', 'mode':1}, '!name.is_empty() and  _value_type == VarValueType.RANDOM_NUMBER')
 	add_header_edit('random_max', ValueType.NUMBER, {'mode':1}, '!name.is_empty() and _value_type == VarValueType.RANDOM_NUMBER')
-	add_header_button('', _on_variable_editor_pressed, 'Variable Editor', ["ExternalLink", "EditorIcons"])
+	add_header_button('', _on_variable_editor_pressed, '变量编辑器', ["ExternalLink", "EditorIcons"])
 
 
 func get_var_suggestions(filter:String) -> Dictionary:
@@ -362,12 +362,12 @@ func _on_variable_editor_pressed() -> void:
 
 func update_editor_warning() -> void:
 	if _value_type == VarValueType.STRING and operation != Operations.SET and operation != Operations.ADD:
-		ui_update_warning.emit('You cannot do this operation with a string!')
+		ui_update_warning.emit('无法对字符串执行此操作！')
 	elif operation != Operations.SET:
 		var type := DialogicUtil.get_variable_type(name)
 		if not type in [DialogicUtil.VarTypes.INT, DialogicUtil.VarTypes.FLOAT, DialogicUtil.VarTypes.ANY]:
 			if not (type == DialogicUtil.VarTypes.STRING and operation == Operations.ADD and _value_type == VarValueType.STRING):
-				ui_update_warning.emit('The selected variable is not a number!')
+				ui_update_warning.emit('所选变量不是数字！')
 				return
 	ui_update_warning.emit('')
 

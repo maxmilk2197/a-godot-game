@@ -21,7 +21,7 @@ func _register() -> void:
 	var add_timeline_button: Button = editors_manager.add_button(
 		load("res://addons/dialogic/Editor/Images/Toolbar/add-timeline.svg"),
 		"",
-		"New Timeline",
+		"新时间线",
 		self, editors_manager.ButtonPlacement.SIDEBAR_LEFT_OF_FILTER)
 	add_timeline_button.pressed.connect(_on_create_timeline_button_pressed)
 	add_timeline_button.shortcut = Shortcut.new()
@@ -33,14 +33,14 @@ func _register() -> void:
 	# play timeline button
 	play_timeline_button = editors_manager.add_button(
 		get_theme_icon("PlayScene", "EditorIcons"),
-		"Play Timeline",
-		"Play the current timeline {0}".format(["(Command+B)" if OS.get_name() == "macOS" else "(CTRL+F6)"]),
+		"播放时间线",
+		"播放当前时间线 {0}".format(["(Command+B)" if OS.get_name() == "macOS" else "(CTRL+F6)"]),
 		self,
 		editors_manager.ButtonPlacement.TOOLBAR_MAIN)
 	play_timeline_button.pressed.connect(play_timeline)
-	#play_timeline_button.tooltip_text = "Play the current timeline (CTRL+F5)"
+	#play_timeline_button.tooltip_text = "播放当前时间线（CTRL+F5）"
 	#if OS.get_name() == "macOS":
-		#play_timeline_button.tooltip_text = "Play the current timeline (Command+B)"
+		#play_timeline_button.tooltip_text = "播放当前时间线（Command+B）"
 
 	%VisualEditor.load_event_buttons()
 
@@ -50,18 +50,18 @@ func _register() -> void:
 		EditorMode.VISUAL:
 			%VisualEditor.show()
 			%TextEditor.hide()
-			%SwitchEditorMode.text = "Text Editor"
+			%SwitchEditorMode.text = "文本编辑器"
 		EditorMode.TEXT:
 			%VisualEditor.hide()
 			%TextEditor.show()
-			%SwitchEditorMode.text = "Visual Editor"
+			%SwitchEditorMode.text = "可视化编辑器"
 
 	$NoTimelineScreen.show()
 	play_timeline_button.disabled = true
 
 
 func _get_title() -> String:
-	return "Timeline"
+	return "时间线"
 
 
 func _get_icon() -> Texture:
@@ -132,7 +132,7 @@ func toggle_editor_mode() -> void:
 			%VisualEditor.hide()
 			%TextEditor.show()
 			%TextEditor.load_timeline(current_resource)
-			%SwitchEditorMode.text = "Visual Editor"
+			%SwitchEditorMode.text = "可视化编辑器"
 			_on_search_text_changed(%Search.text)
 		EditorMode.TEXT:
 			_on_search_text_changed.bind("")
@@ -141,7 +141,7 @@ func toggle_editor_mode() -> void:
 			%TextEditor.hide()
 			%VisualEditor.load_timeline(current_resource)
 			%VisualEditor.show()
-			%SwitchEditorMode.text = "Text Editor"
+			%SwitchEditorMode.text = "文本编辑器"
 			if not %VisualEditor.timeline_loaded.is_connected(_on_search_text_changed):
 				%VisualEditor.timeline_loaded.connect(_on_search_text_changed.bind(%Search.text), CONNECT_ONE_SHOT)
 	DialogicUtil.set_editor_setting('timeline_editor_mode', current_editor_mode)
@@ -208,7 +208,7 @@ func _ready() -> void:
 	$NoTimelineScreen.add_theme_stylebox_override("panel", get_theme_stylebox("Background", "EditorStyles"))
 
 	# switch editor mode button
-	%SwitchEditorMode.text = "Text editor"
+	%SwitchEditorMode.text = "文本编辑器"
 	%SwitchEditorMode.icon = get_theme_icon("ArrowRight", "EditorIcons")
 	%SwitchEditorMode.pressed.connect(toggle_editor_mode)
 	%SwitchEditorMode.custom_minimum_size.x = 200 * DialogicUtil.get_editor_scale()
@@ -283,7 +283,7 @@ func _on_search_text_changed(new_text: String) -> void:
 		%SearchLabel.show()
 		%SearchLabel.add_theme_color_override("font_color", get_theme_color("error_color", "Editor"))
 		%Search.add_theme_color_override("font_color", get_theme_color("error_color", "Editor"))
-		%SearchLabel.text = "No Match"
+		%SearchLabel.text = "无匹配"
 
 
 func _on_search_down_pressed() -> void:

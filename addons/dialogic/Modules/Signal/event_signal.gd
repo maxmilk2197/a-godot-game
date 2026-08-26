@@ -27,7 +27,7 @@ func _execute() -> void:
 			dict.make_read_only()
 			dialogic.emit_signal('signal_event', dict)
 		else:
-			push_error("[Dialogic] Encountered invalid dictionary in signal event.")
+			push_error("[Dialogic] 信号事件中遇到无效字典。")
 	else:
 		dialogic.emit_signal('signal_event', argument)
 	finish()
@@ -40,7 +40,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Signal"
-	event_description = "Emits the Dialogic.signal_event signal with a given argument. You can react to this signal in your code by connecting to it."
+	event_description = "发出带有指定参数的 Dialogic.signal_event 信号。你可以通过连接该信号在代码中做出响应。"
 	set_default_color('Color6')
 	event_category = "Logic"
 	event_sorting_index = 8
@@ -60,7 +60,7 @@ func get_shortcode_parameters() -> Dictionary:
 	return {
 		#param_name : property_info
 		"arg_type"	: {"property": "argument_type", "default": ArgumentTypes.STRING,
-										"suggestions": func(): return {"String":{'value':ArgumentTypes.STRING, 'text_alt':['string']}, "Dictionary":{'value':ArgumentTypes.DICTIONARY, 'text_alt':['dict', 'dictionary']}}},
+										"suggestions": func(): return {"字符串":{'value':ArgumentTypes.STRING, 'text_alt':['string']}, "字典":{'value':ArgumentTypes.DICTIONARY, 'text_alt':['dict', 'dictionary']}}},
 		"arg"		: {"property": "argument", "default": ""}
 	}
 
@@ -71,20 +71,20 @@ func get_shortcode_parameters() -> Dictionary:
 ################################################################################
 
 func build_event_editor() -> void:
-	add_header_label("Emit dialogic signal with argument")
-	add_header_label("(Dictionary in body)", 'argument_type == ArgumentTypes.DICTIONARY')
+	add_header_label("发出带参数的 Dialogic 信号")
+	add_header_label("（字典在正文中）", 'argument_type == ArgumentTypes.DICTIONARY')
 	add_header_edit('argument', ValueType.SINGLELINE_TEXT, {}, 'argument_type == ArgumentTypes.STRING')
-	add_body_edit('argument_type',ValueType.FIXED_OPTIONS, {'left_text':'Argument Type:', 'options': [
+	add_body_edit('argument_type',ValueType.FIXED_OPTIONS, {'left_text':'参数类型：', 'options': [
 			{
-				'label': 'String',
+				'label': '字符串',
 				'value': ArgumentTypes.STRING,
 			},
 			{
-				'label': 'Dictionary',
+				'label': '字典',
 				'value': ArgumentTypes.DICTIONARY,
 			}
 		]})
 	add_body_line_break('argument_type == ArgumentTypes.DICTIONARY')
-	add_body_edit('argument', ValueType.DICTIONARY, {'left_text': 'Dictionary'},'argument_type == ArgumentTypes.DICTIONARY')
+	add_body_edit('argument', ValueType.DICTIONARY, {'left_text': '字典'},'argument_type == ArgumentTypes.DICTIONARY')
 
 #endregion

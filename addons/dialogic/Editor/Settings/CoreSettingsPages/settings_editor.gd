@@ -13,7 +13,7 @@ const _SETTING_EVENT_SECTION_ODER = "event_section_order"
 var do_timeline_editor_refresh_on_close := false
 
 func _get_title() -> String:
-	return "Editor"
+	return "编辑器"
 
 
 func _get_priority() -> int:
@@ -75,7 +75,7 @@ func reload_section_list():
 	for sec in sections:
 		var item: TreeItem = %SectionList.create_item(null)
 		var empty_category := cached_events.filter(func(x:DialogicEvent): return x.event_category == sec).is_empty()
-		item.set_text(0, sec + (" (Empty)" if empty_category else ""))
+		item.set_text(0, DialogicUtil.localize_event_category(sec) + ("（空）" if empty_category else ""))
 		item.add_button(0, get_theme_icon("ArrowUp", "EditorIcons"))
 		item.add_button(0, get_theme_icon("ArrowDown", "EditorIcons"))
 			#if ev.event_category in section_order:
@@ -131,7 +131,7 @@ func update_color_palette() -> void:
 		button.color = DialogicUtil.get_color(color)
 		button.popup_closed.connect(_on_palette_color_popup_closed)
 		if color in color_users:
-			button.tooltip_text = "Used by " + str(color_users[color])
+			button.tooltip_text = "使用于 " + str(color_users[color])
 
 
 func _on_palette_color_popup_closed() -> void:

@@ -35,7 +35,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Wait"
-	event_description = "Waits a given amount of time. Can hide the textbox and be skippable."
+	event_description = "等待指定时长。可以隐藏文本框，且可跳过。"
 	set_default_color('Color5')
 	event_category = "Flow"
 	event_sorting_index = 11
@@ -65,10 +65,10 @@ func get_shortcode_parameters() -> Dictionary:
 ################################################################################
 
 func build_event_editor() -> void:
-	add_header_edit('time', ValueType.NUMBER, {'left_text':'Wait', 'autofocus':true, 'min':0.1})
-	add_header_label('seconds', 'time != 1')
-	add_header_label('second', 'time == 1')
-	add_body_edit('hide_text', ValueType.BOOL, {'left_text':'Hide text box:'})
-	add_body_edit('skippable', ValueType.BOOL, {'left_text':'Skippable:'})
+	add_header_edit('time', ValueType.NUMBER, {'left_text':'等待', 'autofocus':true, 'min':0.1})
+	add_header_label('秒', 'time != 1')
+	add_header_label('秒', 'time == 1')
+	add_body_edit('hide_text', ValueType.BOOL, {'left_text':'隐藏文本框：'})
+	add_body_edit('skippable', ValueType.BOOL, {'left_text':'可跳过：'})
 
 #endregion

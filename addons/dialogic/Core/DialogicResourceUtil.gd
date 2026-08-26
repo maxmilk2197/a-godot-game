@@ -322,7 +322,7 @@ static func guess_special_resource(type: String, string: String, default := {}, 
 
 	## As a last effort check against the unfiltered list
 	if string in special_resources[type]:
-		push_warning("[Dialogic] Using ", type, " '", string,"' when not supposed to.")
+		push_warning("[Dialogic] 不应使用 ", type, "：'", string,"'。")
 		return special_resources[type][string]
 
 	printerr("[Dialogic] Unable to identify ", type, " based on string '", string, "'.")

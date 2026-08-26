@@ -34,7 +34,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "History"
-	event_description = "Performs an action on the simple history."
+	event_description = "对简单历史执行一项操作。"
 	set_default_color('Color9')
 	event_category = "Other"
 	event_sorting_index = 20
@@ -52,7 +52,7 @@ func get_shortcode_parameters() -> Dictionary:
 	return {
 		#param_name 		: property_info
 		"action" 			: {"property": "action", "default": Actions.PAUSE,
-								"suggestions": func(): return {"Clear":{'value':0, 'text_alt':['clear']}, "Pause":{'value':1, 'text_alt':['pause']}, "Resume":{'value':2, 'text_alt':['resume', 'start']}}},
+								"suggestions": func(): return {"清除":{'value':0, 'text_alt':['clear']}, "暂停":{'value':1, 'text_alt':['pause']}, "继续":{'value':2, 'text_alt':['resume', 'start']}}},
 	}
 
 #endregion
@@ -65,15 +65,15 @@ func build_event_editor() -> void:
 	add_header_edit('action', ValueType.FIXED_OPTIONS, {
 		'options': [
 			{
-				'label': 'Pause History',
+				'label': '暂停历史',
 				'value': Actions.PAUSE,
 			},
 			{
-				'label': 'Resume History',
+				'label': '继续历史',
 				'value': Actions.RESUME,
 			},
 			{
-				'label': 'Clear History',
+				'label': '清除历史',
 				'value': Actions.CLEAR,
 			},
 		]

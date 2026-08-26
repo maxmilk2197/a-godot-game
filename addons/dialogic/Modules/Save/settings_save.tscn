@@ -15,7 +15,7 @@ data = {
 [sub_resource type="ImageTexture" id="ImageTexture_dbvsu"]
 image = SubResource("Image_6yfie")
 
-[node name="Saving" type="VBoxContainer"]
+[node name="保存" type="VBoxContainer"]
 offset_right = 1084.0
 offset_bottom = 212.0
 script = ExtResource("2")
@@ -30,13 +30,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Grid/HBoxContainer"]
 layout_mode = 2
-text = "Autosave"
+text = "自动保存"
 
 [node name="HintTooltip" parent="Grid/HBoxContainer" instance=ExtResource("2_v2wt8")]
 layout_mode = 2
-tooltip_text = "If enabled dialogic will autosave the full state to the current slot depending on the autosave method."
+tooltip_text = "启用后，Dialogic 将根据自动保存方法把完整状态自动保存到当前存档位。"
 texture = SubResource("ImageTexture_dbvsu")
-hint_text = "If enabled dialogic will autosave the full state to the current slot depending on the autosave method."
+hint_text = "启用后，Dialogic 将根据自动保存方法把完整状态自动保存到当前存档位。"
 
 [node name="Autosave" type="CheckBox" parent="Grid"]
 unique_name_in_owner = true
@@ -48,7 +48,7 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="Grid/AutosaveModeLabel"]
 layout_mode = 2
-text = "Autosave Mode"
+text = "自动保存模式"
 
 [node name="AutosaveModeContent" type="HBoxContainer" parent="Grid"]
 unique_name_in_owner = true
@@ -59,11 +59,11 @@ unique_name_in_owner = true
 layout_mode = 2
 item_count = 3
 selected = 0
-popup/item_0/text = "Timeline Start+End+Jump"
+popup/item_0/text = "时间线开始+结束+跳转"
 popup/item_0/id = 0
-popup/item_1/text = "Each X seconds"
+popup/item_1/text = "每隔 X 秒"
 popup/item_1/id = 1
-popup/item_2/text = "Every Text Event"
+popup/item_2/text = "每一条文本事件"
 popup/item_2/id = 2
 
 [node name="AutosaveDelay" type="SpinBox" parent="Grid/AutosaveModeContent"]
@@ -77,13 +77,13 @@ layout_mode = 2
 
 [node name="Label4" type="Label" parent="Grid/HBoxContainer2"]
 layout_mode = 2
-text = "Default slot name"
+text = "默认存档位名称"
 
 [node name="HintTooltip3" parent="Grid/HBoxContainer2" instance=ExtResource("2_v2wt8")]
 layout_mode = 2
-tooltip_text = "The name of the default slot. "
+tooltip_text = "默认存档位的名称。"
 texture = SubResource("ImageTexture_dbvsu")
-hint_text = "The name of the default slot. "
+hint_text = "默认存档位的名称。"
 
 [node name="DefaultSaveSlotName" type="LineEdit" parent="Grid"]
 unique_name_in_owner = true
@@ -96,13 +96,13 @@ layout_mode = 2
 
 [node name="EncryptionPasswordLabel" type="Label" parent="Grid/HBoxContainer3"]
 layout_mode = 2
-text = "Encryption Password"
+text = "加密密码"
 
 [node name="HintTooltip" parent="Grid/HBoxContainer3" instance=ExtResource("2_v2wt8")]
 layout_mode = 2
-tooltip_text = "The encryption password used to encrypt save files. When left empty, the save files will not be encrypted."
+tooltip_text = "用于加密存档文件的密码。留空时，存档文件将不会被加密。"
 texture = SubResource("ImageTexture_dbvsu")
-hint_text = "The encryption password used to encrypt save files. When left empty, the save files will not be encrypted."
+hint_text = "用于加密存档文件的密码。留空时，存档文件将不会被加密。"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Grid"]
 layout_mode = 2
@@ -119,17 +119,13 @@ layout_mode = 2
 
 [node name="EncryptionPasswordLabel" type="Label" parent="Grid/HBoxContainer4/EncryptionOnExportsSection"]
 layout_mode = 2
-text = "Use on exports only"
+text = "仅用于导出"
 
 [node name="HintTooltip" parent="Grid/HBoxContainer4/EncryptionOnExportsSection" instance=ExtResource("2_v2wt8")]
 layout_mode = 2
-tooltip_text = "For easier debugging dialogic will only encrypt saves made by exported project.
-Exported projects with debug mode on or saves made when running in editor 
-will not use encryption."
+tooltip_text = "为便于调试，Dialogic 只对导出版本的存档进行加密。\n开启调试模式的导出项目，或在编辑器中运行时保存的存档，\n将不使用加密。"
 texture = SubResource("ImageTexture_dbvsu")
-hint_text = "For easier debugging dialogic will only encrypt saves made by exported project.
-Exported projects with debug mode on or saves made when running in editor 
-will not use encryption."
+hint_text = "为便于调试，Dialogic 只对导出版本的存档进行加密。\n开启调试模式的导出项目，或在编辑器中运行时保存的存档，\n将不使用加密。"
 
 [node name="EncryptionOnExports" type="CheckBox" parent="Grid/HBoxContainer4/EncryptionOnExportsSection"]
 unique_name_in_owner = true

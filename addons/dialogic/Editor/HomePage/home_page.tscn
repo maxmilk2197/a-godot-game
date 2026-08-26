@@ -227,19 +227,19 @@ size_flags_stretch_ratio = 0.4
 layout_mode = 2
 theme_type_variation = &"DialogicSection"
 theme_override_constants/line_spacing = 0
-text = "Documentation"
+text = "文档"
 
 [node name="WikiButton" type="LinkButton" parent="CenterContainer/PanelContainer/HomePageBox/BottomPanel/ScrollContainer/HBoxContainer/CenterContainer" unique_id=1030865985]
 layout_mode = 2
 theme_type_variation = &"DialogicLink"
-text = "  Wiki"
+text = "  维基"
 underline = 2
 uri = "https://docs.dialogic.pro/"
 
 [node name="WikiGettingStartedButton" type="LinkButton" parent="CenterContainer/PanelContainer/HomePageBox/BottomPanel/ScrollContainer/HBoxContainer/CenterContainer" unique_id=2077412255]
 layout_mode = 2
 theme_type_variation = &"DialogicLink"
-text = "  Getting Started"
+text = "  快速上手"
 underline = 2
 uri = "https://docs.dialogic.pro/getting-started.html"
 
@@ -250,12 +250,12 @@ layout_mode = 2
 [node name="Label2" type="Label" parent="CenterContainer/PanelContainer/HomePageBox/BottomPanel/ScrollContainer/HBoxContainer/CenterContainer" unique_id=2037021503]
 layout_mode = 2
 theme_type_variation = &"DialogicSection"
-text = "Get in touch"
+text = "联系我们"
 
 [node name="BugRequestButton" type="LinkButton" parent="CenterContainer/PanelContainer/HomePageBox/BottomPanel/ScrollContainer/HBoxContainer/CenterContainer" unique_id=1518203797]
 layout_mode = 2
 theme_type_variation = &"DialogicLink"
-text = "  Bug / Request"
+text = "  反馈 Bug / 需求"
 underline = 2
 uri = "https://github.com/dialogic-godot/dialogic/issues/new/choose"
 
@@ -269,14 +269,14 @@ uri = "https://discord.gg/2hHQzkf2pX"
 [node name="Website" type="LinkButton" parent="CenterContainer/PanelContainer/HomePageBox/BottomPanel/ScrollContainer/HBoxContainer/CenterContainer" unique_id=379796324]
 layout_mode = 2
 theme_type_variation = &"DialogicLink"
-text = "  Website"
+text = "  官网"
 underline = 2
 uri = "https://dialogic.pro/"
 
 [node name="DonateButton" type="LinkButton" parent="CenterContainer/PanelContainer/HomePageBox/BottomPanel/ScrollContainer/HBoxContainer/CenterContainer" unique_id=997916665]
 layout_mode = 2
 theme_type_variation = &"DialogicLink"
-text = "  Donate"
+text = "  捐赠"
 underline = 2
 uri = "https://www.patreon.com/JowanSpooner"
 
@@ -292,9 +292,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_es88k")
 bbcode_enabled = true
-text = "[center]Welcome to Dialogic, a plugin that lets you easily create stories and dialogs for your game!
-
-If you are new, start by creating a timeline or character!"
+text = "[center]欢迎使用 Dialogic，一个让你轻松为游戏创建故事和对话的插件！\n\n如果你是新用户，先从创建时间线或角色开始吧！"
 fit_content = true
 
 [node name="RandomTipSection" type="VBoxContainer" parent="CenterContainer/PanelContainer/HomePageBox/BottomPanel/ScrollContainer/HBoxContainer/CenterContainer2" unique_id=21727726]
@@ -308,7 +306,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"DialogicSection"
 theme_override_colors/font_color = Color(0.42, 0.67, 0.96, 1)
-text = "Random Tip"
+text = "随机提示"
 
 [node name="TipBox" type="PanelContainer" parent="CenterContainer/PanelContainer/HomePageBox/BottomPanel/ScrollContainer/HBoxContainer/CenterContainer2/RandomTipSection" unique_id=1833114158]
 unique_name_in_owner = true
@@ -321,7 +319,7 @@ clip_contents = false
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_a8dvw")
 bbcode_enabled = true
-text = "[i]You can[/i] [b]create custom[/b] events, [i][b]subsystems, text effects and even editors for[/b][i] [code]dialogic!"
+text = "[i]你可以[/i] [b]创建自定义[/b] 事件、[i][b]子系统、文本效果甚至为[/b][i] [code]dialogic! 的编辑器"
 fit_content = true
 
 [node name="RandomTipMoreButton" type="Button" parent="CenterContainer/PanelContainer/HomePageBox/BottomPanel/ScrollContainer/HBoxContainer/CenterContainer2/RandomTipSection/TipBox/RandomTip" unique_id=327297471]
@@ -338,4 +336,4 @@ offset_right = -8.0
 offset_bottom = 24.0
 grow_horizontal = 0
 grow_vertical = 0
-tooltip_text = "Check it out!"
+tooltip_text = "去看看吧！"

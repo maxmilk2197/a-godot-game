@@ -8,7 +8,7 @@ var current_portrait_data := {}
 var last_scene := ""
 
 func _get_title() -> String:
-	return "Settings"
+	return "设置"
 
 
 func _load_portrait_data(data:Dictionary) -> void:

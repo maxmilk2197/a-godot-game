@@ -35,17 +35,17 @@ func load_parts() -> void:
 	for i in %PartGrid.get_children():
 		i.queue_free()
 
-	%Search.placeholder_text = "Search for "
+	%Search.placeholder_text = "搜索…"
 	%Search.text = ""
 	match current_type:
 		Types.STYLES:
-			%Search.placeholder_text += "premade styles"
+			%Search.placeholder_text += "预制样式"
 		Types.LAYER:
-			%Search.placeholder_text += "layer scenes"
+			%Search.placeholder_text += "图层场景"
 		Types.LAYOUT_BASE:
-			%Search.placeholder_text += "layout base scenes"
+			%Search.placeholder_text += "布局基底场景"
 		Types.ALL:
-			%Search.placeholder_text += "styles or layout scenes"
+			%Search.placeholder_text += "样式或布局场景"
 
 	for info in style_part_info:
 		var type: String = info.get('type', '_')
@@ -81,8 +81,8 @@ func _on_style_item_clicked(item:Node, info:Dictionary) -> void:
 
 func load_part_info(info:Dictionary) -> void:
 	current_info = info
-	%PartTitle.text = info.get('name', 'Unknown Part')
-	%PartAuthor.text = "by "+info.get('author', 'Anonymus')
+	%PartTitle.text = info.get('name', '未知部件')
+	%PartAuthor.text = "由 "+info.get('author', '匿名')
 	%PartDescription.text = info.get('description', '')
 
 	if info.get('preview_image', null):

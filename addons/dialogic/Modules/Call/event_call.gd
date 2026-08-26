@@ -73,7 +73,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Call"
-	event_description = "Calls a method on an autoload script or scene."
+	event_description = "调用自动加载脚本或场景上的一个方法。"
 	set_default_color("Color6")
 	event_category = "Logic"
 	event_sorting_index = 10
@@ -146,15 +146,15 @@ func get_shortcode_parameters() -> Dictionary:
 ################################################################################
 
 func build_event_editor() -> void:
-	add_header_edit("autoload_name", ValueType.DYNAMIC_OPTIONS, {"left_text":"On autoload",
+	add_header_edit("autoload_name", ValueType.DYNAMIC_OPTIONS, {"left_text":"在自动加载上",
 		"empty_text":"Autoload",
 		"suggestions_func": DialogicUtil.get_autoload_suggestions,
 		"editor_icon":["Node", "EditorIcons"]})
-	add_header_edit("method", ValueType.DYNAMIC_OPTIONS, {"left_text":"call",
+	add_header_edit("method", ValueType.DYNAMIC_OPTIONS, {"left_text":"调用",
 		"empty_text":"Method",
 		"suggestions_func": get_method_suggestions,
 		"editor_icon":["Callable", "EditorIcons"]}, "autoload_name")
-	add_body_edit("arguments", ValueType.ARRAY, {"left_text":"Arguments:"}, "not autoload_name.is_empty() and not method.is_empty()")
+	add_body_edit("arguments", ValueType.ARRAY, {"left_text":"参数："}, "not autoload_name.is_empty() and not method.is_empty()")
 
 
 func get_method_suggestions(filter:="") -> Dictionary:
@@ -195,14 +195,14 @@ func check_arguments_and_update_warning() -> void:
 					TYPE_INT: 		expected_type = "int"
 					_: 				expected_type = "something else"
 
-				ui_update_warning.emit("Argument "+ str(idx+1)+ " ("+_current_method_arg_hints.info.args[idx].name+") has the wrong type (method expects "+expected_type+")!")
+				ui_update_warning.emit("参数 "+str(idx+1)+"（"+_current_method_arg_hints.info.args[idx].name+"）类型错误（方法期望 "+expected_type+"）！")
 				return
 
 	if len(arguments) < len(_current_method_arg_hints.info.args)-len(_current_method_arg_hints.info.default_args):
-		ui_update_warning.emit("The method is expecting at least "+str(len(_current_method_arg_hints.info.args)-len(_current_method_arg_hints.info.default_args))+ " arguments, but is given only "+str(len(arguments))+".")
+		ui_update_warning.emit("该方法至少需要 "+str(len(_current_method_arg_hints.info.args)-len(_current_method_arg_hints.info.default_args))+" 个参数，但只提供了 "+str(len(arguments))+" 个。")
 		return
 	elif len(arguments) > len(_current_method_arg_hints.info.args):
-		ui_update_warning.emit("The method is expecting at most "+str(len(_current_method_arg_hints.info.args))+ " arguments, but is given "+str(len(arguments))+".")
+		ui_update_warning.emit("该方法最多需要 "+str(len(_current_method_arg_hints.info.args))+" 个参数，但提供了 "+str(len(arguments))+" 个。")
 		return
 	ui_update_warning.emit()
 

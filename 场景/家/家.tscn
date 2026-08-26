@@ -22,30 +22,30 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q50p0"]
 
 [sub_resource type="StyleBoxFlat" id="sb_stat_panel"]
-bg_color = Color(0.99607843, 0.97254902, 0.94117647, 0.88)
+bg_color = Color(0.99607843, 0.972549, 0.9411765, 0.88)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.94901961, 0.80392157, 0.81568627, 0.9)
+border_color = Color(0.9490196, 0.8039216, 0.8156863, 0.9)
 corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
+expand_margin_top = 10.0
 shadow_color = Color(0.55, 0.42, 0.46, 0.18)
 shadow_size = 8
 shadow_offset = Vector2(0, 3)
-expand_margin_top = 10.0
 
 [node name="家" type="Control" unique_id=1678795185]
 clip_contents = true
-theme = ExtResource("0_warmth")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("0_warmth")
 script = ExtResource("1_xshxy")
 metadata/_edit_lock_ = true
 metadata/_edit_vertical_guides_ = [-266.0]
@@ -56,8 +56,8 @@ clip_contents = true
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.08194444
-anchor_right = 1.0023437
-anchor_bottom = 1.0683718
+anchor_right = 1.0861977
+anchor_bottom = 1.1512731
 offset_right = 319.5
 offset_bottom = 206.24988
 grow_horizontal = 2
@@ -97,9 +97,8 @@ metadata/_edit_lock_ = true
 
 [node name="角色交互" type="Control" parent="." unique_id=1149596293]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.28697917
+anchor_bottom = 0.6166667
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ecy2k")
@@ -116,21 +115,21 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="图" type="TextureButton" parent="角色交互/立绘" unique_id=1264305339]
+custom_minimum_size = Vector2(1024, 1536)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.9807692
-anchor_top = -0.7987014
-anchor_right = 0.061298225
-anchor_bottom = 0.25689954
-offset_left = 304.0
-offset_top = 460.00003
-offset_right = 894.49994
-offset_bottom = 1345.7499
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.4233399, 0.4233399)
+anchor_left = 8.642
+anchor_top = 1.723
+anchor_right = 8.642
+anchor_bottom = 1.723
+offset_left = -685.4911
+offset_top = -1024.9653
+offset_right = 338.5089
+offset_bottom = 511.03467
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.67, 0.67)
 texture_normal = ExtResource("1_ba6u3")
-metadata/_edit_use_anchors_ = true
 
 [node name="交互" type="Control" parent="角色交互" unique_id=1529733689]
 visible = false
@@ -245,14 +244,16 @@ text = "剩余行动：3"
 horizontal_alignment = 1
 
 [node name="行动栏" type="Control" parent="养成面板" unique_id=1717000011]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 49.0
-offset_top = -110.0
-offset_right = -75.0
+offset_left = 96.0
+offset_top = -109.0
+offset_right = -1.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -281,6 +282,7 @@ offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 32
 text = "交流"
+metadata/_edit_lock_ = true
 
 [node name="摸摸" type="Button" parent="养成面板/行动栏" unique_id=1717000014]
 layout_mode = 0
@@ -291,6 +293,7 @@ offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 32
 text = "摸摸"
+metadata/_edit_lock_ = true
 
 [node name="做家务" type="Button" parent="养成面板/行动栏" unique_id=1717000015]
 layout_mode = 0
@@ -301,6 +304,7 @@ offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 32
 text = "做家务"
+metadata/_edit_lock_ = true
 
 [node name="睡觉" type="Button" parent="养成面板/行动栏" unique_id=1717000016]
 layout_mode = 0
@@ -311,6 +315,7 @@ offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 32
 text = "睡觉"
+metadata/_edit_lock_ = true
 
 [node name="离开" type="Button" parent="养成面板/行动栏" unique_id=1717000017]
 layout_mode = 0
@@ -321,6 +326,7 @@ offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("3_vgfoc")
 theme_override_font_sizes/font_size = 32
 text = "离开"
+metadata/_edit_lock_ = true
 
 [node name="AI聊天界面" type="Control" parent="." unique_id=51273642 node_paths=PackedStringArray("_输入框", "_状态标签", "_设置URL输入", "_设置密钥输入", "_设置模型输入", "_设置取消按钮", "_设置保存按钮")]
 visible = false
@@ -464,10 +470,11 @@ offset_bottom = 704.0
 [node name="手机" type="Button" parent="功能" unique_id=2065066854]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.05
-anchor_top = -0.9
-anchor_right = 1.225
-anchor_bottom = 1.35
+anchor_left = 0.025
+anchor_top = 8.225
+anchor_right = 2.4
+anchor_bottom = 10.1
+offset_right = 9.918213e-05
 grow_vertical = 0
 text = "手机"
 metadata/_edit_use_anchors_ = true

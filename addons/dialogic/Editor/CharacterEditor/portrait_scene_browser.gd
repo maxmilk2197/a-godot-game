@@ -41,7 +41,7 @@ func load_parts() -> void:
 	for i in %PartGrid.get_children():
 		i.queue_free()
 
-	%Search.placeholder_text = "Search for "
+	%Search.placeholder_text = "搜索…"
 	%Search.text = ""
 	match current_type:
 		Types.GENERAL: %Search.placeholder_text += "general portrait scenes"
@@ -75,7 +75,7 @@ func _on_item_clicked(item: Node, info:Dictionary) -> void:
 func load_part_info(info:Dictionary) -> void:
 	current_info = info
 	%PartTitle.text = info.get('name', 'Unknown Part')
-	%PartAuthor.text = "by "+info.get('author', 'Anonymus')
+	%PartAuthor.text = "由 "+info.get('author', '匿名')
 	%PartDescription.text = info.get('description', '')
 
 	if info.get('preview_image', null) and ResourceLoader.exists(info.preview_image[0]):
@@ -86,16 +86,16 @@ func load_part_info(info:Dictionary) -> void:
 
 	match info.type:
 		"General":
-			%ActivateButton.text = "Use this scene"
-			%TypeDescription.text = "This is a general use scene, it can be used directly."
+			%ActivateButton.text = "使用此场景"
+			%TypeDescription.text = "这是一个通用场景，可以直接使用。"
 		"Preset":
-			%ActivateButton.text = "Customize this scene"
-			%TypeDescription.text = "This is a preset you can use for a custom portrait scene. Dialogic will promt you to save a copy of this scene that you can then use and customize."
+			%ActivateButton.text = "自定义此场景"
+			%TypeDescription.text = "这是一个用于自定义立绘场景的预设。Dialogic 会提示你保存此场景的副本，然后你可以使用并自定义它。"
 		"Default":
-			%ActivateButton.text = "Use default scene"
+			%ActivateButton.text = "使用默认场景"
 			%TypeDescription.text = ""
 		"Custom":
-			%ActivateButton.text = "Select a custom scene"
+			%ActivateButton.text = "选择自定义场景"
 			%TypeDescription.text = ""
 
 	if info.get("documentation", ""):

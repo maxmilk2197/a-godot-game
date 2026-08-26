@@ -82,15 +82,9 @@ text = "Cool Name"
 
 [node name="NameTooltip" parent="VBox/HBox" unique_id=1349061077 instance=ExtResource("2_yqd26")]
 layout_mode = 2
-tooltip_text = "This unique identifier is based on the file name. You can change it in the Reference Manager.
-This is what you should use in a jump event to reference this timeline.
-
-You can also use this name in Dialogic.start()."
+tooltip_text = "此唯一标识符基于文件名。你可以在引用管理器中更改它。\n这是跳转事件中用于引用此时间线的名称。\n\n你也可以在 Dialogic.start() 中使用此名称。"
 texture = null
-hint_text = "This unique identifier is based on the file name. You can change it in the Reference Manager.
-This is what you should use in a jump event to reference this timeline.
-
-You can also use this name in Dialogic.start()."
+hint_text = "此唯一标识符基于文件名。你可以在引用管理器中更改它。\n这是跳转事件中用于引用此时间线的名称。\n\n你也可以在 Dialogic.start() 中使用此名称。"
 
 [node name="SwitchEditorMode" type="Button" parent="VBox/HBox" unique_id=603937071]
 unique_name_in_owner = true
@@ -98,14 +92,14 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-tooltip_text = "Switch between Text Editor and Visual Editor"
-text = "Text editor"
+tooltip_text = "在文本编辑器与可视化编辑器之间切换"
+text = "文本编辑器"
 
 [node name="Shortcuts" type="Button" parent="VBox/HBox" unique_id=2100210955]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
-tooltip_text = "Shortcuts"
+tooltip_text = "快捷键"
 
 [node name="VisualEditor" parent="VBox" unique_id=180379404 instance=ExtResource("2_qs7vc")]
 unique_name_in_owner = true
@@ -138,7 +132,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Search"
+placeholder_text = "搜索"
 
 [node name="SearchLabel" type="Label" parent="VBox/SearchReplaceSection/VBox/SearchSection" unique_id=572772626]
 unique_name_in_owner = true
@@ -158,12 +152,12 @@ flat = true
 [node name="MatchCase" type="CheckBox" parent="VBox/SearchReplaceSection/VBox/SearchSection" unique_id=1325822471]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Match Case"
+text = "区分大小写"
 
 [node name="WholeWords" type="CheckBox" parent="VBox/SearchReplaceSection/VBox/SearchSection" unique_id=1151656282]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Whole Words"
+text = "整个单词"
 
 [node name="SearchClose" type="Button" parent="VBox/SearchReplaceSection/VBox/SearchSection" unique_id=1436416108]
 unique_name_in_owner = true
@@ -178,22 +172,22 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Replace"
+placeholder_text = "替换"
 
 [node name="ReplaceButton" type="Button" parent="VBox/SearchReplaceSection/VBox/ReplaceSection" unique_id=1020319160]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Replace"
+text = "替换"
 
 [node name="ReplaceAllButton" type="Button" parent="VBox/SearchReplaceSection/VBox/ReplaceSection" unique_id=930344677]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Replace All"
+text = "全部替换"
 
 [node name="ReplaceGlobal" type="Button" parent="VBox/SearchReplaceSection/VBox/ReplaceSection" unique_id=1607571003]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Replace in all timelines"
+tooltip_text = "替换所有时间线"
 
 [node name="ProgressSection" type="HBoxContainer" parent="VBox" unique_id=1180293206]
 unique_name_in_owner = true
@@ -228,15 +222,14 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="NoTimelineScreen/CenterContainer/VBoxContainer" unique_id=1176427325]
 layout_mode = 2
-text = "No timeline opened. 
-Create a timeline or double-click one in the file system dock."
+text = "未打开时间线。\n创建时间线，或在文件系统面板中双击一个时间线。"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="CreateTimelineButton" type="Button" parent="NoTimelineScreen/CenterContainer/VBoxContainer" unique_id=1761424501]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Create New Timeline"
+text = "创建新时间线"
 icon = ExtResource("5_u2118")
 
 [node name="ShortcutsPanel" type="PanelContainer" parent="." unique_id=1337371675]
@@ -261,7 +254,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"DialogicSectionBig"
-text = "Shortcuts "
+text = "快捷键 "
 
 [node name="CloseShortcutPanel" type="Button" parent="ShortcutsPanel/VBoxContainer/HBoxContainer" unique_id=1545322699]
 unique_name_in_owner = true

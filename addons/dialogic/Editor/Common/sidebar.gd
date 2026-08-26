@@ -68,10 +68,10 @@ func _ready() -> void:
 	var options_popup: PopupMenu = %Options.get_popup()
 	options_popup.hide_on_checkable_item_selection = false
 	options_popup.add_submenu_node_item("Grouping", grouping_menu)
-	options_popup.add_check_item("Use Folder Colors", 11)
-	options_popup.add_check_item("Trim Folder Paths", 12)
-	options_popup.add_item("List All", 21)
-	options_popup.add_item("Clear List", 22)
+	options_popup.add_check_item("使用文件夹颜色", 11)
+	options_popup.add_check_item("精简文件夹路径", 12)
+	options_popup.add_item("全部列出", 21)
+	options_popup.add_item("清空列表", 22)
 
 	grouping_menu.id_pressed.connect(_on_grouping_changed)
 	options_popup.id_pressed.connect(_on_resource_list_options_id_pressed)
@@ -191,7 +191,7 @@ func update_resource_list(resources_list: PackedStringArray = []) -> void:
 
 	resources_list = clean_resource_list(resources_list)
 
-	%CurrentResource.text = "No Resource"
+	%CurrentResource.text = "无资源"
 	%CurrentResource.add_theme_color_override(
 		"font_uneditable_color", get_theme_color("disabled_font_color", "Editor")
 	)
@@ -523,7 +523,7 @@ func update_content_list() -> void:
 	if %ContentList.is_anything_selected():
 		prev_selected = %ContentList.get_item_text(%ContentList.get_selected_items()[0])
 	%ContentList.clear()
-	%ContentList.add_item("~ Top")
+	%ContentList.add_item("~ 顶部")
 	for i in current_labels:
 		if i.is_empty():
 			continue

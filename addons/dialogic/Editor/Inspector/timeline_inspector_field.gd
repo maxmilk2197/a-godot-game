@@ -15,7 +15,7 @@ func _init() -> void:
 
 	field = load("res://addons/dialogic/Editor/Events/Fields/field_options_dynamic.tscn").instantiate()
 	hbox.add_child(field)
-	field.placeholder_text = "No Timeline"
+	field.placeholder_text = "无时间线"
 	field.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	field.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	field.mode = field.Modes.IDENTIFIER

@@ -5,7 +5,7 @@ extends DialogicCharacterEditorPortraitSection
 
 
 func _get_title() -> String:
-	return "Scale, Offset & Mirror"
+	return "缩放、偏移与镜像"
 
 
 func _load_portrait_data(data:Dictionary) -> void:

@@ -22,7 +22,7 @@ func _ready() -> void:
 	var button: Button = editors_manager.add_button(
 		get_theme_icon("MakeFloating", "EditorIcons"),
 		"",
-		"Make the dialogic editor floating.",
+		"让 Dialogic 编辑器浮动。",
 		null,
 		editors_manager.ButtonPlacement.TOOLBAR_MAIN
 	)
@@ -38,7 +38,7 @@ func _ready() -> void:
 	info_message.get_parent().move_child(info_message, info_message.get_index() - 1)
 	editor_file_dialog.set_meta("info_message_label", info_message)
 
-	$SaveConfirmationDialog.add_button("No Saving Please!", true, "nosave")
+	$SaveConfirmationDialog.add_button("不保存！", true, "nosave")
 	$SaveConfirmationDialog.hide()
 	update_theme_additions()
 	EditorInterface.get_base_control().theme_changed.connect(update_theme_additions)

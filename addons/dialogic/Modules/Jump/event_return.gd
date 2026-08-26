@@ -23,7 +23,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Return"
-	event_description = "Returns to the last jump event or ends the timeline (if no jump happened before)."
+	event_description = "返回上一次跳转事件，或结束时间线（如果之前没有跳转）。"
 	set_default_color('Color4')
 	event_category = "Flow"
 	event_sorting_index = 5
@@ -58,7 +58,7 @@ func is_valid_event(string:String) -> bool:
 ################################################################################
 
 func build_event_editor() -> void:
-	add_header_label('Return')
+	add_header_label('返回')
 
 #endregion
 

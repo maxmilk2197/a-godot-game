@@ -15,9 +15,9 @@ func _ready() -> void:
 	if owner.get_parent() is SubViewport:
 		return
 
-	set_column_title(0, "Name")
+	set_column_title(0, "名称")
 	set_column_title(1, "")
-	set_column_title(2, "Default Value")
+	set_column_title(2, "默认值")
 	set_column_expand(1, false)
 	set_column_expand_ratio(2, 2)
 	set_column_title_alignment(0, 0)
@@ -70,10 +70,10 @@ func add_variable_item(item_name:String, value:Variant, parent:TreeItem) -> Tree
 	folder_color.a *= 0.5
 	item.set_custom_bg_color(0, folder_color.lerp(get_theme_color("background", "Editor"), 0.5))
 
-	item.add_button(1, get_theme_icon("String", "EditorIcons"), TreeButtons.CHANGE_TYPE, false, "Change Type")
+	item.add_button(1, get_theme_icon("String", "EditorIcons"), TreeButtons.CHANGE_TYPE, false, "更改类型")
 	set_variable_value(item, DialogicUtil.get_variable_value_type(value), value)
 	item.set_editable(2, true)
-	item.add_button(2, get_theme_icon("Remove", "EditorIcons"), TreeButtons.DELETE, false, "Delete Variable")
+	item.add_button(2, get_theme_icon("Remove", "EditorIcons"), TreeButtons.DELETE, false, "删除变量")
 
 	item.set_meta("prev_path", get_item_path(item))
 	return item
@@ -119,10 +119,10 @@ func add_folder_item(item_name:String, parent:TreeItem) -> TreeItem:
 	item.set_custom_bg_color(2, folder_color)
 	item.set_meta("color", folder_color)
 
-	item.add_button(2, load(self.get_script().get_path().get_base_dir().get_base_dir() + "/add-variable.svg"), TreeButtons.ADD_VARIABLE, false, "Add Variable")
-	item.add_button(2, load("res://addons/dialogic/Editor/Images/Pieces/add-folder.svg"), TreeButtons.ADD_FOLDER, false, "Add Group")
-	item.add_button(2, get_theme_icon("Duplicate", "EditorIcons"), TreeButtons.DUPLICATE_FOLDER, item == get_root(), "Duplicate Group")
-	item.add_button(2, get_theme_icon("Remove", "EditorIcons"), TreeButtons.DELETE, item == get_root(), "Delete Group")
+	item.add_button(2, load(self.get_script().get_path().get_base_dir().get_base_dir() + "/add-variable.svg"), TreeButtons.ADD_VARIABLE, false, "添加变量")
+	item.add_button(2, load("res://addons/dialogic/Editor/Images/Pieces/add-folder.svg"), TreeButtons.ADD_FOLDER, false, "添加分组")
+	item.add_button(2, get_theme_icon("Duplicate", "EditorIcons"), TreeButtons.DUPLICATE_FOLDER, item == get_root(), "复制分组")
+	item.add_button(2, get_theme_icon("Remove", "EditorIcons"), TreeButtons.DELETE, item == get_root(), "删除分组")
 
 	return item
 
@@ -221,7 +221,7 @@ func _on_item_edited() -> void:
 
 
 func item_add_undoable(parent_item:TreeItem, item_name:String, type:String, value:Variant) -> void:
-	undo.create_action("Add Item")
+	undo.create_action("添加条目")
 	undo.add_do_method(
 		add_item.bind(
 			get_item_path(parent_item),
@@ -243,7 +243,7 @@ func add_item(parent_path:String, text:String, type:String, value:Variant) -> vo
 
 
 func item_remove_undoable(item:TreeItem) -> void:
-	undo.create_action("Remove Item")
+	undo.create_action("移除条目")
 	undo.add_do_method(remove_item.bind(get_item_path(item)))
 	undo.add_undo_method(
 		add_item.bind(
@@ -264,7 +264,7 @@ func item_rename_undoable(item:TreeItem) -> void:
 	var old_name: String = item.get_metadata(0)
 	item.set_text(0, item.get_metadata(0))
 	var old_item_path := get_item_path(item)
-	undo.create_action("Renamed Item")
+	undo.create_action("重命名条目")
 	undo.add_do_method(item_rename.bind(old_item_path, new_name, old_name))
 	undo.add_undo_method(item_rename.bind(new_item_path, old_name, new_name))
 	undo.commit_action()
@@ -283,7 +283,7 @@ func item_change_value_undoable(item:TreeItem) -> void:
 	var old_value: Variant = item.get_metadata(2)
 	var new_value: Variant = get_variable_item_default(item)
 
-	undo.create_action("Change Variable")
+	undo.create_action("更改变量")
 	undo.add_do_method(item_change_value.bind(item_path, new_value))
 	undo.add_undo_method(item_change_value.bind(item_path, old_value))
 	undo.commit_action()
@@ -535,7 +535,7 @@ func _on_gui_input(event: InputEvent) -> void:
 		var item := get_item_at_position(get_local_mouse_position())
 		if item and item != get_root():
 			%RightClickMenu.popup_on_parent(Rect2(get_global_mouse_position(), Vector2()))
-			%RightClickMenu.set_item_text(0, "Copy '" + get_item_path(item) + "'")
+			%RightClickMenu.set_item_text(0, "复制 '" + get_item_path(item) + "'")
 			%RightClickMenu.set_meta("item", item)
 			%RightClickMenu.size = Vector2()
 

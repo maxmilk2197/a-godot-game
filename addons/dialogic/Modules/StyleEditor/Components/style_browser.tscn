@@ -123,7 +123,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 theme_type_variation = &"DialogicSubTitle"
 theme_override_font_sizes/font_size = 25
-text = "Dialogic Style Browser"
+text = "Dialogic 样式浏览器"
 
 [node name="HBox" type="HBoxContainer" parent="HSplitContainer/Margin/VBox"]
 layout_mode = 2
@@ -134,7 +134,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_4e858")
 theme_override_styles/focus = SubResource("StyleBoxFlat_t3eoa")
-placeholder_text = "Search"
+placeholder_text = "搜索"
 right_icon = SubResource("ImageTexture_f5xt2")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/Margin/VBox"]
@@ -154,7 +154,7 @@ alignment = 1
 [node name="CloseButton" type="Button" parent="HSplitContainer/Margin/VBox/Buttons"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Close"
+text = "关闭"
 icon = SubResource("ImageTexture_f5xt2")
 
 [node name="PanelContainer" type="PanelContainer" parent="HSplitContainer"]
@@ -210,33 +210,33 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DialogicTitle"
-text = "Cool Style Part"
+text = "很酷的样式部件"
 
 [node name="PartAuthor" type="Label" parent="HSplitContainer/PanelContainer/MarginContainer/VBox/HFlowContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DialogicHintText"
-text = "by Jowan"
+text = "由 Jowan"
 
 [node name="PartType" type="Label" parent="HSplitContainer/PanelContainer/MarginContainer/VBox/HFlowContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
 theme_type_variation = &"DialogicHintText"
-text = "a style"
+text = "一个样式"
 
 [node name="PartDescription" type="Label" parent="HSplitContainer/PanelContainer/MarginContainer/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"DialogicHintText2"
-text = "A cool textbox layer"
+text = "一个很酷的文本框图层"
 autowrap_mode = 3
 
 [node name="ActivateButton" type="Button" parent="HSplitContainer/PanelContainer/MarginContainer/VBox"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Use"
+text = "使用"
 
 [connection signal="text_changed" from="HSplitContainer/Margin/VBox/HBox/Search" to="." method="_on_search_text_changed"]
 [connection signal="pressed" from="HSplitContainer/Margin/VBox/Buttons/CloseButton" to="." method="_on_close_button_pressed"]

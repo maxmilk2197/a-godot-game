@@ -36,7 +36,7 @@ func _ready() -> void:
 func _register() -> void:
 	editors_manager.register_simple_editor(self)
 
-	self.alternative_text = "Welcome to dialogic!"
+	self.alternative_text = "欢迎使用 Dialogic！"
 
 
 

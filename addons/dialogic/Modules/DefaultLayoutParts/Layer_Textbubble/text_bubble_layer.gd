@@ -27,14 +27,14 @@ extends DialogicLayoutLayer
 @export var behaviour_direction: Vector2 = Vector2(1, -1)
 @export var behaviour_mouse_filter: Control.MouseFilter
 
-@export_group('Name Label')
-@export_subgroup("Name Label")
+@export_group('姓名标签')
+@export_subgroup("姓名标签")
 @export var name_label_enabled: bool = true
 @export var name_label_font_size: int = 15
 @export_file('*.ttf') var name_label_font: String = ""
 @export var name_label_use_character_color: bool = true
 @export var name_label_color: Color = Color.BLACK
-@export_subgroup("Name Label Box")
+@export_subgroup("姓名标签框")
 @export var name_label_box_modulate: Color = Color.WHITE
 @export var name_label_box_modulate_use_character_color: bool = false
 @export var name_label_padding: Vector2 = Vector2(5,0)
@@ -43,7 +43,7 @@ extends DialogicLayoutLayer
 
 
 @export_group('Choices')
-@export_subgroup('Choices Text')
+@export_subgroup('选项文本')
 @export var choices_text_size: int = 15
 @export_file('*.ttf') var choices_text_font: String = ""
 @export var choices_text_color: Color = Color.DARK_SLATE_GRAY
@@ -51,7 +51,7 @@ extends DialogicLayoutLayer
 @export var choices_text_color_focus: Color = Color.DARK_MAGENTA
 @export var choices_text_color_disabled: Color = Color.DARK_GRAY
 
-@export_subgroup('Choices Layout')
+@export_subgroup('选项布局')
 @export var choices_layout_alignment := FlowContainer.ALIGNMENT_END
 @export var choices_layout_force_lines: bool = false
 @export_file('*.tres', "*.res") var choices_base_theme: String = ""

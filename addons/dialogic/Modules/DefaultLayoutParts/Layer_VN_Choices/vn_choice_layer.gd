@@ -13,11 +13,11 @@ extends DialogicLayoutLayer
 @export var font_size_custom: int = 16
 @export_subgroup('Color')
 @export var text_color_use_global: bool = true
-@export var text_color_custom: Color = Color(0.35, 0.27, 0.3)
-@export var text_color_pressed: Color = Color(0.45, 0.24, 0.3)
-@export var text_color_hovered: Color = Color(0.85, 0.35, 0.47)
-@export var text_color_disabled: Color = Color(0.7, 0.68, 0.68)
-@export var text_color_focused: Color = Color(0.45, 0.27, 0.32)
+@export var text_color_custom: Color = Color.WHITE
+@export var text_color_pressed: Color = Color.WHITE
+@export var text_color_hovered: Color = Color.GRAY
+@export var text_color_disabled: Color = Color.DARK_GRAY
+@export var text_color_focused: Color = Color.WHITE
 
 @export_group('Boxes')
 @export_subgroup('Panels')
@@ -27,7 +27,7 @@ extends DialogicLayoutLayer
 @export_file('*.tres') var boxes_stylebox_disabled: String = ""
 @export_file('*.tres') var boxes_stylebox_focused: String = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/choice_panel_focus.tres"
 @export_subgroup('Modulate')
-@export_subgroup('Size & Position')
+@export_subgroup('大小与位置')
 @export var boxes_v_separation: int = 10
 @export var boxes_fill_width: bool = true
 @export var boxes_min_size: Vector2 = Vector2()

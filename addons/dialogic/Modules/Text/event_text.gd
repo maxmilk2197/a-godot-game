@@ -289,7 +289,7 @@ func _on_auto_skip_enable(enabled: bool) -> void:
 
 func _init() -> void:
 	event_name = "Text"
-	event_description = "Displays text. Can be said by a character. Can contain all kinds of bbcode, text effects or variables."
+	event_description = "显示文本。可以由角色说出。可以包含各种 BBCode、文本效果或变量。"
 	set_default_color('Color1')
 	event_category = "Main"
 	event_sorting_index = 0
@@ -420,11 +420,11 @@ func build_event_editor() -> void:
 			{'file_extension' 	: '.dch',
 			'mode'				: 2,
 			'suggestions_func' 	: get_character_suggestions,
-			'placeholder' 		: '(No one)',
+			'placeholder' 		: '（无人）',
 			'icon' 				: load("res://addons/dialogic/Editor/Images/Resources/character.svg")}, 'do_any_characters_exist()')
 	add_header_edit('portrait', ValueType.DYNAMIC_OPTIONS,
 			{'suggestions_func' : get_portrait_suggestions,
-			'placeholder' 		: "(Don't change)",
+			'placeholder' 		: "（保持不变）",
 			'icon' 				: load("res://addons/dialogic/Editor/Images/Resources/portrait.svg"),
 			'collapse_when_empty': true,},
 			'should_show_portrait_selector()')
@@ -445,13 +445,13 @@ func get_character_suggestions(search_text:String) -> Dictionary:
 	if search_text and not search_text in suggestions:
 		suggestions[search_text] = {
 			"value":search_text,
-			"tooltip": "A temporary character, created on the spot.",
+			"tooltip": "临时角色，当场创建。",
 			"editor_icon":["GuiEllipsis", "EditorIcons"]}
 	return suggestions
 
 
 func get_portrait_suggestions(search_text:String) -> Dictionary:
-	return DialogicUtil.get_portrait_suggestions(search_text, character, true, "Don't change", true)
+	return DialogicUtil.get_portrait_suggestions(search_text, character, true, "不更改", true)
 
 #endregion
 
@@ -496,10 +496,10 @@ func _get_start_code_completion(CodeCompletionHelper:Node, TextNode:TextEdit) ->
 
 
 func suggest_bbcode(TextNode:CodeEdit):
-	for i in [['b (bold)', 'b'], ['i (italics)', 'i'], ['color', 'color='], ['font size','font_size=']]:
+	for i in [['b（加粗）', 'b'], ['i（斜体）', 'i'], ['颜色', 'color='], ['字体大小','font_size=']]:
 		TextNode.add_code_completion_option(CodeEdit.KIND_MEMBER, i[0], i[1],  TextNode.syntax_highlighter.normal_color, TextNode.get_theme_icon("RichTextEffect", "EditorIcons"),)
 		TextNode.add_code_completion_option(CodeEdit.KIND_CLASS, 'end '+i[0], '/'+i[1],  TextNode.syntax_highlighter.normal_color, TextNode.get_theme_icon("RichTextEffect", "EditorIcons"), ']')
-	for i in [['new event', 'n'],['new event (same box)', 'n+']]:
+	for i in [['新事件', 'n'],['新事件（同框）', 'n+']]:
 		TextNode.add_code_completion_option(CodeEdit.KIND_MEMBER, i[0], i[1],  TextNode.syntax_highlighter.normal_color, TextNode.get_theme_icon("ArrowRight", "EditorIcons"),)
 
 #endregion

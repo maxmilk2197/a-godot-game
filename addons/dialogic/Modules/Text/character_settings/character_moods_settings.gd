@@ -9,11 +9,11 @@ var default_mood := ''
 
 
 func _init() -> void:
-	hint_text = 'Typing sound moods allow you to vary the "typing" sounds of your character. \nThey can be changed based on the portrait or with the [mood=something] text effect.'
+	hint_text = '打字音效情绪可让你改变角色的"打字"声音。\n它们可以根据立绘更改，或使用 [mood=something] 文本效果。'
 
 
 func _get_title() -> String:
-	return "Typing Sounds"
+	return "打字音效"
 
 
 #region COMMUNICATION WITH EDITOR
@@ -91,7 +91,7 @@ func update_mood_list(selected_name := "") -> void:
 	%MoodList.custom_minimum_size.y = min(%MoodList.item_count*45, 100)
 	%MoodList.visible = %MoodList.item_count != 0
 
-	character_editor.get_settings_section_by_name('Typing Sound Mood', false).update_visibility(%MoodList.item_count != 0)
+	character_editor.get_settings_section_by_name('打字音效情绪', false).update_visibility(%MoodList.item_count != 0)
 
 
 
@@ -149,7 +149,7 @@ func _on_add_pressed() -> void:
 	if !current_mood.is_empty():
 		current_moods_info[current_mood] = get_mood_info()
 
-	var new_name := 'Mood '
+	var new_name := '情绪 '
 	var counter := 1
 	while new_name+str(counter) in current_moods_info:
 		counter+=1
@@ -180,10 +180,10 @@ func _on_delete_pressed() -> void:
 func _on_name_text_changed(new_text:String) -> void:
 	if new_text.is_empty():
 		%NameWarning.show()
-		%NameWarning.tooltip_text = "Name cannot be empty!"
+		%NameWarning.tooltip_text = "名称不能为空！"
 	elif new_text in current_moods_info and new_text != current_mood:
 		%NameWarning.show()
-		%NameWarning.tooltip_text = "Name is already in use!"
+		%NameWarning.tooltip_text = "名称已被使用！"
 	else:
 		%NameWarning.hide()
 

@@ -203,7 +203,7 @@ func _execute() -> void:
 
 func _init() -> void:
 	event_name = "Character"
-	event_description = "Allows joining or leaving a character or updating its portrait, position, mirroring, z-index or animation."
+	event_description = "允许角色加入或离开，或更新其立绘、位置、镜像、Z 轴或动画。"
 	set_default_color('Color2')
 	event_category = "Main"
 	event_sorting_index = 2
@@ -307,10 +307,10 @@ func get_shortcode_parameters() -> Dictionary:
 	return {
 		#param_name 	: property_info
 		"action" 		: {"property": "action", 					"default": 0, "custom_stored":true,
-							"suggestions": func(): return {'Join':
+							"suggestions": func(): return {'加入':
 										{'value':Actions.JOIN},
-										'Leave':{'value':Actions.LEAVE},
-										'Update':{'value':Actions.UPDATE}}},
+										'离开':{'value':Actions.LEAVE},
+										'更新':{'value':Actions.UPDATE}}},
 		"character" 	: {"property": "character_identifier",	"default": "", "custom_stored":true, "ext_file":true},
 		"portrait" 		: {"property": "portrait", 				"default": "", "custom_stored":true,},
 		"transform" 	: {"property": "transform", 			"default": "center", "custom_stored":true,},
@@ -349,25 +349,25 @@ func build_event_editor() -> void:
 	add_header_edit('action', ValueType.FIXED_OPTIONS, {
 		'options': [
 			{
-				'label': 'Join',
+				'label': '加入',
 				'value': Actions.JOIN,
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/join.svg")
 			},
 			{
-				'label': 'Leave',
+				'label': '离开',
 				'value': Actions.LEAVE,
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/leave.svg")
 			},
 			{
-				'label': 'Update',
+				'label': '更新',
 				'value': Actions.UPDATE,
 				'icon': load("res://addons/dialogic/Editor/Images/Dropdown/update.svg")
 			}
 		],
-		"tooltip": "Switch the action: Join/Leave/Update."
+		"tooltip": "切换操作：加入/离开/更新。"
 	})
 	add_header_edit('character_identifier', ValueType.DYNAMIC_OPTIONS,
-			{'placeholder'		: 'Character',
+			{'placeholder'		: '角色',
 			'file_extension' 	: '.dch',
 			'mode'				: 2,
 			'suggestions_func' 	: get_character_suggestions,
@@ -376,65 +376,65 @@ func build_event_editor() -> void:
 
 	add_header_edit('set_portrait', ValueType.BOOL_BUTTON,
 			{'icon':load("res://addons/dialogic/Modules/Character/update_portrait.svg"),
-			 'tooltip':'Change Portrait'}, "should_show_portrait_selector() and action == Actions.UPDATE")
+			 'tooltip':'更改立绘'}, "should_show_portrait_selector() and action == Actions.UPDATE")
 	add_header_edit('portrait', ValueType.DYNAMIC_OPTIONS,
-			{'placeholder'		: 'Default',
+			{'placeholder'		: '默认',
 			'collapse_when_empty':true,
 			'suggestions_func' 	: get_portrait_suggestions,
 			'icon' 				: load("res://addons/dialogic/Editor/Images/Resources/portrait.svg")},
 			'should_show_portrait_selector() and (action != Actions.UPDATE or set_portrait)')
 	add_header_edit('set_transform', ValueType.BOOL_BUTTON,
-			{'icon': load("res://addons/dialogic/Modules/Character/update_position.svg"), 'tooltip':'Change Position'}, "character != null and !has_no_portraits() and action == Actions.UPDATE")
-	add_header_label('at position', 'character != null and !has_no_portraits() and action == Actions.JOIN')
-	add_header_label('to position', 'character != null and !has_no_portraits() and action == Actions.UPDATE and set_transform')
+			{'icon': load("res://addons/dialogic/Modules/Character/update_position.svg"), 'tooltip':'更改位置'}, "character != null and !has_no_portraits() and action == Actions.UPDATE")
+	add_header_label('在位置', 'character != null and !has_no_portraits() and action == Actions.JOIN')
+	add_header_label('到位置', 'character != null and !has_no_portraits() and action == Actions.UPDATE and set_transform')
 	add_header_edit('transform', ValueType.DYNAMIC_OPTIONS,
-			{'placeholder'		: 'center',
+			{'placeholder'		: '居中',
 			'mode'				: 0,
 			'suggestions_func' 	: get_position_suggestions,
-			'tooltip'		: "You can use a predefined position or a custom transform like 'pos=x0.5y1 size=x0.5y1 rot=10'.\nLearn more about this in the documentation."},
+			'tooltip'		: "你可以使用预定义位置，或类似 'pos=x0.5y1 size=x0.5y1 rot=10' 的自定义变换。\n更多信息请参阅文档。"},
 			'character != null and !has_no_portraits() and action != %s and (action != Actions.UPDATE or set_transform)' %Actions.LEAVE)
 
 	# Body
 	add_body_edit('fade_animation', ValueType.DYNAMIC_OPTIONS,
-			{'left_text'		: 'Fade:',
+			{'left_text'		: '淡入淡出：',
 			'suggestions_func' 	: get_fade_suggestions,
 			'editor_icon' 			: ["Animation", "EditorIcons"],
-			'placeholder' 			: 'Default',
+			'placeholder' 			: '默认',
 			'enable_pretty_name' 	: true,
-			'tooltip'				: "Choose the fading to use when changing to a different portrait."},
+			'tooltip'				: "选择切换到不同立绘时使用的淡入淡出效果。"},
 			'should_show_fade_options()')
-	add_body_edit('fade_length', ValueType.NUMBER, {'left_text':'Length:', 'suffix':'s', "min":0},
+	add_body_edit('fade_length', ValueType.NUMBER, {'left_text':'时长：', 'suffix':'s', "min":0},
 			'should_show_fade_options() and !fade_animation.is_empty()')
 	add_body_line_break("should_show_fade_options()")
 	add_body_edit('animation_name', ValueType.DYNAMIC_OPTIONS,
-			{'left_text'		: 'Animation:',
+			{'left_text'		: '动画：',
 			'suggestions_func' 	: get_animation_suggestions,
 			'editor_icon' 			: ["Animation", "EditorIcons"],
-			'placeholder' 			: 'Default',
+			'placeholder' 			: '默认',
 			'enable_pretty_name' 	: true,
-			'tooltip'				: "Plays an animation on this character."},
+			'tooltip'				: "在该角色上播放一个动画。"},
 			'should_show_animation_options()')
-	add_body_edit('animation_length', ValueType.NUMBER, {'left_text':'Length:', 'suffix':'s', "min":0},
+	add_body_edit('animation_length', ValueType.NUMBER, {'left_text':'时长：', 'suffix':'s', "min":0},
 			'should_show_animation_options() and !animation_name.is_empty() and not "instant" in animation_name.to_lower()')
-	add_body_edit('repeat_forever', ValueType.BOOL, {'left_text':'Repeat Forever:'},
+	add_body_edit('repeat_forever', ValueType.BOOL, {'left_text':'无限重复：'},
 			'should_show_animation_options() and !animation_name.is_empty() and action == %s)' %Actions.UPDATE)
-	add_body_edit('animation_repeats', ValueType.NUMBER, {'left_text':'Repeat:', 'mode':1, "min":1},
+	add_body_edit('animation_repeats', ValueType.NUMBER, {'left_text':'重复次数：', 'mode':1, "min":1},
 			'should_show_animation_options() and !animation_name.is_empty() and action == %s and not repeat_forever' %Actions.UPDATE)
-	add_body_edit('animation_wait', ValueType.BOOL, {'left_text':'Await end:'},
+	add_body_edit('animation_wait', ValueType.BOOL, {'left_text':'等待结束：'},
 			'should_show_animation_options() and !animation_name.is_empty() and not repeat_forever and not "instant" in animation_name.to_lower()')
 	add_body_line_break()
-	add_body_edit('transform_time', ValueType.NUMBER, {'left_text':'Movement duration:', "min":0, "tooltip": "When changing the characters position, this is how fast it will happen."},
+	add_body_edit('transform_time', ValueType.NUMBER, {'left_text':'移动时长：', "min":0, "tooltip": "当角色位置改变时，这是变化的速率。"},
 			"should_show_transform_options()")
-	add_body_edit("transform_trans", ValueType.FIXED_OPTIONS, {'options':trans_options, 'left_text':"Trans:", "tooltip":"The transition type to use for moving the character to its new position."}, 'should_show_transform_options() and transform_time > 0')
-	add_body_edit("transform_ease", ValueType.FIXED_OPTIONS, {'options':ease_options, 'left_text':"Ease:", "tooltip":"The easing to use for moving the character to its new position."}, 'should_show_transform_options() and transform_time > 0')
+	add_body_edit("transform_trans", ValueType.FIXED_OPTIONS, {'options':trans_options, 'left_text':"过渡：", "tooltip":"用于将角色移动到新位置的过渡类型。"}, 'should_show_transform_options() and transform_time > 0')
+	add_body_edit("transform_ease", ValueType.FIXED_OPTIONS, {'options':ease_options, 'left_text':"缓动：", "tooltip":"用于将角色移动到新位置的缓动方式。"}, 'should_show_transform_options() and transform_time > 0')
 
-	add_body_edit('set_z_index', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Character/update_z_index.svg"), 'tooltip':'Change Z-Index'}, "character != null and action == Actions.UPDATE")
-	add_body_edit('z_index', ValueType.NUMBER, {'left_text':'Z-index:', 'mode':1, "tooltip": "The Z-Index controls the visual order of characters. Higher z-index makes a character appear further in front."},
+	add_body_edit('set_z_index', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Character/update_z_index.svg"), 'tooltip':'更改 Z 轴'}, "character != null and action == Actions.UPDATE")
+	add_body_edit('z_index', ValueType.NUMBER, {'left_text':'Z 轴：', 'mode':1, "tooltip": "Z 轴控制角色的视觉顺序。z 值越大，角色显示越靠前。"},
 			'action != %s and (action != Actions.UPDATE or set_z_index)' %Actions.LEAVE)
-	add_body_edit('set_mirrored', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Character/update_mirror.svg"), 'tooltip':'Change Mirroring'}, "character != null and action == Actions.UPDATE")
-	add_body_edit('mirrored', ValueType.BOOL, {'left_text':'Mirrored:', "tooltip": "Mirrors the character. This applies on top of the mirroring of the portrait and the position container."},
+	add_body_edit('set_mirrored', ValueType.BOOL_BUTTON, {'icon':load("res://addons/dialogic/Modules/Character/update_mirror.svg"), 'tooltip':'更改镜像'}, "character != null and action == Actions.UPDATE")
+	add_body_edit('mirrored', ValueType.BOOL, {'left_text':'镜像：', "tooltip": "镜像角色。此设置在立绘与位置容器的镜像基础上叠加。"},
 			'action != %s and (action != Actions.UPDATE or set_mirrored)' %Actions.LEAVE)
-	add_body_edit('extra_data', ValueType.SINGLELINE_TEXT, {'left_text':'Extra Data:', "tooltip": "Data that is given to the portrait. To be used on custom portrait scenes."}, 'action != Actions.LEAVE')
+	add_body_edit('extra_data', ValueType.SINGLELINE_TEXT, {'left_text':'附加数据：', "tooltip": "提供给立绘的数据。用于自定义立绘场景。"}, 'action != Actions.LEAVE')
 
 
 func should_show_transform_options() -> bool:
@@ -462,9 +462,9 @@ func get_character_suggestions(search_text:String) -> Dictionary:
 
 
 func get_portrait_suggestions(search_text:String) -> Dictionary:
-	var empty_text := "Don't Change"
+	var empty_text := "不更改"
 	if action == Actions.JOIN:
-		empty_text = "Default"
+		empty_text = "默认"
 	return DialogicUtil.get_portrait_suggestions(search_text, character, true, empty_text)
 
 

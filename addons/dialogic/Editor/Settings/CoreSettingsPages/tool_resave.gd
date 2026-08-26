@@ -3,8 +3,8 @@ extends Node
 
 @onready var ToolUtil := get_parent()
 
-var button_text := "Resave all timelines"
-var tooltip := "Opens and resaves all timelines. This can be useful if an update introduced a syntax change."
+var button_text := "重新保存所有时间线"
+var tooltip := "打开并重新保存所有时间线。如果更新引入了语法更改，这会很有用。"
 var method := resave_tool
 
 

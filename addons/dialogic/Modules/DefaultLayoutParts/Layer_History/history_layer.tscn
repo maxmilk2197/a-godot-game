@@ -72,7 +72,7 @@ offset_bottom = 38.0
 grow_horizontal = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "History"
+text = "历史"
 
 [node name="HideHistory" type="Button" parent="."]
 visible = false
@@ -87,7 +87,7 @@ offset_bottom = 89.0
 grow_horizontal = 0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Return"
+text = "返回"
 
 [connection signal="pressed" from="ShowHistory" to="." method="_on_show_history_pressed"]
 [connection signal="pressed" from="HideHistory" to="." method="_on_hide_history_pressed"]

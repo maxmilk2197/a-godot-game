@@ -100,7 +100,7 @@ func _set_value(value: Variant) -> void:
 func _on_OpenButton_pressed() -> void:
 	find_parent('EditorView').godot_file_dialog(
 		_on_file_dialog_selected, file_filter, file_mode,
-		"Open "+ property_name,
+		"打开 "+ property_name,
 		"",
 		false,
 		"",

@@ -25,11 +25,11 @@ func open() -> void:
 func load_info(info:Dictionary, update_type:int) -> void:
 	current_info = info
 	if update_type == 2:
-		%State.text = "No Information Available"
-		%UpdateName.text = "Unable to access versions."
+		%State.text = "无可用信息"
+		%UpdateName.text = "无法访问版本信息。"
 		%UpdateName.add_theme_color_override("font_color", editor_view.get_theme_color("readonly_color", "Editor"))
-		%Content.text = "You are probably not connected to the internet. Fair enough."
-		%ShortInfo.text = "Huh, what happened here?"
+		%Content.text = "你可能没有连接互联网。也说得过去。"
+		%ShortInfo.text = "咦，这里发生了什么？"
 		%ReadFull.hide()
 		%Install.disabled = true
 		return
@@ -40,22 +40,22 @@ func load_info(info:Dictionary, update_type:int) -> void:
 		info["body"] = "# 😎 You are using the WIP branch!\nSeems like you are using a version that isn't even released yet. Be careful and give us your feedback ;)"
 		info["published_at"] = "????T"
 		info["author"] = {'login':"???"}
-		%State.text = "Where are we Doc?"
+		%State.text = "我们在哪儿，博士？"
 		%UpdateName.add_theme_color_override("font_color", editor_view.get_theme_color("property_color_z", "Editor"))
 		%Install.disabled = true
 
 	elif update_type == 0:
-		%State.text = "Update Available!"
+		%State.text = "有可用更新！"
 		%UpdateName.add_theme_color_override("font_color", editor_view.get_theme_color("warning_color", "Editor"))
 		%Install.disabled = false
 	else:
-		%State.text = "You are up to date:"
+		%State.text = "你已是最新版本："
 		%UpdateName.add_theme_color_override("font_color", editor_view.get_theme_color("success_color", "Editor"))
 		%Install.disabled = true
 
 	%UpdateName.text = info.name
 	%Content.text = markdown_to_bbcode(info.body).get_slice("\n[font_size", 0).strip_edges()
-	%ShortInfo.text = "Published on "+info.published_at.substr(0, info.published_at.find('T'))+" by "+info.author.login
+	%ShortInfo.text = "发布于 "+info.published_at.substr(0, info.published_at.find('T'))+"，作者："+info.author.login
 	if info.has("html_url"):
 		%ReadFull.uri = info.html_url
 		%ReadFull.show()
@@ -82,7 +82,7 @@ func _on_window_close_requested() -> void:
 func _on_install_pressed() -> void:
 	find_parent('UpdateManager').request_update_download()
 
-	%InfoLabel.text = "Downloading. This can take a moment."
+	%InfoLabel.text = "正在下载，可能需要一点时间。"
 	%Loading.show()
 	%LoadingIcon.create_tween().set_loops().tween_property(%LoadingIcon, 'rotation', 2*PI, 1).from(0)
 
@@ -95,12 +95,12 @@ func _on_update_manager_downdload_completed(result:int):
 	%Loading.hide()
 	match result:
 		0: # success
-			%InfoLabel.text = "Installed successfully. Restart needed!"
+			%InfoLabel.text = "安装成功。需要重启！"
 			%InfoLabel.modulate = editor_view.get_theme_color("success_color", "Editor")
 			%Restart.show()
 			%Restart.grab_focus()
 		1: # failure
-			%InfoLabel.text = "Download failed."
+			%InfoLabel.text = "下载失败。"
 			%InfoLabel.modulate = editor_view.get_theme_color("readonly_color", "Editor")
 
 

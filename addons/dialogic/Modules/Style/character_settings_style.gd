@@ -4,10 +4,10 @@ extends DialogicCharacterEditorMainSection
 ## Character editor tab that allows setting a custom style fot the character.
 
 func _init() -> void:
-	hint_text = 'If a character style is set, dialogic will switch to this style, whenever the character speaks. \nFor this it\'s best to use a variation of the same layout to avoid instancing a lot.'
+	hint_text = '如果角色设置了样式，当该角色说话时 Dialogic 将切换到该样式。\n最好使用同一布局的变体，以避免实例化过多。'
 
 func _get_title() -> String:
-	return "Style"
+	return "样式"
 
 
 func _ready() -> void:
@@ -27,7 +27,7 @@ func _save_changes(character:DialogicCharacter) -> DialogicCharacter:
 func get_style_suggestions(filter:String="") -> Dictionary:
 	var styles: Array = ProjectSettings.get_setting('dialogic/layout/style_list', [])
 	var suggestions := {}
-	suggestions["No Style"] = {'value': "", 'editor_icon': ["EditorHandleDisabled", "EditorIcons"]}
+	suggestions['无样式'] = {'value': "", 'editor_icon': ["EditorHandleDisabled", "EditorIcons"]}
 	for i in styles:
 		var style: DialogicStyle = load(i)
 		suggestions[style.name] = {'value': style.name, 'editor_icon': ["PopupMenu", "EditorIcons"]}

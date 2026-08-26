@@ -32,7 +32,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
-tooltip_text = "Show Sidebar"
+tooltip_text = "显示侧边栏"
 theme_type_variation = &"FlatButton"
 theme_override_constants/icon_max_width = 20
 
@@ -72,7 +72,7 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-text = "No resource"
+text = "无资源"
 alignment = 1
 editable = false
 
@@ -93,8 +93,8 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "Filter Resources"
-placeholder_text = "Filter Resources"
+tooltip_text = "筛选资源"
+placeholder_text = "筛选资源"
 caret_blink = true
 caret_blink_interval = 0.5
 
@@ -105,7 +105,7 @@ layout_mode = 2
 [node name="Options" type="MenuButton" parent="VBoxPrimary/Margin/MainVSplit/VBox/Tools/HBox" unique_id=622489996]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Resource List Options"
+tooltip_text = "资源列表选项"
 theme_type_variation = &"FlatMenuButton"
 flat = false
 
@@ -126,14 +126,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxPrimary/Margin/MainVSplit/VBox/HBoxContainer" unique_id=1565963743]
 layout_mode = 2
 size_flags_vertical = 1
-text = "Sort Order"
+text = "排序方式"
 vertical_alignment = 1
 
 [node name="SortOption" type="OptionButton" parent="VBoxPrimary/Margin/MainVSplit/VBox/HBoxContainer" unique_id=503120854]
 layout_mode = 2
 size_flags_horizontal = 3
 item_count = 1
-popup/item_0/text = "Alphabetical (All)"
+popup/item_0/text = "字母顺序（全部）"
 popup/item_0/id = 0
 
 [node name="ContentListSection" type="VBoxContainer" parent="VBoxPrimary/Margin/MainVSplit" unique_id=1652647940]
@@ -148,7 +148,7 @@ size_flags_stretch_ratio = 0.5
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-tooltip_text = "Label events in your timeline will appear here, allowing you to jump to them."
+tooltip_text = "时间线中的标签事件会显示在这里，方便跳转到它们。"
 theme_type_variation = &"ItemListSecondary"
 theme_override_styles/selected = SubResource("StyleBoxEmpty_gxwm6")
 theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_n8rql")
@@ -161,7 +161,7 @@ layout_mode = 2
 [node name="CloseButton" type="Button" parent="VBoxPrimary/HBoxContainer" unique_id=637854226]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Hide Sidebar"
+tooltip_text = "隐藏侧边栏"
 theme_type_variation = &"FlatButton"
 
 [node name="CurrentVersion" type="Button" parent="VBoxPrimary/HBoxContainer" unique_id=2110656799]
@@ -169,7 +169,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
-text = "Some Version"
+text = "某个版本"
 flat = true
 clip_text = true
 

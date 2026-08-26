@@ -26,7 +26,7 @@ func _on_add_pressed() -> void:
 		elif mode == Modes.EDIT:
 			save()
 
-	%AddButton.text = "Add"
+	%AddButton.text = "添加"
 	mode = Modes.ADD
 	show()
 	%Type.selected = 0
@@ -41,7 +41,7 @@ func open_existing(_item:TreeItem, info:Dictionary):
 	mode = Modes.EDIT
 	item = _item
 	show()
-	%AddButton.text = "Update"
+	%AddButton.text = "更新"
 	%Type.selected = info.type
 	_on_type_item_selected(info.type)
 	if !info.character_names.is_empty():

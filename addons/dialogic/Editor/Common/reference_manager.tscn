@@ -61,7 +61,7 @@ unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
-text = "Broken References"
+text = "损坏的引用"
 flat = true
 
 [node name="TabB" type="Button" parent="Tabs/Tabs" unique_id=179829302]
@@ -69,7 +69,7 @@ unique_name_in_owner = true
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_l6uiy")
-text = "Unique Identifiers"
+text = "唯一标识符"
 flat = true
 
 [node name="BrokenReferences" type="VSplitContainer" parent="Tabs" unique_id=2135102832]
@@ -94,12 +94,12 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "Recent renames"
+text = "最近的重命名"
 
 [node name="AddButton" type="Button" parent="Tabs/BrokenReferences/ChangesList/VBox/HBoxContainer" unique_id=1973618045]
 layout_mode = 2
 size_flags_horizontal = 2
-tooltip_text = "Add custom rename"
+tooltip_text = "添加自定义重命名"
 theme_type_variation = &"FlatButton"
 icon = SubResource("ImageTexture_a0gfq")
 
@@ -118,18 +118,18 @@ layout_mode = 2
 [node name="Type" type="OptionButton" parent="Tabs/BrokenReferences/ChangesList/VBox/ReplacementEditPanel/VBox/HBoxContainer3" unique_id=1357396186]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "This decides the regexes for searching. Pure text allows you to enter your own regex into \"Old\". "
+tooltip_text = "这决定搜索用的正则表达式。选择“纯文本”可让你在“旧”中输入自己的正则。"
 selected = 0
 item_count = 5
-popup/item_0/text = "Pure Text"
+popup/item_0/text = "纯文本"
 popup/item_0/id = 0
-popup/item_1/text = "Variable"
+popup/item_1/text = "变量"
 popup/item_1/id = 1
-popup/item_2/text = "Portrait"
+popup/item_2/text = "立绘"
 popup/item_2/id = 2
-popup/item_3/text = "Character (Ref)"
+popup/item_3/text = "角色（引用）"
 popup/item_3/id = 3
-popup/item_4/text = "Timeline (Ref)"
+popup/item_4/text = "时间线（引用）"
 popup/item_4/id = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Tabs/BrokenReferences/ChangesList/VBox/ReplacementEditPanel/VBox" unique_id=1885755143]
@@ -140,7 +140,7 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Old"
+placeholder_text = "旧"
 
 [node name="Label2" type="Label" parent="Tabs/BrokenReferences/ChangesList/VBox/ReplacementEditPanel/VBox/HBoxContainer" unique_id=1934012091]
 layout_mode = 2
@@ -150,7 +150,7 @@ text = "->"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "New"
+placeholder_text = "新"
 
 [node name="PureTextFlags" type="HBoxContainer" parent="Tabs/BrokenReferences/ChangesList/VBox/ReplacementEditPanel/VBox" unique_id=1142691441]
 unique_name_in_owner = true
@@ -160,14 +160,14 @@ alignment = 2
 [node name="MatchCase" type="Button" parent="Tabs/BrokenReferences/ChangesList/VBox/ReplacementEditPanel/VBox/PureTextFlags" unique_id=1479221705]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Match Case"
+tooltip_text = "区分大小写"
 toggle_mode = true
 icon = SubResource("DPITexture_asrh0")
 
 [node name="WholeWords" type="Button" parent="Tabs/BrokenReferences/ChangesList/VBox/ReplacementEditPanel/VBox/PureTextFlags" unique_id=597458715]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Whole World"
+tooltip_text = "全局"
 toggle_mode = true
 icon = SubResource("DPITexture_xvpjt")
 
@@ -180,11 +180,11 @@ layout_mode = 2
 selected = 0
 fit_to_longest_item = false
 item_count = 3
-popup/item_0/text = "Everywhere"
+popup/item_0/text = "所有位置"
 popup/item_0/id = 0
-popup/item_1/text = "Only for Character"
+popup/item_1/text = "仅用于角色"
 popup/item_1/id = 1
-popup/item_2/text = "Texts only"
+popup/item_2/text = "仅文本"
 popup/item_2/id = 2
 
 [node name="Character" parent="Tabs/BrokenReferences/ChangesList/VBox/ReplacementEditPanel/VBox/HBoxContainer4" unique_id=1881601849 instance=ExtResource("3_yomsc")]
@@ -194,7 +194,7 @@ layout_mode = 2
 [node name="AddButton" type="Button" parent="Tabs/BrokenReferences/ChangesList/VBox/ReplacementEditPanel/VBox" unique_id=245495061]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Add/Save"
+text = "添加/保存"
 
 [node name="ChangeTree" type="Tree" parent="Tabs/BrokenReferences/ChangesList/VBox" unique_id=1796477890]
 unique_name_in_owner = true
@@ -210,8 +210,8 @@ hide_root = true
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-tooltip_text = "Search timelines for occurences of these renames"
-text = "Check Selected"
+tooltip_text = "在时间线中搜索这些重命名的出现位置"
+text = "检查所选"
 
 [node name="ReplacementSection" type="PanelContainer" parent="Tabs/BrokenReferences" unique_id=1219457619]
 unique_name_in_owner = true
@@ -230,7 +230,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "Found references"
+text = "找到的引用"
 
 [node name="State" type="Label" parent="Tabs/BrokenReferences/ReplacementSection/FindList/HBox" unique_id=2122509693]
 unique_name_in_owner = true
@@ -238,7 +238,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "State"
+text = "状态"
 
 [node name="ReferenceTree" type="Tree" parent="Tabs/BrokenReferences/ReplacementSection/FindList" unique_id=580230309]
 unique_name_in_owner = true
@@ -261,14 +261,13 @@ alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-tooltip_text = "Replace all selected findings (Careful, no undo!)"
-text = "Replace Selected"
+tooltip_text = "替换所有选中的结果（注意：无法撤销！）"
+text = "替换所选"
 
 [node name="HintTooltip" parent="Tabs/BrokenReferences/ReplacementSection/FindList/HBoxContainer" unique_id=1728688034 instance=ExtResource("5_sdymt")]
 layout_mode = 2
 texture = null
-hint_text = "Note that searching and replacing is only implemented for timelines. 
-E.g. variables used in character display names or glossary entries will have to be replaced manually."
+hint_text = "请注意，搜索和替换仅对时间线生效。\n例如，角色显示名称或词条条目中使用的变量需要手动替换。"
 
 [node name="UniqueIdentifiers" type="PanelContainer" parent="Tabs" unique_id=219749373]
 visible = false
@@ -288,7 +287,7 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
-placeholder_text = "Filter Identifiers/Paths"
+placeholder_text = "筛选标识符/路径"
 
 [node name="IdentifierTable" type="Tree" parent="Tabs/UniqueIdentifiers/VBox" unique_id=1440037436]
 unique_name_in_owner = true
@@ -302,13 +301,13 @@ hide_root = true
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-text = "You've renamed some identifier(s)! Use the \"Broken References\" tab to check if you have used this identifier (and fix it if so)."
+text = "你重命名了一些标识符！请使用“损坏的引用”标签页检查你是否使用过该标识符（如果是，请修复它）。"
 autowrap_mode = 3
 
 [node name="Close" type="Button" parent="Tabs" unique_id=753377605]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Close"
+text = "关闭"
 
 [node name="HelpButton" type="Button" parent="." unique_id=840546210]
 unique_name_in_owner = true
@@ -316,7 +315,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_type_variation = &"FlatButton"
-text = "Online Docs"
+text = "在线文档"
 
 [connection signal="pressed" from="Tabs/BrokenReferences/ChangesList/VBox/HBoxContainer/AddButton" to="Tabs/BrokenReferences" method="_on_add_button_pressed"]
 [connection signal="item_selected" from="Tabs/BrokenReferences/ChangesList/VBox/ReplacementEditPanel/VBox/HBoxContainer3/Type" to="Tabs/BrokenReferences/ChangesList/VBox/ReplacementEditPanel" method="_on_type_item_selected"]

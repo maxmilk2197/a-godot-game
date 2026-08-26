@@ -19,7 +19,7 @@ size_flags_horizontal = 3
 [node name="Title3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Behaviour"
+text = "行为"
 
 [node name="VBox" type="GridContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -30,13 +30,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/VBox/DefaultSpeedLabel"]
 layout_mode = 2
-text = "Default letter speed"
+text = "默认打字速度"
 
 [node name="HintTooltip2" parent="VBoxContainer/VBox/DefaultSpeedLabel" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "The speed in seconds per character. A speed of 0 will reveal the full text instantly (still taking pauses into consideration)."
+tooltip_text = "每个字符所需的秒数。速度为 0 时，文本将立即全部显示（仍会考虑暂停）。"
 texture = null
-hint_text = "The speed in seconds per character. A speed of 0 will reveal the full text instantly (still taking pauses into consideration)."
+hint_text = "每个字符所需的秒数。速度为 0 时，文本将立即全部显示（仍会考虑暂停）。"
 
 [node name="DefaultSpeed" type="SpinBox" parent="VBoxContainer/VBox"]
 unique_name_in_owner = true
@@ -48,15 +48,13 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="VBoxContainer/VBox/InputActionLabel"]
 layout_mode = 2
-text = "Input action"
+text = "输入操作"
 
 [node name="HintTooltip3" parent="VBoxContainer/VBox/InputActionLabel" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "The action that skips text and generally advances to the next event.
-You can modify actions in the Project Settings > Input Map."
+tooltip_text = "跳过文本并通常推进到下一个事件的操作。\n你可以在“项目设置 > 输入映射”中修改操作。"
 texture = null
-hint_text = "The action that skips text and generally advances to the next event.
-You can modify actions in the Project Settings > Input Map."
+hint_text = "跳过文本并通常推进到下一个事件的操作。\n你可以在“项目设置 > 输入映射”中修改操作。"
 
 [node name="InputAction" parent="VBoxContainer/VBox" instance=ExtResource("3")]
 unique_name_in_owner = true
@@ -68,15 +66,13 @@ layout_mode = 2
 
 [node name="Label3" type="Label" parent="VBoxContainer/VBox/HBoxContainer"]
 layout_mode = 2
-text = "Text Reveal Skippable"
+text = "文本显示可跳过"
 
 [node name="HintTooltip4" parent="VBoxContainer/VBox/HBoxContainer" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "If enabled the revealing of text can be skipped with the input action.
-If disabled you can only advance to the next event when revealing has finnished."
+tooltip_text = "启用后，可以使用输入操作跳过文本显示。\n禁用后，只能在文本显示结束后才能推进到下一个事件。"
 texture = null
-hint_text = "If enabled the revealing of text can be skipped with the input action.
-If disabled you can only advance to the next event when revealing has finnished."
+hint_text = "启用后，可以使用输入操作跳过文本显示。\n禁用后，只能在文本显示结束后才能推进到下一个事件。"
 
 [node name="Skippable" type="HBoxContainer" parent="VBoxContainer/VBox"]
 layout_mode = 2
@@ -90,17 +86,13 @@ layout_mode = 2
 
 [node name="Label3" type="Label" parent="VBoxContainer/VBox/Skippable/HBoxContainer2"]
 layout_mode = 2
-text = "Skip Delay:"
+text = "跳过延迟："
 
 [node name="HintTooltip4" parent="VBoxContainer/VBox/Skippable/HBoxContainer2" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "Delay before you can skip. 
-
-Use this to prevent users from skipping through your timeline to quickly."
+tooltip_text = "可跳过前的延迟。\n\n用它来防止用户过快跳过你的时间线。"
 texture = null
-hint_text = "Delay before you can skip. 
-
-Use this to prevent users from skipping through your timeline too quickly."
+hint_text = "可跳过前的延迟。\n\n用它来防止用户过快跳过你的时间线。"
 
 [node name="SkippableDelay" type="SpinBox" parent="VBoxContainer/VBox/Skippable/HBoxContainer2"]
 unique_name_in_owner = true
@@ -114,17 +106,13 @@ layout_mode = 2
 
 [node name="Label3" type="Label" parent="VBoxContainer/VBox/Skippable/HBoxContainer3"]
 layout_mode = 2
-text = "Advance Delay:"
+text = "推进延迟："
 
 [node name="HintTooltip4" parent="VBoxContainer/VBox/Skippable/HBoxContainer3" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "Delay before you can advance (if the text finishes revealing on its own). 
-
-This is used to prevent players from advancing when they actually wanted to skip the revealing, but did so very shortly after the text was already fully revealed."
+tooltip_text = "可推进前的延迟（如果文本自行显示完成）。\n\n这是为了防止玩家本想跳过文本显示、却在文本已完全显示后不久就推进的情况。"
 texture = null
-hint_text = "Delay before you can advance (only if the text finishes revealing on its own). 
-
-This is used to prevent players from advancing when they actually wanted to skip the revealing, but did so very shortly after the text was already fully revealed."
+hint_text = "可推进前的延迟（仅在文本自行显示完成时）。\n\n这是为了防止玩家本想跳过文本显示、却在文本已完全显示后不久就推进的情况。"
 
 [node name="AdvanceDelay" type="SpinBox" parent="VBoxContainer/VBox/Skippable/HBoxContainer3"]
 unique_name_in_owner = true
@@ -138,13 +126,13 @@ layout_mode = 2
 
 [node name="Label4" type="Label" parent="VBoxContainer/VBox/ColorNames"]
 layout_mode = 2
-text = "Autocolor names"
+text = "姓名自动着色"
 
 [node name="HintTooltip5" parent="VBoxContainer/VBox/ColorNames" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "If enabled character names will be colored in the characters color in text events."
+tooltip_text = "启用后，文本事件中的角色姓名将以角色的颜色显示。"
 texture = null
-hint_text = "If enabled character names will be colored in the characters color in text events."
+hint_text = "启用后，文本事件中的角色姓名将以角色的颜色显示。"
 
 [node name="AutocolorNames" type="CheckBox" parent="VBoxContainer/VBox"]
 unique_name_in_owner = true
@@ -155,13 +143,13 @@ layout_mode = 2
 
 [node name="Label4" type="Label" parent="VBoxContainer/VBox/TextPrefixLabel"]
 layout_mode = 2
-text = "Text prefix"
+text = "文本前缀"
 
 [node name="HintTooltip5" parent="VBoxContainer/VBox/TextPrefixLabel" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "If enabled character names will be colored in the characters color in text events."
+tooltip_text = "启用后，文本事件中的角色姓名将以角色的颜色显示。"
 texture = null
-hint_text = "This is put before the text. Can be used to apply bbcode effects to all texts."
+hint_text = "这段文本会被放在文本之前。可用于对所有文本应用 BBCode 效果。"
 
 [node name="TextPrefix" type="LineEdit" parent="VBoxContainer/VBox"]
 unique_name_in_owner = true
@@ -172,13 +160,13 @@ layout_mode = 2
 
 [node name="Label4" type="Label" parent="VBoxContainer/VBox/BBCodeEffectLabel"]
 layout_mode = 2
-text = "Custom BBCode Effects"
+text = "自定义 BBCode 效果"
 
 [node name="HintTooltip5" parent="VBoxContainer/VBox/BBCodeEffectLabel" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "This is put before the text. Can be used to apply bbcode effects to all texts."
+tooltip_text = "这段文本会被放在文本之前。可用于对所有文本应用 BBCode 效果。"
 texture = null
-hint_text = "Supply a list of bbcode effect resources (paths or uids) separated by comma."
+hint_text = "提供以逗号分隔的 BBCode 效果资源（路径或 uid）列表。"
 
 [node name="CustomBBCodeEffects" type="LineEdit" parent="VBoxContainer/VBox"]
 unique_name_in_owner = true
@@ -189,15 +177,13 @@ layout_mode = 2
 
 [node name="Label5" type="Label" parent="VBoxContainer/VBox/HBoxContainer3"]
 layout_mode = 2
-text = "New lines as new events"
+text = "新行作为新事件"
 
 [node name="HintTooltip7" parent="VBoxContainer/VBox/HBoxContainer3" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "If enabled dialogic, new lines will be treated as [n] effects,
-seemingly waiting for input before starting a new text."
+tooltip_text = "启用后，Dialogic 会将新行视为 [n] 效果，\n在开始新文本前似乎会等待输入。"
 texture = null
-hint_text = "If enabled dialogic, new lines will be treated as [n] effects,
-seemingly waiting for input before starting a new text."
+hint_text = "启用后，Dialogic 会将新行视为 [n] 效果，\n在开始新文本前似乎会等待输入。"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/VBox"]
 layout_mode = 2
@@ -212,9 +198,9 @@ layout_mode = 2
 selected = 0
 fit_to_longest_item = false
 item_count = 2
-popup/item_0/text = "As new event"
+popup/item_0/text = "作为新事件"
 popup/item_0/id = 0
-popup/item_1/text = "Appended"
+popup/item_1/text = "追加"
 popup/item_1/id = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
@@ -226,31 +212,13 @@ layout_mode = 2
 [node name="Title" type="Label" parent="VBoxContainer/HBoxContainer AutoAdvance"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Auto-Advance"
+text = "自动推进"
 
 [node name="HintTooltip" parent="VBoxContainer/HBoxContainer AutoAdvance" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "Autoadvance is the concept of automatically progressing to the next event upon completing text display, usually after a certain delay.
-
-You can enabled Auto-Advance from code using either:
-- Dialogic.Inputs.auto_advance.enabled_until_user_input = true
-- Dialogic.Inputs.auto_advance.enabled_until_next_event = true
-- Dialogic.Inputs.auto_advance.enabled_forced = true
-These add up, so if any of them is true, Auto-Advance will happen.
-Unless manual advancement is disabled, the Auto-Advance time can always be skipped by the player.
-
-The Auto-Advance will wait for Voice audio to finish playing. This behaviour can be disabled via code. "
+tooltip_text = "自动推进是指在文本显示完成后自动进入下一个事件，通常在一定延迟之后。\n\n你可以通过代码启用自动推进，使用以下任一方式：\n- Dialogic.Inputs.auto_advance.enabled_until_user_input = true\n- Dialogic.Inputs.auto_advance.enabled_until_next_event = true\n- Dialogic.Inputs.auto_advance.enabled_forced = true\n这些设置会累加，只要其中任一为 true，就会发生自动推进。\n除非手动推进被禁用，否则玩家始终可以跳过自动推进时间。\n\n自动推进会等待语音音频播放完毕。可以通过代码禁用此行为。"
 texture = null
-hint_text = "Autoadvance is the concept of automatically progressing to the next event upon completing text display, usually after a certain delay.
-
-You can enabled Auto-Advance from code using either:
-- Dialogic.Inputs.auto_advance.enabled_until_user_input = true
-- Dialogic.Inputs.auto_advance.enabled_until_next_event = true
-- Dialogic.Inputs.auto_advance.enabled_forced = true
-These add up, so if any of them is true, Auto-Advance will happen.
-Unless manual advancement is disabled, the Auto-Advance time can always be skipped by the player.
-
-The Auto-Advance will wait for Voice audio to finish playing. This behaviour can be disabled via code. "
+hint_text = "自动推进是指在文本显示完成后自动进入下一个事件，通常在一定延迟之后。\n\n你可以通过代码启用自动推进，使用以下任一方式：\n- Dialogic.Inputs.auto_advance.enabled_until_user_input = true\n- Dialogic.Inputs.auto_advance.enabled_until_next_event = true\n- Dialogic.Inputs.auto_advance.enabled_forced = true\n这些设置会累加，只要其中任一为 true，就会发生自动推进。\n除非手动推进被禁用，否则玩家始终可以跳过自动推进时间。\n\n自动推进会等待语音音频播放完毕。可以通过代码禁用此行为。"
 
 [node name="AutoadvanceSettings" type="GridContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -261,13 +229,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay2"]
 layout_mode = 2
-text = "Base Delay"
+text = "基础延迟"
 
 [node name="HintTooltip" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay2" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "This is the base delay for autoadvancment."
+tooltip_text = "这是自动推进的基础延迟。"
 texture = null
-hint_text = "This is the base delay for autoadvancment."
+hint_text = "这是自动推进的基础延迟。"
 
 [node name="FixedDelay" type="SpinBox" parent="VBoxContainer/AutoadvanceSettings"]
 unique_name_in_owner = true
@@ -282,17 +250,13 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer"]
 layout_mode = 2
-text = "Additional Delay"
+text = "额外延迟"
 
 [node name="HintTooltip2" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "An additional delay per character or word can be added.
-
-Note: When changing values via code, you can actually use both modes simultaniously."
+tooltip_text = "可以添加每个字符或单词的额外延迟。\n\n注意：通过代码更改值时，实际上可以同时使用两种模式。"
 texture = null
-hint_text = "An additional delay per character or word can be added.
-
-Note: When changing values via code, you can actually use both modes simultaniously."
+hint_text = "可以添加每个字符或单词的额外延迟。\n\n注意：通过代码更改值时，实际上可以同时使用两种模式。"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/AutoadvanceSettings"]
 layout_mode = 2
@@ -303,11 +267,11 @@ layout_mode = 2
 selected = 0
 fit_to_longest_item = false
 item_count = 3
-popup/item_0/text = "None"
+popup/item_0/text = "无"
 popup/item_0/id = 0
-popup/item_1/text = "Per Word"
+popup/item_1/text = "按单词"
 popup/item_1/id = 1
-popup/item_2/text = "Per Character"
+popup/item_2/text = "按字符"
 popup/item_2/id = 2
 
 [node name="AdditionalDelay" type="SpinBox" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2"]
@@ -321,19 +285,13 @@ layout_mode = 2
 
 [node name="Label3" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters"]
 layout_mode = 2
-text = "Ignored Characters"
+text = "忽略的字符"
 
 [node name="HintTooltip3" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "An ignored character will add no delay, this is useful to exclude interpunction and whitespaces.
-
-If disabled, the general line of text length will be used, stripping the BBCode tags first.
-If enabled, the text will be scanned and the matching characters will be skipped."
+tooltip_text = "被忽略的字符不会增加延迟，这有助于排除标点符号和空白字符。\n\n禁用时，将使用文本行的一般长度（先去除 BBCode 标签）。\n启用时，将扫描文本并跳过匹配的字符。"
 texture = null
-hint_text = "An ignored character will add no delay, this is useful to exclude interpunction and whitespaces.
-
-If disabled, the general line of text length will be used, stripping the BBCode tags first.
-If enabled, the text will be scanned and the matching characters will be skipped."
+hint_text = "被忽略的字符不会增加延迟，这有助于排除标点符号和空白字符。\n\n禁用时，将使用文本行的一般长度（先去除 BBCode 标签）。\n启用时，将扫描文本并跳过匹配的字符。"
 
 [node name="IgnoredCharactersEnabled" type="CheckBox" parent="VBoxContainer/AutoadvanceSettings/HBoxContainer2/AutoadvanceIgnoreCharacters"]
 unique_name_in_owner = true
@@ -350,17 +308,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay"]
 layout_mode = 2
-text = "Enabled at the start"
+text = "开始时即启用"
 
 [node name="HintTooltip" parent="VBoxContainer/AutoadvanceSettings/HBox_BaseDelay" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "While you would usually enable Auto-Advance via code,
-if this is true it will be initially enabled.
-This kind of Auto-Advance (system) only stops when disabled via code. "
+tooltip_text = "通常你会通过代码启用自动推进，\n如果此项为 true，它将在一开始就启用。\n这种（系统级）自动推进只会在通过代码禁用时停止。"
 texture = null
-hint_text = "While you would usually enable Auto-Advance via code,
-if this is true it will be initially enabled.
-This kind of Auto-Advance (system) only stops when disabled via code. "
+hint_text = "通常你会通过代码启用自动推进，\n如果此项为 true，它将在一开始就启用。\n这种（系统级）自动推进只会在通过代码禁用时停止。"
 
 [node name="AutoAdvance" type="CheckBox" parent="VBoxContainer/AutoadvanceSettings"]
 unique_name_in_owner = true
@@ -375,27 +329,13 @@ layout_mode = 2
 [node name="Title" type="Label" parent="VBoxContainer/HBoxContainer AutoSkip"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Auto-Skip"
+text = "自动跳过"
 
 [node name="HintTooltip" parent="VBoxContainer/HBoxContainer AutoSkip" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "Auto-Skip is the concept of automatically skipping Timeline Events to the next unread Text Event or Event demanding user inputs (e.g. Choice, Wait Input, and Text Input).
-
-You can enable Auto-Skip from code via:
-Dialogic.Inputs.auto_skip.enabled = true
-
-By default, Auto-Skip will cancel on user input.
-You can disable this by calling:
-Dialogic.Inputs.auto_skip.disable_on_user_input = false"
+tooltip_text = "自动跳过是指自动跳过时间线事件，直到下一个未读的文本事件或需要用户输入的事件（例如选项、等待输入和文本输入）。\n\n你可以通过以下代码启用自动跳过：\nDialogic.Inputs.auto_skip.enabled = true\n\n默认情况下，自动跳过会在用户输入时取消。\n你可以通过以下调用禁用此行为：\nDialogic.Inputs.auto_skip.disable_on_user_input = false"
 texture = null
-hint_text = "Auto-Skip is the concept of automatically skipping Timeline Events to the next unread Text Event or Event demanding user inputs (e.g. Choice, Wait Input, and Text Input).
-
-You can enable Auto-Skip from code via:
-Dialogic.Inputs.auto_skip.enabled = true
-
-By default, Auto-Skip will cancel on user input.
-You can disable this by calling:
-Dialogic.Inputs.auto_skip.disable_on_user_input = false"
+hint_text = "自动跳过是指自动跳过时间线事件，直到下一个未读的文本事件或需要用户输入的事件（例如选项、等待输入和文本输入）。\n\n你可以通过以下代码启用自动跳过：\nDialogic.Inputs.auto_skip.enabled = true\n\n默认情况下，自动跳过会在用户输入时取消。\n你可以通过以下调用禁用此行为：\nDialogic.Inputs.auto_skip.disable_on_user_input = false"
 
 [node name="AutoskipSettings" type="GridContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -406,19 +346,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/AutoskipSettings/HBox_BaseDelay2"]
 layout_mode = 2
-text = "Time per Event"
+text = "每个事件的时间"
 
 [node name="HintTooltip" parent="VBoxContainer/AutoskipSettings/HBox_BaseDelay2" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "The time until Auto-Skip will execute the next event.
-
-If this is set to 0.1s, each event should finish within that time.
-Custom events must respect this time, built-in events already handle Auto-Skip."
+tooltip_text = "自动跳过执行下一个事件前的时间。\n\n如果设置为 0.1 秒，每个事件都应在该时间内完成。\n自定义事件必须遵守此时间，内置事件已处理自动跳过。"
 texture = null
-hint_text = "The time until Auto-Skip will execute the next event.
-
-If this is set to 0.1s, each event should finish within that time.
-Custom events must respect this time, built-in events already handle Auto-Skip."
+hint_text = "自动跳过执行下一个事件前的时间。\n\n如果设置为 0.1 秒，每个事件都应在该时间内完成。\n自定义事件必须遵守此时间，内置事件已处理自动跳过。"
 
 [node name="AutoskipTimePerEvent" type="SpinBox" parent="VBoxContainer/AutoskipSettings"]
 unique_name_in_owner = true
@@ -437,25 +371,19 @@ layout_mode = 2
 [node name="Title2" type="Label" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_type_variation = &"DialogicSettingsSection"
-text = "Auto-Pauses"
+text = "自动暂停"
 
 [node name="HintTooltip" parent="VBoxContainer/HBoxContainer" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "Adds pauses after certain letters.
-
-Each set can contain multiple letters that will (individually)
-have a pause of the given length added after them."
+tooltip_text = "在某些字母后添加暂停。\n\n每个集合可以包含多个字母，每个字母后都会（单独）\n添加给定时长的暂停。"
 texture = null
-hint_text = "Adds pauses after certain letters.
-
-Each set can contain multiple letters that will (individually)
-have a pause of the given length added after them."
+hint_text = "在某些字母后添加暂停。\n\n每个集合可以包含多个字母，每个字母后都会（单独）\n添加给定时长的暂停。"
 
 [node name="Add" type="Button" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-text = "Add set"
+text = "添加集合"
 
 [node name="AutoPauseSets" type="GridContainer" parent="VBoxContainer"]
 unique_name_in_owner = true
@@ -468,13 +396,13 @@ layout_mode = 2
 
 [node name="Label5" type="Label" parent="VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-text = "Absolute auto-pause times"
+text = "绝对自动暂停时间"
 
 [node name="HintTooltip7" parent="VBoxContainer/HBoxContainer3" instance=ExtResource("3_s7xhj")]
 layout_mode = 2
-tooltip_text = "If not enabled autopauses will be multiplied by the speed and user speed. When enabled those will be ignored."
+tooltip_text = "未启用时，自动暂停时间将乘以速度与用户速度；启用后这些将被忽略。"
 texture = null
-hint_text = "If not enabled autopauses will be multiplied by the speed and user speed. When enabled those will be ignored."
+hint_text = "未启用时，自动暂停时间将乘以速度与用户速度；启用后这些将被忽略。"
 
 [node name="AutoPausesAbsolute" type="CheckBox" parent="VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true

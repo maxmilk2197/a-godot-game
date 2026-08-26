@@ -12,19 +12,19 @@ script = ExtResource("1_76vf2")
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 2
-text = "Ignore Main Scale: "
+text = "忽略主缩放："
 
 [node name="IgnoreScale" type="CheckBox" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "This portrait will ignore the main scale."
+tooltip_text = "此立绘将忽略主缩放。"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
-text = "Scale:"
+text = "缩放："
 
 [node name="PortraitScale" parent="HBoxContainer" instance=ExtResource("2_daw3l")]
 unique_name_in_owner = true
@@ -40,24 +40,24 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
-text = "Offset:"
+text = "偏移："
 
 [node name="PortraitOffset" parent="HBoxContainer2" instance=ExtResource("2_c8kyi")]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Offset that is applied on top of the main portrait offset."
+tooltip_text = "在主立绘偏移基础上叠加的偏移。"
 
 [node name="MirrorOption" type="HBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MirrorOption"]
 layout_mode = 2
-text = "Mirror:"
+text = "镜像："
 
 [node name="PortraitMirror" type="CheckBox" parent="MirrorOption"]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Mirroring that is applied on top of the main portrait mirror."
+tooltip_text = "在主立绘镜像基础上叠加的镜像。"
 
 [connection signal="toggled" from="IgnoreScale" to="." method="_on_ignore_scale_toggled"]
 [connection signal="value_changed" from="HBoxContainer/PortraitScale" to="." method="_on_portrait_scale_value_changed"]

@@ -56,7 +56,7 @@ func _ready() -> void:
 	%TransRemove.pressed.connect(_on_erase_translations_pressed)
 	%TransRemove.icon = get_theme_icon("Remove", "EditorIcons")
 
-	%UpdateConfirmationDialog.add_button("Keep old & Generate new", false, "generate_new")
+	%UpdateConfirmationDialog.add_button("保留旧的并生成新的", false, "generate_new")
 
 	%UpdateConfirmationDialog.custom_action.connect(_on_custom_action)
 
@@ -124,19 +124,19 @@ func _verify_translation_file() -> void:
 	var status_message := ""
 
 	if not valid_translation_folder:
-		status_message += "⛔ Requires valid translation folder to translate character names"
+		status_message += "⛔ 需要有效的翻译文件夹才能翻译角色名称"
 
 		if file_mode == TranslationModes.PER_PROJECT:
-			status_message += " and the project CSV file."
+			status_message += "和项目 CSV 文件。"
 		else:
-			status_message += "."
+			status_message += "。"
 
 	%StatusMessage.text = status_message
 
 
 func get_locales(_filter: String) -> Dictionary:
 	var suggestions := {}
-	suggestions['Default'] = {'value':'', 'tooltip':"Will use the fallback locale set in the project settings."}
+	suggestions['默认'] = {'value':'', 'tooltip':"将使用项目设置中设置的回退语言区域。"}
 	suggestions[TranslationServer.get_tool_locale()] = {'value':TranslationServer.get_tool_locale()}
 
 	var used_locales: Array = ProjectSettings.get_setting(_USED_LOCALES_SETTING, TranslationServer.get_all_languages())
@@ -355,11 +355,11 @@ func update_csv_files() -> void:
 	# Trigger reimport.
 	EditorInterface.get_resource_filesystem().scan_sources()
 
-	var status_message := "Events   created {new_events}   found {updated_events}
-		Names  created {new_names}   found {updated_names}
-		CSVs      created {new_timelines}   found {updated_timelines}
-		Glossary  created {new_glossaries}   found {updated_glossaries}
-		Entries   created {new_glossary_entries}   found {updated_glossary_entries}"
+	var status_message := "事件    新建 {new_events}   发现 {updated_events}
+		名称    新建 {new_names}   发现 {updated_names}
+		CSV     新建 {new_timelines}   发现 {updated_timelines}
+		词条    新建 {new_glossaries}   发现 {updated_glossaries}
+		条目    新建 {new_glossary_entries}   发现 {updated_glossary_entries}"
 
 	var status_message_args := {
 		'new_events': csv_data.new_events,
@@ -376,6 +376,7 @@ func update_csv_files() -> void:
 
 	%StatusMessage.text = status_message.format(status_message_args)
 	ProjectSettings.set_setting(_USED_LOCALES_SETTING, _unique_locales)
+	ProjectSettings.save()
 
 
 ## Iterates over all character resource files and creates or updates CSV files
@@ -467,9 +468,9 @@ func collect_translations() -> void:
 	ProjectSettings.save()
 
 	%StatusMessage.text = (
-		"Added translation files: " + str(len(all_translation_files)-orig_file_amount)
-		+ "\nRemoved translation files: " + str(removed_translation_files)
-		+ "\nTotal translation files: " + str(len(all_translation_files)))
+		"已添加的翻译文件：" + str(len(all_translation_files)-orig_file_amount)
+		+ "\n移除的翻译文件：" + str(removed_translation_files)
+		+ "\n翻译文件总数：" + str(len(all_translation_files)))
 
 
 func _on_erase_translations_pressed() -> void:
@@ -498,9 +499,9 @@ func delete_translations_files(translation_files: Array, csv_name: String) -> in
 					translation_files.remove_at(project_translation_file_index)
 
 				deleted_files += 1
-				print_rich("[color=green]Deleted translation file: " + file_path + "[/color]")
+				print_rich("[color=green]已删除翻译文件：" + file_path + "[/color]")
 			else:
-				print_rich("[color=yellow]Failed to delete translation file: " + file_path + "[/color]")
+				print_rich("[color=yellow]删除翻译文件失败：" + file_path + "[/color]")
 
 
 	return deleted_files
@@ -535,11 +536,11 @@ func erase_translations() -> void:
 		# Delete the CSV file.
 		if OK == DirAccess.remove_absolute(csv_path):
 			deleted_csv_files += 1
-			print_rich("[color=green]Deleted CSV file: " + csv_path + "[/color]")
+			print_rich("[color=green]已删除 CSV 文件：" + csv_path + "[/color]")
 
 			deleted_translation_files += delete_translations_files(translation_files, csv_name)
 		else:
-			print_rich("[color=yellow]Failed to delete CSV file: " + csv_path + "[/color]")
+			print_rich("[color=yellow]删除 CSV 文件失败：" + csv_path + "[/color]")
 
 	# Clean timelines.
 	for timeline_path: String in DialogicResourceUtil.list_resources_of_type(".dtl"):
@@ -577,13 +578,13 @@ func erase_translations() -> void:
 
 	EditorInterface.get_resource_filesystem().scan_sources()
 
-	var status_message := "Timelines cleaned {cleaned_timelines}
-		Events cleaned {cleaned_events}
-		Characters cleaned {cleaned_characters}
-		Glossaries cleaned {cleaned_glossaries}
+	var status_message := "时间线已清理 {cleaned_timelines}
+		事件已清理 {cleaned_events}
+		角色已清理 {cleaned_characters}
+		词条已清理 {cleaned_glossaries}
 
-		CSVs erased {erased_csv_files}
-		Translations erased {erased_translation_files}"
+		CSV 已删除 {erased_csv_files}
+		翻译已删除 {erased_translation_files}"
 
 	var status_message_args := {
 		'cleaned_timelines': cleaned_timelines,

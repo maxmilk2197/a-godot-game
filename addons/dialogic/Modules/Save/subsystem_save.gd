@@ -150,7 +150,7 @@ func load(slot_name := "") -> Error:
 
 	var set_latest_error := set_latest_slot(slot_name)
 	if set_latest_error:
-		push_error("[Dialogic Error]: Failed to store latest slot to global info. Error %d '%s'" % [set_latest_error, error_string(set_latest_error)])
+		push_error("[Dialogic 错误]：无法将最新存档位写入全局信息。错误 %d “%s”" % [set_latest_error, error_string(set_latest_error)])
 
 	if _debug_save_as_tres:
 		var save_path := SAVE_SLOTS_DIR.path_join(slot_name).path_join('state.tres')
@@ -181,7 +181,7 @@ func save_file(slot_name: String, file_name: String, data: Variant) -> Error:
 		slot_name = get_default_slot()
 
 	if slot_name.is_empty():
-		push_error("[Dialogic Error]: No fallback slot name set.")
+		push_error("[Dialogic 错误]：未设置回退存档位名称。")
 		return ERR_FILE_NOT_FOUND
 
 	if !has_slot(slot_name):
@@ -202,7 +202,7 @@ func save_file(slot_name: String, file_name: String, data: Variant) -> Error:
 		return OK
 	else:
 		var error := FileAccess.get_open_error()
-		push_error("[Dialogic Error]: Could not save slot to file. Error: %d '%s'" % [error, error_string(error)])
+		push_error("[Dialogic 错误]：无法将存档保存到文件。错误：%d “%s”" % [error, error_string(error)])
 		return error
 
 
@@ -333,13 +333,13 @@ func delete_slot(slot_name: String) -> Error:
 		while not file_name.is_empty():
 			var remove_error := directory.remove(file_name)
 			if remove_error:
-				push_warning("[Dialogic Error]: Encountered error while removing '%s': %d\t%s" % [path.path_join(file_name), remove_error, error_string(remove_error)])
+				push_warning("[Dialogic 错误]：移除“%s”时遇到错误：%d\t%s" % [path.path_join(file_name), remove_error, error_string(remove_error)])
 			file_name = directory.get_next()
 
 		# Delete the folder.
 		return directory.remove(SAVE_SLOTS_DIR.path_join(slot_name))
 
-	push_warning("[Dialogic Warning]: Save slot '%s' has already been deleted." % path)
+	push_warning("[Dialogic 警告]：存档位“%s”已被删除。" % path)
 	return OK
 
 
@@ -351,7 +351,7 @@ func add_empty_slot(slot_name: String) -> Error:
 			return directory.make_dir(slot_name)
 		return DirAccess.get_open_error()
 
-	push_error("[Dialogic Error]: Path to '%s' does not exist." % SAVE_SLOTS_DIR)
+	push_error("[Dialogic 错误]：“%s”路径不存在。" % SAVE_SLOTS_DIR)
 	return ERR_FILE_BAD_PATH
 
 
@@ -459,7 +459,7 @@ func save_slot_thumbnail(slot_name: String) -> Error:
 		var path := get_slot_path(slot_name).path_join('thumbnail.png')
 		return latest_thumbnail.save_png(path)
 
-	push_warning("[Dialogic Warning]: No thumbnail has been set yet.")
+	push_warning("[Dialogic 警告]：尚未设置缩略图。")
 	return OK
 
 

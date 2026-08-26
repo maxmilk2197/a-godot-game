@@ -41,26 +41,26 @@ alignment = 2
 [node name="Add" type="Button" parent="VBox/ListPanel/Vbox/HBoxContainer" unique_id=149189447]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Add Mood"
+tooltip_text = "添加情绪"
 theme_type_variation = &"FlatButton"
 
 [node name="Default" type="Button" parent="VBox/ListPanel/Vbox/HBoxContainer" unique_id=1147972556]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Make Default"
+tooltip_text = "设为默认"
 theme_type_variation = &"FlatButton"
 toggle_mode = true
 
 [node name="Duplicate" type="Button" parent="VBox/ListPanel/Vbox/HBoxContainer" unique_id=1807805409]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Duplicate Mood"
+tooltip_text = "复制情绪"
 theme_type_variation = &"FlatButton"
 
 [node name="Delete" type="Button" parent="VBox/ListPanel/Vbox/HBoxContainer" unique_id=966103407]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Delete Mood"
+tooltip_text = "删除情绪"
 theme_type_variation = &"FlatButton"
 
 [node name="VSeparator" type="VSeparator" parent="VBox/ListPanel/Vbox/HBoxContainer" unique_id=1375207989]
@@ -69,7 +69,7 @@ layout_mode = 2
 [node name="Play" type="Button" parent="VBox/ListPanel/Vbox/HBoxContainer" unique_id=361440151]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Preview"
+tooltip_text = "预览"
 
 [node name="MoodList" type="ItemList" parent="VBox/ListPanel/Vbox" unique_id=696500971]
 unique_name_in_owner = true
@@ -86,15 +86,15 @@ columns = 2
 
 [node name="Label" type="Label" parent="VBox/Settings/Grid" unique_id=1989017327]
 layout_mode = 2
-text = "Name:"
+text = "名称："
 
 [node name="Name" type="LineEdit" parent="VBox/Settings/Grid" unique_id=1564051984]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-tooltip_text = "Mood name"
-text = "New Mood"
-placeholder_text = "Enter Mood Name"
+tooltip_text = "情绪名称"
+text = "新情绪"
+placeholder_text = "输入情绪名称"
 caret_blink = true
 
 [node name="NameWarning" type="TextureRect" parent="VBox/Settings/Grid/Name" unique_id=1908393613]
@@ -111,26 +111,24 @@ stretch_mode = 3
 
 [node name="Label6" type="Label" parent="VBox/Settings/Grid" unique_id=1843999425]
 layout_mode = 2
-text = "Mode:"
+text = "模式："
 
 [node name="Mode" type="OptionButton" parent="VBox/Settings/Grid" unique_id=1911787281]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Interrupt = The next sound will stop the previous
-Overlap = Multiple sounds may play at once
-Await = A sound will only be played if the previous has finished"
+tooltip_text = "打断 = 下一个声音将停止上一个\n重叠 = 多个声音可以同时播放\n等待 = 只有在上一个声音结束后才会播放"
 selected = 0
 item_count = 3
-popup/item_0/text = "Interrupt"
+popup/item_0/text = "打断"
 popup/item_0/id = 0
-popup/item_1/text = "Overlap"
+popup/item_1/text = "重叠"
 popup/item_1/id = 1
-popup/item_2/text = "Await"
+popup/item_2/text = "等待"
 popup/item_2/id = 2
 
 [node name="Label4" type="Label" parent="VBox/Settings/Grid" unique_id=26102657]
 layout_mode = 2
-text = "File/Folder:"
+text = "文件/文件夹："
 
 [node name="SoundFolder" parent="VBox/Settings/Grid" unique_id=49354159 instance=ExtResource("2_e1vyd")]
 unique_name_in_owner = true
@@ -143,7 +141,7 @@ type = "MoodSounds, SFX, Audio, Asset"
 
 [node name="Label2" type="Label" parent="VBox/Settings/Grid" unique_id=784538409]
 layout_mode = 2
-text = "Pitch:"
+text = "音调："
 
 [node name="Pitch" type="HBoxContainer" parent="VBox/Settings/Grid" unique_id=722375208]
 layout_mode = 2
@@ -166,7 +164,7 @@ enforce_step = false
 
 [node name="Label3" type="Label" parent="VBox/Settings/Grid" unique_id=1026921332]
 layout_mode = 2
-text = "Volume:"
+text = "音量："
 
 [node name="Volume" type="HBoxContainer" parent="VBox/Settings/Grid" unique_id=2065678471]
 layout_mode = 2
@@ -187,7 +185,7 @@ layout_mode = 2
 
 [node name="Label5" type="Label" parent="VBox/Settings/Grid" unique_id=989596440]
 layout_mode = 2
-text = "Skip:"
+text = "跳过："
 
 [node name="Skip" parent="VBox/Settings/Grid" unique_id=486018047 instance=ExtResource("3_yjcns")]
 unique_name_in_owner = true

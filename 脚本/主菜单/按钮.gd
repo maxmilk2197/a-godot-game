@@ -19,9 +19,8 @@ var 雪花移动补间 : Tween
 #endregion
 
 func _ready():
-	# 从“设置/关于”返回时可跳过 logo 动画，直接显示主菜单
-	if Settings.跳过主菜单logo:
-		Settings.跳过主菜单logo = false
+	if OS.is_debug_build():
+		print("跳过logo")
 		$"../动画/logo".queue_free()
 		$"../背景音乐".play()
 	else:
@@ -29,7 +28,6 @@ func _ready():
 		$"../动画".play("logo")
 		await $"../动画".animation_finished
 		$"../动画/logo".queue_free()
-		
 	新游戏.offset_transform_enabled = true
 	退出.offset_transform_enabled = true
 	继续游戏.offset_transform_enabled = true

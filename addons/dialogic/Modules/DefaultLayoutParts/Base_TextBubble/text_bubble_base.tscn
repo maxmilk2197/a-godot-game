@@ -33,14 +33,7 @@ offset_bottom = -14.0
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_70ljh")
 bbcode_enabled = true
-text = "This is a fallback bubble, that is not actually connected to any character. In game use the following code to add speech bubbles to a character:
-[color=darkgray]
-var layout = Dialogic.start(timeline_path)
-layout.register_character(character_resource, node)
-[/color]
-- [color=lightblue]character_resource[/color] should be a loaded DialogicCharacter (a .dch file).
-- [color=lightblue]node[/color] should be the 2D or 3D node the bubble should point at.
-	-> E.g. [color=darkgray]layout.register_character(load(\"res://path/to/my/character.dch\"), $BubbleMarker)"
+text = "这是一个回退气泡，实际上没有连接到任何角色。在游戏中，使用以下代码为角色添加对话气泡：\n[color=darkgray]\nvar layout = Dialogic.start(timeline_path)\nlayout.register_character(character_resource, node)\n[/color]\n- [color=lightblue]character_resource[/color] 应该是已加载的 DialogicCharacter（.dch 文件）。\n- [color=lightblue]node[/color] 应该是气泡指向的 2D 或 3D 节点。\n\t-> 例如 [color=darkgray]layout.register_character(load(\"res://path/to/my/character.dch\"), $BubbleMarker)"
 
 [node name="CRT" type="ColorRect" parent="Example"]
 layout_mode = 0

@@ -57,21 +57,13 @@ layout_mode = 2
 [node name="StyleListTitle" type="Label" parent="Panel/VBox/Title" unique_id=1425741460]
 layout_mode = 2
 theme_type_variation = &"DialogicSubTitle"
-text = "Styles"
+text = "样式"
 
 [node name="HintTooltip" parent="Panel/VBox/Title" unique_id=1197251385 instance=ExtResource("2_g4mnt")]
 layout_mode = 2
-tooltip_text = "Each style consist of a list of layers and settings for each layer.
-A style can inherit from another style (inherited styles can only overwrite settings of their layers).
-When one style is selected as default dialogic will use that style when calling Dialogic.start() otherwise a fallback is used.
-You can change the style with the Change Style event, by setting a style on a character or by calling
-Dialogic.Styles.load_style(\"Style Name\") before calling Dialogic.start()."
+tooltip_text = "每种样式由图层列表和各图层的设置组成。\n样式可以继承自另一种样式（继承的样式只能覆盖其图层的设置）。\n当一种样式被设为默认后，调用 Dialogic.start() 时将使用该样式，否则使用回退样式。\n你可以通过“更改样式”事件、在角色上设置样式，或在调用 Dialogic.start() 前调用\nDialogic.Styles.load_style(\"样式名称\") 来更改样式。"
 texture = null
-hint_text = "Each style consist of a list of layers and settings for each layer.
-A style can inherit from another style (inherited styles can only overwrite settings of their layers).
-When one style is selected as default dialogic will use that style when calling Dialogic.start() otherwise a fallback is used.
-You can change the style with the Change Style event, by setting a style on a character or by calling
-Dialogic.Styles.load_style(\"Style Name\") before calling Dialogic.start()."
+hint_text = "每种样式由图层列表和各图层的设置组成。\n样式可以继承自另一种样式（继承的样式只能覆盖其图层的设置）。\n当一种样式被设为默认后，调用 Dialogic.start() 时将使用该样式，否则使用回退样式。\n你可以通过“更改样式”事件、在角色上设置样式，或在调用 Dialogic.start() 前调用\nDialogic.Styles.load_style(\"样式名称\") 来更改样式。"
 
 [node name="StyleButtons" type="HBoxContainer" parent="Panel/VBox" unique_id=1676966194]
 layout_mode = 2
@@ -80,38 +72,38 @@ alignment = 2
 [node name="AddButton" type="MenuButton" parent="Panel/VBox/StyleButtons" unique_id=307379993]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Add layout-style"
+tooltip_text = "添加布局样式"
 switch_on_hover = true
 item_count = 5
-popup/item_0/text = "ADD STYLE"
+popup/item_0/text = "添加样式"
 popup/item_0/id = 0
 popup/item_0/disabled = true
 popup/item_1/id = 0
 popup/item_1/separator = true
-popup/item_2/text = "Premade Style"
+popup/item_2/text = "预制样式"
 popup/item_2/id = 0
-popup/item_3/text = "Inherited Style"
+popup/item_3/text = "继承的样式"
 popup/item_3/id = 1
-popup/item_4/text = "Custom Style"
+popup/item_4/text = "自定义样式"
 popup/item_4/id = 2
 
 [node name="DuplicateButton" type="Button" parent="Panel/VBox/StyleButtons" unique_id=1749418768]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Duplicate style"
+tooltip_text = "复制样式"
 flat = true
 
 [node name="RemoveButton" type="Button" parent="Panel/VBox/StyleButtons" unique_id=1881793634]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Remove style from list"
+tooltip_text = "从列表移除样式"
 flat = true
 
 [node name="MakeDefaultButton" type="Button" parent="Panel/VBox/StyleButtons" unique_id=1399827181]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-tooltip_text = "Make Default"
+tooltip_text = "设为默认"
 toggle_mode = true
 flat = true
 
@@ -120,7 +112,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 item_count = 1
-item_0/text = "Style"
+item_0/text = "样式"
 
 [node name="StyleView" type="VBoxContainer" parent="." unique_id=58859596]
 unique_name_in_owner = true
@@ -140,31 +132,31 @@ theme_type_variation = &"DialogicTitle"
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tixgs")
 theme_override_styles/read_only = SubResource("StyleBoxEmpty_tixgs")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tixgs")
-text = "Style"
+text = "样式"
 expand_to_text_length = true
 
 [node name="EditNameButton" type="Button" parent="StyleView/HBox" unique_id=1140843184]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Edit Name"
+tooltip_text = "编辑名称"
 flat = true
 
 [node name="InheritanceButton" type="MenuButton" parent="StyleView/HBox" unique_id=2041438982]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-text = "Inherits VN Style"
+text = "继承 VN 样式"
 icon_alignment = 2
 item_count = 1
-popup/item_0/text = "Clear Inheritance"
+popup/item_0/text = "清除继承"
 popup/item_0/id = 0
 
 [node name="TestStyleButton" type="Button" parent="StyleView/HBox" unique_id=978527389]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
-tooltip_text = "Play current timeline with this style"
-text = "Test Style"
+tooltip_text = "使用此样式播放当前时间线"
+text = "测试样式"
 
 [node name="PanelContainer" type="PanelContainer" parent="StyleView" unique_id=203654864]
 layout_mode = 2
@@ -189,15 +181,13 @@ layout_mode = 2
 [node name="LayerListTitle" type="Label" parent="StyleView/PanelContainer/StyleEditor/LayerPanel/VBox/Title" unique_id=1679594011]
 layout_mode = 2
 theme_type_variation = &"DialogicSubTitle"
-text = "Layers"
+text = "图层"
 
 [node name="HintTooltip" parent="StyleView/PanelContainer/StyleEditor/LayerPanel/VBox/Title" unique_id=838086490 instance=ExtResource("2_g4mnt")]
 layout_mode = 2
-tooltip_text = "Each layer is a scene and settings that will be applied to that scene.
-A layer can either be a premade scene or a scene you've made yourself."
+tooltip_text = "每个图层都是一个场景，以及将应用于该场景的设置。\n图层可以是预制场景，也可以是你自己制作的场景。"
 texture = null
-hint_text = "Each layer is a scene and settings that will be applied to that scene.
-A layer can either be a premade scene or a scene you've made yourself."
+hint_text = "每个图层都是一个场景，以及将应用于该场景的设置。\n图层可以是预制场景，也可以是你自己制作的场景。"
 
 [node name="LayerButtons" type="HBoxContainer" parent="StyleView/PanelContainer/StyleEditor/LayerPanel/VBox" unique_id=1391203904]
 layout_mode = 2
@@ -206,55 +196,55 @@ alignment = 2
 [node name="AddLayerButton" type="MenuButton" parent="StyleView/PanelContainer/StyleEditor/LayerPanel/VBox/LayerButtons" unique_id=737538969]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Add Layer"
+tooltip_text = "添加图层"
 switch_on_hover = true
 item_count = 4
-popup/item_0/text = "ADD LAYER"
+popup/item_0/text = "添加图层"
 popup/item_0/id = 1
 popup/item_0/disabled = true
 popup/item_1/id = 1
 popup/item_1/separator = true
-popup/item_2/text = "Premade Layer"
+popup/item_2/text = "预制图层"
 popup/item_2/id = 1
-popup/item_3/text = "Custom Layer"
+popup/item_3/text = "自定义图层"
 popup/item_3/id = 0
 
 [node name="ReplaceLayerButton" type="MenuButton" parent="StyleView/PanelContainer/StyleEditor/LayerPanel/VBox/LayerButtons" unique_id=718635805]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Replace Layer"
+tooltip_text = "替换图层"
 switch_on_hover = true
 item_count = 4
-popup/item_0/text = "REPLACE LAYER"
+popup/item_0/text = "替换图层"
 popup/item_0/id = 0
 popup/item_0/disabled = true
 popup/item_1/id = 0
 popup/item_1/separator = true
-popup/item_2/text = "Premade Layer"
+popup/item_2/text = "预制图层"
 popup/item_2/id = 0
-popup/item_3/text = "Custom Layer"
+popup/item_3/text = "自定义图层"
 popup/item_3/id = 1
 
 [node name="MakeCustomButton" type="MenuButton" parent="StyleView/PanelContainer/StyleEditor/LayerPanel/VBox/LayerButtons" unique_id=1332622384]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Make Custom"
+tooltip_text = "制作自定义"
 switch_on_hover = true
 item_count = 4
-popup/item_0/text = "MAKE CUSTOM"
+popup/item_0/text = "制作自定义"
 popup/item_0/id = 3
 popup/item_0/disabled = true
 popup/item_1/id = 0
 popup/item_1/separator = true
-popup/item_2/text = "Current Layer"
+popup/item_2/text = "当前图层"
 popup/item_2/id = 0
-popup/item_3/text = "Full Layout"
+popup/item_3/text = "完整布局"
 popup/item_3/id = 2
 
 [node name="DeleteLayerButton" type="Button" parent="StyleView/PanelContainer/StyleEditor/LayerPanel/VBox/LayerButtons" unique_id=22217721]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Delete Layer (no undo!)"
+tooltip_text = "删除图层（无法撤销！）"
 disabled = true
 flat = true
 
@@ -280,7 +270,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"DialogicTitle"
-text = "Default Layout Base"
+text = "默认布局基底"
 
 [node name="ExpandLayerInfo" type="Button" parent="StyleView/PanelContainer/StyleEditor/LayerSettings/LayerInfoHeader" unique_id=1214843466]
 unique_name_in_owner = true
@@ -337,7 +327,7 @@ theme_override_constants/separation = 0
 [node name="Label" type="Label" parent="StyleView/PanelContainer/StyleEditor/LayerSettings/LayerInfoBody/HBox/Info/Description" unique_id=374930628]
 layout_mode = 2
 theme_type_variation = &"DialogicHintText2"
-text = "Info:"
+text = "信息："
 
 [node name="SmallLayerDescription" type="Label" parent="StyleView/PanelContainer/StyleEditor/LayerSettings/LayerInfoBody/HBox/Info/Description" unique_id=313383482]
 unique_name_in_owner = true
@@ -345,7 +335,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_type_variation = &"DialogicHintText2"
-text = "A very simple base for layouts."
+text = "一个非常简单的布局基底。"
 autowrap_mode = 3
 text_overrun_behavior = 4
 
@@ -365,20 +355,20 @@ alignment = 1
 
 [node name="Label" type="Label" parent="NoStyleView" unique_id=1373945060]
 layout_mode = 2
-text = "You have not set up any styles yet. Dialogic will use a fallback style."
+text = "你还没有设置任何样式。Dialogic 将使用回退样式。"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="StartStylingButton" type="Button" parent="NoStyleView" unique_id=1752866801]
 layout_mode = 2
 size_flags_horizontal = 4
-tooltip_text = "Make a custom style from a variation of the fallback."
-text = "Make my own!"
+tooltip_text = "基于回退样式的变体制作自定义样式。"
+text = "我自己来做！"
 
 [node name="StyleBrowserWindow" type="Window" parent="." unique_id=1444985267]
 unique_name_in_owner = true
 oversampling_override = 1.0
-title = "Style Browser"
+title = "样式浏览器"
 position = Vector2i(0, 36)
 size = Vector2i(500, 400)
 visible = false

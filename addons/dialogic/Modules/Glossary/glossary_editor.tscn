@@ -22,7 +22,7 @@ size_flags_stretch_ratio = 0.3
 [node name="Label" type="Label" parent="Entries/Settings" unique_id=187320707]
 layout_mode = 2
 theme_type_variation = &"DialogicSection"
-text = "Glossaries"
+text = "词条"
 
 [node name="Glossaries" type="PanelContainer" parent="Entries/Settings" unique_id=1781414739]
 layout_mode = 2
@@ -42,21 +42,21 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-tooltip_text = "New Glossary"
+tooltip_text = "新词条"
 theme_type_variation = &"FlatButton"
 
 [node name="LoadGlossaryFile" type="Button" parent="Entries/Settings/Glossaries/Glossaries/HBox" unique_id=844011673]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-tooltip_text = "Import Glossary File"
+tooltip_text = "导入词条文件"
 theme_type_variation = &"FlatButton"
 
 [node name="DeleteGlossaryFile" type="Button" parent="Entries/Settings/Glossaries/Glossaries/HBox" unique_id=47014725]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-tooltip_text = "Delete Glossary"
+tooltip_text = "删除词条"
 theme_type_variation = &"FlatButton"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Entries/Settings/Glossaries/Glossaries" unique_id=2080880117]
@@ -73,7 +73,7 @@ size_flags_vertical = 3
 [node name="Label2" type="Label" parent="Entries/Settings" unique_id=1393798511]
 layout_mode = 2
 theme_type_variation = &"DialogicSection"
-text = "Defaults"
+text = "默认值"
 
 [node name="Defaults" type="VBoxContainer" parent="Entries/Settings" unique_id=1590003377]
 layout_mode = 2
@@ -84,7 +84,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Entries/Settings/Defaults/DefaultsColor" unique_id=1559529424]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Color"
+text = "颜色"
 
 [node name="DefaultColor" type="ColorPickerButton" parent="Entries/Settings/Defaults/DefaultsColor" unique_id=564100523]
 unique_name_in_owner = true
@@ -98,7 +98,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Entries/Settings/Defaults/DefCaseSensitive" unique_id=1561297631]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Case sensitive"
+text = "区分大小写"
 
 [node name="DefaultCaseSensitive" type="CheckBox" parent="Entries/Settings/Defaults/DefCaseSensitive" unique_id=1716818662]
 unique_name_in_owner = true
@@ -115,7 +115,7 @@ size_flags_horizontal = 3
 [node name="Label2" type="Label" parent="Entries/HSplit/VBoxContainer" unique_id=1837675753]
 layout_mode = 2
 theme_type_variation = &"DialogicSection"
-text = "Entries"
+text = "条目"
 
 [node name="Tabs" type="PanelContainer" parent="Entries/HSplit/VBoxContainer" unique_id=1614030082]
 layout_mode = 2
@@ -135,21 +135,21 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-tooltip_text = "New Glossary Entry"
+tooltip_text = "新词条条目"
 theme_type_variation = &"FlatButton"
 
 [node name="DeleteGlossaryEntry" type="Button" parent="Entries/HSplit/VBoxContainer/Tabs/Entries/HBox" unique_id=255107373]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-tooltip_text = "Delete Glossary Entry"
+tooltip_text = "删除词条条目"
 theme_type_variation = &"FlatButton"
 
 [node name="EntrySearch" type="LineEdit" parent="Entries/HSplit/VBoxContainer/Tabs/Entries/HBox" unique_id=1739964421]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-placeholder_text = "Filter Entries"
+placeholder_text = "筛选条目"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Entries/HSplit/VBoxContainer/Tabs/Entries" unique_id=2042054821]
 layout_mode = 2
@@ -178,7 +178,7 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="Entries/HSplit/EntryEditor/VBox" unique_id=1141312912]
 layout_mode = 2
 theme_type_variation = &"DialogicSection"
-text = "Entry Settings"
+text = "条目设置"
 
 [node name="Panel" type="PanelContainer" parent="Entries/HSplit/EntryEditor/VBox" unique_id=1164466153]
 layout_mode = 2
@@ -200,7 +200,7 @@ columns = 2
 [node name="Label2" type="Label" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=1505272645]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Name"
+text = "名称"
 
 [node name="HBox2" type="HBoxContainer" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=1313845106]
 layout_mode = 2
@@ -211,20 +211,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../../../../../../../VBoxContainer/Tabs/Entries/ScrollContainer/EntryList")
 theme_override_colors/caret_color = Color(0, 0, 0, 1)
-placeholder_text = "Enter unique name..."
+placeholder_text = "输入唯一名称…"
 caret_blink = true
 
 [node name="EntryCaseSensitive" type="Button" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings/HBox2" unique_id=1455247238]
 unique_name_in_owner = true
 layout_mode = 2
-tooltip_text = "Case sensitive"
+tooltip_text = "区分大小写"
 theme_type_variation = &"FlatButton"
 toggle_mode = true
 
 [node name="Label3" type="Label" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=322125079]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Alternatives"
+text = "别名"
 
 [node name="EntryAlternatives" type="LineEdit" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=1589876286]
 unique_name_in_owner = true
@@ -235,7 +235,7 @@ caret_blink = true
 [node name="Label4" type="Label" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=891580357]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Title"
+text = "标题"
 
 [node name="EntryTitle" type="LineEdit" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=287451368]
 unique_name_in_owner = true
@@ -246,7 +246,7 @@ caret_blink = true
 [node name="Label5" type="Label" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=1424832000]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Description"
+text = "描述"
 
 [node name="EntryText" type="TextEdit" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=1465466718]
 unique_name_in_owner = true
@@ -258,7 +258,7 @@ wrap_mode = 1
 [node name="Label6" type="Label" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=982171799]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Extra"
+text = "附加"
 
 [node name="EntryExtra" type="TextEdit" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=894073414]
 unique_name_in_owner = true
@@ -269,7 +269,7 @@ wrap_mode = 1
 [node name="Label8" type="Label" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=672629169]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Enabled"
+text = "已启用"
 
 [node name="EntryEnabled" type="CheckBox" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=1910310606]
 unique_name_in_owner = true
@@ -279,7 +279,7 @@ button_pressed = true
 [node name="Label7" type="Label" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=1829568029]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Color"
+text = "颜色"
 
 [node name="HBox" type="HBoxContainer" parent="Entries/HSplit/EntryEditor/VBox/Panel/Entry Settings/EntrySettings" unique_id=130817493]
 layout_mode = 2

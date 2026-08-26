@@ -85,7 +85,7 @@ variables={
 "心情": 60,
 "金币": 0
 }
-layout/style_list=["res://资源/对话主题/02.tres"]
+layout/style_list=["res://资源/对话主题/02.tres", "res://资源/对话主题/默认.tres"]
 layout/default_style=""
 glossary/default_case_sensitive=true
 translation/enabled=false
@@ -97,8 +97,10 @@ translation/add_separator=false
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
 [editor_plugins]

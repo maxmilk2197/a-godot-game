@@ -86,7 +86,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-tooltip_text = "Fold/Unfold Settings"
+tooltip_text = "折叠/展开设置"
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ee4ub")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ee4ub")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_ee4ub")
@@ -100,7 +100,7 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 size_flags_horizontal = 10
-tooltip_text = "Collapse Contained Events"
+tooltip_text = "折叠包含的事件"
 toggle_mode = true
 flat = true
 

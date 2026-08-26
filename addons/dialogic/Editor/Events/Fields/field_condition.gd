@@ -29,30 +29,30 @@ func _autofocus() -> void:
 func _ready() -> void:
 	for i in [%Value1Type, %Value2Type]:
 		i.options = [{
-				'label': 'String',
+				'label': '字符串',
 				'icon': ["String", "EditorIcons"],
 				'value': 0
 			},{
-				'label': 'Number',
+				'label': '数字',
 				'icon': ["float", "EditorIcons"],
 				'value': 1
 			},{
-				'label': 'Variable',
+				'label': '变量',
 				'icon': load("res://addons/dialogic/Editor/Images/Pieces/variable.svg"),
 				'value': 2
 			},{
-				'label': 'Bool',
+				'label': '布尔',
 				'icon': ["bool", "EditorIcons"],
 				'value': 3
 			},{
-				'label': 'Expression',
+				'label': '表达式',
 				'icon': ["Variant", "EditorIcons"],
 				'value': 4
 			}]
 		i.symbol_only = true
 		i.value_changed.connect(value_type_changed.bind(i.name))
 		i.value_changed.connect(something_changed)
-		i.tooltip_text = "Change type"
+		i.tooltip_text = "更改类型"
 
 
 	for i in [%Value1Variable, %Value2Variable]:
@@ -181,7 +181,7 @@ func something_changed(fake_arg1=null, fake_arg2 = null):
 
 	if event_resource:
 		if not %Operator.text in ['==', '!='] and get_value_type(_current_value2, 0) in [0, 3]:
-			event_resource.ui_update_warning.emit("This operator doesn't work with strings and booleans.")
+			event_resource.ui_update_warning.emit("此运算符不适用于字符串和布尔值。")
 		else:
 			event_resource.ui_update_warning.emit("")
 
