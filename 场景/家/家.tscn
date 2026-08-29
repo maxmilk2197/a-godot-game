@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6q4nwtp1vnyq"]
 
-[ext_resource type="Theme" path="res://资源/主题/测试主题.tres" id="0_warmth"]
+[ext_resource type="Theme" uid="uid://bhi1wr60t3kim" path="res://资源/主题/测试主题.tres" id="0_warmth"]
 [ext_resource type="Texture2D" uid="uid://bs2bmpfdt6awc" path="res://资源/纹理/角色/阿云/001.png" id="1_ba6u3"]
 [ext_resource type="Script" uid="uid://dsyqo2j4y4r63" path="res://脚本/家/立绘.gd" id="1_ecy2k"]
 [ext_resource type="Script" uid="uid://dci4euht3qx2y" path="res://脚本/家/主脚本.gd" id="1_xshxy"]
