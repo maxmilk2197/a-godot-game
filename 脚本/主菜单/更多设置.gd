@@ -82,7 +82,7 @@ func _快_pressed() -> void:
 ## 高亮当前选中的速度档位按钮
 func _刷新速度高亮() -> void:
 	var 当前 := Settings.文字速度
-	var 高亮 := Color(0.95, 0.62, 0.68, 1)
+	var 高亮 := Color(0.851, 0.886, 1, 1)
 	慢按钮.modulate = 高亮 if 当前 == 0 else Color(1, 1, 1, 1)
 	中按钮.modulate = 高亮 if 当前 == 1 else Color(1, 1, 1, 1)
 	快按钮.modulate = 高亮 if 当前 == 2 else Color(1, 1, 1, 1)

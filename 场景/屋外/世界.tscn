@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cnwgjilw1dunm"]
 
 [ext_resource type="Texture2D" uid="uid://vxu3akjj6g3f" path="res://资源/纹理/地面/Pixel Art Top Down - Basic v1.2.3/Texture/TX Tileset Grass.png" id="1_mfosb"]
-[ext_resource type="Script" path="res://脚本/屋外/世界.gd" id="2_world"]
+[ext_resource type="Script" uid="uid://dsexrgdpovnx4" path="res://脚本/屋外/世界.gd" id="2_world"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7t88"]
 texture = ExtResource("1_mfosb")
@@ -266,6 +266,7 @@ texture = ExtResource("1_mfosb")
 sources/0 = SubResource("TileSetAtlasSource_m7t88")
 
 [node name="世界" type="Node2D" unique_id=1610482125]
+visible = false
 script = ExtResource("2_world")
 
 [node name="地面" type="TileMapLayer" parent="." unique_id=677165001]
@@ -276,18 +277,19 @@ tile_set = SubResource("TileSet_s8gn6")
 [node name="UI" type="CanvasLayer" parent="." unique_id=1610482126]
 
 [node name="回家按钮" type="Button" parent="UI" unique_id=1610482127]
-offset_left = 560.0
-offset_top = 40.0
-offset_right = 720.0
-offset_bottom = 92.0
+offset_left = 875.0
+offset_top = 62.0
+offset_right = 1089.0
+offset_bottom = 132.0
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "回家"
 
 [node name="便利店按钮" type="Button" parent="UI" unique_id=1610482128]
-offset_left = 560.0
-offset_top = 110.0
-offset_right = 720.0
-offset_bottom = 162.0
+offset_left = 875.0
+offset_top = 211.0
+offset_right = 1089.0
+offset_bottom = 291.0
 theme_override_font_sizes/font_size = 24
 text = "便利店"
 

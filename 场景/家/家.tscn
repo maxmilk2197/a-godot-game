@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c6q4nwtp1vnyq"]
 
-[ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
+[ext_resource type="Theme" path="res://资源/主题/测试主题.tres" id="0_warmth"]
 [ext_resource type="Texture2D" uid="uid://bs2bmpfdt6awc" path="res://资源/纹理/角色/阿云/001.png" id="1_ba6u3"]
 [ext_resource type="Script" uid="uid://dsyqo2j4y4r63" path="res://脚本/家/立绘.gd" id="1_ecy2k"]
 [ext_resource type="Script" uid="uid://dci4euht3qx2y" path="res://脚本/家/主脚本.gd" id="1_xshxy"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://bhij74bjy2fei" path="res://脚本/家/场景交互.gd" id="6_gq21x"]
 [ext_resource type="AudioStream" uid="uid://dye6urihdu0tt" path="res://资源/音频/音乐/1_30pm.mp3" id="7_u4jm0"]
 [ext_resource type="Script" uid="uid://da3s2tieoeonl" path="res://脚本/家/AI聊天界面.gd" id="10_q50p0"]
+[ext_resource type="PackedScene" uid="uid://no6lyec340o" path="res://场景/过渡界面/第二日时间过渡.tscn" id="11_akvva"]
 [ext_resource type="Script" uid="uid://c5b20bc5e868d" path="res://脚本/家/养成面板.gd" id="11_yangcheng"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gq21x"]
@@ -479,6 +480,10 @@ grow_vertical = 0
 text = "手机"
 metadata/_edit_use_anchors_ = true
 
+[node name="第二日时间过度" parent="." unique_id=1080157007 instance=ExtResource("11_akvva")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="场景交互/电脑" to="场景交互" method="_on_电脑_pressed"]
 [connection signal="pressed" from="角色交互/立绘/图" to="角色交互" method="立绘被按下"]
 [connection signal="pressed" from="角色交互/交互/聊天" to="角色交互" method="_on_交流_pressed"]
@@ -491,3 +496,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="AI聊天界面/设置按钮" to="AI聊天界面" method="_on_设置按钮_pressed"]
 [connection signal="close_requested" from="AI聊天界面/AI设置弹窗" to="AI聊天界面" method="_on_ai设置弹窗_close_requested"]
 [connection signal="pressed" from="功能/手机" to="场景交互" method="_on_手机_pressed"]
+
+[editable path="第二日时间过度"]

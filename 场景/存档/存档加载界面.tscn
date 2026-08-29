@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dc1oyd6jk2qqg"]
 
-[ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
+[ext_resource type="Theme" path="res://资源/主题/测试主题.tres" id="0_warmth"]
 [ext_resource type="Script" uid="uid://cjdauvd4kc7x" path="res://脚本/存档界面/存档加载界面.gd" id="1_yedrk"]
 [ext_resource type="PackedScene" uid="uid://bbyxssg0k1p6d" path="res://场景/存档/保存加载按钮.tscn" id="2_dsnkd"]
 
@@ -30,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.35, 0.22, 0.22, 0.55)
+color = Color(0.16, 0.17, 0.23, 0.55)
 metadata/_edit_use_anchors_ = true
 
 [node name="按钮组" type="Control" parent="." unique_id=990095366]
@@ -39,7 +39,7 @@ anchor_left = 0.109375
 anchor_top = 0.13055556
 anchor_right = 0.9052084
 anchor_bottom = 0.92638886
-offset_right = -18.666748
+offset_right = -28
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -50,9 +50,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
-offset_left = -500.0
-offset_right = 500.0
-offset_bottom = 160.0
+offset_left = -750
+offset_right = 750
+offset_bottom = 240
 grow_horizontal = 2
 
 [node name="保存加载按钮2" parent="按钮组" unique_id=1955547161 instance=ExtResource("2_dsnkd")]
@@ -62,10 +62,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -86.5
-offset_right = 500.0
-offset_bottom = 73.5
+offset_left = -750
+offset_top = -129.75
+offset_right = 750
+offset_bottom = 110.25
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -76,10 +76,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -500.0
-offset_top = -173.0
-offset_right = 500.0
-offset_bottom = -15.0
+offset_left = -750
+offset_top = -259.5
+offset_right = 750
+offset_bottom = -22.5
 grow_horizontal = 2
 grow_vertical = 0
 

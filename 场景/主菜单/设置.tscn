@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://buy2xfbsqkcno"]
 
-[ext_resource type="Theme" uid="uid://cwyancifanyn1" path="res://资源/主题/温馨主题.tres" id="0_warmth"]
+[ext_resource type="Theme" path="res://资源/主题/测试主题.tres" id="0_warmth"]
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
 [ext_resource type="Script" uid="uid://co4ymw0hw4fl4" path="res://脚本/主菜单/设置.gd" id="1_scpt"]
 
@@ -21,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.996, 0.984, 1, 1)
 
 [node name="标题" type="Label" parent="." unique_id=2049755668]
 layout_mode = 1
@@ -30,7 +31,7 @@ anchor_top = 0.032407407
 anchor_right = 0.12916666
 anchor_bottom = 0.09351852
 offset_bottom = -3.0
-theme_override_colors/font_color = Color(0.42, 0.33, 0.34, 1)
+theme_override_colors/font_color = Color(0.106, 0.106, 0.122, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 53
 text = "设置"
@@ -58,7 +59,7 @@ offset_bottom = 411.0
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 50.0
-theme_override_colors/font_color = Color(0.45, 0.36, 0.37, 1)
+theme_override_colors/font_color = Color(0.106, 0.106, 0.122, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "音量"
@@ -77,7 +78,7 @@ metadata/_edit_lock_ = true
 [node name="音乐标签" type="Label" parent="音量区/音乐行" unique_id=771125315]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.4, 0.31, 0.32, 1)
+theme_override_colors/font_color = Color(0.267, 0.275, 0.31, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 26
 text = "音乐"
@@ -102,7 +103,7 @@ metadata/_edit_lock_ = true
 [node name="音效标签" type="Label" parent="音量区/音效行" unique_id=91615080]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.4, 0.31, 0.32, 1)
+theme_override_colors/font_color = Color(0.267, 0.275, 0.31, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 26
 text = "音效"
@@ -125,7 +126,7 @@ offset_bottom = 761.0
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 50.0
-theme_override_colors/font_color = Color(0.45, 0.36, 0.37, 1)
+theme_override_colors/font_color = Color(0.106, 0.106, 0.122, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
 text = "屏幕"
@@ -145,7 +146,7 @@ metadata/_edit_lock_ = true
 [node name="大小标签" type="Label" parent="屏幕设置区/大小行" unique_id=1219473087]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.4, 0.31, 0.32, 1)
+theme_override_colors/font_color = Color(0.267, 0.275, 0.31, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 26
 text = "大小"
@@ -186,7 +187,7 @@ metadata/_edit_lock_ = true
 [node name="全屏标签" type="Label" parent="屏幕设置区/全屏行" unique_id=1589261843]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.4, 0.31, 0.32, 1)
+theme_override_colors/font_color = Color(0.267, 0.275, 0.31, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 26
 text = "全屏"

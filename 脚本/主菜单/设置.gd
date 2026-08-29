@@ -8,11 +8,11 @@ extends Control
 
 @onready var 音乐滑块: HSlider = $"音量区/音乐行/音量滑块"
 @onready var 音效滑块: HSlider = $"音量区/音效行/音量滑块"
-@onready var 小按钮: Button = $"屏幕区/大小行/小"
-@onready var 中按钮: Button = $"屏幕区/大小行/中"
-@onready var 大按钮: Button = $"屏幕区/大小行/大"
-@onready var 超大按钮: Button = $"屏幕区/大小行/超大"
-@onready var 全屏开关: Button = $"屏幕区/全屏行/全屏开关"
+@onready var 小按钮: Button = $"屏幕设置区/大小行/小"
+@onready var 中按钮: Button = $"屏幕设置区/大小行/中"
+@onready var 大按钮: Button = $"屏幕设置区/大小行/大"
+@onready var 超大按钮: Button = $"屏幕设置区/大小行/超大"
+@onready var 全屏开关: Button = $"屏幕设置区/全屏行/全屏开关"
 
 
 func _ready() -> void:
@@ -23,7 +23,7 @@ func _ready() -> void:
 	全屏开关.set_pressed_no_signal(Settings.全屏)
 	全屏开关.text = "开" if 全屏开关.button_pressed else "关"
 	_刷新大小高亮()
-	_行点击切换($"屏幕区/全屏行", 全屏开关)
+	_行点击切换($"屏幕设置区/全屏行", 全屏开关)
 
 
 # =========================
@@ -73,7 +73,7 @@ func _全屏开关_toggled(开: bool) -> void:
 ## 高亮当前选中的屏幕大小按钮
 func _刷新大小高亮() -> void:
 	var 当前 := Settings.窗口缩放
-	var 高亮 := Color(0.95, 0.62, 0.68, 1)
+	var 高亮 := Color(0.851, 0.886, 1, 1)
 	var 常态 := Color(1, 1, 1, 1)
 	小按钮.modulate = 高亮 if is_equal_approx(当前, Settings.窗口缩放档位[0]) else 常态
 	中按钮.modulate = 高亮 if is_equal_approx(当前, Settings.窗口缩放档位[1]) else 常态

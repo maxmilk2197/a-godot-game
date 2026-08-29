@@ -16,10 +16,12 @@ var 雪花移动补间 : Tween
 @export var 雪花 : TextureRect
 @export var 按钮移动 : bool = false
 @export_range(-200, 200, 1) var 雪花X偏移 : float = -50   ## 雪花离 VBox 左缘的额外偏移（负数往左、正数往右）
+@export var 自动跳过logo : bool = true
 #endregion
 
+
 func _ready():
-	if OS.is_debug_build():
+	if OS.is_debug_build() and 自动跳过logo:
 		print("跳过logo")
 		$"../动画/logo".queue_free()
 		$"../背景音乐".play()

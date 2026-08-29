@@ -273,10 +273,10 @@ texture = SubResource("GradientTexture1D_j2inh")
 [node name="标题" type="TextureRect" parent="背景/遮罩" unique_id=56004729]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.050808314
+anchor_left = 0.050808318
 anchor_top = 0.1
-anchor_right = 0.8489607
-anchor_bottom = 0.42
+anchor_right = 1.7206633
+anchor_bottom = 0.78905356
 offset_right = 1190.4
 offset_bottom = 793.6
 grow_horizontal = 2
@@ -304,19 +304,21 @@ script = ExtResource("2_bi7fr")
 "退出" = NodePath("按钮组/退出")
 "退出Label" = NodePath("按钮组/退出/Label")
 "雪花" = NodePath("雪花")
+"自动跳过logo" = false
 metadata/_edit_use_anchors_ = true
 
 [node name="按钮组" type="VBoxContainer" parent="按钮" unique_id=1588682671]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.7152248
-anchor_bottom = 0.64937377
+anchor_top = 0.014141414
+anchor_right = 0.71522486
+anchor_bottom = 0.96654546
 offset_right = 1061.6223
 offset_bottom = 990.56
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.245, 0.245)
-theme_override_constants/separation = 100
+theme_override_constants/separation = 150
 metadata/_edit_use_anchors_ = true
 
 [node name="开始游戏" type="Button" parent="按钮/按钮组" unique_id=1405177826]
