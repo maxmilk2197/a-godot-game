@@ -21,11 +21,12 @@ extends Node
 ## 滚轮停止后多久才回弹（拖动是松手立刻回弹）
 @export var 释放延迟: float = 0.06
 ## 回弹时长
-@export var 回弹时长: float = 0.42
+@export var 回弹时长: float = 0.35
 
 var _滚动: ScrollContainer
 var _内容: Control
 var _拉伸: float = 0.0
+var _回弹起: float = 0.0
 var _底部: bool = false
 var _补间: Tween
 var _释放计时: float = 0.0
@@ -187,8 +188,14 @@ func _滚轮拉伸(量: float, 底部: bool) -> void:
 func _回弹() -> void:
 	if _补间 != null and _补间.is_valid():
 		_补间.kill()
+	_回弹起 = _拉伸
 	_补间 = create_tween()
-	_补间.tween_method(_设置拉伸, _拉伸, 0.0, 回弹时长).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	# M3 Expressive 弹簧曲线：收得快、尾巴轻轻停住，不会像 BACK 那样甩过头
+	_补间.tween_method(_设回弹, 0.0, 1.0, 回弹时长)
+
+
+func _设回弹(t: float) -> void:
+	_设置拉伸(lerpf(_回弹起, 0.0, M3Motion.弹簧_快(t)))
 
 
 func _设置拉伸(值: float) -> void:

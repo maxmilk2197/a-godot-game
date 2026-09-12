@@ -12,6 +12,8 @@ extends BaseButton
 
 var _进度: float = 0.0
 var _补间: Tween
+var _起值: float = 0.0
+var _目标值: float = 0.0
 
 
 func _ready() -> void:
@@ -39,8 +41,15 @@ func _动画到(目标: float) -> void:
 		return
 	if _补间 != null and _补间.is_valid():
 		_补间.kill()
+	_起值 = _进度
+	_目标值 = 目标
 	_补间 = create_tween()
-	_补间.tween_method(_设置进度, _进度, 目标, 0.16).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	# M3 Expressive 空间弹簧（带一点点过冲）
+	_补间.tween_method(_设弹簧, 0.0, 1.0, M3Motion.弹簧_快_时长)
+
+
+func _设弹簧(t: float) -> void:
+	_设置进度(lerpf(_起值, _目标值, M3Motion.弹簧_快(t)))
 
 
 func _设置进度(值: float) -> void:

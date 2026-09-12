@@ -28,7 +28,6 @@ Audio="*res://脚本/全局/音量设置.gd"
 Settings="*res://脚本/全局/设置数据.gd"
 SceneNav="*res://脚本/全局/场景导航.gd"
 M3ThemeManager="*res://addons/material_ui/core/m3_theme_manager.gd"
-_TestBubble="*res://_test_bubble.gd"
 
 [dialogic]
 

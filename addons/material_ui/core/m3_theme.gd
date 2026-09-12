@@ -34,13 +34,32 @@ static var on_surface: Color = Color(0.106, 0.106, 0.122)
 static var surface_variant: Color = Color(0.882, 0.886, 0.925)
 static var on_surface_variant: Color = Color(0.267, 0.275, 0.31)
 
+static var surface_container_lowest: Color = Color(1, 1, 1)
 static var surface_container_low: Color = Color(0.949, 0.953, 0.988)
 static var surface_container: Color = Color(0.918, 0.933, 0.984)
 static var surface_container_high: Color = Color(0.886, 0.914, 0.976)
+static var surface_container_highest: Color = Color(0.882, 0.884, 0.937)
+
+## 变暗 / 变亮的表面（大面积遮罩、抬升层用）
+static var surface_dim: Color = Color(0.849, 0.851, 0.903)
+static var surface_bright: Color = Color(0.975, 0.976, 1)
+## 表面染色（MD3 里 = primary），用于海拔着色
+static var surface_tint: Color = Color(0, 0.349, 0.78)
+
+## 反色组：给 Snackbar / Tooltip 这类「反色浮层」用
+static var inverse_surface: Color = Color(0.184, 0.187, 0.227)
+static var inverse_on_surface: Color = Color(0.938, 0.94, 0.993)
+static var inverse_primary: Color = Color(0.741, 0.764, 0.981)
+
+## background / on_background 在 MD3 里与 surface 同值，保留是为了对齐规范命名
+static var background: Color = Color(0.996, 0.984, 1)
+static var on_background: Color = Color(0.106, 0.106, 0.122)
 
 static var outline: Color = Color(0.459, 0.467, 0.502)
 static var outline_variant: Color = Color(0.773, 0.776, 0.816)
 static var shadow: Color = Color(0, 0, 0)
+## 遮罩（dialog / drawer 统一用 rgba(scrim, 0.4)）
+static var scrim: Color = Color(0, 0, 0)
 
 ## 全局尺寸缩放（想让整套组件整体放大/缩小时改这个）
 static var scale: float = 1.0
@@ -90,40 +109,70 @@ static func 海拔样式(背景: Color, 圆角: int = 16, 海拔: int = 1) -> St
 
 
 ## 状态层样式（悬停/按下时叠加的半透明色）
+## 底色不透明时直接与叠加色混合；底色本身透明（描边/文字按钮）时不能混，
+## 否则叠加色会被一起拉向黑色、变成灰罩，应该保留叠加色本身、只取它的透明度。
 static func 状态层(底色: Color, 叠加色: Color, 圆角: int, 透明度: float) -> StyleBoxFlat:
-	var 混合 := 底色.lerp(叠加色, 透明度)
-	return 样式(混合, 圆角)
+	if 底色.a <= 0.0:
+		return 样式(Color(叠加色.r, 叠加色.g, 叠加色.b, 透明度), 圆角)
+	return 样式(底色.lerp(叠加色, 透明度), 圆角)
 
 
 # ---------------- 主题色派生 ----------------
-## 按一个种子色粗略派生整套令牌（简化版 HSL 派生，够日常用）
+## 按一个种子色派生整套 MD3 令牌（用 CIELAB 色调板，见 M3Palette）
 static func 应用种子(种子: Color) -> void:
-	primary = 种子
-	on_primary = _对比色(种子)
-	primary_container = 种子.lerp(Color(1, 1, 1), 0.8)
-	on_primary_container = 种子.lerp(Color(0, 0, 0), 0.75)
+	var 色相 := M3Palette.色相(种子)
+	var 彩度 := M3Palette.彩度(种子)
 
-	secondary = 种子.lerp(Color(0.4, 0.4, 0.4), 0.62)
-	on_secondary = _对比色(secondary)
-	secondary_container = 种子.lerp(Color(1, 1, 1), 0.86)
-	on_secondary_container = 种子.lerp(Color(0, 0, 0), 0.8)
+	var 主彩 := clampf(彩度, 36.0, 72.0)
+	var 次彩 := clampf(彩度 * 0.42, 16.0, 28.0)
+	var 三彩 := clampf(彩度 * 0.62, 22.0, 40.0)
+	var 三色相 := 色相 + PI / 3.0
+	var 中彩 := 4.0
+	var 中变彩 := 8.0
+	var 错误色相 := M3Palette.色相(Color(0.729, 0.102, 0.102))
 
-	tertiary = Color.from_hsv(fmod(种子.h + 0.333, 1.0), 种子.s, 种子.v)
-	on_tertiary = _对比色(tertiary)
-	tertiary_container = tertiary.lerp(Color(1, 1, 1), 0.82)
-	on_tertiary_container = tertiary.lerp(Color(0, 0, 0), 0.78)
+	primary = M3Palette.取色调(色相, 主彩, 40.0)
+	on_primary = M3Palette.取色调(色相, 主彩, 100.0)
+	primary_container = M3Palette.取色调(色相, 主彩, 90.0)
+	on_primary_container = M3Palette.取色调(色相, 主彩, 10.0)
 
-	surface = Color(0.996, 0.984, 1)
-	on_surface = Color(0.106, 0.106, 0.122)
-	surface_variant = 种子.lerp(Color(1, 1, 1), 0.9)
-	on_surface_variant = 种子.lerp(Color(0, 0, 0), 0.7)
-	surface_container_low = 种子.lerp(Color(1, 1, 1), 0.94)
-	surface_container = 种子.lerp(Color(1, 1, 1), 0.91)
-	surface_container_high = 种子.lerp(Color(1, 1, 1), 0.88)
-	outline = 种子.lerp(Color(0.5, 0.5, 0.5), 0.6)
-	outline_variant = 种子.lerp(Color(1, 1, 1), 0.78)
+	secondary = M3Palette.取色调(色相, 次彩, 40.0)
+	on_secondary = M3Palette.取色调(色相, 次彩, 100.0)
+	secondary_container = M3Palette.取色调(色相, 次彩, 90.0)
+	on_secondary_container = M3Palette.取色调(色相, 次彩, 10.0)
 
+	tertiary = M3Palette.取色调(三色相, 三彩, 40.0)
+	on_tertiary = M3Palette.取色调(三色相, 三彩, 100.0)
+	tertiary_container = M3Palette.取色调(三色相, 三彩, 90.0)
+	on_tertiary_container = M3Palette.取色调(三色相, 三彩, 10.0)
 
-## 根据背景亮度挑黑或白（保证文字对比度）
-static func _对比色(背景: Color) -> Color:
-	return Color(0, 0, 0) if 背景.get_luminance() > 0.55 else Color(1, 1, 1)
+	error = M3Palette.取色调(错误色相, 84.0, 40.0)
+	on_error = M3Palette.取色调(错误色相, 84.0, 100.0)
+	error_container = M3Palette.取色调(错误色相, 84.0, 90.0)
+	on_error_container = M3Palette.取色调(错误色相, 84.0, 10.0)
+
+	surface = M3Palette.取色调(色相, 中彩, 98.0)
+	on_surface = M3Palette.取色调(色相, 中彩, 10.0)
+	surface_variant = M3Palette.取色调(色相, 中变彩, 90.0)
+	on_surface_variant = M3Palette.取色调(色相, 中变彩, 30.0)
+	surface_container_lowest = M3Palette.取色调(色相, 中彩, 100.0)
+	surface_container_low = M3Palette.取色调(色相, 中彩, 96.0)
+	surface_container = M3Palette.取色调(色相, 中彩, 94.0)
+	surface_container_high = M3Palette.取色调(色相, 中彩, 92.0)
+	surface_container_highest = M3Palette.取色调(色相, 中彩, 90.0)
+	surface_dim = M3Palette.取色调(色相, 中彩, 87.0)
+	surface_bright = M3Palette.取色调(色相, 中彩, 98.0)
+	surface_tint = primary
+
+	# 反色组：拿深色方案里的对应角色（浅色主题的「反色」= 深色表面）
+	inverse_surface = M3Palette.取色调(色相, 中彩, 20.0)
+	inverse_on_surface = M3Palette.取色调(色相, 中彩, 95.0)
+	inverse_primary = M3Palette.取色调(色相, 主彩, 80.0)
+
+	background = surface
+	on_background = on_surface
+
+	outline = M3Palette.取色调(色相, 中变彩, 50.0)
+	outline_variant = M3Palette.取色调(色相, 中变彩, 80.0)
+	shadow = Color(0, 0, 0)
+	scrim = Color(0, 0, 0)

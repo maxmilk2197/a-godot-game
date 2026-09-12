@@ -1,9 +1,9 @@
 @tool
-class_name M3NavigationBar
+class_name M3NavigationRail
 extends PanelContainer
 ## ============================================================
-## Material 3 底部导航栏：根据 项目 自动生成一排按钮。
-## 选中项显示胶囊底色 + 主色文字。切换时发出 切换(索引)。
+## Material 3 侧边导航栏（竖向版 NavigationBar）。
+## 适合中等宽度布局，放屏幕左侧或右侧。
 ## ============================================================
 
 signal 切换(索引: int)
@@ -20,12 +20,12 @@ signal 切换(索引: int)
 	set(值):
 		圆角 = 值
 		_刷新样式()
-@export var 字号: int = 20:
+@export var 字号: int = 18:
 	set(值):
 		字号 = 值
 		_刷新选中()
 
-var _行: HBoxContainer
+var _列: VBoxContainer
 var _按钮: Array[Button] = []
 
 
@@ -35,19 +35,21 @@ func _ready() -> void:
 
 
 func _构建() -> void:
-	if _行 != null and is_instance_valid(_行):
+	if _列 != null and is_instance_valid(_列):
 		return
-	_行 = HBoxContainer.new()
-	_行.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_行.alignment = BoxContainer.ALIGNMENT_CENTER
-	add_child(_行)
+	_列 = VBoxContainer.new()
+	_列.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_列.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	_列.alignment = BoxContainer.ALIGNMENT_CENTER
+	_列.add_theme_constant_override("separation", int(round(8 * M3Theme.scale)))
+	add_child(_列)
 
 
 func _重建() -> void:
 	_构建()
-	if _行 == null:
+	if _列 == null:
 		return
-	for 子 in _行.get_children():
+	for 子 in _列.get_children():
 		子.queue_free()
 	_按钮.clear()
 	for i in range(项目.size()):
@@ -56,23 +58,23 @@ func _重建() -> void:
 		按钮.toggle_mode = true
 		按钮.focus_mode = Control.FOCUS_NONE
 		按钮.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		按钮.custom_minimum_size = Vector2(M3Theme.px(72), M3Theme.px(56))
+		按钮.custom_minimum_size = Vector2(M3Theme.px(96), M3Theme.px(64))
 		按钮.toggled.connect(_某个切换.bind(i))
-		_行.add_child(按钮)
+		_列.add_child(按钮)
 		_按钮.append(按钮)
 	_刷新选中()
 	_刷新样式()
 
 
 func _某个切换(按下: bool, 索引: int) -> void:
-	if 按钮_有效(索引) and not 按下:
+	if _有效(索引) and not 按下:
 		_按钮[索引].set_pressed_no_signal(true)
 		return
 	当前索引 = 索引
 	切换.emit(索引)
 
 
-func 按钮_有效(索引: int) -> bool:
+func _有效(索引: int) -> bool:
 	return 索引 >= 0 and 索引 < _按钮.size()
 
 
@@ -105,6 +107,6 @@ func _刷新样式() -> void:
 	var sb := M3Theme.样式(M3Theme.surface_container_low, 圆角)
 	sb.content_margin_left = M3Theme.px(8)
 	sb.content_margin_right = M3Theme.px(8)
-	sb.content_margin_top = M3Theme.px(6)
-	sb.content_margin_bottom = M3Theme.px(6)
+	sb.content_margin_top = M3Theme.px(8)
+	sb.content_margin_bottom = M3Theme.px(8)
 	add_theme_stylebox_override("panel", sb)

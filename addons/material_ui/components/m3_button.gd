@@ -12,7 +12,7 @@ enum 按钮样式 { FILLED, TONAL, OUTLINED, TEXT, ELEVATED }
 	set(值):
 		样式类型 = 值
 		_刷新样式()
-@export var 圆角: int = 20:
+@export var 圆角: int = M3Shape.大加强:
 	set(值):
 		圆角 = 值
 		_刷新样式()
@@ -30,6 +30,8 @@ enum 按钮样式 { FILLED, TONAL, OUTLINED, TEXT, ELEVATED }
 	set(值):
 		点击颜色 = 值
 		_刷新样式()
+## 涟漪（点击水波）的起始不透明度
+@export_range(0.0, 1.0, 0.05) var 涟漪不透明度: float = 0.55
 
 var _涟漪: M3Ripple
 
@@ -37,9 +39,11 @@ var _涟漪: M3Ripple
 func _ready() -> void:
 	clip_contents = true
 	button_down.connect(_按下)
+	button_up.connect(_松开)
 	_刷新样式()
 
 
+## 按下：涟漪扩散并保持（长按也一直有）
 func _按下() -> void:
 	if Engine.is_editor_hint():
 		return
@@ -47,15 +51,38 @@ func _按下() -> void:
 		_涟漪 = M3Ripple.new()
 		add_child(_涟漪)
 	var 波纹 := 状态色()
-	波纹.a = 0.35
-	_涟漪.播放(get_local_mouse_position(), 波纹)
+	波纹.a = 涟漪峰值()
+	_涟漪.按下(get_local_mouse_position(), 波纹)
+
+
+## 松开：涟漪淡出
+func _松开() -> void:
+	if _涟漪 != null and is_instance_valid(_涟漪):
+		_涟漪.松开()
 
 
 ## 点击时涟漪 / 状态层的实际颜色
 func 状态色() -> Color:
 	if 点击颜色.a > 0.0:
 		return 点击颜色
+	if 样式类型 == 按钮样式.TONAL:
+		# 色调按钮的底色本身就是 secondary_container，再用同色叠上去等于没反应
+		return M3Theme.on_secondary_container
 	return M3Theme.secondary_container
+
+
+## 涟漪峰值不透明度。
+## 填充/色调底的按钮，涟漪色与底色的明度差很大，按 涟漪不透明度 全量叠上去会
+## 把整颗按钮冲淡或压黑（文字对比度跟着掉），所以这两类要压低峰值；
+## 浅底（描边/文字/抬升）上涟漪色本身很浅，得保持全量才看得见。
+func 涟漪峰值() -> float:
+	var 基准 := clampf(涟漪不透明度, 0.0, 1.0)
+	match 样式类型:
+		按钮样式.FILLED:
+			return 基准 * 0.32
+		按钮样式.TONAL:
+			return 基准 * 0.22
+	return 基准
 
 
 ## 该样式下的文字/图标颜色
@@ -101,9 +128,9 @@ func _刷新样式() -> void:
 	else:
 		普通 = M3Theme.样式(_底色(), 圆角值)
 
-	# 悬停 / 按下：用状态层跟底色混合
-	var 悬停 := M3Theme.状态层(_底色(), 状态叠加, 圆角值, 0.08)
-	var 按下态 := M3Theme.状态层(_底色(), 状态叠加, 圆角值, 0.14)
+	# 悬停 / 按下：用状态层跟底色混合（不透明度见 M3Motion.状态_*）
+	var 悬停 := M3Theme.状态层(_底色(), 状态叠加, 圆角值, M3Motion.状态_悬停)
+	var 按下态 := M3Theme.状态层(_底色(), 状态叠加, 圆角值, M3Motion.状态_按下)
 	var 禁用 := M3Theme.样式(Color(M3Theme.on_surface.r, M3Theme.on_surface.g, M3Theme.on_surface.b, 0.12), 圆角值)
 	var 焦点 := M3Theme.描边样式(M3Theme.primary, 圆角值, 2)
 

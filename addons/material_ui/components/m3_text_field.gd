@@ -11,7 +11,7 @@ enum 输入样式 { FILLED, OUTLINED }
 	set(值):
 		样式类型 = 值
 		_刷新样式()
-@export var 圆角: int = 12:
+@export var 圆角: int = M3Shape.中:
 	set(值):
 		圆角 = 值
 		_刷新样式()

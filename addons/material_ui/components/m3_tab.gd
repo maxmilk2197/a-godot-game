@@ -55,7 +55,7 @@ func _刷新() -> void:
 	if not is_inside_tree():
 		return
 	_确保指示条()
-	var 圆角值 := int(round(12 * M3Theme.scale))
+	var 圆角值 := int(round(M3Shape.中 * M3Theme.scale))
 
 	var 空底 := M3Theme.样式(Color(0, 0, 0, 0), 圆角值)
 	空底.content_margin_left = M3Theme.px(20)
@@ -63,7 +63,7 @@ func _刷新() -> void:
 	空底.content_margin_top = M3Theme.px(12)
 	空底.content_margin_bottom = M3Theme.px(16)
 
-	var 悬停底 := M3Theme.样式(Color(M3Theme.on_surface.r, M3Theme.on_surface.g, M3Theme.on_surface.b, 0.06), 圆角值)
+	var 悬停底 := M3Theme.样式(Color(M3Theme.on_surface.r, M3Theme.on_surface.g, M3Theme.on_surface.b, M3Motion.状态_悬停), 圆角值)
 	悬停底.content_margin_left = M3Theme.px(20)
 	悬停底.content_margin_right = M3Theme.px(20)
 	悬停底.content_margin_top = M3Theme.px(12)

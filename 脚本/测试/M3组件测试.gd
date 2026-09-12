@@ -38,7 +38,9 @@ func _ready() -> void:
 	_进度区()
 	_标签页区()
 	_导航区()
+	_侧边导航区()
 	_其它区()
+	_调色区()
 
 
 # ---------------- 各分区 ----------------
@@ -136,6 +138,52 @@ func _导航区() -> void:
 	导航.项目 = PackedStringArray(["消息", "通讯录", "发现", "我"])
 	导航.字号 = 22
 	_列.add_child(导航)
+
+
+func _侧边导航区() -> void:
+	_小标题("M3NavigationRail / M3NavigationDrawer")
+	var 行 := _行()
+	var 轨 := M3NavigationRail.new()
+	轨.项目 = PackedStringArray(["消息", "通讯录", "发现", "我"])
+	轨.字号 = 18
+	轨.custom_minimum_size = Vector2(150, 320)
+	行.add_child(轨)
+
+	var 开抽屉 := M3Button.new()
+	开抽屉.text = "打开抽屉"
+	开抽屉.样式类型 = M3Button.按钮样式.TONAL
+	行.add_child(开抽屉)
+
+	# 抽屉要挂在非容器父节点下，position 才能做滑出动画
+	var 抽屉 := M3NavigationDrawer.new()
+	抽屉.项目 = PackedStringArray(["首页", "消息", "设置", "关于"])
+	抽屉.标题 = "M3 抽屉"
+	抽屉.字号 = 20
+	抽屉.展开 = false
+	add_child(抽屉)
+	开抽屉.pressed.connect(抽屉.开关)
+
+
+func _调色区() -> void:
+	_小标题("主题调色（点了重新载入页面）")
+	var 行 := _行()
+	_调色按钮(行, "蓝", Color(0, 0.349, 0.78))
+	_调色按钮(行, "绿", Color(0.1, 0.5, 0.25))
+	_调色按钮(行, "紫", Color(0.42, 0.28, 0.6))
+	_调色按钮(行, "橙", Color(0.7, 0.35, 0.1))
+
+
+func _调色按钮(行: HBoxContainer, 名: String, 色: Color) -> void:
+	var 按钮 := M3Button.new()
+	按钮.text = 名
+	按钮.样式类型 = M3Button.按钮样式.TONAL
+	按钮.pressed.connect(_换种子.bind(色))
+	行.add_child(按钮)
+
+
+func _换种子(色: Color) -> void:
+	M3Theme.应用种子(色)
+	get_tree().reload_current_scene()
 
 
 func _其它区() -> void:
