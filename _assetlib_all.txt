@@ -1,0 +1,1592 @@
+﻿1004	4.4	Tools	2025-04-03 15:30:42	Achievement System
+1032	4.0	Scripts	2023-03-15 08:57:15	Hexgrid
+1038	4.1	Tools	2025-12-19 21:06:09	Godot CSS Theme
+1043	4.2	2D Tools	2023-12-31 16:46:35	Sprite Cutter
+1054	4.0	Tools	2023-02-10 21:38:36	Tool Button
+1062	4.0	Scripts	2023-05-07 15:13:26	PlatformerController2D
+1077	4.0	Tools	2022-12-29 12:12:30	Material Modifier
+1083	4.0	3D Tools	2021-10-21 22:42:18	Godot 4 3D Terrain Plugin (GPU Based)
+1087	4.0	2D Tools	2024-07-18 09:46:30	Donut Collision Polygon 2D
+1106	4.0	3D Tools	2025-08-19 03:27:48	Blender 3D Shortcuts
+1110	4.0	Scripts	2023-03-10 11:17:00	Linear Stairs Generator
+1140	4.0	Tools	2021-12-19 04:10:33	Datalogue
+1157	4.3	Misc	2024-09-15 14:01:54	Date Time Addon
+1160	4.0	2D Tools	2023-04-23 01:58:56	GDScript Delaunay + Voronoi
+1174	4.0	2D Tools	2023-05-04 05:42:37	Auto Polygon2D Triangulation
+1190	4.0	Tools	2023-06-14 15:01:44	Interactive Scene Changer (G4)
+1194	4.3	Scripts	2024-12-05 15:31:01	Quake-Style Light Animations
+1199	4.0	Tools	2023-02-10 21:38:59	Localization Editor (G4)
+1200	4.0	Tools	2023-02-10 21:39:06	Dialogue Editor (G4)
+1204	4.0	Scripts	2022-09-08 18:38:08	PostgreSQL Client in GDScript
+1211	4.0	2D Tools	2022-10-15 16:04:57	Easy Vector Display (2D)
+1215	4.0	Tools	2023-02-10 21:39:02	Inventory Editor (G4)
+1221	4.0	Tools	2023-02-10 21:39:09	Quest Editor (G4)
+1241	4.0	Tools	2023-01-05 17:07:29	Github To Itch
+1247	4.0	Tools	2022-02-26 04:10:26	Aseprite Helper
+1248	4.0	Tools	2022-11-11 19:28:37	Blender Helper
+1252	4.0	Tools	2025-06-16 19:39:46	Color Preview
+1260	4.3	Tools	2024-09-09 14:02:36	Godot Krita Importer
+1262	4.2	Misc	2024-09-07 14:15:48	GUS - Godot Universal Serializer 2
+1265	4.1	3D Tools	2023-07-16 13:39:14	TrenchBroom Loader
+1280	4.0	Tools	2026-01-02 07:06:22	Monitor overlay
+1282	4.0	Scripts	2024-06-10 14:53:16	Dice Syntax Godot4
+1284	4.0	Scripts	2024-07-22 14:58:52	Complex Numbers
+1289	4.0	Scripts	2023-03-16 20:37:09	Mingos' Restrictive Precise Angle Shadowcasting (MRPAS)
+1303	4.4	Tools	2026-08-21 04:34:45	Scene Manager
+1313	4.1	3D Tools	2025-10-02 16:56:32	Polyliner
+1317	4.0	3D Tools	2023-03-13 17:42:16	Free Look Camera
+1319	4.0	3D Tools	2022-09-12 22:35:20	Pretty Primitive
+1321	4.1	Misc	2024-12-23 15:44:42	godot-playfab
+1327	4.0	Tools	2026-04-03 19:03:28	TODO Manager (Godot 4)
+1328	4.1	2D Tools	2024-07-05 18:01:29	Onscreen Keyboard
+1329	4.3	3D Tools	2026-02-04 18:31:17	WiggleBone
+1348	4.0	3D Tools	2024-01-17 14:26:13	Line Renderer
+1357	4.0	3D Tools	2022-09-03 15:45:46	Snappy
+1360	4.1	3D Tools	2024-09-19 20:12:33	Goshapes: Curve-based Modelling and Level Building
+1368	4.4	Tools	2025-05-01 20:55:01	GLoot (Universal Inventory System)
+1372	4.0	3D Tools	2022-06-25 19:41:56	Vpainter
+1388	4.3	Scripts	2024-10-14 13:37:52	Poki SDK
+1389	4.0	Scripts	2022-07-14 19:34:33	Async Socket
+1399	4.4	Scripts	2026-08-10 19:16:40	SmoothScroll
+1405	4.1	Tools	2025-09-11 17:45:55	Loggot
+1407	4.0	2D Tools	2023-03-12 11:58:20	Better Tab Container
+1415	4.0	2D Tools	2022-11-18 22:49:48	Aseprite Animation Importer - Godot 4
+1419	4.0	2D Tools	2022-09-08 16:49:18	RandomAudioPlayer
+1420	4.0	Misc	2024-09-18 13:33:36	Dev Blocks
+1421	4.2	Tools	2024-03-25 16:16:55	Instance Dock
+1425	4.0	3D Tools	2022-08-16 10:08:27	Ed's CSG to MeshInstance
+1430	4.0	Tools	2024-04-15 10:41:50	Auto Export Version
+1431	4.2	Misc	2023-12-11 00:07:57	Action Icon
+1432	4.1	Tools	2025-01-25 11:37:46	Dialogue Manager 2
+1433	4.0	Tools	2023-04-16 23:54:03	Custom Project Runner
+1443	4.0	Misc	2024-06-11 14:39:56	Slider Label
+1444	4.4	Shaders	2025-03-12 21:55:41	Palette swap shader with animation support
+1447	4.0	Tools	2022-09-08 11:35:39	VersionCheck 
+1452	4.0	Scripts	2023-11-16 18:09:58	Prefab
+1453	4.0	Shaders	2022-09-11 12:01:23	Gradient shift shader (palette-cycling-like)
+1454	4.0	Misc	2023-10-17 16:16:31	Universal Fade
+1455	4.0	Misc	2024-04-15 13:01:11	ControlsRemap resource
+1460	4.0	Tools	2025-01-03 06:48:26	Quick Scenes
+1462	4.0	Tools	2022-09-20 06:09:13	Select By Type
+1464	4.0	3D Tools	2023-05-04 05:43:14	Ed's Mesh Builder
+1472	4.0	Scripts	2022-10-25 00:20:03	Climb'n'glide character controller
+1474	4.0	Tools	2026-03-20 19:23:09	Kanban Tasks - Todo Manager 2
+1477	4.4	Tools	2025-03-18 06:40:47	Godot AI Kit
+1479	4.0	Tools	2026-01-27 21:56:07	Edit Resources as Table 2
+1482	4.0	Tools	2022-10-01 00:56:09	Sketchfab
+1485	4.0	Misc	2024-08-15 13:59:16	Directory Watcher
+1486	4.0	Tools	2023-03-09 10:22:43	Spritesheet Generator
+1487	4.0	Tools	2026-04-10 17:38:52	Puzzle Dependencies 3
+1488	4.2	3D Tools	2024-03-30 16:04:22	Godot Subdiv
+1489	4.2	Tools	2024-05-10 14:28:47	Simple TODO
+1491	4.1	Tools	2023-08-13 21:59:21	Simple License
+1492	4.0	Scripts	2023-02-28 18:26:53	Nesinkrona
+1496	4.2	Scripts	2024-02-07 09:19:55	Multiplayer Input
+1498	4.0	Tools	2022-10-17 21:05:15	Debug Interface Components
+1499	4.0	Shaders	2022-10-17 21:06:13	Motion Blur 4.0
+1503	4.3	2D Tools	2026-07-30 04:02:43	TexturePacker Importer (SpriteSheet, AtlasTexture)
+1509	4.0	2D Tools	2024-08-05 14:18:15	Primitives2D
+1514	4.0	Shaders	2023-02-17 21:18:27	Terrain Shader
+1517	4.0	Scripts	2022-10-25 23:04:36	Action List
+1518	4.0	3D Tools	2022-10-27 20:35:07	Path Tool
+1522	4.3	Tools	2025-06-09 23:53:02	GdUnit4
+1524	4.0	3D Tools	2022-11-09 13:34:20	Control3D Nodes
+1526	4.0	Tools	2023-02-28 18:27:08	GDShell
+1530	4.0	Tools	2025-02-19 01:24:21	Script Name On Top
+1534	4.0	Scripts	2024-08-13 14:10:34	Text Database
+1536	4.0	Tools	2022-11-07 22:22:12	XRController Midi Player
+1537	4.0	Tools	2022-11-11 21:13:48	Cursor Shape Previewer
+1539	4.0	Misc	2023-06-08 14:08:01	Fancy particles
+1540	4.0	Scripts	2023-11-10 10:45:25	Cinematic Camera 2D
+1541	4.0	Misc	2022-11-18 22:39:49	Easy Menus
+1543	4.0	2D Tools	2022-11-18 22:44:50	Trail2D
+1546	4.4	Tools	2025-10-14 16:02:03	XSM 4
+1552	4.0	Scripts	2023-04-10 16:38:09	Supabase API (4.x)
+1553	4.0	Scripts	2022-11-18 22:51:04	FPS Controller (Mono)
+1558	4.2	Tools	2024-05-09 14:01:06	Panku Console
+1559	4.0	Scripts	2025-09-17 19:01:26	Ridiculous Coding
+156	4.0	Scripts	2023-05-21 20:44:58	SimpleFirstPerson
+1560	4.0	Misc	2023-01-28 23:23:21	Godot icon creator/replacer
+1561	4.0	Scripts	2022-12-04 02:08:03	Simple Free-Look Camera for Godot 4
+1564	4.0	Shaders	2022-12-04 02:08:52	Godot 4 interior mapping shader no cubemap
+1566	4.0	3D Tools	2023-02-12 20:46:39	MultiMesh Scatter
+1567	4.1	Scripts	2025-03-20 18:04:43	Character Controller
+1568	4.0	2D Tools	2025-07-13 16:03:25	Vision Cone 2D
+1570	4.0	3D Tools	2024-06-21 14:15:26	Orbit Controls
+1571	4.0	Misc	2022-12-12 12:01:01	Animation Slider
+1572	4.4	Tools	2026-03-03 18:08:45	Aseprite Wizard
+1573	4.0	2D Tools	2022-12-25 21:40:38	RemapTools
+1578	4.0	Scripts	2023-02-28 18:26:57	SimpleState
+1579	4.0	3D Tools	2022-12-23 20:46:45	CurveMesh3D
+1581	4.1	Tools	2025-12-31 16:29:07	Godot Git Plugin (4.1+)
+1582	4.0	Tools	2024-07-06 14:34:47	Scene Manager Tool (Godot4)
+1583	4.0	2D Tools	2022-12-23 20:55:04	Godot4-TiledImporter
+1585	4.0	Tools	2024-07-09 14:36:10	Smoother: physics interpolation node
+1586	4.0	Tools	2023-01-01 04:51:24	RngUtils
+1587	4.0	3D Tools	2023-01-04 19:00:48	MagicaVoxel importer with extensions++
+1591	4.0	2D Tools	2023-06-22 19:02:46	Yet Another Behavior Tree
+1592	4.0	Tools	2025-05-21 00:20:45	Godot Colyseus
+1593	4.0	Tools	2025-01-20 13:43:08	Sprite Painter - Built-in Image Editor
+1595	4.0	3D Tools	2023-04-16 03:28:26	JiggleBones (4.0)
+1596	4.0	Tools	2023-01-05 11:26:14	Shaker
+1598	4.0	Tools	2023-01-05 11:27:22	Advanced Random Stuff
+1599	4.0	Tools	2024-09-19 20:22:18	Dictionary Inspector
+1605	4.0	2D Tools	2023-09-03 16:40:22	Animated Sprite to Animation Player Convertor 4.0
+1606	4.0	2D Tools	2024-08-15 20:25:47	Controller Icons (Legacy - v2)
+1607	4.0	2D Tools	2023-03-27 05:23:30	Parallax 2D node
+1608	4.1	2D Tools	2023-08-19 15:26:20	Previewing Parallax Background
+1609	4.0	Misc	2023-02-15 10:52:40	Hide renderer switch
+1610	4.0	Tools	2023-01-15 13:35:42	JamCountdown
+1617	4.1	Tools	2023-11-20 10:36:06	Compute Worker
+1619	4.1	Misc	2024-09-11 14:24:04	Godot QOI (4.1.4+)
+1621	4.4	2D Tools	2025-10-29 18:32:34	SoftBody2D
+1622	4.0	Tools	2023-01-20 11:07:18	Quick Script Change
+1623	4.0	3D Tools	2026-04-03 19:02:40	Simple Grass Textured
+1624	4.0	Misc	2023-01-20 11:06:07	BiliveObserver
+1629	4.1	Tools	2024-06-13 15:22:54	Godot RL Agents
+1630	4.0	3D Tools	2023-01-20 11:13:31	Kenney Prototype Tools
+1632	4.0	Tools	2024-08-30 13:51:52	Inspector Extender - Buttons, Warnings, More
+1635	4.0	Tools	2023-10-28 15:26:21	Palette Tools
+1638	4.2	Scripts	2024-01-03 16:54:39	BloodyLogger
+1639	4.0	Misc	2023-10-11 17:37:11	TwitchIRCClient
+1642	4.0	Scripts	2023-04-18 10:58:54	Nakama Godot 4 client
+1645	4.0	Tools	2025-11-28 23:51:20	Godot Firebase 4.x
+1647	4.0	Misc	2023-11-08 19:20:34	GIFT - Godot IRC For Twitch
+1649	4.0	Scripts	2023-02-12 20:44:28	Cybs Gameunit
+1650	4.4	Scripts	2026-02-20 20:12:43	Inventory System
+1651	4.0	Shaders	2023-02-12 20:45:09	Melvin's Toon Shader System (C# with .net 7)
+1653	4.0	2D Tools	2023-02-12 20:46:08	Duelyst Animated Sprites
+1654	4.0	Tools	2023-02-13 21:28:01	GodotVersion for Godot4
+1655	4.0	Scripts	2025-08-11 18:55:43	Universal Save/Load System
+1658	4.0	Scripts	2023-02-13 21:30:04	Dicebag
+1660	4.2	3D Tools	2024-01-28 16:38:22	AutoMat plugin - automatically create and assign materials
+1661	4.0	2D Tools	2023-02-17 22:28:57	Rotor Node : advanced rotations made easy
+1663	4.0	Misc	2023-02-26 22:33:45	Fade Transition
+1664	4.0	Tools	2023-03-15 08:57:03	Editor Icons Previewer for Godot 4
+1665	4.4	Scripts	2025-07-21 18:20:30	fsm
+1666	4.3	Scripts	2025-06-09 23:48:57	Godot Mod Player for Godot Engine 4
+1667	4.3	Scripts	2025-12-10 21:19:35	Godot MIDI Player for Godot Engine 4
+1669	4.0	2D Tools	2023-02-18 13:52:46	Controller Input Viewer
+1675	4.0	Tools	2023-02-19 21:07:00	Simple Test Harness
+1682	4.0	Tools	2026-04-15 19:02:21	Godot FFT (Fast Fourier Transform)
+1691	4.0	2D Tools	2023-06-25 02:07:54	Acrylic Glass
+1693	4.0	Tools	2026-07-19 21:56:23	Dynamic Day Night Cycles
+1701	4.0	Tools	2023-11-16 18:10:02	AdMob (v2) (Legacy Godot 4.0)
+1715	4.0	Scripts	2023-03-13 17:42:12	Borderless Display
+1735	4.0	3D Tools	2023-05-31 16:08:10	ControlCamera3D
+1742	4.0	Tools	2026-08-27 18:48:08	SCML importer
+1743	4.0	Tools	2025-08-05 18:21:57	Array Modifier
+1744	4.0	Misc	2023-03-27 05:30:38	bs58
+1747	4.0	Tools	2023-03-27 05:34:30	Cheatsheet
+1750	4.0	Tools	2023-03-28 22:21:09	BTransition
+1753	4.4	Tools	2025-09-11 17:49:57	Clyde Dialogue
+1760	4.0	Tools	2023-03-28 22:28:06	Random Names Generator
+1763	4.0	Tools	2023-03-31 08:49:40	Aseprite Importer
+1766	4.4	3D Tools	2026-04-04 22:25:37	Debug Draw 3D (4.4.1+)
+1772	4.3	2D Tools	2026-03-20 19:22:25	YATI (Yet Another Tiled Importer) for Godot 4
+1776	4.0	Scripts	2023-04-08 18:46:56	CharacterCamera3D
+1777	4.2	Tools	2026-03-18 18:46:59	AnimationPlayer Refactor
+1778	4.0	Tools	2026-06-27 01:01:24	Godot State Charts
+1783	4.0	Scripts	2024-05-02 00:49:08	Heart Rate Plugin for HypeRate
+1787	4.2	Tools	2024-08-29 14:37:56	 Virtual Joystick
+1790	4.3	2D Tools	2026-08-07 22:17:12	SmartShape2D - Godot 4
+1793	4.0	Tools	2023-04-05 19:14:21	CSV Data Importer
+1799	4.0	2D Tools	2023-04-24 17:01:04	A Star 2D Grid Node
+1800	4.1	Tools	2026-02-02 20:42:43	Animation Resetter
+1801	4.0	2D Tools	2024-04-09 16:46:22	Dark Peace's BulletUpHell: BulletHell Engine (Godot 4)
+1806	4.3	2D Tools	2026-02-14 22:07:00	Better Terrain
+1807	4.1	Tools	2023-09-23 12:21:20	Plugin Refresher
+1812	4.0	3D Tools	2026-04-26 02:07:04	Godot 4 Concave Mesh Slicer
+1813	4.0	Misc	2025-10-19 16:34:07	Simple Resource Icons.
+1814	4.0	2D Tools	2024-06-18 11:59:42	BurstParticles2D
+1818	4.1	Misc	2023-11-30 17:58:09	Cross Origin Isolation Service Worker
+1819	4.0	Misc	2023-04-13 17:42:20	Quaternius' Simple Nature pack
+1820	4.0	Scripts	2023-04-15 15:09:50	Quit On Input
+1821	4.0	Scripts	2023-04-15 15:13:24	Fullscreen On Input
+1822	4.4	Tools	2026-07-19 21:58:38	Phantom Camera
+1823	4.0	Misc	2023-04-18 10:58:48	Extra Export Hints
+1825	4.0	Misc	2023-04-16 15:54:45	EZ Music Cuer
+1827	4.0	Tools	2025-08-05 18:19:23	Better Random Number Generator
+1833	4.0	Misc	2023-04-21 00:40:20	Kenney's Digital Audio
+1834	4.0	Misc	2023-04-21 00:40:48	Kenney's Sci-Fi Sounds
+1835	4.0	Misc	2023-04-21 00:40:52	Kenney's Voiceover
+1836	4.0	Misc	2023-04-21 00:40:55	Kenney's Voiceover Fighter
+1837	4.0	Misc	2023-04-19 16:16:15	 Kenney's UI Audio
+1838	4.0	Misc	2023-04-21 00:40:17	Kenney's Casino Audio
+1839	4.0	Misc	2023-04-21 00:40:39	Kenney's Music Jingles
+1840	4.0	Misc	2023-04-21 00:40:45	Kenney's RPG Audio
+1841	4.0	Misc	2023-04-21 00:40:30	Kenney's Impact Sounds
+1842	4.0	Tools	2024-09-17 14:14:12	Anima for Godot 4
+1846	4.0	Tools	2024-03-02 15:20:12	CSV-Typed-Data-Importer
+1851	4.0	Tools	2023-04-22 21:56:12	PopupTools
+1858	4.0	Misc	2023-04-24 17:01:55	Kenney's Pixel Platformer
+1865	4.1	Scripts	2025-09-17 19:01:38	Codecks User Reports
+1872	4.0	Tools	2023-05-03 04:29:24	Unused MD5 File Cleaner
+1875	4.0	Tools	2023-05-07 00:01:23	Code Editor Background 4.0
+1876	4.0	3D Tools	2023-05-23 15:50:07	3D Visualized Path
+1878	4.1	Tools	2023-11-12 14:51:14	Better Processes
+1880	4.0	Tools	2023-07-18 13:51:55	Aseprite importers
+1890	4.0	Scripts	2023-05-12 00:14:39	Settings Change Tracker
+1892	4.0	2D Tools	2023-05-14 10:42:03	RichTextLabelEx
+1897	4.0	Scripts	2023-05-18 05:18:15	ConvoQuest Framework
+1901	4.0	Scripts	2023-05-19 15:11:11	LocalTime
+1905	4.0	Misc	2023-05-25 13:14:23	 Follow Parent
+1909	4.0	Scripts	2023-06-29 17:34:19	Input Helper
+1910	4.0	3D Tools	2023-06-01 15:46:15	CameraPositioner
+1911	4.0	Tools	2023-12-29 15:26:56	Bonnie Dialogue Manager for 4.0
+1912	4.1	Tools	2026-02-02 21:11:15	Arcweave Godot Plugin
+1925	4.0	Scripts	2023-07-02 03:49:43	Damped Oscillator
+1931	4.0	Scripts	2023-06-15 14:18:05	Customizable Packed Scene
+1933	4.0	Tools	2023-06-14 15:02:13	Audio Control
+1948	4.0	Misc	2023-06-26 16:03:06	CurvePDFtoCDF
+1960	4.1	Scripts	2023-07-07 10:07:32	Bit of reactivity 
+1968	4.4	Scripts	2026-07-31 05:00:58	Discord  RPC / Editor Presence Plugin
+1983	4.3	Tools	2025-03-23 17:53:26	AdaptiSound
+1984	4.1	Tools	2023-12-29 15:26:46	Bonnie Dialogue Manager for 4.1
+1986	4.1	Tools	2023-07-11 14:20:12	Alignment Tool
+1987	4.1	Misc	2023-07-14 01:18:02	Binary Radian
+1993	4.1	Misc	2026-09-09 18:19:10	MQTT Client
+1998	4.0	Tools	2023-07-18 13:53:21	AMP (Adaptive Music Player)
+2002	4.0	Shaders	2023-08-06 22:29:25	Atmosphere shader
+2008	4.1	Scripts	2023-07-24 18:02:56	AlternativeTimer
+2011	4.4	Tools	2025-06-23 21:52:13	SiSHoDit
+2013	4.0	Shaders	2023-07-26 18:54:03	Chroma Key Shader
+2014	4.1	Misc	2023-08-02 14:17:58	BugReporter
+2025	4.1	Tools	2026-03-23 23:33:54	Importality
+2029	4.1	Shaders	2023-08-03 13:29:51	Caution Tape Shader
+2042	4.1	3D Tools	2025-01-17 22:40:43	CSGMesher
+2046	4.1	2D Tools	2023-08-13 14:51:00	ScrollListContainer
+2047	4.1	Tools	2023-08-14 07:36:35	Criss-Cross
+2050	4.1	2D Tools	2026-06-09 18:48:51	CollapsibleContainer
+2052	4.1	Scripts	2023-08-21 16:41:55	ArrayUtils
+2059	4.1	Tools	2023-08-21 16:43:34	GD NNabla C Runtime for GodotEngine 4.1
+2061	4.3	Shaders	2024-08-16 14:03:20	Compute Shader Helper
+2063	4.2	Tools	2026-07-22 05:18:04	AdMob
+2068	4.1	Misc	2025-11-03 18:21:49	Large Linear Algebra (c++)
+2069	4.2	Tools	2024-10-02 18:14:41	FastNoiseLite Tool
+2070	4.1	Shaders	2023-09-22 13:21:43	Boujie Water Shader
+2073	4.0	2D Tools	2023-09-13 16:03:24	CocosLike Godot 4 Actions
+2088	4.1	3D Tools	2023-09-05 18:41:26	Control3D
+2089	4.2	2D Tools	2025-03-04 23:12:57	AspectRatioResizeContainer
+2091	4.2	Tools	2025-03-04 23:13:10	Custom Theme Overrides
+2103	4.3	Misc	2026-07-09 19:38:06	WebRTC plugin - Godot 4.3+
+2111	4.1	Tools	2026-06-12 19:18:17	Developer Console
+2115	4.1	2D Tools	2023-09-15 14:25:15	Animated Control Node
+2116	4.1	Scripts	2023-09-15 14:26:08	2.5D Sprite Rotator
+2121	4.1	Scripts	2023-09-21 21:24:00	Character Controller C#
+2122	4.1	3D Tools	2023-09-16 09:16:51	KayKit Prototype Bits
+2123	4.1	3D Tools	2023-09-16 11:59:20	KayKit City Builder Bits
+2124	4.1	3D Tools	2023-09-16 11:59:25	KayKit Space Base Bits
+2125	4.1	3D Tools	2023-09-16 11:59:22	KayKit Furniture Bits
+2126	4.1	3D Tools	2023-09-29 17:48:16	KayKit Dungeon Remastered
+2129	4.1	3D Tools	2024-04-26 13:09:02	KayKit Character Pack : Adventurers
+2130	4.2	Scripts	2025-03-19 04:39:52	Asset Drawer
+2131	4.3	Tools	2024-09-02 15:01:43	Csharp Console
+2141	4.0	Tools	2025-04-26 13:42:57	AppLovinMAX
+2144	4.1	Scripts	2023-09-18 21:09:45	C# Coroutines like Unity
+2150	4.1	Scripts	2023-09-21 21:21:48	3D Trail in C#
+2164	4.2	2D Tools	2024-08-09 08:32:32	Realtime SVG Rasterizer
+2167	4.2	Scripts	2023-09-25 04:35:07	Godot Speech Recognition
+2172	4.1	Tools	2023-11-02 07:21:21	 TODO 4
+2173	4.1	2D Tools	2023-09-25 16:25:00	2D Action Compute Resource
+2177	4.1	Scripts	2023-09-26 18:04:45	C# OnReady Plugin 
+2178	4.1	2D Tools	2023-09-26 18:05:12	Combat Area 2D
+2193	4.0	2D Tools	2026-05-24 00:13:01	Radial Progress Indicator
+2196	4.1	3D Tools	2023-09-29 17:49:02	KayKit Restaurant Bits
+2220	4.0	2D Tools	2024-10-28 15:33:38	Advanced Radial Menu
+2224	4.1	3D Tools	2023-10-06 16:11:28	KayKit Halloween Bits
+2227	4.0	Tools	2024-10-28 15:33:33	easy tween (test)
+2232	4.0	Tools	2023-10-10 16:02:30	Pause Manager
+2234	4.1	Tools	2023-10-10 16:02:21	godot-ui-helpers
+2235	4.3	Tools	2025-02-15 22:16:11	Cognite
+2252	4.1	2D Tools	2023-10-13 16:15:41	.nw Level Importer
+2257	4.1	2D Tools	2023-10-14 17:15:37	AudioStreamPreview
+2259	4.1	3D Tools	2023-10-31 11:46:24	Control3D
+2261	4.2	Scripts	2024-03-11 14:41:16	Zodot (Data Validation)
+2273	4.1	Misc	2024-10-15 22:41:37	Bottom Panel Shortcuts
+2283	4.1	3D Tools	2023-10-23 14:17:30	Skeletal Animation Player
+2300	4.0	Scripts	2023-10-28 15:49:07	UUID v5 Generator
+2305	4.2	Scripts	2023-10-30 22:50:31	Composition Components
+2307	4.0	Scripts	2026-05-24 00:13:07	Godot3To4FileConversion
+2308	4.4	3D Tools	2026-09-03 23:00:41	Verlet Rope 4 .NET (Physical Ropes)
+2311	4.1	3D Tools	2023-11-02 07:14:16	Beholder
+2323	4.1	3D Tools	2024-06-04 15:10:05	Simple Portal System
+2326	4.1	Scripts	2023-11-05 23:51:25	Addonsave (4.1)
+2328	4.2	Tools	2023-11-05 23:51:32	Cutscener
+2333	4.3	Tools	2025-09-19 20:18:03	BehaviourToolkit - StateMachine and Behaviour Tree for AI & NPCs
+2334	4.3	2D Tools	2026-08-09 18:24:07	GDNative-Ropesim
+2335	4.1	Scripts	2023-11-05 23:53:05	10+ GDScript Tips Script (With Video)
+2338	4.0	Scripts	2023-11-08 00:45:58	Tracer
+2349	4.1	Shaders	2023-11-12 15:04:34	Auto Vertex Painter
+2353	4.2	Tools	2026-04-01 16:14:21	Editor Theme Explorer
+2354	4.2	Tools	2023-12-16 17:29:46	Cellular Automata Studio
+2355	4.2	Tools	2024-01-17 13:42:52	Behavior Tree for Groups
+2357	4.1	3D Tools	2023-11-17 18:07:14	godot-dynamic-quality-scaling
+236	4.0	Misc	2023-06-07 13:26:50	Godot WakaTime
+2365	4.2	Misc	2023-12-01 11:09:34	D-Bus Nodes
+2369	4.1	Scripts	2026-08-01 22:35:07	GodotRx
+2386	4.2	Tools	2023-12-01 18:10:11	Automatic Layer Enums
+2390	4.4	Misc	2025-03-25 18:19:29	Auto Expand Property Inspector
+2396	4.0	Shaders	2023-12-01 18:27:32	GodotVolumetricRendering
+2406	4.2	Tools	2023-12-29 15:26:38	Bonnie Dialogue Manager for 4.2
+2410	4.2	3D Tools	2026-03-27 20:03:45	Light Sensor 3D
+2411	4.2	Tools	2023-12-08 20:00:55	Credits Screen
+2412	4.1	Scripts	2023-12-08 20:01:15	Basic Dynamic Pool
+2415	4.2	Shaders	2024-03-18 14:11:15	Compute Shader Studio
+2416	4.2	2D Tools	2023-12-08 20:03:01	TileMapsChef
+2426	4.2	Tools	2023-12-11 21:11:05	Custom Play Buttons
+2429	4.1	Scripts	2024-06-26 14:18:11	Neural Network
+2431	4.2	Tools	2024-01-17 13:42:49	Audio Events
+2433	4.3	Tools	2025-09-11 17:41:14	Componentable
+2434	4.2	Tools	2023-12-19 19:06:04	Applinks
+2437	4.2	Shaders	2023-12-19 19:07:50	3D print shader
+2439	4.2	3D Tools	2023-12-21 04:49:46	Basic FPS Player
+2441	4.0	Scripts	2023-12-27 17:39:41	2090s Storage System
+2444	4.2	Tools	2023-12-22 18:50:17	OneiroNovel
+2445	4.4	Tools	2026-09-04 01:40:13	GodotSteam GDExtension 4.4+
+2453	4.2	Misc	2026-06-09 18:49:36	Epic Online Services Godot (EOSG)
+2457	4.2	Scripts	2023-12-29 15:27:02	MenuButton Populator
+2458	4.0	Scripts	2024-06-10 14:53:40	2090s Language System
+2468	4.2	Misc	2023-12-31 16:46:18	PockAdForGodot4.2
+2469	4.2	Misc	2023-12-31 16:47:59	Seriously - Serialize any data!
+2470	4.2	3D Tools	2024-05-08 14:43:05	Godot 4 Vertex Painter
+2473	4.2	Tools	2024-12-10 15:23:01	Wave Function Collapse (WFC) 2D/3D Generator
+2474	4.2	3D Tools	2024-01-02 15:34:17	Cinematic Camera Shake
+2475	4.2	3D Tools	2025-11-23 22:58:45	LightmapProbeGrid
+2477	4.2	Tools	2024-01-13 21:31:04	RunBeforeBuild
+2478	4.0	Tools	2025-01-10 22:26:56	CopperDC - An in-game debug console
+2479	4.2	3D Tools	2024-01-15 15:47:15	Sprite3DPlus for Godot
+248	4.2	Tools	2024-12-10 15:23:56	Godot Plugin Refresher
+2480	4.0	Misc	2024-10-03 13:32:02	Godot Theme Prototype Textures
+2482	4.2	Tools	2026-08-05 22:03:37	Diagnostic List
+2483	4.4	Scripts	2025-04-15 16:10:54	Godot Traits
+2484	4.2	2D Tools	2024-03-13 00:42:33	Animated Shape 2D
+2486	4.2	Scripts	2025-01-20 13:47:12	GD_ (Godot Lodash Port)
+2487	4.2	2D Tools	2024-02-26 15:14:20	godot_sparrow
+2488	4.2	Scripts	2024-01-18 15:43:54	DwarfImpulse - A Camera Shake Plugin for C#
+2491	4.0	2D Tools	2024-01-09 22:45:27	GenerateAnimationPlayerFrameTracks
+2492	4.2	Scripts	2024-03-10 14:35:25	Untrue Organization Classes
+2493	4.2	Tools	2024-08-06 14:21:27	FrogConsole
+2494	4.2	Tools	2024-01-20 10:15:26	RCalc
+2495	4.2	Scripts	2024-01-12 18:35:51	State Machine
+2497	4.2	Shaders	2024-01-13 21:30:59	FastNoiseLite Runtime Shader
+2498	4.2	3D Tools	2024-01-13 21:31:15	ShakyCamera3D
+2499	4.2	Tools	2025-05-05 00:57:59	Jam Launch Multiplayer Tools
+2500	4.2	Tools	2025-11-23 23:09:43	Little Camera Preview
+2501	4.4	Scripts	2026-03-07 20:41:18	Calendar Library
+2502	4.1	Scripts	2025-03-30 02:58:17	AwaitableHTTPRequest
+2503	4.3	Shaders	2024-10-01 13:29:40	Shader-Lib
+2504	4.2	Tools	2024-03-28 15:33:46	ExtendTimer
+2506	4.2	Tools	2024-01-13 21:32:31	Easy Aspect Ratio
+2507	4.0	Tools	2024-01-16 10:06:40	Tabby Explorer
+2508	4.2	2D Tools	2026-08-21 04:38:21	GDCEF Godot4
+2511	4.4	Tools	2025-03-04 23:12:11	Icon Explorer
+2513	4.2	Misc	2024-07-08 14:47:38	gdlogging
+2514	4.2	Tools	2024-08-15 20:25:37	LimboAI: Behavior Trees & State Machines (Godot 4.2)
+2515	4.2	Scripts	2024-02-26 15:13:30	Random Audio
+2516	4.0	Tools	2025-05-05 00:58:53	Quest System
+2517	4.1	Tools	2024-01-19 16:49:13	Wiring
+2518	4.2	2D Tools	2024-01-17 16:44:24	BoxAspectContainer
+2519	4.2	Misc	2024-02-03 16:12:59	Godot NVDA Integration
+2520	4.2	Scripts	2024-06-24 14:25:18	gdLinter 
+2522	4.2	3D Tools	2024-02-10 17:18:32	BHop3D
+2523	4.2	Scripts	2026-02-06 20:40:02	Inputty
+2524	4.2	Tools	2024-01-19 16:48:32	VarEdit - Variant File Inspector
+2525	4.2	Scripts	2024-01-20 16:17:07	Firebase Analytics Android
+2526	4.0	Tools	2024-01-20 16:17:43	Debug Start Screen 
+2527	4.2	2D Tools	2024-02-09 16:51:01	Marquee Label Control
+2528	4.4	Misc	2025-06-30 17:47:42	Newgrounds.io API
+2529	4.0	Tools	2024-01-21 16:25:30	GraphQL client
+2530	4.2	Scripts	2024-01-22 16:47:13	KSaver
+2531	4.2	Tools	2024-01-22 16:47:35	ResourcePlus
+2533	4.0	Scripts	2025-11-14 19:52:16	TCPMaid
+2534	4.3	Scripts	2026-02-07 20:20:20	Android Deeplink Plugin
+2535	4.2	Tools	2024-09-18 13:34:20	Godot Wasm
+2537	4.1	Tools	2024-03-06 14:05:09	Script Search
+2538	4.1	Scripts	2026-06-26 06:37:19	GodOSC
+2539	4.0	Tools	2024-01-24 16:13:13	GDebugPanel (C#)
+2540	4.1	Tools	2026-01-08 21:46:59	GDScript Formatter
+2542	4.3	Scripts	2026-02-09 05:20:55	Android Share Plugin
+2543	4.2	Tools	2024-09-24 15:25:40	Previewer_2D_3D
+2544	4.2	3D Tools	2024-02-06 03:00:25	UV Tools
+2545	4.0	Tools	2024-02-06 15:48:40	GTweens (C#)
+2546	4.2	Tools	2025-04-28 21:23:27	[Deprecated] Resonate — Audio Manager (Sound & Music)
+2547	4.3	Scripts	2026-02-10 17:18:11	Android Notification Scheduler Plugin
+2548	4.4	Scripts	2026-02-02 20:36:25	Android Admob Plugin
+2549	4.3	Scripts	2026-02-12 17:28:09	Android In-app Review Plugin
+2550	4.2	Tools	2024-02-25 15:24:04	Godot Steam Devkit Notifier
+2551	4.2	3D Tools	2024-05-31 14:56:02	Stairs3D
+2553	4.2	3D Tools	2024-01-31 17:10:19	Instant Realistic Light
+2554	4.0	Misc	2024-12-05 15:28:15	Godot Firebase Lite
+2555	4.0	Scripts	2024-01-29 20:04:55	Node Based Finite State Machine 4
+2556	4.2	Tools	2024-01-31 17:03:18	Pasta Property Setters
+2557	4.2	3D Tools	2024-05-14 15:00:33	Scene Object Brush
+2558	4.3	Misc	2025-06-23 21:54:40	Godot Easy Vehicle Physics
+2559	4.2	2D Tools	2024-01-31 17:08:38	Blender Spritesheet Import Plugin
+2560	4.2	Shaders	2024-01-31 21:09:09	Godot Card Parallax
+2561	4.2	Tools	2024-02-01 15:52:02	RandomTimer
+2562	4.2	3D Tools	2025-09-28 19:46:37	Blender-Godot Pipeline
+2563	4.0	3D Tools	2024-02-10 17:18:56	simple line renderer
+2564	4.2	2D Tools	2024-02-03 16:13:19	Simple Card Pile UI
+2565	4.1	2D Tools	2026-07-28 21:45:30	Controller Icons
+2566	4.1	3D Tools	2024-02-03 16:13:50	KayKit Character Pack: Skeletons
+2567	4.2	Tools	2024-05-21 00:54:00	CyberAsset+
+2568	4.1	Tools	2024-03-26 15:20:05	AudioStream Subtitle
+2569	4.2	3D Tools	2024-02-13 18:43:01	GoldGdt Legacy
+2570	4.2	Scripts	2024-02-09 16:51:09	Turnity
+2571	4.2	Tools	2024-02-22 10:11:31	Typed Dictionary NET
+2572	4.2	Scripts	2024-02-06 15:48:57	Connected
+2573	4.2	Shaders	2024-02-14 15:37:36	SO FLUFFY Fur Rendering System
+2574	4.2	Scripts	2024-06-30 20:59:25	TextureFont
+2575	4.0	Misc	2025-05-23 21:54:23	Godot States
+2576	4.0	2D Tools	2024-04-09 16:46:09	Dark Peace's BulletUpHell: BulletHell Engine (Godot 4.2)
+2577	4.0	2D Tools	2024-04-09 16:46:16	Dark Peace's BulletUpHell: BulletHell Engine (Godot4.1)
+2579	4.4	3D Tools	2025-10-09 16:08:56	Flight Navigation
+2580	4.4	3D Tools	2026-06-05 18:34:22	Godot Aerodynamic Physics
+2583	4.2	2D Tools	2024-02-08 16:00:55	Simple Shapes
+2584	4.2	Tools	2024-02-08 16:10:10	Gmap - map packager
+2585	4.2	Misc	2026-02-07 20:24:51	Collapse Folders
+2586	4.3	Scripts	2024-08-15 13:59:22	Tween Suite
+2587	4.2	Shaders	2025-03-04 23:14:04	Compute Shader Plus
+2589	4.2	2D Tools	2024-02-10 17:18:25	CameraManager2D
+2590	4.2	2D Tools	2024-08-14 14:46:09		Godot Atlas Cutter
+2591	4.2	Tools	2024-02-12 22:01:26	TextureRectRounded
+2592	4.2	Scripts	2024-02-12 22:01:31	Timestamp Stopwatch
+2593	4.2	Misc	2024-02-12 15:38:01	Textify - Speech2Text
+2594	4.2	3D Tools	2024-03-03 15:27:27	PlayAtCamPos
+2595	4.2	3D Tools	2024-02-15 15:49:55	Simple Airplane Controller (models included!)
+2596	4.2	Tools	2025-07-07 18:00:13	CORE Framework [DEPRECATED]
+2597	4.2	3D Tools	2024-02-23 14:44:00	GoldGdt
+2598	4.2	Tools	2026-02-27 22:05:18	Dialogue Engine
+2599	4.0	2D Tools	2024-02-15 15:43:58	Godot Level Editor 2D (GLE2D)
+2600	4.2	3D Tools	2024-02-15 15:49:43	Mesh Slicing
+2601	4.2	3D Tools	2024-02-15 15:50:22	Weather System
+2603	4.2	3D Tools	2024-02-18 17:41:32	ThrowOut
+2604	4.2	3D Tools	2025-10-31 19:01:36	[OLD] Post Process
+2605	4.4	3D Tools	2026-06-15 18:16:04	GodotVMF
+2607	4.2	3D Tools	2024-12-23 15:45:00	Waterways .NET (River Generation Tool)
+2608	4.2	Tools	2024-02-19 22:45:03	Table Container
+261	4.2	Tools	2023-12-08 19:52:33	Notes Tab
+2610	4.2	Tools	2024-09-03 14:37:02	Customizable Crosshair
+2611	4.4	Tools	2026-03-03 18:02:49	Awesome Input Icon
+2612	4.2	Scripts	2024-02-23 14:43:13	GDScript Resources to C# Export
+2613	4.2	Tools	2024-02-21 15:00:27	Run Preset
+2614	4.0	Misc	2024-03-27 17:49:26	Quiver Analytics
+2615	4.2	3D Tools	2026-01-30 18:07:50	TrailRenderer
+2616	4.1	Misc	2024-02-22 15:01:58	GodotCrowdControl 4.1
+2617	4.2	2D Tools	2025-10-27 16:33:23	Basic Shape Creation
+2618	4.2	Scripts	2024-06-30 16:58:25	EFT-gdscript - User created themes
+2619	4.3	Tools	2024-08-28 12:47:57	SplashScreenWizard
+2620	4.2	Misc	2024-02-27 18:31:44	Assorted Controls
+2621	4.2	Tools	2024-02-25 15:26:07	Scene Tree Sorter
+2622	4.2	Misc	2024-02-25 15:26:01	Kenney Assets Helper
+2623	4.0	Tools	2026-01-27 21:51:32	Subresource Inspector
+2625	4.2	Tools	2024-03-18 14:11:27	Dialogue Trees C#
+2626	4.2	Tools	2024-03-05 14:38:59	GD-OpenBlive
+2627	4.2	Scripts	2025-09-15 00:01:43	Multi Touch GUI
+2628	4.4	2D Tools	2025-08-19 18:01:16	BoneIK
+2630	4.2	2D Tools	2024-02-26 21:05:14	LinePath2D
+2633	4.2	Misc	2024-03-23 15:22:00	FlowerStats
+2635	4.2	Tools	2024-02-27 15:05:34	GdCSharpLog
+2636	4.2	Tools	2024-02-27 18:31:48	User Input WhiteList
+2638	4.3	Tools	2026-05-18 20:32:10	Godot Whisper - Speech to Text
+2639	4.3	Tools	2025-01-03 06:38:06	IREE runtime - Run machine learning models
+2640	4.2	Shaders	2024-02-28 14:20:45	Eyeball Shader
+2642	4.2	Tools	2024-03-01 20:48:30	Mono Build Toggler for Godot 4
+2643	4.2	Tools	2026-04-07 20:32:54	GodotGPT
+2644	4.2	Misc	2024-10-06 14:35:56	Ridiculous Coding - Godot 4.2.2 [Cuppixx Version]
+2645	4.4	Misc	2025-06-29 16:32:05	 Visibility shortcut 
+2646	4.2	Tools	2024-05-25 15:48:59	Toggle External Editor
+2647	4.2	2D Tools	2024-03-04 14:56:40	Flawless 2D Shadows
+2648	4.1	3D Tools	2024-03-03 15:27:20	3D Auto Collision Generator
+2649	4.1	2D Tools	2024-03-02 15:21:29	Rope2D
+2650	4.0	Misc	2024-03-02 15:21:46	Quiver Player Accounts
+2653	4.2	Misc	2024-03-10 20:32:13	Run Counter
+2654	4.2	Tools	2024-03-04 14:55:39	vkaParticleTool
+2655	4.2	Materials	2024-03-05 14:37:57	Kenney Input Prompts
+2656	4.2	Tools	2024-03-13 00:42:28	Cider Wiki
+2657	4.2	Tools	2024-03-06 14:05:24	GodotOwl
+2658	4.2	Tools	2024-03-06 14:05:42	Minos UUID Generator 4.2
+2659	4.0	Misc	2024-04-04 14:28:58	Quiver Leaderboards
+2660	4.2	Tools	2024-11-24 22:07:38	SCORM Plugin (Depreaced)
+2661	4.2	Tools	2024-03-07 14:31:56	MusicManager
+2662	4.2	Scripts	2024-03-10 14:35:34	Xsolla SDK
+2663	4.2	Tools	2024-06-17 14:11:56	TemplateSaver
+2664	4.2	2D Tools	2024-05-06 14:30:23	DraggableSprite2D
+2666	4.3	Tools	2025-02-05 20:53:04	Multi Inputer
+2667	4.2	Tools	2024-03-13 00:42:19	Mono Plugin
+2668	4.0	Tools	2024-12-23 15:40:59	Window-B-Gone
+2669	4.2	Tools	2026-06-21 00:46:14	Poly Haven Import
+2671	4.2	Tools	2024-03-11 14:42:52	MusicMeta | Extract MP3 Metadata
+2672	4.2	Scripts	2024-03-13 13:18:39	Async Resource Loader (C#)
+2674	4.1	Tools	2025-07-03 19:01:27	Questify - Quest editor and manager
+2675	4.2	Tools	2024-03-13 13:19:48	Modular Components
+2676	4.2	Misc	2024-05-20 14:08:59	KoalaTime [Take A Break] - Godot 4.2.2
+2677	4.2	Tools	2024-03-20 15:20:03	Simple Timer
+2678	4.2	2D Tools	2024-03-14 15:15:51	Fill Gap Container
+2680	4.2	Tools	2024-07-19 15:38:55	Script Dock
+2681	4.2	Tools	2024-07-10 14:37:43	Globalize Plugins
+2682	4.2	Scripts	2024-03-16 16:44:11	Hexagonal Grid Utils
+2683	4.2	Scripts	2024-03-28 15:32:47	MiniScript C#
+2684	4.0	3D Tools	2024-03-18 14:12:11	PolygonCircleGen
+2685	4.0	3D Tools	2024-03-18 14:12:31	CSGToMesh
+2686	4.1	3D Tools	2024-03-18 14:14:30	Material Editor
+2687	4.2	Tools	2024-03-18 14:15:22	ConsoleGD
+2688	4.2	Tools	2025-03-02 00:13:35	Statechart Sharp: a state machine plugin
+2690	4.0	Tools	2024-03-19 14:35:26	BumpToNormal
+2691	4.2	Shaders	2024-03-24 16:39:17	SDF for Visual Shaders
+2693	4.2	Tools	2024-03-21 15:10:58	EditGrid
+2694	4.2	Tools	2024-03-21 15:13:53	About Dialog
+2695	4.3	Shaders	2024-07-26 15:32:27	PSX Style Camera Shader - Distance Fog, Dithering, Color Limiter, Noise
+2696	4.1	Tools	2025-12-23 20:24:17	Log.gd, a GDScript pretty-printer
+2697	4.2	3D Tools	2024-04-01 15:26:01	RelativeRemoteTransform3D
+2699	4.2	2D Tools	2024-03-24 16:38:20	Slider Gamepad
+2701	4.0	2D Tools	2024-04-05 15:28:51	Modular Sprite Animation Factory
+2705	4.2	Tools	2024-03-25 16:21:09	jTest
+2707	4.2	Scripts	2024-04-07 08:25:02	Customizable Crosshair Lite
+2708	4.2	Tools	2024-03-26 15:20:30	AI Context Generator
+2709	4.3	Scripts	2026-09-10 19:19:49	Maaack's Game Template - Plugin
+2811	4.2	Tools	2024-04-05 15:27:40	Godot .NET Scene-Oriented Unit Test
+2812	4.2	Tools	2024-03-29 16:26:30	Code Jump
+2814	4.0	Tools	2024-03-30 16:01:11	Saturn - Simple Cascade State Machine
+2817	4.0	Tools	2024-03-31 14:29:20	Receipt Validator - Secure, Server-Side In-App Purchase (IAP) Validation
+2818	4.2	Materials	2024-04-01 15:26:19	UDIM Shader Material
+2820	4.2	Tools	2024-04-02 15:43:35	Awesome Scene Manager
+2822	4.0	Scripts	2024-04-07 08:32:59	AudioStreamPlayerArea2D
+2823	4.0	Scripts	2024-04-01 21:00:23	DestructiblePolygon2D
+2825	4.0	Scripts	2026-06-15 18:10:23	MapCamera2D
+2827	4.0	Scripts	2024-04-01 21:04:44	TextureCircle
+2829	4.0	Shaders	2024-04-01 21:07:17	2D outline shader
+2832	4.0	Tools	2024-04-02 15:43:49	TablePager
+2833	4.2	Misc	2024-08-04 16:02:06	PandaTime [Take A Break] - Godot 4.2.2
+2834	4.3	2D Tools	2024-04-04 14:27:02	Parallax2D Preview
+2835	4.2	Shaders	2024-04-03 14:35:57	Color Matrix System
+2836	4.2	Tools	2024-08-16 17:33:23	Project Time Tracker
+2838	4.2	Tools	2025-10-24 19:08:00	Godot-BFMachine
+2839	4.2	2D Tools	2024-04-04 14:28:51	Remote Transform Control
+2840	4.2	Tools	2024-06-02 15:46:41	Asset Dock
+2841	4.3	Tools	2025-10-16 19:38:13	WebBus (yandex games, crazy games, poki)
+2842	4.2	3D Tools	2025-05-08 18:15:52	Progress Bar 3D
+2843	4.3	Tools	2025-02-03 22:42:01	SpanningTableContainer
+2845	4.3	Tools	2024-08-11 17:48:31	GLTF to MeshLibrary
+2846	4.3	3D Tools	2024-08-20 14:16:42	Scene Tools
+2847	4.2	2D Tools	2024-04-07 08:28:15	Godot Pixelmatch
+2848	4.0	Scripts	2024-04-29 13:38:14	HTML5 File Dialogs
+2849	4.2	Scripts	2024-04-07 08:31:17	Gameboard SDK Plugin
+2850	4.2	3D Tools	2024-04-13 00:01:48	Modular Camera
+2851	4.2	2D Tools	2025-04-08 16:36:20	Godot-DragonBones
+2852	4.4	Scripts	2025-03-05 23:22:14	RangeContainer
+2853	4.4	Scripts	2025-03-05 23:22:17	RemoteContainer
+2854	4.0	Scripts	2024-04-09 16:40:08	Flower-Godot
+2856	4.0	Scripts	2024-04-09 16:41:10	SignalSentry
+2857	4.4	Scripts	2025-03-05 23:22:38	ResourceOverrider
+2858	4.4	Scripts	2025-03-05 23:22:41	StateMachine Nodes
+2860	4.3	Tools	2024-04-09 16:42:33	CompossedTextureBuilder
+2861	4.2	Misc	2026-05-01 20:45:43	GD-EOS (4.2)
+2862	4.2	2D Tools	2024-04-09 16:43:40	Character generator importer tool
+2863	4.0	Scripts	2024-04-09 16:45:16	HTML5 Popups
+2864	4.2	Misc	2024-08-01 13:58:23	GDBlas
+2865	4.0	Scripts	2024-04-22 13:29:44	Dice_Roll
+2868	4.0	Scripts	2024-04-10 15:53:19	Rdot
+2869	4.0	Tools	2024-07-05 13:03:03	Godot Debug Camera
+2870	4.0	Tools	2024-04-16 13:25:36	MP3 Id3Tag Extractor
+2871	4.1	Tools	2024-04-16 13:26:02	Work Clock
+2872	4.2	Tools	2024-04-17 15:18:25	Correct Conventional Naming
+2873	4.2	3D Tools	2024-07-22 14:58:01	GodotNode2Tile: A TileMap3D editor inspired by Crocotile
+2875	4.2	2D Tools	2024-04-17 20:37:22	Kenney Spritesheet Importer
+2876	4.0	Scripts	2025-03-12 22:00:40	Godot Playlists
+2877	4.0	Scripts	2024-04-18 14:07:09	EasyFiles
+2878	4.2	Tools	2024-04-19 17:45:29	Movie Maker Timestamp
+2879	4.2	Tools	2024-04-23 14:37:30	Random Timers
+2880	4.0	Tools	2024-04-23 14:41:16	Convention Cheat Sheet
+2884	4.2	Tools	2024-04-22 13:31:11	BMOD: Create sound effects like with FMOD but B-tier 
+2891	4.2	Tools	2024-04-23 14:40:01	Awesome Debug Log
+2895	4.0	Tools	2025-01-03 06:54:59	Confirma Unit Testing (C#)
+2896	4.3	Scripts	2026-07-13 20:12:55	Maaack's Scene Loader
+2899	4.3	Scripts	2026-09-10 19:19:31	Maaack's Menus Template - Plugin
+2900	4.1	3D Tools	2024-04-26 13:08:52	KayKit Medieval Hexagon Pack
+2901	4.2	Scripts	2024-04-26 13:09:41	APRUM
+2912	4.1	2D Tools	2024-04-30 14:26:03	Remove All Theme Overrides 
+2915	4.2	Tools	2024-04-30 14:28:24	Audio Mixer Visualizer
+2916	4.2	Misc	2025-09-01 17:34:50	Android Internet Connection State Plugin
+2919	4.2	Tools	2024-05-04 15:23:24	Copy Correct Shader Parameters
+2921	4.0	3D Tools	2024-05-02 00:45:18	BlenderCam
+2927	4.2	Tools	2024-05-04 15:20:44	Camera Shifter
+2929	4.0	2D Tools	2024-05-04 15:23:55	2D Editor Light Toggle
+2931	4.1	Scripts	2024-05-04 15:25:47	ActionReaction
+2933	4.2	Misc	2025-09-11 17:44:51	Chey's Background Addon - Editor BG
+2935	4.2	Tools	2025-09-03 17:30:47	Config Table Manager
+2938	4.1	Scripts	2024-05-06 14:27:31	Auto-Bus (auto event bus with signal nodes)
+2946	4.2	Tools	2024-10-17 21:39:28	Console and Textchat Node
+2947	4.3	Tools	2025-01-10 22:26:53	Godot FEAGI Integration
+2948	4.3	Scripts	2026-08-12 21:46:50	Maaack's GWJ Template - Plugin
+2949	4.2	2D Tools	2026-08-22 00:19:40	Awesome Custom Cursor
+2954	4.1	2D Tools	2024-08-17 14:29:53	Better Terrain 4.2
+2961	4.1	Tools	2024-05-10 14:28:41	Controller
+2966	4.0	3D Tools	2024-05-12 15:58:58	Curve Terrain
+2968	4.2	Tools	2024-05-21 00:54:04	AudioLogic
+2970	4.0	Tools	2024-05-18 13:23:32	Open in editor
+2981	4.2	Misc	2024-06-21 14:16:00	MattohaLobbySystem
+2982	4.2	Misc	2026-05-11 21:06:16	Modal World
+2983	4.2	2D Tools	2024-05-17 15:48:55	Nemesis STG Engine
+2984	4.2	Scripts	2024-11-04 10:58:38	CSLocator (Contextual Service Locator)
+2988	4.2	Tools	2024-05-20 14:09:21	Project Statistics Menu
+2997	4.2	2D Tools	2024-05-20 14:12:06	Arc2D
+3000	4.0	Tools	2024-05-25 15:49:04	Solo Visibility - Focus on selection 
+3001	4.0	Scripts	2025-05-12 01:14:53	Dispatch Queue
+3003	4.0	Scripts	2024-05-23 14:34:03	Timchi Global Music Player
+3005	4.2	Misc	2026-05-22 22:52:31	Godot-DuckDB (SQL)
+3007	4.2	Tools	2026-04-13 17:52:28	Artificial Worm Brain AI
+3022	4.0	2D Tools	2024-05-30 14:35:11	Better UI
+3027	4.2	Misc	2024-06-02 15:40:32	CineCam: A Camera GDExtension
+3036	4.1	Shaders	2024-06-04 15:10:47	Color Dither
+3043	4.3	Tools	2025-09-18 18:53:30	PlayerConnect - Godot to Discord Reporting System
+3044	4.2	3D Tools	2024-06-10 14:53:34	CineCam
+3046	4.0	2D Tools	2024-06-10 14:51:20	AreaOfSight2D
+3052	4.2	2D Tools	2024-06-09 10:00:46	Kenney Tiny Battle Asset Pack
+3054	4.1	Misc	2024-06-09 14:30:50	cargo-godot
+3055	4.1	Tools	2024-06-09 14:31:09	GDProfiler
+3057	4.2	3D Tools	2026-02-05 17:40:04	CSG Toolkit - Enhance Your Blockout Speed
+3058	4.3	Scripts	2026-07-13 20:11:15	Maaack's Options Menus
+3059	4.0	3D Tools	2024-06-13 15:20:07	AABB Static BoxCollider from Mesh
+3061	4.3	Scripts	2024-08-18 16:03:23	Taffer's Logger
+3064	4.0	Scripts	2024-06-15 14:36:59	Resource Encryption
+3066	4.0	Tools	2025-01-10 22:20:37	BitMap editor
+3070	4.2	2D Tools	2024-06-16 14:12:31	2D Procedural Map Generator
+3074	4.0	Tools	2026-05-01 20:30:31	Scene Palette
+3078	4.3	Scripts	2024-08-18 16:03:29	Taffer's Loader
+3081	4.3	2D Tools	2024-06-24 06:42:20	2D Liquid Simulator - 4.3+
+3082	4.2	2D Tools	2024-06-24 06:42:14	2D Liquid Simulator
+3083	4.1	Tools	2025-05-21 00:24:45	Audio Node Wrangler Addon
+3086	4.0	Tools	2024-06-19 14:54:56	Better Vircle
+3087	4.2	Tools	2026-02-09 05:19:33	Local Asset browser
+3092	4.0	Scripts	2025-08-19 03:38:04	CReverter (Composite Reverter aka Undo/Redo)
+3093	4.2	Misc	2024-07-19 15:41:03	AudioEffectGate
+3094	4.2	Tools	2024-11-21 17:06:43	Adivery Plugin
+3095	4.3	Tools	2025-08-12 18:25:39	Block Coding
+3098	4.0	Misc	2024-09-22 15:44:29	GodotBlockchain
+3102	4.3	Tools	2024-06-26 15:01:08	BUFFer - Generic purpose buffer
+3103	4.2	2D Tools	2024-06-26 21:34:40	Antialiased Line2D - Better antialiasing for 2D line/polygon/circle drawing
+3114	4.2	3D Tools	2024-07-08 14:47:42	Collision Groups 3D
+3126	4.2	Tools	2024-08-22 19:40:04	Class Name Hider
+3128	4.0	Scripts	2024-07-22 14:57:38	Most Simple Scene Loader
+3129	4.2	Tools	2025-05-21 00:26:48	GDScript REPL
+3140	4.0	Scripts	2024-07-13 14:23:51	MeshLODGenerator
+3142	4.0	3D Tools	2024-07-13 14:32:44	Arrow3D
+3143	4.2	Tools	2024-07-14 16:17:21	Code Collapse Toggler
+3149	4.0	Scripts	2026-06-09 18:48:31	Ludare Godot
+3152	4.3	2D Tools	2024-07-18 15:02:09	AnimatedButton
+3153	4.0	3D Tools	2024-08-09 08:32:36	Prototype CSGs
+3154	4.0	2D Tools	2024-07-25 15:38:42	Csv Animations Builder
+3161	4.2	Scripts	2026-07-04 18:47:26	Godot Midi
+3170	4.2	Tools	2024-07-24 15:14:40	AutoSaver Toggle for Godot Editor (C#)
+3174	4.3	Tools	2026-04-03 19:11:49	Command Export Plugin
+3182	4.2	2D Tools	2024-07-29 13:59:47	2D Revealer
+3185	4.2	Tools	2024-07-31 13:50:06	OpenAi-api Godot
+3189	4.4	Scripts	2026-05-19 22:35:05	Rem Send
+3192	4.4	Tools	2026-09-08 18:49:35	Godot Sandbox
+3198	4.2	3D Tools	2025-01-13 15:20:56	"Immersive" First Person Controller
+3202	4.2	Misc	2024-08-06 14:22:52	Audio Haptics
+3212	4.0	3D Tools	2024-08-11 17:46:43	3D Gallery
+3213	4.3	Scripts	2024-08-19 14:30:54	Alexandria - alexandria.db
+3214	4.3	Scripts	2024-08-19 14:31:05	Alexandria - alexandria.netclient
+3215	4.3	Scripts	2024-08-19 14:31:13	 Alexandria - alexandria.netserver
+3239	4.2	Scripts	2026-09-01 04:23:19	Launchpad
+3244	4.2	Tools	2026-06-21 00:42:58	MIDI Importer
+3245	4.3	2D Tools	2024-08-19 14:32:20	GodotMouseCoordinates
+3248	4.1	3D Tools	2024-08-27 14:35:33	Tiny Treats - Bubbly Bathroom set 
+3249	4.1	3D Tools	2024-08-27 14:35:39	Tiny Treats - Homely House set
+3256	4.1	Tools	2024-08-23 14:36:32	JLogger
+3257	4.2	2D Tools	2024-09-26 15:20:08	Gesture Recognizer
+3267	4.3	Scripts	2026-06-26 06:37:59	You Can Do It!
+3270	4.1	3D Tools	2024-08-27 14:35:27	Tiny Treats - Pretty Park set
+3271	4.0	Tools	2024-08-27 14:36:04	AssetsPathGenerator
+3279	4.0	Scripts	2025-05-29 16:47:25	Copilot/CodeCompletion (Gemini, LMStudio, Ollama)
+3284	4.3	Tools	2025-11-28 23:54:24	Boids (2D/3D flocking)
+3285	4.1	Scripts	2024-08-31 15:34:37	Custom Observer Pattern for C#
+3286	4.0	Tools	2024-09-01 15:29:43	Auto Version Code
+3294	4.2	2D Tools	2024-09-02 15:00:51	B-Spline Plugin
+3297	4.3	3D Tools	2025-12-20 20:20:10	3D Controls Toolkit
+3299	4.0	Tools	2026-05-02 21:22:54	ThemeGen
+3301	4.3	3D Tools	2024-09-04 14:43:00	CSG Converter
+3315	4.1	3D Tools	2024-09-06 19:17:00	Tiny Treats - Baked Goods set
+3317	4.0	Scripts	2024-09-08 14:35:00	Godot Oauth
+3319	4.2	Tools	2026-07-23 02:49:26	Sync Deck
+3320	4.3	Tools	2024-09-10 15:16:34	Android Geolocation Plugin
+3330	4.0	3D Tools	2025-01-20 13:43:12	Camera Shake 3D
+3331	4.1	3D Tools	2024-09-13 14:20:21	Tiny Treats - Charming Kitchen set
+3334	4.2	Tools	2024-09-14 14:17:37	GAIs Utils
+3337	4.3	Tools	2025-04-28 21:26:31	BBCodeEdit (for script editor)
+3338	4.3	Tools	2026-06-21 00:47:17	LimboConsole: in-game dev console
+3342	4.2	Tools	2024-10-05 15:36:40	Android System Bar Color Changer
+3351	4.3	Scripts	2026-05-18 20:39:08	NumDot: Tensor Math and Scientific Computation
+3359	4.3	Scripts	2026-08-25 19:29:47	DTDA ML - Machine Learning models
+3362	4.3	3D Tools	2024-09-26 15:20:02	3D Enemy Toolkit
+3364	4.2	Scripts	2026-05-24 00:04:04	Godot GameJolt API
+3368	4.0	2D Tools	2024-09-24 15:26:06	2D Tools
+3372	4.1	Tools	2026-05-04 20:25:45	Project Layer Name Enum Generator
+3373	4.1	Tools	2026-07-30 04:04:18	 GdScript2All
+3374	4.0	Scripts	2024-12-23 15:45:30	Cog: UI Scripts
+3375	4.0	Tools	2026-03-20 19:23:53	godot-4-mobile-plugin
+3393	4.3	Tools	2024-10-08 13:52:31	Lootfabriq export downloader
+3396	4.3	Tools	2025-02-03 22:37:02	blockchain_sdk
+3399	4.2	Tools	2024-10-11 14:23:32	BetterTable
+3402	4.0	Misc	2024-10-14 13:37:33	Godot Plush
+3407	4.4	2D Tools	2025-05-23 21:55:37	Character generator importer tool
+3408	4.3	Scripts	2024-10-14 13:40:16	Better Third Person Camera 3D
+3415	4.4	3D Tools	2026-07-23 02:47:03	NoClipSprite3D
+3417	4.0	Tools	2025-09-13 19:03:44	 RhythmNotifier - Sync Your Game to the Beat of the Music (Sound & Audio)
+3422	4.0	Tools	2024-10-18 14:52:21	Laigter Integration
+3423	4.0	Scripts	2025-01-30 15:57:17	GD Data Binding
+3427	4.3	Tools	2026-09-01 04:24:26	AI Assistant Hub
+3429	4.3	3D Tools	2024-10-22 19:32:33	Mixamo Animation Retargeter
+3431	4.3	Scripts	2024-11-02 16:36:43	Anti-cheating-value
+3432	4.3	2D Tools	2024-10-22 19:45:17	Better Terrain in Gaea
+3433	4.1	3D Tools	2024-10-22 19:45:53	Tiny Treats - Pleasant Picnic set
+3440	4.2	3D Tools	2026-01-25 19:50:29	Godot 3D Cursor (GD 4.2)
+3443	4.3	2D Tools	2025-10-09 16:03:15	GodPlot
+3449	4.2	Tools	2025-05-01 20:53:31	Command Terminal
+3452	4.3	Tools	2024-11-07 13:49:30	Conzole advanced logger
+3459	4.3	3D Tools	2024-10-31 00:36:36	Building Culler
+3460	4.2	Tools	2024-11-02 16:33:31	ColorBlind Accesibility Tool
+3465	4.1	Tools	2024-11-02 16:36:05	BurtTree
+3471	4.1	Scripts	2024-11-04 10:58:48	CSConnector (Contextual Signal/Setup Connector)
+3472	4.0	Scripts	2026-05-25 22:34:43	GD UUID
+3474	4.3	3D Tools	2025-02-19 01:17:01	Advanced Character
+3475	4.4	3D Tools	2026-06-21 00:36:34	Advanced First Person Controller
+3477	4.3	Scripts	2024-11-07 13:47:37	Event Bus
+3481	4.4	Scripts	2026-03-19 18:32:26	GECS - Godot Entity Component System
+3483	4.0	3D Tools	2024-11-12 22:46:31	3D Node Graph
+3484	4.3	Tools	2026-05-04 20:31:09	Godot Super Wakatime
+3495	4.2	Tools	2026-04-03 19:11:53	Quit and Restart Buttons 
+3498	4.2	Scripts	2026-01-11 21:08:36	AutoScrollContainer
+3503	4.2	Scripts	2026-07-14 21:27:40	G.U.I.D.E - Godot Unified Input Detection Engine
+3507	4.3	3D Tools	2024-11-21 17:11:25	LH: CameraControl 
+3512	4.3	Scripts	2025-03-25 18:21:03	CookieHTTPRequest
+3519	4.4	Misc	2026-03-30 20:09:23	usefulScripts
+3522	4.3	Scripts	2024-11-30 15:48:55	Anti-cheating-value-plus
+3526	4.2	3D Tools	2024-11-30 15:49:21	Scatter Tool
+3530	4.4	2D Tools	2025-07-13 16:00:13	Godot Dice Roller (UI Control)
+3532	4.3	Scripts	2024-12-05 16:08:10	Control++
+3541	4.3	Scripts	2024-12-23 15:40:51	ByteKruncher
+3544	4.3	2D Tools	2025-01-17 22:56:15	CameraRegion2D
+3550	4.0	Tools	2024-12-10 16:29:58	CodeScope
+3554	4.2	2D Tools	2024-12-12 20:57:44	Control Node Window
+3558	4.3	Tools	2024-12-12 21:01:49	Markov Machine
+3560	4.2	2D Tools	2024-12-23 15:43:23	Controllers Icons Local Multiplayer
+3566	4.3	Scripts	2025-05-01 20:58:32	AMC Forth
+3568	4.3	Tools	2025-01-03 06:24:16	Auto Version Incrementor (Mono)
+3570	4.3	Tools	2025-01-03 06:29:32	Android Haptics
+3574	4.1	Scripts	2025-01-03 06:31:57	RCON Server
+3591	4.3	3D Tools	2025-01-03 06:49:57	SRCoder Thirdperson Controller
+3592	4.1	Tools	2025-01-03 06:50:18	Awaiter await-all
+3600	4.3	2D Tools	2025-01-10 22:26:27	CurvedArrow2D
+3603	4.4	Tools	2026-04-03 19:11:43	Doc Export Platform
+3604	4.4	Tools	2026-04-03 19:12:08	Novatools (for Godot 4.4 and up)
+3610	4.3	3D Tools	2025-01-06 01:55:54	SRCoder's Simple Car
+3613	4.3	Tools	2025-01-17 22:42:47	Claude 3.5 Sonnet Chat API
+3623	4.3	Tools	2025-01-10 22:25:55	EngA - Engine Agnostic Framework
+3627	4.3	Tools	2025-01-13 15:21:38	Animation Node Redirector
+3629	4.3	Tools	2025-01-13 15:24:11	Baked Lipsync
+3637	4.3	Tools	2025-01-17 22:54:08	Code Time
+3638	4.3	3D Tools	2025-10-12 19:04:50	3D RTS Camera
+3643	4.0	3D Tools	2025-01-21 20:47:52	Fantasy 3D models Free
+3646	4.3	3D Tools	2025-01-20 13:47:24	SRCoders FPS Controller
+3647	4.3	2D Tools	2025-01-21 20:48:59	AnchorsOnlyPreset
+3652	4.1	Tools	2025-01-23 20:39:00	Blendot Path Exporter
+3653	4.3	Misc	2026-04-04 22:18:21	Libsm64 Godot
+3654	4.4	Tools	2026-04-17 18:37:12	Dialogue Manager 3
+3656	4.2	Scripts	2026-05-27 03:09:55	New Relic Analytics
+3657	4.4	Materials	2026-01-11 21:01:24	AmbientCG Material Downloader (Godot 4.4+)
+3660	4.0	Misc	2025-11-09 21:37:20	plenticons
+3664	4.3	2D Tools	2026-05-27 03:07:17	EZ Tiles plugin - Easy Tile Drawing
+3667	4.0	Scripts	2025-01-30 15:42:55	Dark Mode Signal
+3675	4.1	2D Tools	2026-04-28 19:20:45	Simple Touch Joystick
+3682	4.3	Tools	2025-02-05 20:52:37	Content Pack Manager 
+3683	4.3	Scripts	2025-02-13 15:38:22	Celestial Bodies
+3684	4.3	2D Tools	2025-04-26 13:37:40	2D Controls Toolkit
+3686	4.1	2D Tools	2025-02-05 20:55:13	2D Camera Controller - Multitarget follow + FXs
+3689	4.3	Tools	2026-04-22 20:17:49	GDScript Editor Shortcuts
+3690	4.3	Misc	2025-11-29 19:34:45	Mesh: 3D Male Base (Rigged)
+3696	4.3	2D Tools	2025-02-13 15:25:50	Combat Collider
+3698	4.4	Scripts	2026-07-22 05:21:56	Godot Cookies
+3699	4.3	3D Tools	2025-02-13 15:28:35	Humanizer
+3700	4.1	Tools	2025-02-13 15:29:35	Children Dock
+3701	4.1	Tools	2025-02-13 15:30:32	Basic Settings Menu
+3704	4.2	Misc	2026-05-01 20:46:08	GD-EOS (4.2 - AOOLU)
+3706	4.3	Misc	2026-05-02 21:16:05	GD-EOS (4.3 - AOOLU)
+3707	4.3	Misc	2026-05-02 21:15:51	GD-EOS (4.3)
+3711	4.4	Scripts	2025-07-31 02:21:52	Beautify Code on Save
+3713	4.3	Tools	2026-04-22 20:25:43	LootLockerSDK
+3715	4.0	3D Tools	2025-05-08 18:08:02	FPS Hands
+3716	4.3	Tools	2025-03-04 23:05:36	Color Palette Manager
+3718	4.0	Scripts	2026-03-21 17:45:56	GWJ Accessibility Scripts
+3742	4.0	Tools	2025-02-25 15:18:47	AI Voices/Dialogues Generator (AllTalk_TTS)
+3743	4.4	3D Tools	2026-08-09 18:24:21	Voxel Destruction
+3746	4.3	3D Tools	2025-02-24 18:25:02	3D Shooter Kit
+3747	4.3	2D Tools	2025-03-18 06:40:42	2D Hexagon TileMapLayer Navigation Class
+3748	4.3	Tools	2025-03-19 04:40:34	Custom HTML Loader
+3752	4.3	3D Tools	2025-02-25 15:18:41	ConvexConeShape3D
+3754	4.3	Scripts	2025-03-04 23:05:52		Packed Scene Instantiater
+3756	4.3	3D Tools	2025-03-02 00:01:07	Coins Generator 3D
+3757	4.0	Tools	2025-06-30 17:47:45	Auto add class_name
+3759	4.3	3D Tools	2025-03-02 00:04:00	Free fly camera
+3761	4.3	Tools	2026-07-16 04:30:48	GTLib
+3762	4.3	Tools	2025-10-02 16:56:19	Arm Performance Studio Integration
+3766	4.3	2D Tools	2026-05-10 00:19:43	Godot VLC
+3767	4.3	Tools	2026-05-27 03:10:10	Ctrl+V Clipboard Image
+3768	4.4	3D Tools	2026-05-14 22:54:45	Godot OpenXR Vendors plugin v4
+3774	4.3	Scripts	2026-08-24 21:26:42	Godot YAML
+3786	4.4	3D Tools	2026-05-10 00:22:36	CSG Terrain
+3788	4.4	Tools	2025-03-07 03:52:35	Addon Toggler
+3795	4.4	Tools	2025-08-23 01:46:54	Daicon
+3803	4.3	3D Tools	2025-03-12 21:42:02	3D Gizmo Tool
+3813	4.1	Tools	2025-03-12 21:58:21	Animation Folder Loader
+3826	4.2	Tools	2025-09-18 18:47:08	Copy Files On Export
+3832	4.4	Misc	2025-06-22 02:27:48	C# GDExtension Bindgen
+3834	4.4	3D Tools	2025-03-25 18:22:09	Camera Flow
+3843	4.4	Tools	2025-04-08 16:34:06	AutoSizeText
+3848	4.3	Misc	2026-03-30 20:13:06	MariaDB Connector (SQL, DB)
+3849	4.0	Scripts	2025-03-19 04:37:46	gbk_decode
+3852	4.4	Tools	2025-04-15 16:09:26	Gopilot Assist
+3853	4.0	Scripts	2025-03-19 04:40:52	AI dialog generator plugin
+3856	4.3	Tools	2026-04-23 18:35:52	Hide Folders
+3868	4.4	Tools	2025-03-23 17:53:47	Clone
+3869	4.4	2D Tools	2025-03-23 17:54:11	2D CRPG Character Controller
+3874	4.4	Shaders	2025-06-06 18:55:55	3D Hover canvasitem
+3877	4.4	2D Tools	2026-05-02 21:17:42	TileMapDual
+3878	4.4	2D Tools	2026-09-08 18:53:38	Scalable Vector Shapes 2D - Draw and Animate Curves
+3879	4.0	Scripts	2026-08-27 18:49:08	SQLiteSharp
+3884	4.4	2D Tools	2025-04-15 16:06:39	ActionButton
+3885	4.0	Tools	2025-03-31 23:57:40	Copy Context AI | Vibe Coding Godot
+3886	4.4	3D Tools	2026-04-21 19:34:05	CRWTILES - 3D Tile/Map Tools
+3890	4.4	3D Tools	2026-06-21 00:36:03	Simple First Person Controller
+3891	4.4	Tools	2025-04-03 15:28:12	AutoAssignIDs
+3892	4.4	3D Tools	2026-05-19 22:42:09	Terrain3D
+3898	4.3	3D Tools	2025-04-01 00:04:15	Cardboard VR Camera 3D
+3899	4.2	2D Tools	2026-04-03 19:11:14	AnimSheet – Sprite Sheets to AnimatedSprite2D & AnimationPlayer
+3900	4.4	Tools	2026-08-03 06:02:08	Script Splitter
+3901	4.4	Tools	2026-08-22 23:34:27	GodotSteam Server GDExtension 4.4+
+3902	4.0	Tools	2025-04-01 13:58:43	Asset Atlas Replacer
+3903	4.0	Tools	2025-04-01 13:58:55	BitMap Fonts Atlas Replacer
+3907	4.4	Tools	2025-04-05 17:49:29	Blankit
+3908	4.1	Scripts	2026-06-05 18:40:54	Threaded resource save-load
+3909	4.4	Tools	2025-04-03 15:30:23	Process Mode Indicator
+3916	4.3	Tools	2025-06-06 18:59:12	Auto Screenshot
+3917	4.0	2D Tools	2025-04-08 16:34:00	cpolygon (Knife, Cut, Merge)
+3919	4.2	Scripts	2026-03-10 19:06:19	GWJ Countdown
+3924	4.4	Tools	2025-04-10 21:41:17	All Projectiles
+3925	4.1	Tools	2025-04-10 21:41:39	Multinet (Godot 4 Multiplayer C# addon)
+3928	4.4	2D Tools	2025-04-15 16:08:36	Animated Panel Container
+3930	4.1	Scripts	2026-02-25 17:48:50	Composition
+3931	4.2	Tools	2026-06-21 00:44:25	Godot Git Describe
+3933	4.2	Scripts	2025-05-21 00:31:48	Cables
+3934	4.4	3D Tools	2026-06-21 00:37:28	Third Person Controller
+3935	4.4	3D Tools	2025-11-27 20:22:17	3D First Person WASD Input Actions
+3937	4.4	Scripts	2026-07-25 05:30:38	PicklerGD Serializer
+3943	4.4	Misc	2025-04-17 14:01:10	Base32768 encoder/decoder
+3944	4.4	Tools	2025-06-22 02:26:45	BoxConstructor
+3949	4.4	Tools	2025-04-20 16:45:16	Advanced Rich Text Label
+3950	4.4	Scripts	2026-08-24 21:16:45	JSONH GDExtension (JSON for Humans)
+3951	4.4	Tools	2026-05-24 22:50:01	Inspector Tabs
+3952	4.4	2D Tools	2025-05-27 15:50:57	Animated Box Container
+3953	4.4	Tools	2025-05-21 00:28:52	Const Generator
+3956	4.3	Tools	2025-04-26 13:37:51	Analog Touch Control
+3958	4.3	Scripts	2026-08-17 00:48:56	AnyIcon: type and class icons utility
+3967	4.4	Tools	2025-04-26 13:46:16	Composer
+3976	4.1	3D Tools	2025-05-01 20:51:24	3D Tiles For Godot
+3981	4.0	Tools	2025-05-01 20:56:48	WDebugger - A Git-friendly Debugger
+3982	4.4	Scripts	2025-05-01 20:57:30	ooGame
+3983	4.4	Shaders	2026-06-22 22:46:47	Mirror3D
+3988	4.4	Tools	2026-09-08 18:49:48	Discord Social SDK
+3992	4.1	2D Tools	2025-05-08 18:11:00	Coyote Jump
+3995	4.0	Tools	2025-05-08 18:16:20	Fold Functions
+3997	4.4	Misc	2025-05-08 18:18:32	Inhumate RTI
+4001	4.3	Misc	2026-02-22 20:44:19	BlipKit
+4002	4.0	Misc	2026-07-13 20:02:10	Mqtt node
+4005	4.4	Shaders	2025-05-10 14:32:48	Bayer Dithering Shader
+4009	4.1	Tools	2025-05-12 01:17:47	Meta Horizon OS UI Kit
+4016	4.2	3D Tools	2026-05-13 18:24:04	Quake Mapper
+4023	4.3	Tools	2026-06-30 18:34:29	Godot RichLogger C#
+4029	4.1	Misc	2025-05-21 00:25:44	AdvancedText
+4033	4.0	Scripts	2026-08-26 18:47:54	Godot UI Animation Library
+4039	4.4	2D Tools	2025-05-21 00:31:31	2D Strategy Camera
+4040	4.4	Misc	2025-05-27 15:53:45	H3 Godot
+4043	4.1	3D Tools	2026-07-25 05:30:49	Polyrinthes, 3D Maze Generator
+4055	4.0	Scripts	2026-06-11 18:34:26	Godot 4 MessagePack
+4056	4.1	3D Tools	2025-11-19 19:53:32	3D Fighting Camera
+4061	4.4	2D Tools	2025-06-06 18:53:43	2D Platformer Pathfinding Tool
+4065	4.4	Scripts	2025-06-22 02:26:32	AndroidSystemBarControl
+4069	4.2	Tools	2025-05-31 14:44:46	Arky Addons
+4072	4.4	Tools	2025-06-06 18:53:39	CodeCapture - plugin to capture screenshots of your code snippets
+4075	4.0	Tools	2026-03-18 18:46:00	AI Assistants For Godot 4
+4092	4.4	Tools	2025-06-16 19:42:53	Better Print
+4093	4.4	Scripts	2025-07-15 21:00:58	Character Step
+4098	4.4	Scripts	2025-06-26 18:01:53	Blueprint - Data Validation
+4099	4.4	3D Tools	2026-07-13 20:08:26	Asset Placer With Physics
+4100	4.0	Tools	2026-04-13 17:58:53	GDTerminal
+4101	4.1	2D Tools	2025-08-19 03:19:46	Controller Icons (C#)
+4105	4.4	3D Tools	2026-06-21 00:36:53	Simple FPS Weapon System
+4107	4.1	Misc	2025-06-23 21:52:39	Godot Mod Loader
+4108	4.4	Scripts	2025-06-28 01:12:30	Bonion's Logging Utils
+4111	4.3	Tools	2026-08-03 06:02:19	Ignore Folders
+4112	4.1	Scripts	2025-07-01 19:37:25	Godot Chess Engine in pure gdscript
+4114	4.4	2D Tools	2025-09-03 05:08:31	Brenny's GameManager
+4122	4.0	3D Tools	2026-05-18 20:21:29	Godot Material Footsteps
+4123	4.4	Tools	2025-08-05 18:21:46	BAD Multiplayer
+4132	4.4	Tools	2026-08-03 23:00:59	Parley Dialogue Manager
+4135	4.4	Tools	2026-08-03 06:03:26	Godot IDE Extension
+4137	4.2	Tools	2026-03-16 23:19:03	Godot Google Play Billing
+4142	4.3	Misc	2026-06-26 06:37:46	Pixelpart
+4148	4.4	Shaders	2026-03-18 18:51:52	Universal Transition Shader
+4149	4.4	Tools	2026-03-24 19:13:45	Fast Wave Function Collapse (WFC)
+4160	4.0	Tools	2025-07-19 18:19:43	Code Snippets
+4161	4.4	Tools	2025-08-13 17:36:14	D's Levels
+4175	4.4	Tools	2026-06-01 20:50:24	GdSerial
+4179	4.4	Tools	2025-09-01 17:50:52	GDWiiInput
+4181	4.4	Scripts	2026-02-13 17:36:16	Fictional's Options Manager
+4182	4.0	Tools	2025-07-28 18:25:44	AI Context Generator
+4183	4.4	2D Tools	2025-07-31 02:18:52	5-Tile Dual-Grid AutoTiler
+4184	4.0	Tools	2025-08-29 18:00:27	Options Auto Handler
+4185	4.2	Tools	2025-08-01 02:37:14	Appodeal Plugin (android)
+4186	4.2	2D Tools	2025-09-19 20:25:31	Auto-Keyframe SpriteFrames Animations
+4187	4.4	Tools	2025-08-11 19:06:48	BOMBodoro! (Pomodoro Timer)
+4188	4.4	3D Tools	2025-08-03 21:34:50	CityCrafter3D
+4189	4.0	Tools	2025-08-01 02:37:52	Godot RCON Server
+4190	4.0	Tools	2025-08-13 17:32:31	Constants Generator C#
+4191	4.0	3D Tools	2026-01-15 17:39:28	Smart Planar Reflector
+4192	4.1	Tools	2025-08-03 21:34:59	Error Capture (.NET)
+4193	4.4	2D Tools	2025-08-03 21:36:44	Generate TileMapLayer from image of tilemap
+4194	4.4	Tools	2025-10-01 16:02:20	Modal Window
+4196	4.4	3D Tools	2025-08-04 18:03:42	Template Script: Basic Camera3D
+4197	4.4	3D Tools	2025-08-14 18:03:21	bulk mesh collisionshape exporter
+4198	4.4	3D Tools	2025-08-04 18:07:47	meshy-godot-bridge-plugin
+4199	4.4	Tools	2025-11-10 20:55:23	Fluent Behaviour Tree (C#)
+4201	4.4	Tools	2025-09-17 19:02:01	Asset Iteration Helper
+4202	4.4	3D Tools	2025-08-12 18:25:46	Raytraced Audio
+4203	4.0	3D Tools	2025-08-06 18:34:35	Window3D
+4204	4.3	Tools	2025-08-07 22:28:52	Joystick Inspector Plugin (Vector2)
+4205	4.1	Tools	2025-08-11 18:35:12	BorDR
+4206	4.4	2D Tools	2025-08-07 22:32:19	Godot WalkAbout
+4207	4.0	Tools	2025-08-07 22:34:12	VectorPad
+4208	4.2	Shaders	2025-12-18 21:02:54	[GSL] Godot Shader Linker
+421	4.2	Scripts	2024-03-27 17:49:32	Orbit Camera
+4210	4.4	Tools	2026-05-28 22:34:12	Debug Console
+4211	4.4	Tools	2026-08-05 22:03:48	Documentation Comment Helper
+4212	4.2	Tools	2026-04-03 19:01:46	GDIFC
+4214	4.1	Scripts	2025-08-13 17:33:00	Graphite
+4215	4.4	2D Tools	2025-08-19 03:29:49	Primitive Shapes
+4216	4.4	Misc	2025-08-11 18:43:58	Slow Motion
+4217	4.2	Shaders	2025-08-11 18:45:45	Voronoi Texture Scattering
+4218	4.4	Shaders	2025-08-11 18:55:23	Extremely Fast Atmosphere
+4219	4.4	2D Tools	2025-08-14 18:10:36	CRT
+4220	4.4	Tools	2025-08-12 18:25:19	RessourceDB
+4221	4.3	Tools	2025-08-12 18:24:30	GD-Rive
+4222	4.2	Tools	2026-08-15 21:51:43	External Editor Helper
+4223	4.4	3D Tools	2025-09-19 20:24:54	Simple Object Placer
+4224	4.0	Tools	2025-10-21 16:17:55	Godot Resource Cleaner
+4225	4.0	Tools	2025-08-13 17:32:17	Tokebi Metrics Plugin
+4226	4.3	Misc	2025-08-13 17:34:05	MIDI Web - Godot Plugin
+4227	4.0	Scripts	2026-08-15 21:51:33	Screen Print
+4228	4.0	Misc	2025-08-13 17:36:51	Godot Save and Load Manager
+4229	4.3	Tools	2025-08-14 18:03:13	Quick
+4230	4.4	Tools	2025-09-03 05:03:49	NHB Functions On The Fly
+4231	4.2	Tools	2026-08-15 21:51:54	AnimatedSprite2D Merger
+4232	4.1	2D Tools	2025-08-19 18:07:37	Animated Sprite Importer
+4233	4.4	Scripts	2025-08-21 18:20:17	AnimationHandler
+4234	4.1	2D Tools	2025-08-21 18:20:44	Jigsaw Puzzle Generator
+4235	4.0	Tools	2026-01-04 20:00:55	Itch.io OAuth API
+4236	4.2	3D Tools	2025-08-19 03:29:33	SpeechBubble3D
+4237	4.4	3D Tools	2025-08-19 03:31:51	Object Strings 3D
+4238	4.4	Misc	2025-08-26 18:16:48	Marine Marks
+4240	4.4	Tools	2025-08-19 03:38:51	CSV to gettext converter
+4241	4.4	Tools	2025-08-21 18:18:14	Multiplay plugin
+4243	4.4	2D Tools	2025-08-19 03:46:29	Mobile Joystick
+4244	4.3	3D Tools	2026-08-25 19:35:12	Godot Asset Placer
+4245	4.4	2D Tools	2026-07-04 18:45:52	UI Widget
+4246	4.0	Misc	2026-05-29 22:34:51	Conductor
+4247	4.4	Tools	2025-08-19 18:01:56	Layout Tools
+4249	4.4	Materials	2025-08-19 18:09:45	Prototype textures (with normal map)
+4250	4.0	3D Tools	2025-08-25 16:47:35	Shaky Camera 3D 
+4251	4.1	Scripts	2025-08-20 18:49:48	GoDot-Wakatime
+4252	4.4	2D Tools	2025-08-20 18:49:55	Acro's Hitbox G4
+4254	4.4	Tools	2025-08-21 18:20:05	Script Region Folder
+4255	4.4	Tools	2025-11-29 19:34:49	UI: Godot Editor Notes
+4256	4.4	Tools	2025-08-23 01:45:50	Multi Script Maker
+4258	4.4	Misc	2025-08-25 16:45:50	Main Menu Multi-Theme
+4260	4.4	Tools	2025-08-25 16:47:08	Nested Tooltips
+4261	4.0	Misc	2025-08-25 16:48:19	Vine Boom Button
+4262	4.4	Tools	2025-08-25 16:51:19	sqlite-crypto
+4263	4.4	3D Tools	2026-05-24 22:58:09	Import Replacer
+4264	4.1	Misc	2025-10-10 16:03:03	Scope (node finder)
+4265	4.4	Tools	2025-08-25 16:57:06	Script Multi Plus
+4266	4.4	3D Tools	2025-08-25 16:58:30	RodinBridge
+4267	4.0	Scripts	2025-08-25 17:04:00	Procedural Faker
+4268	4.0	Tools	2025-08-25 17:06:10	Mod Loader Dev Tool
+4269	4.4	Scripts	2025-08-27 19:03:29	WS-godot
+4270	4.0	3D Tools	2025-08-27 19:02:48	Impact Sounds for RigidBody3D
+4271	4.4	Tools	2025-08-26 18:22:43	Markov Chain Image Scanline Rules
+4272	4.4	3D Tools	2025-10-10 16:01:51	CollisionShape3d Editor
+4273	4.0	Scripts	2025-08-27 19:03:22	Global Signal Nodes (Auto-bus fork)
+4274	4.4	2D Tools	2025-09-01 17:39:58	SpriteFrames Generator From Sprite Sheets
+4276	4.4	Shaders	2025-09-01 17:46:29	Visual Shader Lambert Light Model Node
+4277	4.0	Scripts	2025-08-28 18:47:42	Button Audio Player
+4278	4.4	Shaders	2025-09-01 17:46:34	Visual Shader Lambert-Wrap Light Model Node
+4281	4.2	2D Tools	2026-06-05 18:36:46	Vector2 editor
+4282	4.4	Tools	2026-01-27 21:32:30	Solana SDK
+4283	4.4	Tools	2026-04-29 19:50:02	Modular Character Controller
+4284	4.4	Shaders	2025-09-01 17:50:15	Visual Shader Burley Light Model Node
+4285	4.4	Shaders	2025-11-30 20:21:16	Visual Shader Full-Oren-Nayar Light Model Node
+4287	4.4	Tools	2025-09-11 18:11:16	CGLF — Custom Global Light Function
+4289	4.4	Scripts	2025-09-03 05:06:56	Resolution Scaler
+4291	4.0	3D Tools	2026-09-11 19:31:14	RichText3D
+4292	4.4	Tools	2025-10-06 16:23:14	Gedis
+4293	4.4	Tools	2025-09-03 17:32:18	Resource Generation Framework
+4294	4.0	Tools	2025-12-25 21:47:05	Virtual Steering
+4296	4.4	Tools	2025-09-11 17:35:15	Godot Wasm
+4297	4.0	Tools	2025-09-15 17:48:58	Screenshot Manager
+4298	4.2	2D Tools	2026-05-30 21:50:58	RoundedPolygon2D
+4299	4.4	Tools	2025-09-11 17:45:35	Game Jam Countdown
+4300	4.4	Scripts	2026-02-13 17:32:10	Myth
+4301	4.3	Tools	2026-02-19 21:53:03	GodotXterm - Terminal Emulator
+4302	4.4	Tools	2025-09-19 20:18:45	Godot Itch
+4303	4.0	2D Tools	2025-09-11 17:54:45	Save and load polygon (PackedVector2Array) as Resource
+4304	4.1	Scripts	2025-09-15 17:47:57	Godot Stat Math
+4305	4.1	Tools	2026-04-29 19:49:06	Addon Save (4.x)
+4307	4.1	Tools	2025-09-17 19:10:04	Aseprite File Parser
+4308	4.3	Scripts	2025-09-15 00:14:41	TUIO Protocol
+4309	4.4	Scripts	2026-02-14 22:08:47	Lazy ListBox
+4310	4.4	Tools	2025-09-19 20:15:47	Lazy Menu 2
+4312	4.4	Tools	2026-02-02 21:09:45	FancyGradient (for Godot 4)
+4313	4.4	Tools	2026-09-01 04:21:34	Text to Speech
+4314	4.0	Tools	2025-09-12 19:34:13	GetFromGit
+4315	4.3	3D Tools	2025-09-26 21:03:11	Halyard
+4317	4.4	2D Tools	2025-09-13 19:14:08	Vision2D
+4318	4.0	Tools	2025-09-13 19:16:20	PBIJSON(PreBulitIndexJSON)
+4319	4.4	2D Tools	2025-10-15 16:38:16	EZ-Chess
+4320	4.4	Scripts	2025-09-21 20:26:12	Simple WebSocket Multiplayer
+4321	4.1	Scripts	2025-09-17 19:03:59	Ellyality Inventory
+4322	4.4	Tools	2025-09-17 19:04:42	GDMP
+4323	4.0	Tools	2025-09-19 20:19:29	Godot Codebot
+4326	4.4	Tools	2025-09-18 18:47:59	Script Exporter
+4327	4.1	2D Tools	2026-01-25 19:49:41	Scatter2D
+4330	4.4	Tools	2025-09-22 22:31:45	Godinal Clap Loader
+4333	4.0	Tools	2025-09-20 23:08:09	CountUpTimer
+4337	4.4	Tools	2025-09-22 22:33:53	Git Bash Here
+4341	4.2	Scripts	2025-09-28 19:44:13	Android Notification Plugin
+4342	4.4	Tools	2025-09-24 19:06:32	Godot Pure Data
+4345	4.4	Shaders	2025-10-05 16:44:24	Texture3D Visualizer
+4347	4.0	Scripts	2026-01-16 20:07:37	Discord.gd (Godot 4.x)
+4354	4.3	Tools	2025-09-28 19:45:17	DualSenseX-Support
+4359	4.3	Misc	2026-04-07 20:33:16	break-nihility | big number plugin for idle games
+4363	4.0	Scripts	2025-10-15 16:35:53	GDInterface
+4366	4.2	3D Tools	2025-10-31 19:07:45	Simple Asset Placer
+4368	4.2	Scripts	2025-10-02 16:52:46	Date Time Label
+4369	4.4	Tools	2025-10-02 16:53:24	Control List
+4370	4.2	Scripts	2025-10-02 16:56:38	Visibility Buttons
+4371	4.4	3D Tools	2025-10-03 16:51:36	Mass Calculator
+4372	4.4	3D Tools	2026-03-08 20:10:39	Interactive Grid GDExtension
+4373	4.2	Scripts	2025-10-03 16:48:11	Window Buttons
+4374	4.0	Tools	2026-07-24 05:01:16	Godot Doctor
+4378	4.4	3D Tools	2025-10-06 16:19:41	PhysicalAudio3D
+4379	4.3	Scripts	2025-10-06 16:19:35	Relative Line Numbers
+4381	4.3	Misc	2025-10-05 16:47:11	508 Command Input
+4383	4.3	Misc	2026-08-24 21:26:25	GDSchema
+4385	4.1	Misc	2025-10-07 16:01:08	Godot Mascots
+4386	4.4	Tools	2025-10-06 16:23:39	GedisQueue
+4387	4.0	Tools	2026-06-27 01:02:14	Favorites/Bookmarks
+4389	4.0	2D Tools	2025-10-07 16:10:10	Basic Joystick Plugin
+4391	4.3	Tools	2025-10-07 16:16:07	SpriteFrames exported textures
+4392	4.1	Tools	2025-10-07 16:16:38	Easy State Machine
+4393	4.4	Scripts	2025-10-12 19:01:43	NuGetter
+4394	4.4	Scripts	2025-10-08 16:06:09	Debug Info Controls
+4395	4.3	Tools	2026-08-21 04:33:02	Godot EOS 
+4396	4.4	Tools	2025-10-08 16:09:27	Legends of Learning SDK Integration Plugin for Godot
+4397	4.2	3D Tools	2025-10-10 16:05:42	Godot 3DX Mouse
+4398	4.2	Scripts	2025-10-09 16:08:23	Godot-SceneInstantiateControls
+4399	4.2	Scripts	2025-10-09 16:08:48	Godot-SceneLoadControls
+4400	4.0	2D Tools	2025-10-09 16:10:02	Bitmap Fonts
+4403	4.1	Tools	2025-10-10 16:03:49	Control Touchscreen Button
+4404	4.0	Tools	2025-10-12 19:02:28	excel manager
+4407	4.4	Tools	2026-09-06 01:04:57	Fancy StyleBoxes
+4408	4.0	Scripts	2026-02-22 20:46:42	Button Feedback
+4409	4.1	2D Tools	2025-10-16 19:34:24	Quad-Color Gradient Rect
+4411	4.4	Tools	2025-11-10 20:56:13	GDScript Formatter (GDQuest)
+4412	4.0	Tools	2025-10-26 19:41:44	Textbox
+4416	4.1	Tools	2025-11-06 18:47:27	BetterAuth
+4418	4.4	Scripts	2025-10-21 16:18:11	SwapBackArray
+4420	4.1	Scripts	2025-11-01 19:03:06	Typewriter Label
+4421	4.0	Tools	2025-10-21 16:25:59	Animated Hardware Cursor
+4424	4.2	Tools	2026-01-28 23:17:01	EOSG-android-exporter
+4425	4.4	3D Tools	2025-10-23 16:32:49	DisplayVector3D
+4427	4.1	Scripts	2026-06-10 19:37:10	Gremlins Toolbox
+4428	4.3	3D Tools	2026-02-16 20:16:08	Physics Collision Import Generator
+4429	4.4	Tools	2025-10-26 19:32:10	Script Region Folder
+4430	4.1	Tools	2025-10-26 19:44:03	Save Manager Lite
+4433	4.1	3D Tools	2025-10-27 16:31:55	PrototypeSprite3D
+4434	4.4	3D Tools	2025-10-27 16:37:12	MeshLibrary Generator 
+4438	4.0	Tools	2025-11-24 20:11:02	In-App Purchases (IAP)
+4447	4.0	Tools	2026-05-01 20:44:03	Quick Audio Preview
+4449	4.3	Tools	2025-11-04 20:21:53	JT's Color Picker Kit
+4452	4.2	Scripts	2026-02-16 20:23:07	Awaiter
+4457	4.0	Tools	2026-01-27 21:36:57	Godotx SafeAreaX
+4458	4.4	Tools	2026-02-02 20:51:10	Virtual Joystick Plus
+4461	4.0	3D Tools	2025-11-07 19:02:53	Scene Map
+4463	4.0	3D Tools	2025-11-07 19:07:03	CAVE Camera System
+4464	4.4	3D Tools	2026-01-08 02:16:28	Deep RayCast 3D
+4465	4.0	Scripts	2026-06-08 19:15:32	Lovely Event
+4467	4.0	Tools	2025-11-13 19:48:35	User Directory Within Godot
+4469	4.0	Scripts	2025-11-10 20:55:40	GodotRedisClient
+4470	4.1	Scripts	2026-06-04 21:47:33	CFFI GDExtension
+4472	4.4	Tools	2026-08-05 04:20:28	Xogot Connect
+4474	4.0	2D Tools	2025-11-11 21:07:17	Quick Licenses
+4476	4.1	Tools	2026-04-27 19:06:06	Godot-DWM
+4477	4.1	2D Tools	2025-11-12 23:30:54	Barcode
+4478	4.0	Tools	2025-11-21 21:45:53	Godot Backend as a Service
+4479	4.1	Tools	2025-11-19 19:49:27	GDQuery
+4482	4.4	Misc	2025-11-15 17:36:09	Slippery Scenes (Quick Scene Navigation)
+4483	4.0	Tools	2025-11-24 20:06:08	AdMob
+4484	4.4	Shaders	2025-11-18 16:34:50	Visual Shader Schlick-GGX Light Model Node
+4485	4.0	2D Tools	2025-11-14 19:50:55	MadeWithGodotWidget
+4486	4.4	3D Tools	2026-03-16 03:39:18	GPU Texture Painter
+4487	4.1	2D Tools	2025-11-15 17:33:45	AnimationPlayer Key Frame Shifter
+4488	4.4	Misc	2025-11-15 17:37:25	Go To Last Scene
+4489	4.3	2D Tools	2025-12-03 17:24:51	2D Character Controller
+4490	4.2	Tools	2025-11-23 22:58:09	Google Sheets to Godot Localization
+4492	4.4	Tools	2026-06-27 20:16:51	Itch Exporter & Uploader
+4497	4.4	Tools	2025-11-19 19:46:50	GodotARKit
+4498	4.1	Tools	2025-11-19 19:52:17	Spawner plugin
+4500	4.1	Tools	2026-02-10 17:16:50	Godot Context Exporter
+4501	4.4	Scripts	2025-12-08 19:49:09	NeonSceneRunner
+4504	4.1	Tools	2025-11-24 20:03:09	StringSequence
+4508	4.0	3D Tools	2025-11-25 15:03:33	Icosa Gallery
+4509	4.4	Tools	2025-12-29 20:37:03	Trigger Manager
+4510	4.3	Scripts	2026-05-10 00:19:59	Gamend - Game Server
+4512	4.4	Misc	2026-01-02 07:04:53	Persistent Settings
+4515	4.1	2D Tools	2025-11-27 20:17:35	Godot Moving Platforms 2D
+4517	4.0	Misc	2025-11-28 23:46:57	Play is Play Current Scene
+4518	4.4	Scripts	2025-11-28 23:52:11	NeonPageController
+4521	4.0	Tools	2025-11-30 20:21:33	GTML - Godot Text Markup Language
+4524	4.4	Shaders	2025-11-30 20:21:02	Visual Shader Fujii-Oren-Nayar Light Model Node
+4525	4.4	Tools	2026-04-12 00:04:22	Folded Paper Engine
+4526	4.0	Misc	2025-12-02 19:28:07	GDPackages
+4527	4.2	Shaders	2025-12-01 20:50:53	NeuralRegen
+4528	4.4	Tools	2026-08-24 21:29:51	Ezcha Network
+4529	4.1	3D Tools	2026-03-19 18:36:38	Gremlin's First Person Controller (FPS controller)
+4533	4.2	Tools	2026-02-27 22:08:03	Subtitles Importer
+4534	4.0	2D Tools	2025-12-08 19:51:25	UI Responsive Animations
+4537	4.0	Scripts	2025-12-03 17:19:12	Godot-SSE
+4538	4.4	3D Tools	2026-05-18 20:37:18	Merging Meshes Godot
+4541	4.0	Tools	2025-12-06 21:06:52	OmnEmoji
+4542	4.4	Tools	2025-12-06 20:51:56	Option/Result (with code gen)
+4543	4.0	Tools	2025-12-05 16:20:32	Palette importer
+4544	4.3	Tools	2025-12-10 01:37:49	Godot Apple Sign In (REPLACED BY Godot Apple Plugins)
+4545	4.3	3D Tools	2025-12-05 16:26:30	Clipmap
+4549	4.4	Tools	2025-12-11 21:02:04	Itch.io Uploader
+4551	4.4	Scripts	2025-12-08 19:48:56	NeonGameModes
+4552	4.3	Misc	2026-06-07 18:39:17	Godot Apple Plugins
+4554	4.1	Tools	2025-12-10 01:33:42	Bitcoin/Lightning - Breez
+4556	4.0	Tools	2025-12-10 01:47:57	AMI-Accessible Model Interface for Grok
+4557	4.0	Shaders	2026-05-01 20:38:56	PS1 / PSX Visuals
+4558	4.0	Scripts	2025-12-10 21:20:05	ViewPanner
+4560	4.0	Tools	2025-12-11 21:10:42	Itqan AI - Smart Godot Assistant
+4563	4.2	3D Tools	2025-12-12 19:35:37	MaterialMatch
+4564	4.2	Tools	2025-12-12 19:35:57	Playtest Telemetry
+4565	4.2	Shaders	2025-12-12 19:36:28	FilmGrain
+4569	4.3	2D Tools	2025-12-13 20:36:52	Tutorial Mask
+4570	4.3	Tools	2026-02-10 17:19:31	Spotlight Search
+4575	4.3	Tools	2025-12-14 21:25:44	External Debug Attach Plugin
+4577	4.4	Tools	2026-03-19 18:36:54	MarginSprites
+4578	4.2	Tools	2025-12-14 21:33:30	Godot Google Sign-In
+4580	4.1	Scripts	2026-07-27 03:36:34	data-forging
+4583	4.0	Tools	2025-12-19 21:03:05	AI Autonomous Agent
+4584	4.4	Tools	2025-12-16 17:38:01	Brah Rah's Save Some Seconds
+4586	4.0	Tools	2025-12-17 20:36:00	Pixelorama Importer
+4588	4.3	Tools	2026-04-13 17:58:29	FMOD Sharp
+4589	4.0	3D Tools	2025-12-20 20:17:30	Move here
+4592	4.4	3D Tools	2025-12-19 21:10:13	Breakable Glass Custom
+4595	4.2	2D Tools	2025-12-20 20:22:22	SpriteLabel
+4597	4.2	Scripts	2026-02-26 17:32:55	FrameBasedLib
+4599	4.0	2D Tools	2025-12-23 20:28:12	Aseprite Importer
+4600	4.2	Tools	2026-03-02 21:47:18	Achievements Manager
+4603	4.0	Tools	2026-05-18 20:21:16	Gommand
+4604	4.0	3D Tools	2026-01-14 17:19:36	Custom Gravity
+4605	4.2	2D Tools	2025-12-26 21:16:09	DsInspector
+4606	4.4	Scripts	2025-12-26 21:16:42	Godot-GameBackendSDK
+4608	4.0	Tools	2025-12-26 21:18:50	EditorResourcePreviewGenerator Extensions
+4612	4.0	Tools	2026-07-14 21:22:29	Godot Gdscript Linter - Static Code Quality Analyzer
+4616	4.3	Tools	2025-12-29 20:38:17	Easy SFX Manager
+4622	4.4	2D Tools	2026-07-14 21:24:53	Chart Designer
+4623	4.0	2D Tools	2026-01-01 01:45:19	Counter Object
+4624	4.2	Tools	2026-01-02 07:06:37	Plugin Toggle
+4626	4.2	Tools	2026-01-01 01:47:16	Android Battery Temperature Plugin
+4627	4.3	Misc	2026-09-01 04:23:04	Godot IAP - Cross-Platform In-App Purchases
+4629	4.0	3D Tools	2026-01-02 07:07:22	Ghost Mesh - CSharp
+4630	4.0	Scripts	2026-03-12 05:04:55	Async Resource Loader
+4632	4.2	Tools	2026-01-02 21:38:38	Android Battery Temperature C# Plugin
+4633	4.1	3D Tools	2026-01-03 18:22:36	MeshCombiner
+4638	4.0	Scripts	2026-01-05 22:49:29	Audio Bus Volume Slider
+4639	4.0	Tools	2026-01-29 21:49:43	Line Up Nodes
+4642	4.0	Tools	2026-01-05 22:58:38	Fullscreen Export
+4643	4.0	Tools	2026-03-16 03:43:42	Autofree
+4646	4.2	3D Tools	2026-01-08 02:02:37	3DConnexion SpaceMouse Support for Godot 4
+4652	4.0	Tools	2026-01-12 22:02:06	BiliLive
+4658	4.3	Scripts	2026-09-10 19:19:13	Maaack's Minimal Game Template - Plugin
+4659	4.0	2D Tools	2026-01-10 21:33:42	Chromatica
+4660	4.4	Scripts	2026-07-14 21:18:02	Car Driver 2D
+4661	4.4	Tools	2026-02-07 20:19:56	Buttered Sausage
+4664	4.0	Scripts	2026-01-12 22:00:50	Auth Kernel
+4668	4.4	Tools	2026-07-07 21:35:25	godot-neovim
+4671	4.4	Tools	2026-01-14 17:26:07	Action Manager
+4680	4.0	Scripts	2026-05-31 21:34:57	BZ Physics Helper
+4697	4.0	2D Tools	2026-06-11 18:32:11	Godot 4 2D Rope Implementation
+4698	4.1	Tools	2026-02-07 20:26:04	CMD Console
+4714	4.3	Tools	2026-02-03 17:47:20	AssetPlus - Unified Asset Browser
+4718	4.4	Scripts	2026-06-15 18:17:05	WCSafeResourceFormat
+4723	4.0	Tools	2026-01-31 21:10:03	Bulk Make Local 
+4728	4.4	3D Tools	2026-02-06 20:37:05	Blender viewport shortcuts
+4733	4.4	2D Tools	2026-07-14 21:25:24	Map Province Creator
+4737	4.3	Misc	2026-05-12 19:05:43	KRA as Texture Importer
+4754	4.1	Scripts	2026-02-11 17:19:37	Better HTTP
+4758	4.0	Scripts	2026-04-04 22:21:45	GUIPresser
+4760	4.1	2D Tools	2026-08-21 04:31:53	Spawner Plugin for 2D
+4767	4.1	Tools	2026-08-24 21:28:04	Godot AI Assistant tools MCP
+4774	4.0	2D Tools	2026-02-25 17:31:59	Card Object Templete
+4780	4.3	Materials	2026-02-14 22:13:46	Atlas Recolor
+4787	4.0	Tools	2026-04-04 22:15:39	EasyLeaderboards
+4788	4.4	Tools	2026-02-17 20:21:28	Godot Matrix RTC
+4803	4.0	Misc	2026-02-20 20:16:16	CS 1.6 Theme
+4807	4.2	Tools	2026-02-21 21:24:14	Batch Renamer
+4815	4.4	Tools	2026-02-23 20:20:11	 CSV Parser
+4818	4.3	Tools	2026-02-23 20:23:48	Annotated Screenshot
+4819	4.4	Scripts	2026-02-23 20:24:22	Dependency Injection Node
+4822	4.2	Tools	2026-08-12 21:50:46	Logic Bricks
+4829	4.3	Tools	2026-03-31 18:47:13	Global Asset Manager
+4838	4.4	Tools	2026-08-09 18:18:28	GodotHaru PDF
+4839	4.4	3D Tools	2026-02-27 22:03:14	CSG Generator
+4842	4.3	Misc	2026-04-02 22:02:39	SQLite3.gd
+4843	4.4	2D Tools	2026-08-28 21:17:28	Easing Curve
+4845	4.2	Tools	2026-03-02 21:51:47	Basic CharacterBody3D
+4855	4.3	Tools	2026-05-06 19:46:01	pretty.gd for Godot
+4860	4.4	Misc	2026-07-13 20:02:27	ed25519
+4864	4.2	Tools	2026-07-20 22:49:00	Asset Browser
+4866	4.0	Tools	2026-06-21 00:44:09	Godotwind UI Animator
+4868	4.2	Tools	2026-03-08 20:03:57	HemoLoader Mod Loader
+4872	4.0	Tools	2026-03-08 20:11:44	Copy All Errors
+4877	4.4	Tools	2026-03-26 16:05:28	Material Baker
+4878	4.2	3D Tools	2026-03-09 19:58:24	Mesh Origin Pivot Editor
+4879	4.2	Tools	2026-06-16 18:47:54	Ziva - The all in one Godot AI Agent with ChatGPT, Claude and Gemini support 
+4882	4.3	Tools	2026-03-10 19:12:48	FlipDot
+4884	4.2	Tools	2026-04-13 17:53:21	GDTask
+4886	4.3	Tools	2026-03-12 19:25:11	GD-QTE
+4890	4.1	Tools	2026-06-15 18:12:39	Godot Shaders Library
+4892	4.0	Tools	2026-05-08 16:00:57	Flow HFSM
+4893	4.0	Tools	2026-03-16 03:37:57	µKanban: Project Task Board
+4894	4.1	Tools	2026-07-03 18:31:51	Dialog system Renpy style
+4895	4.0	Misc	2026-03-12 19:22:05	Button Prompts For Godot
+4899	4.4	Tools	2026-03-16 03:34:41	Export Rules
+4900	4.0	Tools	2026-03-16 03:36:10	GodotIQ
+4901	4.0	Misc	2026-03-16 03:37:32	Clickdev PlugPlay
+4902	4.0	Tools	2026-03-16 03:38:49	DataCrate
+4905	4.1	Tools	2026-05-02 21:23:13	Godot-FmodPlayer
+4906	4.1	Misc	2026-06-15 18:25:21	Picture My Project
+4908	4.4	2D Tools	2026-03-23 23:54:39	NilDev Directional Movement 2D
+4913	4.4	3D Tools	2026-03-16 23:31:52	Godot Ragdoll Wizard
+4914	4.1	Tools	2026-03-18 18:52:05	Font Baker
+4917	4.1	Scripts	2026-03-17 20:51:05	Godot Shortcut Text
+4918	4.2	Tools	2026-03-17 20:56:17	Intelli-verse-X-Unity-SDK
+4920	4.0	2D Tools	2026-03-17 21:10:05	GhostTrail
+4922	4.0	Misc	2026-07-14 21:17:45	Function Calculator
+4926	4.0	3D Tools	2026-03-19 18:39:13	Terrain splitter
+4927	4.0	Tools	2026-03-20 19:19:48	Simple Save Tool
+4930	4.3	Tools	2026-03-21 17:49:47	Aide-De-Cam
+4931	4.1	Tools	2026-05-30 21:49:52	Godot-GIF
+4933	4.0	Scripts	2026-03-23 23:39:12	Trauma - 2D Camera Shake Plugin for Godot
+4936	4.4	Tools	2026-05-24 22:47:28	Aseprite Spritesheet Importer
+4938	4.2	Tools	2026-03-23 23:47:43	AI Context Exporter
+4940	4.0	Tools	2026-03-23 23:50:43	Stacked SDK
+4950	4.4	2D Tools	2026-03-25 19:49:05	A-Star Grid Map
+4952	4.4	Tools	2026-03-25 19:53:16	AMY Music Synthesizer
+4953	4.0	2D Tools	2026-05-22 04:23:02	Magnet2D
+4954	4.0	3D Tools	2026-05-22 04:22:51	Magnet3D
+4955	4.1	Scripts	2026-07-03 18:31:59	Input Buffer Combo System
+4956	4.2	Tools	2026-03-26 15:50:40	Flatten for LLM
+4959	4.2	Tools	2026-03-26 16:05:05	Version Bumper
+4961	4.4	Tools	2026-08-03 06:04:03	Godot MCP Pro
+4965	4.4	Tools	2026-04-03 19:09:44	Persistent Free
+4967	4.4	Scripts	2026-03-30 19:46:35	Godot-VolumeControls
+4968	4.4	Scripts	2026-03-30 19:47:38	 Godot-FrameLimitControls
+4969	4.3	Tools	2026-03-30 19:56:37	GDTuner
+4971	4.3	Scripts	2026-03-30 20:03:30	Number Formatter
+4972	4.3	Scripts	2026-03-31 18:47:29	Simple Rhythm Game Library
+4974	4.4	2D Tools	2026-05-22 22:52:48	Rich text editor / viewer
+4976	4.1	Tools	2026-03-31 18:51:44	Foley AI Sound Effect Generation
+4978	4.2	Tools	2026-03-31 19:04:42	Genesis Engine: AI Game creator
+4980	4.0	Scripts	2026-04-02 22:03:45	ReactBridge — React/Next.js Bridge
+4983	4.1	2D Tools	2026-07-03 18:32:03	Mini Map
+4984	4.0	2D Tools	2026-04-02 22:22:31	IntelliVerse X Spritesheet Bundle
+4989	4.0	Tools	2026-04-16 18:06:40	godotdev.nvim node copy
+4990	4.3	Tools	2026-04-05 19:27:28	SaveState
+4994	4.4	3D Tools	2026-04-10 17:33:22	Mesh Merge Tool
+5001	4.1	Misc	2026-04-05 19:26:31	Moonlight-Godot
+5007	4.2	Tools	2026-04-10 17:33:08	Player Scuffolder
+5008	4.4	Scripts	2026-04-08 18:09:00	Quantum API Client
+5009	4.0	Scripts	2026-04-10 17:32:02	Godot String Intercept
+5010	4.0	Tools	2026-07-18 00:20:43	Wavedash SDK
+5012	4.1	Tools	2026-04-27 19:03:57	Beatrix AC
+5016	4.0	Tools	2026-04-09 18:35:48	GD Wires OnShaded
+5017	4.3	Tools	2026-04-20 18:31:50	Quick Resolution
+5022	4.2	Scripts	2026-04-10 17:34:29	Godot Download Manager
+5023	4.4	Scripts	2026-04-10 17:35:42	GDScript Data Structures
+5024	4.0	2D Tools	2026-04-10 17:37:58	Alenia UI Integrator
+5027	4.4	Scripts	2026-04-21 19:36:34	GIF Replay Recorder
+5034	4.4	Tools	2026-04-14 18:14:00	Programmatic State Machine
+5040	4.4	Tools	2026-04-26 02:02:54	Wick — C# MCP Server for Godot
+5042	4.4	Tools	2026-04-15 19:08:35	Godot Catalyst
+5047	4.0	Scripts	2026-04-23 18:38:10	Lucide icons
+5049	4.4	3D Tools	2026-04-23 18:37:53	Mesh Inspector
+5052	4.0	Tools	2026-04-22 20:26:34	BUEORM data base (BDB)
+5054	4.0	Tools	2026-04-20 18:39:52	ShipItch - Easy one click Itch export 
+5058	4.0	3D Tools	2026-04-20 18:39:48	SUCC - SurfsUp Character Controller
+5060	4.0	2D Tools	2026-04-20 18:43:22	Light Shape 2D
+5063	4.4	Tools	2026-04-26 02:13:29	Audiot
+5065	4.4	3D Tools	2026-04-28 19:15:47	Blend File To Meshlib
+5066	4.2	Tools	2026-04-20 18:50:41	Sparkle Lite — Game Feel Plugin for Godot 4
+5067	4.0	Tools	2026-04-21 19:33:31	Godot AI
+5068	4.0	Tools	2026-05-19 22:38:26	Godot Advanced Logger (C#)
+5070	4.3	Tools	2026-04-22 20:15:59	Agent Tools
+5071	4.1	Scripts	2026-04-22 20:16:57	Input Multi Device
+5072	4.3	Tools	2026-04-23 18:32:32	EasyChat
+5073	4.0	Tools	2026-04-23 18:32:45	EasyNotify
+5074	4.4	Scripts	2026-04-22 20:24:06	State Machine Bot
+5076	4.3	3D Tools	2026-07-23 02:48:25	GDGS
+5078	4.3	3D Tools	2026-05-04 20:25:33	AnimKit
+5080	4.0	Tools	2026-04-24 23:36:13	MyConsole
+5085	4.4	Tools	2026-04-26 23:10:13	LinkUx
+5087	4.4	Tools	2026-04-26 02:17:09	Event Graph for Godot
+5088	4.0	Scripts	2026-04-28 19:22:17	Format Document
+5089	4.0	Misc	2026-04-29 19:47:29	Clear Output
+5091	4.0	Tools	2026-04-27 19:07:00	gd-plug-plus
+5094	4.1	Tools	2026-04-27 19:05:02	Export Diff
+5095	4.1	Tools	2026-04-27 19:05:32	Region Viewer
+5096	4.4	3D Tools	2026-05-31 21:36:02	MixaBridge
+5098	4.0	Tools	2026-04-28 19:16:51	EasyStateMachine
+5100	4.0	Tools	2026-04-29 19:49:33	Game Trace
+5103	4.3	Misc	2026-04-29 19:48:52	Connected Tileset Template 16px (Autotile)
+5104	4.2	Scripts	2026-09-09 18:18:03	G.U.I.D.E-CSharp - Godot Unified Input Detection Engine C#
+5105	4.1	Tools	2026-05-02 21:19:26	Godot Virtual Joystick
+5107	4.1	Tools	2026-05-02 21:17:05	Godot-Jieba
+5108	4.4	Tools	2026-07-17 04:32:34	Tween Composer
+5110	4.0	Tools	2026-05-01 20:37:27	EasyTransition
+5111	4.2	3D Tools	2026-08-25 19:30:11	SurfaceAnalyzer
+5112	4.4	2D Tools	2026-05-01 20:41:00	TextureAnimation
+5113	4.3	Tools	2026-05-01 20:41:49	Assetless Source Export Addon
+5115	4.4	3D Tools	2026-06-07 18:40:30	Dioptra Level Editor
+5117	4.1	Scripts	2026-05-02 21:18:09	Vuedot
+5118	4.0	Tools	2026-05-02 21:20:06	PS1 Shader Mixer
+5122	4.4	Tools	2026-05-10 00:18:18	Godot Signal Checker
+5126	4.0	Tools	2026-05-04 20:27:43	Godot Unit Test (GSpec)
+5130	4.0	Tools	2026-08-18 18:04:11	Expose Them Properties!
+5131	4.0	Tools	2026-05-08 15:46:49	Debug API
+5132	4.3	Tools	2026-07-06 19:30:29	Eye detection
+5135	4.3	Tools	2026-05-08 15:51:24	Rolling Average
+5137	4.2	3D Tools	2026-05-08 15:56:36	Blender style transform manipulation 
+5138	4.4	Tools	2026-07-05 19:32:46	EasyStore
+5139	4.0	Tools	2026-05-18 20:19:21	Godot Node Tree Shell
+5140	4.4	Tools	2026-05-10 00:19:29	blender_to_godot_curve_tool
+5144	4.1	3D Tools	2026-05-10 00:24:26	Interactive 3D
+5145	4.4	Tools	2026-05-10 21:53:10	Origami: Project Folder Organizer
+5147	4.4	2D Tools	2026-05-11 21:02:22	Auto-Sized-Text Optimized
+5148	4.4	Tools	2026-05-11 21:03:34	QImageProcessor
+5149	4.1	Scripts	2026-07-03 18:31:20	vuedotcs
+5151	4.4	2D Tools	2026-05-12 19:04:19	TileMapLayer Baker
+5152	4.4	Materials	2026-05-14 18:49:52	AmbientCG
+5153	4.4	Scripts	2026-05-20 18:12:36	Godot Volcengine TTS
+5156	4.1	Scripts	2026-08-18 18:01:22	Mesh Tools
+5157	4.1	Tools	2026-05-19 22:45:01	GodoSound
+5164	4.4	Tools	2026-05-18 20:53:34	Double Shift Global Search
+5167	4.3	3D Tools	2026-05-20 18:09:31	Sky3D
+5170	4.2	Tools	2026-05-20 18:13:01	Skill Editor
+5172	4.0	Tools	2026-05-22 04:10:35	Godot Add-on Auditor
+5173	4.1	Scripts	2026-05-31 21:35:08	Reactive Signal
+5174	4.4	Tools	2026-07-23 02:46:18	Pocket Chordsmith
+5175	4.1	Tools	2026-05-22 22:50:33	GodoPlayer
+5180	4.4	Tools	2026-06-22 22:54:55	Alicenzia: License Manager
+5182	4.1	Tools	2026-05-24 00:15:20	Advanced Timer
+5183	4.3	Scripts	2026-05-25 22:31:55	TextWidget
+5184	4.1	Scripts	2026-06-17 22:46:33	RPG Components 2D
+5185	4.1	Scripts	2026-07-11 01:31:20	Finite State Machine
+5186	4.0	3D Tools	2026-06-30 18:33:54	Modular Inventory
+5188	4.1	Scripts	2026-05-28 22:32:41	GodotNWS
+5190	4.1	Tools	2026-05-27 03:04:04	Next Discord RPC
+5191	4.0	Scripts	2026-05-27 03:12:46	Jodotai
+5193	4.3	Tools	2026-08-22 00:16:41	Godot MCP Enhanced
+5196	4.1	Scripts	2026-09-03 23:03:32	brainCloud Client SDK
+5198	4.1	3D Tools	2026-07-27 23:05:53	Home Builder
+5199	4.3	Misc	2026-05-29 22:31:01	P2P Net
+5200	4.0	Scripts	2026-05-29 22:36:24	LLM Chatbot Plugin for Godot 4
+5201	4.4	Tools	2026-05-29 22:38:18	Fennara MCP
+5202	4.3	Tools	2026-09-08 18:50:46	gdstyle
+5206	4.2	Tools	2026-05-30 21:48:56	ShipKit Public Demo Readiness
+5207	4.4	Tools	2026-05-30 21:49:40	GrabberConvert 
+5208	4.0	Scripts	2026-05-30 21:52:16	Player Interaction Logger for Godot 4
+5209	4.0	2D Tools	2026-07-09 19:41:58	J-Gizmos
+5210	4.0	2D Tools	2026-05-30 21:53:28	J-CSG_2D
+5212	4.2	Shaders	2026-06-17 22:56:38	Juice Shaders Lite
+5215	4.0	3D Tools	2026-06-16 18:54:13	XCameraControler (3D)
+5216	4.0	Tools	2026-06-01 20:54:34	Script Tabs
+5218	4.2	Tools	2026-06-27 20:16:25	Juicee
+5219	4.0	2D Tools	2026-06-05 18:41:18	TargetingArrow2D
+5220	4.0	Scripts	2026-06-03 04:40:57	IMSC Dialogue/Script Player
+5222	4.3	3D Tools	2026-08-31 04:01:29	VRM Importer & MToon Shader
+5223	4.0	Tools	2026-06-03 19:16:52	Godo4NewbiAI
+5224	4.0	2D Tools	2026-06-03 19:20:21	StyleBoxFlatProxy
+5225	4.0	Tools	2026-06-04 21:45:56	ProcGen World
+5226	4.2	Tools	2026-06-04 21:57:22	Persistly
+5228	4.0	Tools	2026-08-09 18:18:23	GodotMods
+5234	4.4	Scripts	2026-09-10 19:18:26	Klotho — Deterministic multiplayer for Godot(.NET)
+5236	4.4	Tools	2026-06-08 19:16:57	Notifying Containers (Array & Dictionary)
+5238	4.3	Tools	2026-06-12 19:31:11	GenosDB for Godot
+5241	4.3	Scripts	2026-06-09 18:48:19	GDSignalR
+5243	4.0	3D Tools	2026-06-11 18:34:09	Sci-Fi Exit Portal (Free)
+5245	4.3	Tools	2026-08-25 19:30:00	Godot-MCP
+5246	4.3	Scripts	2026-06-12 19:31:37	gd-promise
+5252	4.4	Tools	2026-06-15 18:05:24	Layout Tools
+5253	4.2	Tools	2026-06-17 22:54:33	Appodeal Ads (with native)
+5254	4.4	3D Tools	2026-06-15 18:11:19	Distance Measure Tool
+5260	4.2	Tools	2026-09-02 19:18:05	GDScript refactoring plugin
+5261	4.2	Tools	2026-08-03 23:04:09	GDScript Commenter
+5262	4.0	Scripts	2026-06-22 22:46:36	Gwynbleidd-plugin
+5264	4.3	Tools	2026-06-16 18:49:40	A.I. Essentials Toolkit 
+5267	4.2	Tools	2026-06-24 20:05:55	Golem-AI
+5272	4.0	Tools	2026-06-17 22:59:39	Ensoul
+5273	4.2	Tools	2026-06-18 22:06:18	QTI Neon
+5277	4.1	Tools	2026-06-21 00:35:30	GDSpellGuard
+5281	4.0	2D Tools	2026-06-22 22:56:32	Maze2D
+5282	4.3	2D Tools	2026-06-21 19:01:34	SimpleShadow2D
+5283	4.0	Tools	2026-06-21 19:03:46	Inspector Notes
+5284	4.4	Tools	2026-06-21 19:06:06	EasySave Lite
+5285	4.4	Tools	2026-06-21 19:07:03	Grid Inventory Lite
+5286	4.4	Tools	2026-06-21 19:08:53	Dialogue System Lite
+5287	4.4	Tools	2026-06-21 19:09:28	Scene Transitions Lite
+5290	4.4	Tools	2026-06-22 22:48:06	Settings Menu Lite
+5292	4.4	Shaders	2026-06-24 20:07:17	Compositor Lens Effects / Lens flare
+5293	4.4	Scripts	2026-06-22 22:53:08	Audio Manager Lite
+5295	4.4	Tools	2026-06-24 20:11:32	Godot Agent CLI
+5296	4.4	Tools	2026-08-26 18:48:06	Beckett (AI MCP for Godot)
+5297	4.0	Scripts	2026-06-23 20:04:50	State Machine Lite
+5298	4.0	Scripts	2026-06-23 20:06:24	Health & Damage System Lite
+5299	4.0	Scripts	2026-06-23 20:06:51	Object Pool Lite
+5300	4.0	Scripts	2026-06-23 20:07:29	Quest System Lite
+5301	4.0	3D Tools	2026-06-23 20:07:59	Smart Camera Lite
+5303	4.4	2D Tools	2026-09-06 01:00:17	Lit - 2D Lighting Engine
+5304	4.4	Tools	2026-07-07 21:35:36	BluetoothGD
+5305	4.0	Tools	2026-06-24 20:07:12	Godot MCP - Cursor and Claude Integration
+5306	4.0	Scripts	2026-06-24 20:08:35	LightLeaderboard SDK
+5309	4.3	Tools	2026-09-09 18:17:22	Dear ImGui Godot
+5311	4.0	Scripts	2026-07-07 21:33:00	Procedural PBR Texture Generators
+5312	4.4	Tools	2026-07-04 18:49:10	Godot Resource Database
+5317	4.4	Tools	2026-07-04 18:44:46	Godot Easy Icons
+5318	4.2	3D Tools	2026-07-07 21:35:01	Bounds Snapper
+5319	4.3	Tools	2026-09-07 03:16:40	IcyRadioStreamer
+5321	4.4	Tools	2026-07-18 00:19:04	Forge Logger — In-Game Bug Reporting & Player Feedback
+5323	4.4	Tools	2026-08-01 22:32:01	Reactive UI Toolkit — Godot Editor
+5325	4.0	Tools	2026-07-14 21:23:09	Project Cleaner
+5328	4.3	2D Tools	2026-07-11 01:29:38	WeatherSystem2D
+5329	4.4	Tools	2026-07-09 19:30:01	Sound Player
+5330	4.4	Tools	2026-07-09 19:30:24	GodotNodes+
+5331	4.0	Tools	2026-07-09 19:31:25	Visibility Polygon
+5333	4.1	Tools	2026-07-09 19:41:27	Transable — App Translation
+5334	4.0	Tools	2026-07-16 04:34:16	J-Custom_Extensions
+5335	4.2	Tools	2026-09-06 01:05:25	Breakpoint MCP
+5339	4.2	3D Tools	2026-07-12 04:38:05	WaterBox
+5341	4.1	2D Tools	2026-07-16 04:34:39	FairyGUI Godot
+5342	4.0	Tools	2026-07-16 04:30:25	Lynx Relay
+5343	4.3	2D Tools	2026-09-06 01:05:02	Blobsmith Autotile Wirer
+5347	4.0	2D Tools	2026-07-14 21:28:07	Oxide Infinite World Generator (Lite)
+5348	4.4	Tools	2026-07-16 04:31:21	Godot Agent Loop Bridge
+5350	4.0	Tools	2026-07-16 04:33:33	External Shader Editor
+5351	4.0	Tools	2026-07-19 21:52:32	Copy Scene Tree
+5352	4.0	Scripts	2026-07-17 04:33:54	Resource2JSON
+5353	4.4	Tools	2026-07-17 04:36:04	Godot AI Workbench
+5354	4.0	Tools	2026-07-17 04:37:22	Godot Agent
+5355	4.3	Tools	2026-07-24 05:02:58	Framedash Telemetry SDK
+5356	4.2	Tools	2026-07-18 00:17:12	Copy Full Stack Trace
+5357	4.2	3D Tools	2026-08-05 22:02:47	SpringVisual3D
+5359	4.3	Tools	2026-09-02 19:16:40	WifiGD
+5360	4.3	Tools	2026-07-24 05:01:34	Open Godot MCP
+5362	4.3	Tools	2026-07-31 05:07:12	TileCopy
+5363	4.2	Tools	2026-07-22 05:16:57	Sonilo Music & Sound Effect Generator
+5366	4.0	Tools	2026-07-25 23:01:09	godot-dualsense
+5367	4.3	Tools	2026-09-11 19:34:59	Swallowtail - Godot Automation
+5368	4.0	Tools	2026-07-27 03:30:51	Mebo
+5369	4.3	Tools	2026-07-27 03:31:16	godot-mcp-bridge
+5370	4.0	Tools	2026-07-27 03:33:16	 GdScript-Stamp 
+5371	4.1	Scripts	2026-09-08 18:48:49	Crux - Game Backend SDK
+5375	4.2	Tools	2026-07-27 03:44:28	Godot MCP Toolkit
+5383	4.0	Tools	2026-07-31 19:18:53	Alpha AI Agent for Godot
+5387	4.2	Tools	2026-08-03 23:11:40	Gamevocal
+5389	4.0	Tools	2026-08-05 04:15:43	GDScript Complexity Analyzer (gdmetrics4)
+5391	4.0	Scripts	2026-08-15 21:50:48	StringTool
+5392	4.4	2D Tools	2026-08-05 22:01:39	TKSpriteServer
+5395	4.2	Tools	2026-09-03 23:03:48	Sloyd Godot Bridge
+5400	4.1	Tools	2026-08-09 18:23:42	Audio Metadata Extension
+5402	4.0	Tools	2026-08-24 21:26:08	Local Keep AI
+5403	4.2	Tools	2026-08-11 21:39:01	GDMCP
+5404	4.3	Tools	2026-08-11 22:46:23	Spreen
+5405	4.4	Tools	2026-08-15 21:54:06	Plugin Updater
+5406	4.4	2D Tools	2026-08-12 21:48:27	Puddle System
+5410	4.1	Tools	2026-08-13 20:16:20	VersionChecker
+5411	4.2	Tools	2026-08-13 20:19:25	AppLovin MAX V2 Fix
+5414	4.0	Tools	2026-08-15 21:57:59	Instance Log
+5416	4.1	2D Tools	2026-08-17 00:48:28	Day Night Cycle & Season System
+5418	4.0	3D Tools	2026-08-21 04:36:49	Unwrap Lightmap
+5419	4.4	Scripts	2026-08-24 21:29:37	Discord Rich Presence (pure GDScript)
+5421	4.0	3D Tools	2026-08-24 21:23:18	Basic FPS Controller for Godot 4
+5422	4.2	Tools	2026-08-24 21:23:37	Script Editor Bookmarks
+5423	4.2	Tools	2026-08-24 21:24:07	Plugin Manager Shortcut
+5424	4.0	2D Tools	2026-08-24 21:24:24	EditorShapes
+5425	4.4	Tools	2026-08-24 21:27:42	I.Say() Debug Messaging
+5427	4.0	Scripts	2026-08-25 19:30:37	GodotXoshiro256++
+5428	4.2	Misc	2026-08-26 18:44:44	UI Overlay in 3D
+5429	4.0	3D Tools	2026-08-26 18:49:08	Static Mesh Merger
+5431	4.3	2D Tools	2026-08-27 18:47:05	tcfAlignTool - UI & 2D Alignment Plugin
+5432	4.0	Tools	2026-08-27 18:47:24	Copy Errors Plugin 
+5433	4.2	Tools	2026-08-27 18:47:51	Godot Native Audio Recorder (Android)
+5434	4.4	Tools	2026-09-01 04:21:10	Godot Editor MCP
+5435	4.2	Tools	2026-08-29 19:46:11	ShipGodot
+5437	4.3	Scripts	2026-08-31 04:00:38	Componentable
+5438	4.0	Tools	2026-09-08 18:48:09	Scene Splitter
+5440	4.3	Tools	2026-09-01 04:22:08	Godot Stagehand
+5446	4.3	Tools	2026-09-07 03:18:41	Animation Group
+5448	4.0	2D Tools	2026-09-07 03:15:25	SpriteFrames Batch Importer
+5451	4.4	Tools	2026-09-09 18:17:42	Godot Team Create
+5459	4.0	Scripts	2026-09-11 19:39:32	ScaleContainer
+556	4.0	Scripts	2023-03-12 11:58:24	ThreadPool
+559	4.2	Scripts	2023-12-21 04:49:10	Poisson Disc Sampling
+563	4.4	3D Tools	2026-09-07 03:19:22	CSG to Obj Exporter
+592	4.3	2D Tools	2024-10-18 14:51:59	PinchPanCamera
+598	4.1	Tools	2025-06-16 19:42:41	abfi: Allegro Bitmap Font Importer
+625	4.0	Tools	2025-10-05 16:48:11	Godot Piskel Importer
+650	4.1	Tools	2026-08-31 04:01:06	Godot-Opus
+663	4.2	Misc	2025-09-19 20:15:51	Simple Sampler
+701	4.0	Scripts	2023-02-19 06:49:51	Simple Free-Look Camera
+711	4.2	2D Tools	2023-12-08 19:51:30	Scrolling Backgrounds Tool
+717	4.0	2D Tools	2023-05-01 23:29:23	UI Design Tool
+739	4.1	3D Tools	2023-07-16 21:49:33	InterpolatedCamera3D
+770	4.2	2D Tools	2023-12-08 19:51:43	Layered Sprite Tool
+781	4.1	Materials	2023-07-16 21:49:35	Kenney Prototype Textures
+784	4.1	Misc	2023-07-16 21:49:35	Kenney Particle Pack
+794	4.1	Misc	2023-07-16 21:49:36	Kenney Interface Sounds
+796	4.1	Misc	2023-07-16 21:49:36	Kenney UI Audio
+81	4.0	Scripts	2026-01-30 18:09:44	uuid
+811	4.4	Scripts	2026-09-07 03:19:03	Selection Tools (Blender Like)
+817	4.0	Tools	2025-08-19 03:27:17	gd-YAFSM(Finite State Machine)
+818	4.3	Tools	2024-08-16 01:36:11	Measuring Tape (2D and 3D)
+859	4.4	Tools	2025-09-17 19:04:04	Godot Game Settings
+863	4.0	Tools	2023-03-10 11:17:10	VMFLib
+932	4.0	Scripts	2024-12-23 15:41:56	Godot Gameplay Systems
+96	4.4	Tools	2025-10-26 19:45:51	PCK / DLC Manager
+962	4.0	Tools	2025-08-19 03:27:42	gd-plug - Plugin Manager
+967	4.0	Tools	2021-05-31 16:02:25	XDateTime
+992	4.0	Tools	2022-11-23 13:50:07	GDScript Macros

@@ -1,9 +1,6 @@
 extends Node
 ## ============================================================
 ## AI 对话管理器（全局唯一，autoload 注册名：AIChat）
-## 通过 HTTP 调用兼容 OpenAI 格式的 API（/v1/chat/completions），
-## 维护对话记录（裁剪到最近 N 条）并把回复用信号发回界面。
-## 配置持久化在 user://aisettings.cfg（url / key / model）。
 ## 用法：
 ##   AIChat.发送消息("你好")
 ##   AIChat.收到AI回复.connect(func(回复): ...)

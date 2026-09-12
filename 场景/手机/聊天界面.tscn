@@ -1,62 +1,182 @@
 [gd_scene format=3 uid="uid://brn1kvt06lkh2"]
 
-[ext_resource type="Theme" path="res://资源/主题/测试主题.tres" id="0_warmth"]
+[ext_resource type="Theme" uid="uid://bhi1wr60t3kim" path="res://资源/主题/测试主题.tres" id="0_warmth"]
 [ext_resource type="Script" uid="uid://cqg7yewlk2rff" path="res://脚本/手机/聊天界面.gd" id="1_script"]
 [ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="2_font"]
+[ext_resource type="Script" uid="uid://cd2ljkhblk2q3" path="res://addons/material_ui/components/m3_button.gd" id="m3btn"]
+[ext_resource type="Script" uid="uid://s41xmt62ejke" path="res://addons/material_ui/components/m3_text_field.gd" id="m3field"]
+[ext_resource type="Script" uid="uid://dcn48j38y2s1q" path="res://addons/material_ui/components/m3_navigation_bar.gd" id="m3nav"]
+[ext_resource type="Script" uid="uid://cwuxxoxeaij0u" path="res://addons/material_ui/effects/m3_scroll_stretch.gd" id="m3stretch"]
+[ext_resource type="Script" uid="uid://cs44xyros5f6" path="res://addons/material_ui/components/m3_surface.gd" id="m3surf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qttyn"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7eyo"]
+bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="sb_topbar"]
-bg_color = Color(0.94901961, 0.62352941, 0.68627451, 1)
-corner_radius_top_left = 28
-corner_radius_top_right = 28
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2e5tk"]
+bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="sb_transparent"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okvau"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
 bg_color = Color(0, 0, 0, 0)
 
-[sub_resource type="StyleBoxFlat" id="sb_avatar_sister"]
-bg_color = Color(1, 0.419608, 0.615686, 1)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjphf"]
+bg_color = Color(0, 0, 0, 0.14)
 
-[sub_resource type="StyleBoxFlat" id="sb_avatar_yun"]
-bg_color = Color(0.305882, 0.803922, 0.768627, 1)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0ccp"]
+bg_color = Color(0, 0, 0, 0.08)
 
-[sub_resource type="StyleBoxFlat" id="sb_bottombar"]
-bg_color = Color(0.99607843, 0.97254902, 0.95294118, 1)
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5m354"]
+bg_color = Color(0, 0, 0, 0.12)
 
-[sub_resource type="StyleBoxFlat" id="sb_inputbar"]
-bg_color = Color(0.99607843, 0.97254902, 0.95294118, 1)
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
-
-[sub_resource type="StyleBoxFlat" id="sb_inputfield"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7ekb"]
+bg_color = Color(0, 0, 0, 0)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.94901961, 0.80392157, 0.81568627, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="sb_send"]
-bg_color = Color(0.94901961, 0.62352941, 0.68627451, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlokf"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h78kf"]
+bg_color = Color(0, 0, 0, 0.14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_atc6p"]
+bg_color = Color(0, 0, 0, 0.08)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ub428"]
+bg_color = Color(0, 0, 0, 0.12)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_820ui"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nr2d1"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1rxp"]
+bg_color = Color(0, 0, 0, 0.14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1u0s"]
+bg_color = Color(0, 0, 0, 0.08)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjkxl"]
+bg_color = Color(0, 0, 0, 0.12)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fy6wf"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="sb_avatar_sister"]
+bg_color = Color(1, 0.419608, 0.615686, 1)
+corner_radius_top_left = 36
+corner_radius_top_right = 36
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qda1i"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7o14"]
+bg_color = Color(0, 0, 0, 0.14)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_la5ua"]
+bg_color = Color(0, 0, 0, 0.08)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01ftb"]
+bg_color = Color(0, 0, 0, 0.12)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_saw1r"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="sb_avatar_yun"]
+bg_color = Color(0.305882, 0.803922, 0.768627, 1)
+corner_radius_top_left = 36
+corner_radius_top_right = 36
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ma45k"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo180"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1caaq"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_viuf0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldbo4"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t57p2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fc5k"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avr3n"]
+bg_color = Color(0, 0, 0, 0.12)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tl5r"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [node name="聊天应用" type="Control" unique_id=675123890]
 layout_mode = 3
@@ -76,59 +196,92 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qttyn")
+theme_override_styles/panel = SubResource("StyleBoxFlat_t7eyo")
+script = ExtResource("m3surf")
+"角色" = 0
+"圆角" = 42
 metadata/_edit_use_anchors_ = true
 
 [node name="顶栏" type="Panel" parent="." unique_id=159874236]
+z_index = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 48.0
+offset_bottom = 72.0
 grow_horizontal = 0
-theme_override_styles/panel = SubResource("sb_topbar")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2e5tk")
+script = ExtResource("m3surf")
+"角色" = 6
+"圆角" = 42
+"圆下" = false
 metadata/_edit_use_anchors_ = true
 
 [node name="返回按钮" type="Button" parent="顶栏" unique_id=876524189]
+clip_contents = true
 layout_mode = 0
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 44.0
-offset_bottom = 42.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 22
-theme_override_styles/normal = SubResource("sb_transparent")
-theme_override_styles/pressed = SubResource("sb_transparent")
-theme_override_styles/hover = SubResource("sb_transparent")
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 66.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_focus_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_hover_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_okvau")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hjphf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a0ccp")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5m354")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e7ekb")
 text = "<"
+script = ExtResource("m3btn")
+"样式类型" = 3
+"圆角" = 999
+"自定义文字色" = Color(0.078, 0.106, 0.173, 1)
 
 [node name="标题" type="Label" parent="顶栏" unique_id=341258967]
 layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -60.0
-offset_right = 60.0
-offset_bottom = 48.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+offset_left = -90.0
+offset_right = 90.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.078, 0.106, 0.173, 1)
 theme_override_fonts/font = ExtResource("2_font")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 26
 text = "消息"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="关闭按钮" type="Button" parent="顶栏" unique_id=842136597]
+clip_contents = true
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -44.0
-offset_top = 6.0
-offset_right = -8.0
-offset_bottom = 42.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("sb_transparent")
-theme_override_styles/pressed = SubResource("sb_transparent")
-theme_override_styles/hover = SubResource("sb_transparent")
+offset_left = -66.0
+offset_top = 9.0
+offset_right = -12.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_focus_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_hover_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlokf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h78kf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_atc6p")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ub428")
+theme_override_styles/focus = SubResource("StyleBoxFlat_820ui")
 text = "X"
+script = ExtResource("m3btn")
+"样式类型" = 3
+"圆角" = 999
+"字号" = 22
+"自定义文字色" = Color(0.078, 0.106, 0.173, 1)
 
 [node name="内容容器" type="Control" parent="." unique_id=456123789]
 layout_mode = 1
@@ -154,142 +307,177 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 
 [node name="联系人_妹妹" type="Button" parent="内容容器/联系人滚动/联系人列表" unique_id=111111111]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 108)
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("sb_transparent")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_nr2d1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v1rxp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s1u0s")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kjkxl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fy6wf")
+script = ExtResource("m3btn")
+"样式类型" = 3
+"圆角" = 0
 
 [node name="头像背景" type="Panel" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111112]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 64.0
-offset_bottom = 60.0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 96.0
+offset_bottom = 90.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("sb_avatar_sister")
 
 [node name="头像文字" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111113]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 64.0
-offset_bottom = 60.0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 96.0
+offset_bottom = 90.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "妹"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="名称" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111114]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 14.0
-offset_right = 250.0
-offset_bottom = 36.0
-theme_override_colors/font_color = Color(0.10196, 0.10196, 0.10196, 1)
-theme_override_font_sizes/font_size = 16
+offset_left = 114.0
+offset_top = 21.0
+offset_right = 375.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.106, 0.106, 0.122, 1)
+theme_override_font_sizes/font_size = 24
 text = "妹妹"
 
 [node name="最后消息" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111115]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 40.0
-offset_right = 250.0
-offset_bottom = 58.0
-theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
-theme_override_font_sizes/font_size = 13
+offset_left = 114.0
+offset_top = 60.0
+offset_right = 375.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.267, 0.275, 0.31, 1)
+theme_override_font_sizes/font_size = 20
 text = "哥哥你在干嘛呀~"
 
 [node name="时间" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111116]
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -72.0
-offset_top = 14.0
-offset_right = -16.0
-offset_bottom = 36.0
-theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
-theme_override_font_sizes/font_size = 12
+offset_left = -108.0
+offset_top = 21.0
+offset_right = -24.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.267, 0.275, 0.31, 1)
+theme_override_font_sizes/font_size = 18
 text = "10:30"
 horizontal_alignment = 2
 
 [node name="分割线" type="ColorRect" parent="内容容器/联系人滚动/联系人列表/联系人_妹妹" unique_id=111111117]
 layout_mode = 0
 anchor_right = 1.0
-offset_left = 76.0
-offset_top = 71.0
-offset_bottom = 72.0
+offset_left = 114.0
+offset_top = 106.5
+offset_bottom = 108.0
 mouse_filter = 2
-color = Color(0.878431, 0.878431, 0.878431, 1)
+color = Color(0.773, 0.776, 0.816, 1)
 
 [node name="联系人_阿云" type="Button" parent="内容容器/联系人滚动/联系人列表" unique_id=222222221]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 108)
+clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("sb_transparent")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_qda1i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a7o14")
+theme_override_styles/hover = SubResource("StyleBoxFlat_la5ua")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_01ftb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_saw1r")
+script = ExtResource("m3btn")
+"样式类型" = 3
+"圆角" = 0
 
 [node name="头像背景" type="Panel" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222222]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 64.0
-offset_bottom = 60.0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 96.0
+offset_bottom = 90.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("sb_avatar_yun")
 
 [node name="头像文字" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222223]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 64.0
-offset_bottom = 60.0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 96.0
+offset_bottom = 90.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 text = "云"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="名称" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222224]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 14.0
-offset_right = 250.0
-offset_bottom = 36.0
-theme_override_colors/font_color = Color(0.10196, 0.10196, 0.10196, 1)
-theme_override_font_sizes/font_size = 16
+offset_left = 114.0
+offset_top = 21.0
+offset_right = 375.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.106, 0.106, 0.122, 1)
+theme_override_font_sizes/font_size = 24
 text = "阿云"
 
 [node name="最后消息" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222225]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 40.0
-offset_right = 250.0
-offset_bottom = 58.0
-theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
-theme_override_font_sizes/font_size = 13
+offset_left = 114.0
+offset_top = 60.0
+offset_right = 375.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.267, 0.275, 0.31, 1)
+theme_override_font_sizes/font_size = 20
 text = "今天的任务完成了吗？"
 
 [node name="时间" type="Label" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222226]
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -72.0
-offset_top = 14.0
-offset_right = -16.0
-offset_bottom = 36.0
-theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
-theme_override_font_sizes/font_size = 12
+offset_left = -108.0
+offset_top = 21.0
+offset_right = -24.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.267, 0.275, 0.31, 1)
+theme_override_font_sizes/font_size = 18
 text = "09:15"
 horizontal_alignment = 2
 
 [node name="分割线" type="ColorRect" parent="内容容器/联系人滚动/联系人列表/联系人_阿云" unique_id=222222227]
 layout_mode = 0
 anchor_right = 1.0
-offset_left = 76.0
-offset_top = 71.0
-offset_bottom = 72.0
+offset_left = 114.0
+offset_top = 106.5
+offset_bottom = 108.0
 mouse_filter = 2
-color = Color(0.878431, 0.878431, 0.878431, 1)
+color = Color(0.773, 0.776, 0.816, 1)
+
+[node name="拉伸" type="Node" parent="内容容器/联系人滚动" unique_id=279033927]
+script = ExtResource("m3stretch")
+"滚轮力度" = 0.016
+"拖动阻尼" = null
 
 [node name="聊天滚动" type="ScrollContainer" parent="内容容器" unique_id=369874125]
 layout_mode = 1
@@ -305,7 +493,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="底栏" type="Panel" parent="." unique_id=785236914]
+[node name="拉伸" type="Node" parent="内容容器/聊天滚动" unique_id=527428621]
+script = ExtResource("m3stretch")
+"滚轮力度" = 0.016
+"拖动阻尼" = null
+
+[node name="底栏" type="PanelContainer" parent="." unique_id=785236914]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.9
@@ -313,57 +506,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("sb_bottombar")
-
-[node name="底栏按钮组" type="HBoxContainer" parent="底栏" unique_id=369852147]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="微信标签" type="Label" parent="底栏/底栏按钮组" unique_id=147852369]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0.349, 0.78, 1)
-theme_override_font_sizes/font_size = 12
-text = "消息"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="通讯录标签" type="Label" parent="底栏/底栏按钮组" unique_id=258963147]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
-theme_override_font_sizes/font_size = 12
-text = "通讯录"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="发现标签" type="Label" parent="底栏/底栏按钮组" unique_id=369852741]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
-theme_override_font_sizes/font_size = 12
-text = "发现"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="我标签" type="Label" parent="底栏/底栏按钮组" unique_id=963852741]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.502, 0.502, 0.502, 1)
-theme_override_font_sizes/font_size = 12
-text = "我"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ma45k")
+script = ExtResource("m3nav")
+"项目" = PackedStringArray("消息", "通讯录", "发现", "我")
+"字号" = 22
 
 [node name="输入区" type="Panel" parent="." unique_id=159753468]
 layout_mode = 1
@@ -371,9 +517,12 @@ anchors_preset = -1
 anchor_top = 0.858
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 22.23999
+offset_top = 33.36
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("sb_inputbar")
+theme_override_styles/panel = SubResource("StyleBoxFlat_vo180")
+script = ExtResource("m3surf")
+"圆角" = 35
+"圆上" = false
 
 [node name="输入框" type="LineEdit" parent="输入区" unique_id=842136579]
 layout_mode = 1
@@ -386,12 +535,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 14
-theme_override_styles/normal = SubResource("sb_inputfield")
-theme_override_styles/focus = SubResource("sb_inputfield")
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_1caaq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_viuf0")
 placeholder_text = "输入消息..."
+script = ExtResource("m3field")
 
 [node name="发送按钮" type="Button" parent="输入区" unique_id=357159486]
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.82
@@ -400,10 +554,22 @@ anchor_right = 0.97
 anchor_bottom = 0.81
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 13
-theme_override_styles/normal = SubResource("sb_send")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_ldbo4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t57p2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1fc5k")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_avr3n")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8tl5r")
 text = "发送"
+script = ExtResource("m3btn")
+"圆角" = 12
+"字号" = 18
 
 [connection signal="pressed" from="顶栏/返回按钮" to="." method="_on_返回按钮_pressed"]
 [connection signal="pressed" from="顶栏/关闭按钮" to="." method="_on_关闭按钮_pressed"]

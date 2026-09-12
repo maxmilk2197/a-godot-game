@@ -97,6 +97,7 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="角色交互" type="Control" parent="." unique_id=1149596293]
+visible = false
 layout_mode = 1
 anchor_right = 0.28697917
 anchor_bottom = 0.6166667

@@ -23,7 +23,7 @@ func _ready() -> void:
 	聊天数据.初始化()
 	_显示联系人列表()
 	_刷新联系人信息()
-	消息列表.add_theme_constant_override("separation", 4)
+	消息列表.add_theme_constant_override("separation", 8)
 	AIChat.收到AI回复.connect(_on_AI回复)
 	AIChat.AI出错.connect(_on_AI出错)
 
@@ -90,10 +90,10 @@ func _刷新消息列表() -> void:
 	if ai等待中:
 		var hint = Label.new()
 		hint.text = "对方正在输入..."
-		hint.add_theme_font_size_override("font_size", 11)
-		hint.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0, 1.0))
+		hint.add_theme_font_size_override("font_size", 20)
+		hint.add_theme_color_override("font_color", M3Theme.on_surface_variant)
 		hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		hint.custom_minimum_size = Vector2(0, 24)
+		hint.custom_minimum_size = Vector2(0, 44)
 		消息列表.add_child(hint)
 
 	await get_tree().process_frame
@@ -101,120 +101,99 @@ func _刷新消息列表() -> void:
 
 
 func _创建气泡(msg: Dictionary) -> Control:
-	var is_me = msg["发送者"] == "我"
-	var row = Control.new()
-	row.custom_minimum_size = Vector2(0, 28)
+	var is_me: bool = msg["发送者"] == "我"
+
+	# 一条消息 = 上面一行气泡（左/右对齐）+ 下面居中的时间
+	var row := VBoxContainer.new()
 	row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	row.add_theme_constant_override("separation", 4)
 
-	var bg = Panel.new()
-	bg.layout_mode = 0
-	var label = Label.new()
-	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	label.text = msg["内容"]
-	label.add_theme_font_size_override("font_size", 14)
-	label.add_theme_color_override("font_color", Color(0.102, 0.102, 0.102, 1))
-	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-
-	var max_text_width = min(200, _估算文字宽度(msg["内容"]))
-	var text_height = _估算文字高度(msg["内容"], max_text_width) + 20
-	var bg_width = max_text_width + 24
-	var bubble_height = text_height
-
-	var sb = StyleBoxFlat.new()
-	if is_me:
-		sb.bg_color = Color(0.584, 0.925, 0.412, 1)
-	else:
-		# 对方气泡用浅灰，和白色聊天背景区分开（纯白会跟白底融为一体看不见）
-		sb.bg_color = Color(0.929, 0.933, 0.945, 1)
-	sb.set_corner_radius_all(6)
-	bg.add_theme_stylebox_override("panel", sb)
-
-	bg.size = Vector2(bg_width, bubble_height)
+	var line := HBoxContainer.new()
+	line.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	line.add_theme_constant_override("separation", 14)
+	line.alignment = BoxContainer.ALIGNMENT_END if is_me else BoxContainer.ALIGNMENT_BEGIN
 
 	# 对方消息左侧的头像（由设置里的“显示对方头像”开关控制）
-	var 对方头像: Control = null
 	if not is_me and Settings.显示对方头像:
-		对方头像 = _创建对方头像()
-		row.add_child(对方头像)
+		line.add_child(_创建对方头像())
 
-	if is_me:
-		bg.layout_mode = 1
-		bg.anchor_left = 1.0
-		bg.anchor_right = 1.0
-		bg.offset_left = -(bg_width + 12)
-		bg.offset_right = -12
-		bg.offset_top = 4
-		label.layout_mode = 1
-		label.anchor_left = 1.0
-		label.anchor_right = 1.0
-		label.offset_left = -bg_width
-		label.offset_right = -24
-		label.offset_top = 14
-		label.offset_bottom = bubble_height - 6
-	else:
-		if Settings.显示对方头像:
-			# 显示头像：头像占左 52px，气泡再往右排
-			bg.position = Vector2(52, 4)
-			label.position = Vector2(64, 10)
-		else:
-			# 不显示头像：气泡直接靠左，不留空位
-			bg.position = Vector2(12, 4)
-			label.position = Vector2(24, 10)
-		label.size = Vector2(max_text_width, bubble_height - 14)
+	line.add_child(_创建气泡本体(msg["内容"], is_me))
+	row.add_child(line)
 
-	var time_label = Label.new()
-	time_label.text = msg.get("时间", "")
-	time_label.add_theme_font_size_override("font_size", 10)
-	time_label.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0, 1.0))
-	time_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	time_label.layout_mode = 1
-	time_label.anchor_left = 0.5
-	time_label.anchor_right = 0.5
-	time_label.offset_left = -60
-	time_label.offset_right = 60
-	time_label.offset_top = bubble_height + 6
-	time_label.offset_bottom = bubble_height + 22
-
-	row.custom_minimum_size = Vector2(0, bubble_height + 28)
-
-	row.add_child(bg)
-	row.add_child(label)
-	row.add_child(time_label)
+	var 时间 := str(msg.get("时间", ""))
+	if not 时间.is_empty():
+		var time_label := Label.new()
+		time_label.text = 时间
+		time_label.add_theme_font_size_override("font_size", 18)
+		time_label.add_theme_color_override("font_color", M3Theme.on_surface_variant)
+		time_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		time_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		row.add_child(time_label)
 
 	return row
 
 
-## 创建对方头像：圆形（用联系人的 头像颜色 + 头像文字），放在左侧
+## 气泡本体：圆角背景 + 自动换行文字。短消息贴合内容，长消息最多 200px 后换行。
+func _创建气泡本体(内容: String, is_me: bool) -> Control:
+	var 气泡 := PanelContainer.new()
+	气泡.add_theme_stylebox_override("panel", _气泡样式(is_me))
+	气泡.size_flags_horizontal = Control.SIZE_SHRINK_END if is_me else Control.SIZE_SHRINK_BEGIN
+
+	var 边距 := MarginContainer.new()
+	边距.add_theme_constant_override("margin_left", 24)
+	边距.add_theme_constant_override("margin_right", 24)
+	边距.add_theme_constant_override("margin_top", 16)
+	边距.add_theme_constant_override("margin_bottom", 16)
+	气泡.add_child(边距)
+
+	var 文本 := Label.new()
+	文本.text = 内容
+	文本.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	文本.add_theme_font_size_override("font_size", 26)
+	文本.add_theme_color_override("font_color", M3Theme.on_surface)
+	文本.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	文本.custom_minimum_size = Vector2(min(380, _估算文字宽度(内容)), 0)
+	边距.add_child(文本)
+
+	return 气泡
+
+
+func _气泡样式(is_me: bool) -> StyleBoxFlat:
+	var sb := StyleBoxFlat.new()
+	# 自己的气泡用主题蓝的浅色容器；对方的用浅灰，和白色背景区分开
+	sb.bg_color = M3Theme.primary_container if is_me else M3Theme.surface_variant
+	sb.set_corner_radius_all(18)
+	return sb
+
+
+## 创建对方头像：圆形（用联系人的 头像颜色 + 头像文字），放在气泡左侧
 func _创建对方头像() -> Control:
 	var 联系人 := 聊天数据.获取联系人(当前联系人)
 	var 头像 := Panel.new()
-	头像.size = Vector2(36, 36)
-	头像.position = Vector2(8, 4)
+	头像.custom_minimum_size = Vector2(66, 66)
+	头像.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 
 	var sb := StyleBoxFlat.new()
 	sb.bg_color = 联系人.get("头像颜色", Color(0.6, 0.6, 0.6, 1))
-	sb.set_corner_radius_all(18)   # 圆形
+	sb.set_corner_radius_all(33)   # 圆形
 	sb.set_content_margin_all(0)
 	头像.add_theme_stylebox_override("panel", sb)
 
 	var 文字 := Label.new()
 	文字.text = str(联系人.get("头像文字", "?"))
 	文字.add_theme_color_override("font_color", Color.WHITE)
-	文字.add_theme_font_size_override("font_size", 16)
+	文字.add_theme_font_size_override("font_size", 30)
 	文字.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	文字.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	文字.size = 头像.size
+	文字.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	头像.add_child(文字)
 
 	return 头像
 
 
+## 估算文字自然宽度（不换行），用于让气泡按内容自适应宽度
 func _估算文字宽度(text: String) -> int:
-	return int(ThemeDB.fallback_font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, 200, 14).x)
-
-
-func _估算文字高度(text: String, width: int) -> int:
-	return int(ThemeDB.fallback_font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, width, 14).y)
+	return int(ThemeDB.fallback_font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, 26).x)
 
 
 func _on_联系人_妹妹_pressed() -> void:

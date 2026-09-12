@@ -6,6 +6,8 @@ var 正在编辑时间: bool = false
 @onready var 时间标签: Label = $"屏幕显示/状态栏/时间"
 @onready var 时间输入: LineEdit = $"屏幕显示/状态栏/时间输入"
 @onready var app容器: Control = $"屏幕显示/App容器"
+@onready var 屏幕显示: Control = $"屏幕显示"
+@onready var 模糊叠加: ColorRect = $"屏幕显示/模糊叠加"
 
 
 func _ready() -> void:
@@ -20,6 +22,11 @@ func _ready() -> void:
 			_提交时间()
 	)
 	_刷新时间()
+	# 屏幕毛玻璃层按手机尺寸做圆角裁剪，跟随尺寸变化
+	_更新屏幕圆角()
+	屏幕显示.resized.connect(_更新屏幕圆角)
+	await get_tree().process_frame
+	_更新屏幕圆角()
 	# 每 0.5 秒检查一次时段是否变化，跟随时段自动更新
 	var 检查定时器 := Timer.new()
 	检查定时器.wait_time = 0.5
@@ -41,6 +48,14 @@ func _当前时段时间() -> String:
 func _刷新时间() -> void:
 	if not 正在编辑时间:
 		时间标签.text = _当前时段时间()
+
+
+## 把屏幕毛玻璃层的圆角裁剪参数同步为当前尺寸
+func _更新屏幕圆角() -> void:
+	var mat := 模糊叠加.material as ShaderMaterial
+	if mat:
+		mat.set_shader_parameter("rect_size", 模糊叠加.size)
+		mat.set_shader_parameter("corner_radius", 42.0)
 
 
 func _时间标签_点击(event: InputEvent) -> void:

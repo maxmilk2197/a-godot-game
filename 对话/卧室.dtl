@@ -7,7 +7,6 @@ yun: 怎么了？
 	yun: 干什么啊！
 	你: 没什么
 	旁白: 该不会真有人选这个吧
-	yun (默认): 这个可是媒体特别选项哦
 	jump 选项
 - 摸摸
 	update yun [animation="Shake Y" wait="true"]

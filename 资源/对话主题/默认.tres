@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://cf6r46hhtmqhq"]
+[gd_resource type="Resource" script_class="DialogicStyle" format=3 uid="uid://cfobgkkb8g0df"]
 
 [ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_8y6b6"]
 [ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_tr7c2"]
@@ -12,39 +12,39 @@
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="10_wevg8"]
 [ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_bpkwc"]
 
-[sub_resource type="Resource" id="Resource_u5127"]
+[sub_resource type="Resource" id="Resource_8y6b6"]
 script = ExtResource("2_tr7c2")
 scene = ExtResource("1_8y6b6")
 
-[sub_resource type="Resource" id="Resource_vvmqp"]
+[sub_resource type="Resource" id="Resource_tr7c2"]
 script = ExtResource("2_tr7c2")
 scene = ExtResource("3_3f17m")
 
-[sub_resource type="Resource" id="Resource_x2she"]
+[sub_resource type="Resource" id="Resource_3f17m"]
 script = ExtResource("2_tr7c2")
 scene = ExtResource("4_1jl3i")
 
-[sub_resource type="Resource" id="Resource_7a46m"]
+[sub_resource type="Resource" id="Resource_1jl3i"]
 script = ExtResource("2_tr7c2")
 scene = ExtResource("5_a8g1c")
 
-[sub_resource type="Resource" id="Resource_xsomn"]
+[sub_resource type="Resource" id="Resource_a8g1c"]
 script = ExtResource("2_tr7c2")
 scene = ExtResource("6_1u8c2")
 
-[sub_resource type="Resource" id="Resource_hod0x"]
+[sub_resource type="Resource" id="Resource_1u8c2"]
 script = ExtResource("2_tr7c2")
 scene = ExtResource("7_ddi4g")
 
-[sub_resource type="Resource" id="Resource_nuxry"]
+[sub_resource type="Resource" id="Resource_ddi4g"]
 script = ExtResource("2_tr7c2")
 scene = ExtResource("8_ax8os")
 
-[sub_resource type="Resource" id="Resource_smnlc"]
+[sub_resource type="Resource" id="Resource_ax8os"]
 script = ExtResource("2_tr7c2")
 scene = ExtResource("9_d16vu")
 
-[sub_resource type="Resource" id="Resource_bhfpq"]
+[sub_resource type="Resource" id="Resource_d16vu"]
 script = ExtResource("2_tr7c2")
 scene = ExtResource("10_wevg8")
 
@@ -53,14 +53,14 @@ script = ExtResource("11_bpkwc")
 name = "默认"
 layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
 layer_info = {
-"": SubResource("Resource_u5127"),
-"10": SubResource("Resource_vvmqp"),
-"11": SubResource("Resource_x2she"),
-"12": SubResource("Resource_7a46m"),
-"13": SubResource("Resource_xsomn"),
-"14": SubResource("Resource_hod0x"),
-"15": SubResource("Resource_nuxry"),
-"16": SubResource("Resource_smnlc"),
-"17": SubResource("Resource_bhfpq")
+"": SubResource("Resource_8y6b6"),
+"10": SubResource("Resource_tr7c2"),
+"11": SubResource("Resource_3f17m"),
+"12": SubResource("Resource_1jl3i"),
+"13": SubResource("Resource_a8g1c"),
+"14": SubResource("Resource_1u8c2"),
+"15": SubResource("Resource_ddi4g"),
+"16": SubResource("Resource_ax8os"),
+"17": SubResource("Resource_d16vu")
 }
 metadata/_latest_layer = ""

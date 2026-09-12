@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://d3vmtedflhx7b" path="res://资源/纹理/亚克力噪点.tres" id="4_noise"]
 [ext_resource type="FontFile" uid="uid://cp80cc6e1sa15" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="5_font"]
 [ext_resource type="Texture2D" uid="uid://b8kecb5ouxw1c" path="res://资源/纹理/手机照片_上传.jpg" id="6_photo"]
+[ext_resource type="Theme" path="res://资源/主题/测试主题.tres" id="0_theme"]
+[ext_resource type="Script" path="res://addons/material_ui/components/m3_button.gd" id="m3btn"]
+[ext_resource type="Script" path="res://addons/material_ui/components/m3_surface.gd" id="m3surf"]
 
 [sub_resource type="StyleBoxFlat" id="phone_bg"]
 bg_color = Color(0.08, 0.08, 0.08, 1)
@@ -13,46 +16,46 @@ border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.15, 0.15, 0.15, 1)
-corner_radius_top_left = 40
-corner_radius_top_right = 40
-corner_radius_bottom_right = 40
-corner_radius_bottom_left = 40
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
 
 [sub_resource type="ShaderMaterial" id="blur_mat"]
 shader = ExtResource("1_shader")
 shader_parameter/noise_texture = ExtResource("4_noise")
 shader_parameter/strength = 2.0
 shader_parameter/opacity = 0.35
-shader_parameter/tint_color = Color(0.96, 0.9, 0.88, 0.2)
+shader_parameter/tint_color = Color(0.86, 0.9, 0.98, 0.2)
 shader_parameter/noise_amount = 0.02
 shader_parameter/noise_scale = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="invisible_style"]
 
 [sub_resource type="StyleBoxFlat" id="time_input_style"]
-content_margin_left = 8.0
-content_margin_top = 3.0
-content_margin_right = 8.0
-content_margin_bottom = 3.0
+content_margin_left = 12
+content_margin_top = 4.5
+content_margin_right = 12
+content_margin_bottom = 4.5
 bg_color = Color(0, 0, 0, 0.5)
-corner_radius_top_left = 9
-corner_radius_top_right = 9
-corner_radius_bottom_right = 9
-corner_radius_bottom_left = 9
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
 
 [sub_resource type="StyleBoxFlat" id="icon_green"]
-bg_color = Color(0.9372549, 0.5607843, 0.6392157, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+bg_color = Color(0, 0.349, 0.78, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
 
 [sub_resource type="StyleBoxFlat" id="dock_bg"]
-bg_color = Color(0.95, 0.95, 0.97, 0.85)
-corner_radius_top_left = 35
-corner_radius_top_right = 35
-corner_radius_bottom_right = 35
-corner_radius_bottom_left = 35
+bg_color = Color(0.949, 0.953, 0.988, 0.92)
+corner_radius_top_left = 52
+corner_radius_top_right = 52
+corner_radius_bottom_right = 52
+corner_radius_bottom_left = 52
 
 [node name="主界面" type="Control" unique_id=440480169]
 layout_mode = 3
@@ -60,6 +63,7 @@ anchor_right = 0.33
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("0_theme")
 script = ExtResource("3_script")
 metadata/_edit_use_anchors_ = true
 
@@ -68,9 +72,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_right = -4.0
-offset_bottom = -8.0
+offset_left = 6
+offset_right = -6
+offset_bottom = -12
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("phone_bg")
@@ -81,10 +85,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 12.0
-offset_top = 28.0
-offset_right = -12.0
-offset_bottom = -28.0
+offset_left = 18
+offset_top = 42
+offset_right = -18
+offset_bottom = -42
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -115,8 +119,8 @@ anchors_preset = -1
 anchor_top = 0.1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 36.0
-offset_bottom = -36.0
+offset_top = 54
+offset_bottom = -54
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0)
@@ -129,7 +133,7 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 32.0
+offset_bottom = 48
 grow_horizontal = 0
 metadata/_edit_use_anchors_ = true
 
@@ -140,15 +144,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -16.0
-offset_right = 40.0
-offset_bottom = 16.0
+offset_left = -60
+offset_top = -24
+offset_right = 60
+offset_bottom = 24
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_font")
-theme_override_font_sizes/font_size = 13
+theme_override_font_sizes/font_size = 20
 text = "12:00"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -162,16 +166,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -22.0
-offset_right = 46.0
-offset_bottom = 16.0
+offset_left = -69
+offset_top = -33
+offset_right = 69
+offset_bottom = 24
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/caret_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_font")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("time_input_style")
 theme_override_styles/focus = SubResource("time_input_style")
 text = "12:00"
@@ -180,24 +184,24 @@ metadata/_edit_use_anchors_ = true
 
 [node name="信号" type="Label" parent="屏幕显示/状态栏" unique_id=365214789]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 8.0
-offset_right = 36.0
-offset_bottom = 26.0
+offset_left = 18
+offset_top = 12
+offset_right = 54
+offset_bottom = 39
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 18
 text = "78G"
 
 [node name="电池" type="Label" parent="屏幕显示/状态栏" unique_id=478521369]
 layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -42.0
-offset_top = 8.0
-offset_right = -12.0
-offset_bottom = 26.0
+offset_left = -63
+offset_top = 12
+offset_right = -18
+offset_bottom = 39
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 18
 text = "85%"
 horizontal_alignment = 2
 
@@ -206,8 +210,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 40.0
-offset_bottom = -78.0
+offset_top = 60
+offset_bottom = -117
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -218,7 +222,9 @@ anchor_left = 0.07028112
 anchor_top = 0.08058608
 anchor_right = 0.23343372
 anchor_bottom = 0.1996337
-theme_override_styles/normal = SubResource("icon_green")
+script = ExtResource("m3btn")
+"样式类型" = 0
+"圆角" = 24
 metadata/_edit_use_anchors_ = true
 
 [node name="图标文字" type="Label" parent="屏幕显示/应用区/消息App" unique_id=521478963]
@@ -228,14 +234,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -29.0
-offset_top = -29.0
-offset_right = 29.0
-offset_bottom = 29.0
+offset_left = -43.5
+offset_top = -43.5
+offset_right = 43.5
+offset_bottom = 43.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 36
 text = "消"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -246,12 +252,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -29.0
-offset_top = 6.0
-offset_right = 29.0
-offset_bottom = 20.0
+offset_left = -43.5
+offset_top = 9
+offset_right = 43.5
+offset_bottom = 30
 theme_override_colors/font_color = Color(1, 1, 1, 0.9)
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 16
 text = "消息"
 horizontal_alignment = 1
 
@@ -263,7 +269,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("dock_bg")
+script = ExtResource("m3surf")
+"角色" = 6
+"圆角" = 35
 metadata/_edit_use_anchors_ = true
 
 [node name="Dock图标" type="Button" parent="屏幕显示/Dock栏" unique_id=214785369]
@@ -273,13 +281,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -35.0
-offset_right = 35.0
-offset_bottom = 35.0
+offset_left = -52.5
+offset_top = -52.5
+offset_right = 52.5
+offset_bottom = 52.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("icon_green")
+script = ExtResource("m3btn")
+"样式类型" = 0
+"圆角" = 18
 
 [node name="Dock文字" type="Label" parent="屏幕显示/Dock栏/Dock图标" unique_id=698523147]
 layout_mode = 1
@@ -289,12 +299,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 16
 text = "消息"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="App容器" type="Control" parent="屏幕显示" unique_id=369258147]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

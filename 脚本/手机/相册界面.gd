@@ -8,6 +8,15 @@ extends Control
 func _ready() -> void:
 	# 相片默认铺满；加载到的照片在场景里已绑定
 	相片显示.modulate = Color(1, 1, 1, 1)
+	# 相片按尺寸做圆角裁剪，跟手机屏幕圆角一致
+	_更新相片圆角()
+	相片显示.resized.connect(_更新相片圆角)
+
+
+func _更新相片圆角() -> void:
+	var mat := 相片显示.material as ShaderMaterial
+	if mat:
+		mat.set_shader_parameter("rect_size", 相片显示.size)
 
 
 func 设置相片(路径: String) -> void:

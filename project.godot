@@ -27,6 +27,8 @@ Raise="*res://脚本/全局/养成管理器.gd"
 Audio="*res://脚本/全局/音量设置.gd"
 Settings="*res://脚本/全局/设置数据.gd"
 SceneNav="*res://脚本/全局/场景导航.gd"
+M3ThemeManager="*res://addons/material_ui/core/m3_theme_manager.gd"
+_TestBubble="*res://_test_bubble.gd"
 
 [dialogic]
 
@@ -41,10 +43,7 @@ directories/dtl_directory={
 "初次见面": "res://对话/初次见面.dtl",
 "卧室": "res://对话/卧室.dtl"
 }
-layout/style_directory={
-"02": "res://资源/对话主题/02.tres",
-"默认": "res://资源/对话主题/默认.tres"
-}
+layout/style_directory={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
@@ -86,7 +85,7 @@ variables={
 "心情": 60,
 "金币": 0
 }
-layout/style_list=["res://资源/对话主题/02.tres", "res://资源/对话主题/默认.tres"]
+layout/style_list=[]
 layout/default_style=""
 glossary/default_case_sensitive=true
 translation/enabled=false
@@ -106,7 +105,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/aseprite_spritesheet_importer/plugin.cfg", "res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/aseprite_spritesheet_importer/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/material_ui/plugin.cfg")
 
 [input]
 

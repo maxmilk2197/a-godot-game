@@ -8,6 +8,9 @@ uniform float opacity : hint_range(0.0, 1.0) = 0.85;
 uniform vec4 tint_color : source_color = vec4(0.0, 0.0, 0.0, 1.0);
 uniform float noise_amount : hint_range(0.0, 0.1) = 0.03;
 uniform float noise_scale : hint_range(0.1, 10.0) = 4.0;
+// 圆角裁剪：rect_size 由脚本设为节点像素尺寸；corner_radius 为 0 时不裁剪（默认，保持原样）
+uniform vec2 rect_size = vec2(0.0, 0.0);
+uniform float corner_radius : hint_range(0.0, 200.0) = 0.0;
 
 float gaussianDistribution(float x, float STD) {
 	return exp(-(x * x) / (2.0 * STD * STD)) / (sqrt(2.0 * PI) * STD);
@@ -30,6 +33,17 @@ vec3 gaussianblur(sampler2D sampler, vec2 pos, vec2 pixel_size, float sigmaUsed,
 }
 
 void fragment() {
+	// 圆角裁剪（corner_radius 为 0 时不生效）
+	if (corner_radius > 0.0 && rect_size.x > 0.0 && rect_size.y > 0.0) {
+		vec2 p = UV * rect_size;
+		vec2 half_size = rect_size * 0.5;
+		vec2 q = abs(p - half_size) - (half_size - vec2(corner_radius));
+		float d = length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - corner_radius;
+		if (d > 0.0) {
+			discard;
+		}
+	}
+
 	vec3 pixel_blurred = gaussianblur(SCREEN_TEXTURE, SCREEN_UV, SCREEN_PIXEL_SIZE, strength, int(round(3.0 * strength)));
 	vec3 blurred_with_tint = mix(pixel_blurred, tint_color.rgb, tint_color.a);
 
