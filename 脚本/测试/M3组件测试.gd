@@ -36,6 +36,7 @@ func _ready() -> void:
 	_选择区()
 	_输入区()
 	_进度区()
+	_加载区()
 	_标签页区()
 	_导航区()
 	_侧边导航区()
@@ -119,6 +120,37 @@ func _进度区() -> void:
 	滑块.custom_minimum_size.x = 260
 	滑块.value = 0.4
 	行.add_child(滑块)
+
+
+func _加载区() -> void:
+	_小标题("M3LoadingIndicator：Loading Morph（7 个形状弹簧变形 + 匀速自转）")
+	var 行 := _行()
+	行.add_child(_标签("独立"))
+	for 边 in [36, 48, 64]:
+		var 器 := M3LoadingIndicator.new()
+		器.尺寸 = 边
+		行.add_child(器)
+	行.add_child(_标签("容器"))
+	var 容器 := M3LoadingIndicator.new()
+	容器.尺寸 = 48
+	容器.变体 = M3LoadingIndicator.显示变体.容器
+	行.add_child(容器)
+
+	# 定量模式：形状从「圆」补间到「软爆」
+	var 行2 := _行()
+	var 定量 := M3LoadingIndicator.new()
+	定量.尺寸 = 64
+	定量.进度 = 0.0
+	行2.add_child(定量)
+	var 滑 := M3Slider.new()
+	滑.min_value = 0.0
+	滑.max_value = 1.0
+	滑.step = 0.01
+	滑.value = 0.0
+	滑.custom_minimum_size.x = 320
+	滑.value_changed.connect(func(值: float) -> void: 定量.进度 = 值)
+	行2.add_child(滑)
+	行2.add_child(_标签("定量进度"))
 
 
 func _标签页区() -> void:

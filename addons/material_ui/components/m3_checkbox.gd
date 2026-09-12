@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/checkbox.svg")
 class_name M3Checkbox
 extends BaseButton
 ## ============================================================

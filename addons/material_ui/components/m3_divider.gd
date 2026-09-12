@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/divider.svg")
 class_name M3Divider
 extends Control
 ## ============================================================

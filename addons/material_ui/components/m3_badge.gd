@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/badge.svg")
 class_name M3Badge
 extends Label
 ## ============================================================

@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/switch.svg")
 class_name M3Switch
 extends BaseButton
 ## ============================================================

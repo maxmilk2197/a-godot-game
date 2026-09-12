@@ -1,39 +1,59 @@
 @tool
+@icon("res://addons/material_ui/icons/progress_indicator.svg")
 class_name M3ProgressIndicator
 extends Control
 ## ============================================================
 ## Material 3 进度指示器（线性 / 圆形）。
 ## 确定进度：设 值(0~1)；不确定（加载中）：把 不定 设为 true。
 ##
-## 不定动画照 mdui / Material 的环形进度来做：
-##   · 整段弧持续旋转 —— mdui 是「容器 1568ms/圈」+「图层 5332ms 转 3 圈」，
-##     合计约 1.6 圈/周期；这里用 尾/头 自身 1 圈 + 附加 0.6 圈凑成同样速度
-##   · 前半段「头往前跑」把弧拉长，后半段「尾往前追」把弧收短
-##     —— 两端永远同向向前，不会有一头倒着缩
-##   · 弧长在 10° ~ 270° 之间（Material 的 MIN/MAX_SWEEP），缓动 standard
+## 环形不定量照 mdui 的 circular-progress 来，它是「双半圆遮罩」：
+## 两个 clipper 各露出一半圆环，里面的 <circle> 只画半圈（dasharray=周长、
+## dashoffset=周长/2），各自被 left-spin / right-spin 反向旋转。
+## 把两半在屏幕上的可见部分并起来，等价于一整段弧：
+##
+##     起始角 = 容器自转 + 图层旋转 + 钳口角
+##     扫过角 = 540° − 2 × 钳口角
+##
+## 三段时序（原文见 components/circular-progress/style.js）：
+##   · 容器整圈自转  1568ms  linear            360°
+##   · 图层旋转      5332ms  8 段 × 135°        1080°
+##   · 钳口伸缩      1333ms  265° ↔ 130°        standard
+##
+## 关键性质：图层每段正好也是 666.5ms，与钳口半周期同长、同缓动，两者叠加后
+## 两个端点全程都只前进、不会有一端倒着缩（旧版自创公式会倒缩，已修）。
 ## ============================================================
 
 enum 样式类型 { LINEAR, CIRCULAR }
 
-## 不定动画一伸一缩的周期（秒）。mdui 的钳口旋转是 1333ms
-const 周期 := 1.33
-## 除「尾/头自身每周期 1 圈」之外，额外叠加的旋转圈数（凑够 mdui 的 ~1.6 圈/周期）
-const 附加圈数 := 0.6
-## 弧的最小 / 最大角度（度）
-const 最小弧 := 10.0
-const 最大弧 := 270.0
+# ---------------- 环形不定量时序 ----------------
+## 容器整圈自转
+const 容器周期 := 1.568
+## 图层旋转：5332ms 转 1080°（8 段，每段 standard 缓动）
+const 图层周期 := 5.332
+const 图层总角 := 1080.0
+const 图层段数 := 8
+## 半圆钳口伸缩：265° ↔ 130°，对应弧长 10° ↔ 280°
+const 钳口周期 := 1.333
+const 钳口外 := 265.0
+const 钳口内 := 130.0
+## 三个周期的公倍数（2090144ms ≈ 35 分钟）：到这里回绕不会有任何可见跳变
+const 回绕周期 := 2090.144
+
+## 确定进度的弧长过渡时长（mdui 的 long2）
+const 值过渡 := 0.5
 
 @export var 类型: 样式类型 = 样式类型.LINEAR:
 	set(值):
 		类型 = 值
 		_刷新尺寸()
 @export_range(0.0, 1.0, 0.01) var 值: float = 0.4:
-	set(值):
-		值 = 值
-		queue_redraw()
+	set(新值):
+		值 = clampf(新值, 0.0, 1.0)
+		_缓到值(值)
 @export var 不定: bool = false:
 	set(值):
 		不定 = 值
+		_时刻 = 0.0
 		set_process(值)
 		queue_redraw()
 @export var 粗细: int = 4:
@@ -41,23 +61,26 @@ const 最大弧 := 270.0
 		粗细 = 值
 		_刷新尺寸()
 
-var _相位: float = 0.0
-var _旋转: float = 0.0
+var _时刻: float = 0.0
+## 实际画出来的进度值（会缓动到 值）
+var _显示值: float = 0.4
+var _值补间: Tween
 
 
 func _ready() -> void:
 	if not resized.is_connected(queue_redraw):
 		resized.connect(queue_redraw)
+	_显示值 = 值
 	set_process(不定)
 	_刷新尺寸()
 
 
 func _process(增量: float) -> void:
-	_相位 = fmod(_相位 + 增量 / 周期, 1.0)
-	# 附加旋转：连续累加，按整圈回绕（肉眼看不出跳变）
-	_旋转 += 增量 / 周期 * 附加圈数 * TAU
-	if _旋转 >= TAU * 1024.0:
-		_旋转 -= TAU * 1024.0
+	if not 不定:
+		return
+	_时刻 += 增量
+	if _时刻 >= 回绕周期:
+		_时刻 = fmod(_时刻, 回绕周期)
 	queue_redraw()
 
 
@@ -70,6 +93,23 @@ func _刷新尺寸() -> void:
 		custom_minimum_size = Vector2(直径, 直径)
 	set_process(不定)
 	queue_redraw()
+
+
+## 值变化时用 500ms standard 缓动过去（编辑器里直接跳，方便预览）
+func _缓到值(目标: float) -> void:
+	if not is_inside_tree() or Engine.is_editor_hint():
+		_显示值 = 目标
+		queue_redraw()
+		return
+	if _值补间 != null and _值补间.is_valid():
+		_值补间.kill()
+	var 起 := _显示值
+	_值补间 = create_tween()
+	_值补间.tween_method(
+		func(t: float) -> void:
+			_显示值 = lerpf(起, 目标, M3Motion.标准(t))
+			queue_redraw(),
+		0.0, 1.0, 值过渡)
 
 
 func _draw() -> void:
@@ -87,12 +127,16 @@ func _画线性() -> void:
 	draw_style_box(M3Theme.样式(M3Theme.secondary_container, int(半)), Rect2(0.0, 顶部, size.x, 像素))
 
 	if 不定:
-		_画滑条(_相位, 0.0, 像素, 顶部)
-		_画滑条(_相位, 0.5, 像素, 顶部)
+		_画滑条(_环形相位(), 0.0, 像素, 顶部)
+		_画滑条(_环形相位(), 0.5, 像素, 顶部)
 	else:
-		var 宽 := size.x * clampf(值, 0.0, 1.0)
+		var 宽 := size.x * clampf(_显示值, 0.0, 1.0)
 		if 宽 > 0.0:
 			draw_style_box(M3Theme.样式(M3Theme.primary, int(半)), Rect2(0.0, 顶部, 宽, 像素))
+
+
+func _环形相位() -> float:
+	return fmod(_时刻, 1.33) / 1.33
 
 
 func _画滑条(相位: float, 偏移: float, 像素: float, 顶部: float) -> void:
@@ -113,22 +157,30 @@ func _画圆形() -> void:
 	draw_arc(中心, 半径, 0.0, TAU, 96, M3Theme.secondary_container, 像素, true)
 
 	if 不定:
-		var 小 := deg_to_rad(最小弧)
-		var 大 := deg_to_rad(最大弧)
-		var 尾 := 0.0
-		var 头 := 0.0
-		if _相位 < 0.5:
-			# 生长：尾不动，头往前跑（standard 减速）
-			尾 = 0.0
-			头 = 小 + (大 - 小) * M3Motion.标准(_相位 / 0.5)
-		else:
-			# 收缩：头几乎不动，尾往前追（standard 加速）
-			var k := (_相位 - 0.5) / 0.5
-			尾 = k * TAU
-			头 = 尾 + 大 - (大 - 小) * M3Motion.标准(k)
-		_画弧(中心, 半径, _旋转 + 尾 - PI * 0.5, 头 - 尾, 像素, M3Theme.primary)
+		var 角 := _环形角度(_时刻)
+		_画弧(中心, 半径, deg_to_rad(角.x), deg_to_rad(角.y), 像素, M3Theme.primary)
 	else:
-		_画弧(中心, 半径, -PI * 0.5, TAU * clampf(值, 0.0, 1.0), 像素, M3Theme.primary)
+		_画弧(中心, 半径, -PI * 0.5, TAU * clampf(_显示值, 0.0, 1.0), 像素, M3Theme.primary)
+
+
+## 环形不定量当前这一帧的 Vector2(起始角, 扫过角)，单位是度
+func _环形角度(时刻: float) -> Vector2:
+	var 容器 := 360.0 * fmod(时刻, 容器周期) / 容器周期
+	var 图层 := 图层总角 * _图层进度(fmod(时刻, 图层周期) / 图层周期)
+	var u := fmod(时刻, 钳口周期) / 钳口周期
+	var 钳 := 0.0
+	if u < 0.5:
+		钳 = lerpf(钳口外, 钳口内, M3Motion.标准(u * 2.0))
+	else:
+		钳 = lerpf(钳口内, 钳口外, M3Motion.标准(u * 2.0 - 1.0))
+	return Vector2(容器 + 图层 + 钳, 540.0 - 2.0 * 钳)
+
+
+## 图层旋转的「8 段步进」：每 12.5% 走 135°，段内 standard 缓动
+func _图层进度(x: float) -> float:
+	var 段 := clampi(int(floor(x * float(图层段数))), 0, 图层段数 - 1)
+	var 局部 := x * float(图层段数) - float(段)
+	return (float(段) + M3Motion.标准(局部)) / float(图层段数)
 
 
 ## 画一段圆头弧 —— Material 的环形进度两端是圆的（draw_arc 默认是平头）

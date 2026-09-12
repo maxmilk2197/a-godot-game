@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/surface.svg")
 class_name M3Surface
 extends Panel
 ## ============================================================

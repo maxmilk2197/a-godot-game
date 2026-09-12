@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/navigation_drawer.svg")
 class_name M3NavigationDrawer
 extends PanelContainer
 ## ============================================================

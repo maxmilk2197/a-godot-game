@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/card.svg")
 class_name M3Card
 extends PanelContainer
 ## ============================================================

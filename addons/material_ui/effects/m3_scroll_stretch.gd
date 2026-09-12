@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/scroll_stretch.svg")
 class_name M3ScrollStretch
 extends Node
 ## ============================================================

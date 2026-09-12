@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/tooltip.svg")
 class_name M3Tooltip
 extends PanelContainer
 ## ============================================================

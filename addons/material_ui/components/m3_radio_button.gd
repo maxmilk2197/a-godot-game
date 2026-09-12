@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/radio_button.svg")
 class_name M3RadioButton
 extends BaseButton
 ## ============================================================

@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/tab_bar.svg")
 class_name M3TabBar
 extends HBoxContainer
 ## ============================================================

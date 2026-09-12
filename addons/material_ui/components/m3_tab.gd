@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/tab.svg")
 class_name M3Tab
 extends Button
 ## ============================================================

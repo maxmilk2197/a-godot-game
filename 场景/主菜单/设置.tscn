@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://buy2xfbsqkcno"]
 
-[ext_resource type="Theme" path="res://资源/主题/测试主题.tres" id="0_warmth"]
+[ext_resource type="Theme" uid="uid://bhi1wr60t3kim" path="res://资源/主题/测试主题.tres" id="0_warmth"]
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
 [ext_resource type="Script" uid="uid://co4ymw0hw4fl4" path="res://脚本/主菜单/设置.gd" id="1_scpt"]
+[ext_resource type="Script" uid="uid://bkkp8vo0icsxe" path="res://addons/material_ui/components/m3_slider.gd" id="m3slider"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yo668"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehpcr"]
 
 [node name="设置" type="Control" unique_id=1172313393]
 layout_mode = 3
@@ -87,9 +92,15 @@ text = "音乐"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxEmpty_yo668")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_yo668")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_yo668")
 max_value = 1.0
 step = 0.01
 value = 1.0
+script = ExtResource("m3slider")
+"显示数值" = true
+"气泡字号" = 20
 
 [node name="音效行" type="HBoxContainer" parent="音量区" unique_id=1073794269]
 layout_mode = 0
@@ -111,9 +122,15 @@ text = "音效"
 [node name="音量滑块" type="HSlider" parent="音量区/音效行" unique_id=2094478147]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxEmpty_ehpcr")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_ehpcr")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_ehpcr")
 max_value = 1.0
 step = 0.01
 value = 1.0
+script = ExtResource("m3slider")
+"显示数值" = true
+"气泡字号" = 20
 
 [node name="屏幕设置区" type="Control" parent="." unique_id=-1010556557]
 anchors_preset = 0

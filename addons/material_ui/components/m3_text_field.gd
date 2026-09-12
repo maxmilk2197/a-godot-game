@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/text_field.svg")
 class_name M3TextField
 extends LineEdit
 ## ============================================================

@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/material_ui/icons/button.svg")
 class_name M3Button
 extends Button
 ## ============================================================
@@ -30,10 +31,49 @@ enum 按钮样式 { FILLED, TONAL, OUTLINED, TEXT, ELEVATED }
 	set(值):
 		点击颜色 = 值
 		_刷新样式()
-## 涟漪（点击水波）的起始不透明度
-@export_range(0.0, 1.0, 0.05) var 涟漪不透明度: float = 0.55
+## ---- 涟漪（点击水波）----
+## 下面五个留 **-1 = 跟随全局**。全局值在 M3Theme 里（涟漪长按时长 等），
+## 编辑器里在 项目设置 → m3/ripple 就能改；设成 0 或正数则这个按钮单独覆盖。
+@export_group("涟漪")
+## 起始不透明度
+@export_range(-1.0, 1.0, 0.05) var 涟漪不透明度: float = -1.0
+## 按住不放时的扩散时长 —— 越大，长按的扩散过程越慢
+@export_range(-1.0, 2.0, 0.05) var 涟漪长按时长: float = -1.0:
+	set(值):
+		涟漪长按时长 = 值
+		同步涟漪参数()
+## 松开后补完剩余部分的速度基准（也就是「原来的速度」）
+@export_range(-1.0, 1.0, 0.05) var 涟漪扩散时长: float = -1.0:
+	set(值):
+		涟漪扩散时长 = 值
+		同步涟漪参数()
+## 不透明度淡入时长
+@export_range(-1.0, 1.0, 0.01) var 涟漪淡入时长: float = -1.0:
+	set(值):
+		涟漪淡入时长 = 值
+		同步涟漪参数()
+## 松开后的淡出时长
+@export_range(-1.0, 2.0, 0.05) var 涟漪淡出时长: float = -1.0:
+	set(值):
+		涟漪淡出时长 = 值
+		同步涟漪参数()
 
 var _涟漪: M3Ripple
+
+
+## 把按钮上的覆盖值同步到涟漪实例上（-1 原样传过去，涟漪那边会回落到全局值）
+func 同步涟漪参数() -> void:
+	if _涟漪 == null or not is_instance_valid(_涟漪):
+		return
+	_涟漪.扩散时长 = 涟漪扩散时长
+	_涟漪.长按时长 = 涟漪长按时长
+	_涟漪.淡入时长 = 涟漪淡入时长
+	_涟漪.淡出时长 = 涟漪淡出时长
+
+
+## 生效的涟漪不透明度（-1 时取全局）
+func 涟漪不透明度值() -> float:
+	return 涟漪不透明度 if 涟漪不透明度 >= 0.0 else M3Theme.涟漪不透明度
 
 
 func _ready() -> void:
@@ -50,13 +90,28 @@ func _按下() -> void:
 	if _涟漪 == null or not is_instance_valid(_涟漪):
 		_涟漪 = M3Ripple.new()
 		add_child(_涟漪)
+	同步涟漪参数()
 	var 波纹 := 状态色()
 	波纹.a = 涟漪峰值()
 	_涟漪.按下(get_local_mouse_position(), 波纹)
+	# 只有真的被指针按下才开兜底（键盘激活没有鼠标按下）
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		set_process(true)
+
+
+## 兜底：松手事件有可能被别的节点吃掉 —— 比如列表的拖拽滚动会在 _input 里
+## set_input_as_handled()，而 _input 比 GUI 派发更早，于是 button_up 永远不来，
+## 涟漪就一直停在满格（看起来像「松手了还高亮」）。所以按住期间盯一下指针，
+## 松开了就自己把涟漪收掉。
+func _process(_增量: float) -> void:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		return
+	_松开()
 
 
 ## 松开：涟漪淡出
 func _松开() -> void:
+	set_process(false)
 	if _涟漪 != null and is_instance_valid(_涟漪):
 		_涟漪.松开()
 
@@ -76,7 +131,7 @@ func 状态色() -> Color:
 ## 把整颗按钮冲淡或压黑（文字对比度跟着掉），所以这两类要压低峰值；
 ## 浅底（描边/文字/抬升）上涟漪色本身很浅，得保持全量才看得见。
 func 涟漪峰值() -> float:
-	var 基准 := clampf(涟漪不透明度, 0.0, 1.0)
+	var 基准 := clampf(涟漪不透明度值(), 0.0, 1.0)
 	match 样式类型:
 		按钮样式.FILLED:
 			return 基准 * 0.32
