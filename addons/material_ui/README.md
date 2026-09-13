@@ -324,6 +324,10 @@ _涟漪层.add_child(_涟漪)
 
 ### 开关（`M3Switch`）
 
+- **`toggle_mode` 必须在 `_init()` 里设**，不能放 `_ready()`。
+  Godot 的 `BaseButton.set_pressed()` 在 `!toggle_mode` 时**直接 return**，
+  而场景里存的 `button_pressed = true` 是在 `_ready` **之前**应用的 ——
+  放 `_ready` 就晚了，那个 `true` 会被丢掉，开关永远显示成关。
 - **要清掉自带样式box**：场景里的节点类型常常还是 `Button`（只是换了脚本），
   那样 Godot 的 `Button` 本体照样会画 `normal`/`hover` 底色 —— 开关后面就会多一块方背景。
   `_ready()` 里 `_清空样式()` 把这几个样式box全换成透明。

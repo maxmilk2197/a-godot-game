@@ -209,9 +209,9 @@ func _draw() -> void:
 		M3Theme.海拔样式(M3Theme.primary, int(round(minf(实宽, 实高) * 0.5)), 1),
 		Rect2(柄心x - 实宽 * 0.5, 中心y - 实高 * 0.5, 实宽, 实高))
 
-	# 数值气泡
+	# 数值气泡：放在**手柄上方**，不能压在手柄/轨道上
 	if 显示数值 and (_按下中 or _悬停):
-		_画气泡(柄心x, 轨y)
+		_画气泡(柄心x, 中心y - 实高 * 0.5)
 
 
 func _画刻度(轨x: float, 中心y: float, 轨宽: float, 比: float) -> void:
@@ -240,7 +240,10 @@ func _数值文本() -> String:
 	return "%.2f" % value
 
 
-func _画气泡(柄心x: float, 轨y: float) -> void:
+## 画数值气泡。柄顶y = 手柄矩形上沿 —— 气泡要整个在它上面，
+## 以前是按「轨道上沿」定位的，而手柄比轨道高（44 vs 16），
+## 结果手柄上半截被气泡压住，看起来像重叠。
+func _画气泡(柄心x: float, 柄顶y: float) -> void:
 	var 文 := _数值文本()
 	var 字 := get_theme_font("font")
 	if 字 == null:
@@ -252,9 +255,8 @@ func _画气泡(柄心x: float, 轨y: float) -> void:
 	var 宽 := 文宽 + 内x * 2.0
 	var 高 := 字.get_height(号) + 内y * 2.0
 	var x := clampf(柄心x - 宽 * 0.5, 0.0, maxf(0.0, size.x - 宽))
-	# md3e 是 bottom:32px（于 48dp 根），换算过来气泡底边正好压在轨道上沿，
-	# 手柄竖条的上半截就藏进气泡里
-	var y := 轨y - 高
+	# 手柄上方留一点空隙
+	var y := 柄顶y - M3Theme.px(6.0) - 高
 	draw_style_box(M3Theme.样式(M3Theme.inverse_surface, int(round(M3Theme.px(8.0)))), Rect2(x, y, 宽, 高))
 	draw_string(字, Vector2(x + 内x, y + 内y + 字.get_ascent(号)), 文,
 		HORIZONTAL_ALIGNMENT_LEFT, -1.0, 号, M3Theme.inverse_on_surface)

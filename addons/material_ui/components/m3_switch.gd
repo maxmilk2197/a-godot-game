@@ -21,14 +21,23 @@ var _起值: float = 0.0
 var _目标值: float = 0.0
 
 
-func _ready() -> void:
+## 必须在 _init 里设 toggle_mode。
+## Godot 的 BaseButton.set_pressed() 在 !toggle_mode 时会直接 return ——
+## 放到 _ready 里就晚了：场景里存的 button_pressed = true 是在 _ready **之前**
+## 应用的，那时候 toggle_mode 还是默认的 false，那个 true 会被丢掉。
+func _init() -> void:
 	toggle_mode = true
+
+
+func _ready() -> void:
 	_清空样式()
 	_进度 = 1.0 if button_pressed else 0.0
 	toggled.connect(_切换)
 	if not resized.is_connected(queue_redraw):
 		resized.connect(queue_redraw)
 	_刷新尺寸()
+	# 场景状态可能在 _ready 前就被丢掉过，按当前值再同步一次
+	queue_redraw()
 
 
 ## 清掉 Button 自带的样式box。
