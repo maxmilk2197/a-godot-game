@@ -60,6 +60,7 @@ enum 按钮样式 { FILLED, TONAL, OUTLINED, TEXT, ELEVATED }
 		同步涟漪参数()
 
 var _涟漪: M3Ripple
+var _涟漪层: Panel
 
 
 ## 把按钮上的覆盖值同步到涟漪实例上（-1 原样传过去，涟漪那边会回落到全局值）
@@ -81,17 +82,52 @@ func _ready() -> void:
 	clip_contents = true
 	button_down.connect(_按下)
 	button_up.connect(_松开)
+	# 开关型按钮：选中状态变了要换样式（选中底 + 选中文字色）
+	if not toggled.is_connected(_选中变了):
+		toggled.connect(_选中变了)
 	_刷新样式()
+
+
+func _选中变了(_按下: bool) -> void:
+	_刷新样式()
+
+
+## 涟漪的圆角遮罩层。
+## 不能直接靠 clip_contents：那只按**矩形**裁，涟漪铺满时圆角外面那四块也会被
+## 染上色，看起来就是个方块。也不能拿按钮自己画的东西当遮罩 —— 描边/文字按钮
+## 本身是透明的，只画了一圈边框和文字，涟漪会被裁得只剩边框。
+## 所以单独放一层圆角 Panel：CLIP_CHILDREN_ONLY 表示「只拿它裁剪、不显示它」，
+## 涟漪作为它的子节点就被裁进圆角里了。
+func _确保涟漪() -> void:
+	if _涟漪层 == null or not is_instance_valid(_涟漪层):
+		_涟漪层 = Panel.new()
+		_涟漪层.name = "涟漪遮罩"
+		_涟漪层.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_涟漪层.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		_涟漪层.clip_children = CanvasItem.CLIP_CHILDREN_ONLY
+		add_child(_涟漪层)
+		_同步涟漪遮罩()
+	if _涟漪 == null or not is_instance_valid(_涟漪):
+		_涟漪 = M3Ripple.new()
+		_涟漪层.add_child(_涟漪)
+	同步涟漪参数()
+
+
+## 遮罩的形状要跟按钮的圆角一致
+func _同步涟漪遮罩() -> void:
+	if _涟漪层 == null or not is_instance_valid(_涟漪层):
+		return
+	var 圆角值 := int(round(圆角 * M3Theme.scale))
+	var sb := M3Theme.样式(Color(1, 1, 1, 1), 圆角值)
+	sb.set_content_margin_all(0)
+	_涟漪层.add_theme_stylebox_override("panel", sb)
 
 
 ## 按下：涟漪扩散并保持（长按也一直有）
 func _按下() -> void:
 	if Engine.is_editor_hint():
 		return
-	if _涟漪 == null or not is_instance_valid(_涟漪):
-		_涟漪 = M3Ripple.new()
-		add_child(_涟漪)
-	同步涟漪参数()
+	_确保涟漪()
 	var 波纹 := 状态色()
 	波纹.a = 涟漪峰值()
 	_涟漪.按下(get_local_mouse_position(), 波纹)
@@ -189,25 +225,38 @@ func _刷新样式() -> void:
 	else:
 		普通 = M3Theme.样式(_底色(), 圆角值)
 
-	# 悬停：叠一层状态层
-	var 悬停 := M3Theme.状态层(_底色(), 状态叠加, 圆角值, M3Motion.状态_悬停)
-	# 按下：**不再叠状态层**。MD3 里涟漪本身就是按下状态层，两者叠起来会到
-	# 0.10 + 0.12 ≈ 0.22，整个按钮变成一块实心色（又高又窄的按钮尤其明显，
-	# 看起来像「方块」）。所以按下态直接用普通底，按下反馈交给涟漪。
+	# 悬停：在普通底的基础上只换底色 —— 必须 duplicate 普通，
+	# 直接用 状态层() 会生成一个全新的、没有描边/阴影的样式box，
+	# 描边按钮一悬停边框就消失（这个坑踩过）。
+	var 悬停: StyleBoxFlat = 普通.duplicate() as StyleBoxFlat
+	悬停.bg_color = M3Theme.状态层色(_底色(), 状态叠加, M3Motion.状态_悬停)
+	# 按下态分两种：
+	#   · 开关型（toggle_mode）：按下 = **选中**，要画成选中态（secondary_container），
+	#     否则开关按钮根本看不出选没选；
+	#   · 普通按钮：按下反馈交给涟漪，这里直接用普通底 —— MD3 里涟漪本身就是按下状态层，
+	#     两者叠起来会到 0.10 + 0.12 ≈ 0.22，整个按钮变成一块实心色（又高又窄的按钮
+	#     尤其明显，看起来像「方块」）。
 	var 按下态 := 普通
+	var 选中态 := 普通
+	if toggle_mode:
+		选中态 = M3Theme.样式(M3Theme.secondary_container, 圆角值)
+		按下态 = M3Theme.状态层(M3Theme.secondary_container, M3Theme.on_secondary_container,
+			圆角值, M3Motion.状态_按下)
 	var 禁用 := M3Theme.样式(Color(M3Theme.on_surface.r, M3Theme.on_surface.g, M3Theme.on_surface.b, 0.12), 圆角值)
 	var 焦点 := M3Theme.描边样式(M3Theme.primary, 圆角值, 2)
 
-	add_theme_stylebox_override("normal", 普通)
-	add_theme_stylebox_override("hover", 悬停)
+	add_theme_stylebox_override("normal", 选中态 if (toggle_mode and button_pressed) else 普通)
+	add_theme_stylebox_override("hover", 选中态 if (toggle_mode and button_pressed) else 悬停)
 	add_theme_stylebox_override("pressed", 按下态)
 	add_theme_stylebox_override("disabled", 禁用)
 	add_theme_stylebox_override("focus", 焦点)
 
-	add_theme_color_override("font_color", 文字色)
-	add_theme_color_override("font_hover_color", 文字色)
-	add_theme_color_override("font_pressed_color", 文字色)
-	add_theme_color_override("font_hover_pressed_color", 文字色)
+	# 选中态下的文字色要换成 on_secondary_container
+	var 选中文字色 := M3Theme.on_secondary_container if 自定义文字色.a <= 0.0 else 自定义文字色
+	add_theme_color_override("font_color", 选中文字色 if (toggle_mode and button_pressed) else 文字色)
+	add_theme_color_override("font_hover_color", 选中文字色 if (toggle_mode and button_pressed) else 文字色)
+	add_theme_color_override("font_pressed_color", 选中文字色)
+	add_theme_color_override("font_hover_pressed_color", 选中文字色)
 	add_theme_color_override("font_focus_color", 文字色)
 	add_theme_color_override("font_disabled_color", M3Theme.on_surface_variant)
 	add_theme_font_size_override("font_size", M3Theme.fs(字号))
@@ -215,5 +264,7 @@ func _刷新样式() -> void:
 	# 让内容左右留出 M3 的内边距
 	普通.content_margin_left = M3Theme.px(24)
 	普通.content_margin_right = M3Theme.px(24)
+	# 涟漪遮罩跟着圆角走
+	_同步涟漪遮罩()
 	普通.content_margin_top = M3Theme.px(10)
 	普通.content_margin_bottom = M3Theme.px(10)

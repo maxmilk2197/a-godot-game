@@ -14,16 +14,32 @@ extends Control
 
 
 func _ready() -> void:
+	_套用M3外观()
 	_行点击切换($"开关区/头像行", 头像开关)
 	_行点击切换($"开关区/自动继续行", 自动继续开关)
 	刷新UI()
+
+
+## 颜色统一走 M3Theme 令牌（换种子色时跟着变）
+func _套用M3外观() -> void:
+	_染色(get_node_or_null("标题"), M3Theme.on_surface)
+	_染色(get_node_or_null("速度区/速度标题"), M3Theme.on_surface)
+	for 路径 in ["开关区/头像行/头像标签", "开关区/自动继续行/自动继续标签"]:
+		_染色(get_node_or_null(路径), M3Theme.on_surface_variant)
+	var 背 := get_node_or_null("背景")
+	if 背 is ColorRect:
+		(背 as ColorRect).color = M3Theme.surface
+
+
+func _染色(节点: Node, 色: Color) -> void:
+	if 节点 is Label:
+		(节点 as Label).add_theme_color_override("font_color", 色)
 
 
 ## 把当前设置值反映到控件上（不会触发信号回调）
 func 刷新UI() -> void:
 	头像开关.set_pressed_no_signal(Settings.显示对方头像)
 	自动继续开关.set_pressed_no_signal(Settings.自动继续)
-	_刷新开关文字()
 	_刷新速度高亮()
 
 
@@ -32,19 +48,11 @@ func 刷新UI() -> void:
 # =========================
 func _头像开关_toggled(开: bool) -> void:
 	Settings.显示对方头像 = 开
-	_刷新开关文字()
 
 
 func _自动继续开关_toggled(开: bool) -> void:
 	Settings.自动继续 = 开
 	Settings.应用对话设置()
-	_刷新开关文字()
-
-
-## 开关按钮文字跟随状态显示「开 / 关」
-func _刷新开关文字() -> void:
-	头像开关.text = "开" if 头像开关.button_pressed else "关"
-	自动继续开关.text = "开" if 自动继续开关.button_pressed else "关"
 
 
 ## 点标签或行内空白也能切换（点开关本体时按钮自己处理，不会到这里）
@@ -79,13 +87,14 @@ func _快_pressed() -> void:
 	Settings.应用对话设置()
 
 
-## 高亮当前选中的速度档位按钮
+## 高亮当前选中的速度档位按钮。
+## 以前是用 modulate 调亮，现在这 3 个是 M3Button + 同一个 ButtonGroup 的开关按钮，
+## 直接设 button_pressed，选中态（secondary_container 底）由组件自己画。
 func _刷新速度高亮() -> void:
 	var 当前 := Settings.文字速度
-	var 高亮 := Color(0.851, 0.886, 1, 1)
-	慢按钮.modulate = 高亮 if 当前 == 0 else Color(1, 1, 1, 1)
-	中按钮.modulate = 高亮 if 当前 == 1 else Color(1, 1, 1, 1)
-	快按钮.modulate = 高亮 if 当前 == 2 else Color(1, 1, 1, 1)
+	慢按钮.set_pressed_no_signal(当前 == 0)
+	中按钮.set_pressed_no_signal(当前 == 1)
+	快按钮.set_pressed_no_signal(当前 == 2)
 
 
 # =========================

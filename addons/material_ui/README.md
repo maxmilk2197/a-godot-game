@@ -281,6 +281,55 @@ var pr := lerpf(当前.r * 当前.a, 目标.r * 目标.a, k) / a
 
 `M3NavigationRailItem` 也能单独当开关按钮用（`button_pressed` / `toggled`）。
 
+### 悬停态不能重新生成样式box
+
+按钮的 `normal` / `hover` / `pressed` 三个样式box要**形状一致、只换底色**。
+早期 `hover` 是直接 `M3Theme.状态层(底色, 叠加色, 圆角, 0.08)` 生成的 ——
+那会造出一个**全新的、没有描边也没有阴影**的样式box，于是：
+
+- 描边按钮一悬停，**黑边就没了**；
+- 抬升按钮一悬停，**阴影就没了**。
+
+正确写法是先 `duplicate()` 普通态，再只改 `bg_color`：
+
+```gdscript
+var 悬停: StyleBoxFlat = 普通.duplicate() as StyleBoxFlat
+悬停.bg_color = M3Theme.状态层色(_底色(), 状态叠加, M3Motion.状态_悬停)
+```
+
+`M3Theme.状态层色()` 是只算颜色的版本（`状态层()` 会顺手生成样式box，
+需要保留描边/阴影时别用那个）。
+
+### 涟漪为什么要单独一层遮罩
+
+`M3Button` 的涟漪不是直接加到按钮上的，而是放在一层 **`Panel` 遮罩**里：
+
+```gdscript
+_涟漪层 = Panel.new()
+_涟漪层.clip_children = CanvasItem.CLIP_CHILDREN_ONLY   # 只拿它裁剪，不显示它
+_涟漪层.add_theme_stylebox_override("panel", M3Theme.样式(Color(1,1,1,1), 圆角值))
+_涟漪 = M3Ripple.new()
+_涟漪层.add_child(_涟漪)
+```
+
+两种走不通的做法，都踩过：
+
+| 做法 | 结果 |
+|---|---|
+| 只 `clip_contents = true` | 只按**矩形**裁 —— 涟漪铺满时圆角外面那四块也被染色，**看起来是个方块** |
+| `clip_children = CLIP_CHILDREN_AND_DRAW`（拿按钮自己画的当遮罩） | 描边/文字按钮本身是透明的，只画了一圈边框和文字，**涟漪被裁得只剩边框** |
+
+遮罩层用 `CLIP_CHILDREN_ONLY`：它画的圆角矩形**只用于裁剪、不会被显示**，
+涟漪就正好被裁进圆角里。圆角改了要在 `_刷新样式()` 里同步（`_同步涟漪遮罩()`）。
+
+### 开关（`M3Switch`）
+
+- **要清掉自带样式box**：场景里的节点类型常常还是 `Button`（只是换了脚本），
+  那样 Godot 的 `Button` 本体照样会画 `normal`/`hover` 底色 —— 开关后面就会多一块方背景。
+  `_ready()` 里 `_清空样式()` 把这几个样式box全换成透明。
+- **不能直接用 `size` 画轨道**：放进 `HBoxContainer` 会被纵向拉伸，轨道一高半径就跟着变大，
+  胶囊会变成圆角方块、拇指也跑到中间。所以按 `轨道宽/轨道高` 画，并在给定矩形里居中。
+
 ### 一个容易踩的坑：缓存色 + `set_pressed_no_signal`
 
 项目为了做「指示器颜色过渡」缓存了一份 `_实指示`（每帧往目标色靠）。但轨道切换选中用的是

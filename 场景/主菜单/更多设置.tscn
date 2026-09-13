@@ -3,6 +3,10 @@
 [ext_resource type="Theme" path="res://资源/主题/测试主题.tres" id="0_warmth"]
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
 [ext_resource type="Script" uid="uid://c76r4354a06qh" path="res://脚本/主菜单/更多设置.gd" id="1_scpt"]
+[ext_resource type="Script" uid="uid://cd2ljkhblk2q3" path="res://addons/material_ui/components/m3_button.gd" id="m3btn"]
+[ext_resource type="Script" uid="uid://comk0xb2dbx5k" path="res://addons/material_ui/components/m3_switch.gd" id="m3sw"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_速度"]
 
 [node name="更多设置" type="Control" unique_id=1760460604]
 layout_mode = 3
@@ -36,6 +40,9 @@ text = "更多设置"
 vertical_alignment = 1
 
 [node name="返回按钮" type="Button" parent="." unique_id=379078008]
+script = ExtResource("m3btn")
+"样式类型" = 3
+"字号" = 28
 layout_mode = 0
 offset_left = 1763.0
 offset_top = 17.0
@@ -69,6 +76,11 @@ offset_bottom = 130.0
 theme_override_constants/separation = 24
 
 [node name="慢" type="Button" parent="速度区/速度行" unique_id=1106816731]
+script = ExtResource("m3btn")
+"样式类型" = 2
+"字号" = 28
+toggle_mode = true
+button_group = SubResource("ButtonGroup_速度")
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")
@@ -76,6 +88,11 @@ theme_override_font_sizes/font_size = 28
 text = "慢"
 
 [node name="中" type="Button" parent="速度区/速度行" unique_id=780092330]
+script = ExtResource("m3btn")
+"样式类型" = 2
+"字号" = 28
+toggle_mode = true
+button_group = SubResource("ButtonGroup_速度")
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")
@@ -83,6 +100,11 @@ theme_override_font_sizes/font_size = 28
 text = "中"
 
 [node name="快" type="Button" parent="速度区/速度行" unique_id=401403579]
+script = ExtResource("m3btn")
+"样式类型" = 2
+"字号" = 28
+toggle_mode = true
+button_group = SubResource("ButtonGroup_速度")
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")
@@ -111,12 +133,11 @@ theme_override_font_sizes/font_size = 30
 text = "显示对方头像"
 
 [node name="头像开关" type="Button" parent="开关区/头像行" unique_id=746877975]
+script = ExtResource("m3sw")
 custom_minimum_size = Vector2(110, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 30
-toggle_mode = true
-text = "关"
 
 [node name="自动继续行" type="HBoxContainer" parent="开关区" unique_id=1808692439]
 layout_mode = 0
@@ -134,12 +155,11 @@ theme_override_font_sizes/font_size = 30
 text = "对话自动继续"
 
 [node name="自动继续开关" type="Button" parent="开关区/自动继续行" unique_id=1281234005]
+script = ExtResource("m3sw")
 custom_minimum_size = Vector2(110, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 30
-toggle_mode = true
-text = "关"
 
 [connection signal="pressed" from="返回按钮" to="." method="_返回设置"]
 [connection signal="pressed" from="速度区/速度行/慢" to="." method="_慢_pressed"]

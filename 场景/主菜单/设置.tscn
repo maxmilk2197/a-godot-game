@@ -4,8 +4,12 @@
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
 [ext_resource type="Script" uid="uid://co4ymw0hw4fl4" path="res://脚本/主菜单/设置.gd" id="1_scpt"]
 [ext_resource type="Script" uid="uid://bkkp8vo0icsxe" path="res://addons/material_ui/components/m3_slider.gd" id="m3slider"]
+[ext_resource type="Script" uid="uid://cd2ljkhblk2q3" path="res://addons/material_ui/components/m3_button.gd" id="14_m3btn"]
+[ext_resource type="Script" uid="uid://comk0xb2dbx5k" path="res://addons/material_ui/components/m3_switch.gd" id="15_m3sw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yo668"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_大小"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehpcr"]
 
@@ -44,6 +48,9 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="返回按钮" type="Button" parent="." unique_id=1646714257]
+script = ExtResource("14_m3btn")
+"样式类型" = 3
+"字号" = 28
 layout_mode = 0
 offset_left = 1763.0
 offset_top = 17.0
@@ -169,24 +176,44 @@ theme_override_font_sizes/font_size = 26
 text = "大小"
 
 [node name="小" type="Button" parent="屏幕设置区/大小行" unique_id=-1976857745]
+script = ExtResource("14_m3btn")
+"样式类型" = 2
+"字号" = 26
+toggle_mode = true
+button_group = SubResource("ButtonGroup_大小")
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "小"
 
 [node name="中" type="Button" parent="屏幕设置区/大小行" unique_id=-469428212]
+script = ExtResource("14_m3btn")
+"样式类型" = 2
+"字号" = 26
+toggle_mode = true
+button_group = SubResource("ButtonGroup_大小")
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "中"
 
 [node name="大" type="Button" parent="屏幕设置区/大小行" unique_id=1936458287]
+script = ExtResource("14_m3btn")
+"样式类型" = 2
+"字号" = 26
+toggle_mode = true
+button_group = SubResource("ButtonGroup_大小")
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "大"
 
 [node name="超大" type="Button" parent="屏幕设置区/大小行" unique_id=-1149939677]
+script = ExtResource("14_m3btn")
+"样式类型" = 2
+"字号" = 26
+toggle_mode = true
+button_group = SubResource("ButtonGroup_大小")
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
@@ -210,11 +237,10 @@ theme_override_font_sizes/font_size = 26
 text = "全屏"
 
 [node name="全屏开关" type="Button" parent="屏幕设置区/全屏行" unique_id=-868894111]
+script = ExtResource("15_m3sw")
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-toggle_mode = true
-text = "关"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1868594198]
 layout_mode = 0
@@ -225,6 +251,9 @@ offset_bottom = 1041.0
 theme_override_constants/separation = 20
 
 [node name="更多设置按钮" type="Button" parent="VBoxContainer" unique_id=2024754719]
+script = ExtResource("14_m3btn")
+"样式类型" = 1
+"字号" = 36
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 size_flags_vertical = 0
@@ -233,6 +262,9 @@ theme_override_font_sizes/font_size = 36
 text = "更多设置"
 
 [node name="关于按钮" type="Button" parent="VBoxContainer" unique_id=1379103144]
+script = ExtResource("14_m3btn")
+"样式类型" = 1
+"字号" = 36
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")

@@ -3,6 +3,7 @@
 [ext_resource type="Theme" path="res://资源/主题/测试主题.tres" id="0_warmth"]
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
 [ext_resource type="Script" uid="uid://t1k4waiahxpn" path="res://脚本/主菜单/关于.gd" id="1_scpt"]
+[ext_resource type="Script" uid="uid://cd2ljkhblk2q3" path="res://addons/material_ui/components/m3_button.gd" id="m3btn"]
 
 [node name="关于" type="Control" unique_id=659054937]
 layout_mode = 3
@@ -36,6 +37,9 @@ text = "关于"
 vertical_alignment = 1
 
 [node name="返回按钮" type="Button" parent="." unique_id=1072337765]
+script = ExtResource("m3btn")
+"样式类型" = 3
+"字号" = 28
 layout_mode = 0
 anchor_left = 0.91822916
 anchor_top = 0.015740741

@@ -23,11 +23,20 @@ var _目标值: float = 0.0
 
 func _ready() -> void:
 	toggle_mode = true
+	_清空样式()
 	_进度 = 1.0 if button_pressed else 0.0
 	toggled.connect(_切换)
 	if not resized.is_connected(queue_redraw):
 		resized.connect(queue_redraw)
 	_刷新尺寸()
+
+
+## 清掉 Button 自带的样式box。
+## 场景里的节点类型常常是 Button（只是换了脚本），那样 Godot 的 Button 本体
+## 照样会把 normal/hover 底色画出来 —— 开关后面就会多出一块方背景。
+func _清空样式() -> void:
+	for 名 in ["normal", "hover", "pressed", "disabled", "focus"]:
+		add_theme_stylebox_override(名, M3Theme.样式(Color(0, 0, 0, 0), 0))
 
 
 func _刷新尺寸() -> void:
@@ -65,16 +74,32 @@ func _设置进度(值: float) -> void:
 func _draw() -> void:
 	if size.x <= 0.0 or size.y <= 0.0:
 		return
-	var 高 := size.y
-	var 半 := 高 * 0.5
-	var 轨道色 := M3Theme.surface_container_high.lerp(M3Theme.primary, _进度)
+	# 按设定的轨道尺寸画，并在这个矩形里居中 ——
+	# 不能直接用 size：放进 HBoxContainer 会被纵向拉伸，轨道一高就变成圆角方块、
+	# 拇指也会跑到中间去。横向同理（被 EXPAND 拉宽的话胶囊会长得离谱）。
+	var 轨宽 := minf(size.x, M3Theme.px(float(轨道宽)))
+	var 轨高 := minf(size.y, M3Theme.px(float(轨道高)))
+	var 轨 := Rect2(Vector2((size.x - 轨宽) * 0.5, (size.y - 轨高) * 0.5), Vector2(轨宽, 轨高))
+	var 半 := 轨高 * 0.5
+
+	# 轨道：关 = surface_container_highest + outline 描边；开 = primary（官方就是这样）
+	var 轨道色 := M3Theme.surface_container_highest.lerp(M3Theme.primary, _进度)
 	if disabled:
 		轨道色.a = 0.4
-	draw_style_box(M3Theme.样式(轨道色, int(半)), Rect2(Vector2.ZERO, size))
+	var 轨道样式 := M3Theme.样式(轨道色, int(round(半)))
+	# 关着的时候描边跟 outline 走，打开后描边消失
+	var 边色 := M3Theme.outline
+	边色.a *= 1.0 - _进度
+	var 边宽 := int(round(M3Theme.px(2.0) * (1.0 - _进度)))
+	if 边宽 > 0:
+		轨道样式.border_color = 边色
+		轨道样式.set_border_width_all(边宽)
+	draw_style_box(轨道样式, 轨)
 
-	var 半径 := lerpf(高 * 0.22, 高 * 0.36, _进度)
-	var 中心x := lerpf(半, size.x - 半, _进度)
+	# 拇指：关 = 小圆（outline 色）；开 = 大圆（on_primary 色）
+	var 半径 := lerpf(轨高 * 0.22, 轨高 * 0.36, _进度)
+	var 中心x := lerpf(半, 轨宽 - 半, _进度)
 	var 拇指色 := M3Theme.outline.lerp(M3Theme.on_primary, _进度)
 	if disabled:
 		拇指色.a = 0.6
-	draw_circle(Vector2(中心x, 高 * 0.5), 半径, 拇指色, true, -1.0, true)
+	draw_circle(轨.position + Vector2(中心x, 半), 半径, 拇指色, true, -1.0, true)
