@@ -28,10 +28,10 @@ func _ready() -> void:
 ## 那几项由 material_ui 插件登记；插件没启用 / 没设过就保持 M3Theme 的默认。
 func 读取项目设置() -> void:
 	M3Theme.涟漪不透明度 = float(ProjectSettings.get_setting("m3/ripple/opacity", M3Theme.涟漪不透明度))
-	M3Theme.涟漪长按时长 = float(ProjectSettings.get_setting("m3/ripple/hold_duration", M3Theme.涟漪长按时长))
-	M3Theme.涟漪扩散时长 = float(ProjectSettings.get_setting("m3/ripple/spread_duration", M3Theme.涟漪扩散时长))
+	M3Theme.涟漪扩散时长 = float(ProjectSettings.get_setting("m3/ripple/grow_duration", M3Theme.涟漪扩散时长))
 	M3Theme.涟漪淡入时长 = float(ProjectSettings.get_setting("m3/ripple/fade_in_duration", M3Theme.涟漪淡入时长))
 	M3Theme.涟漪淡出时长 = float(ProjectSettings.get_setting("m3/ripple/fade_out_duration", M3Theme.涟漪淡出时长))
+	M3Theme.涟漪最小按压 = float(ProjectSettings.get_setting("m3/ripple/minimum_press", M3Theme.涟漪最小按压))
 
 
 ## 换主题种子色

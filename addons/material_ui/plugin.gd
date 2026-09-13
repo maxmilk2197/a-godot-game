@@ -13,14 +13,15 @@ const 单例名 := "M3ThemeManager"
 const 单例路径 := "res://addons/material_ui/core/m3_theme_manager.gd"
 
 ## 项目设置里暴露的涟漪参数：键 -> [默认值, 范围提示]
+## 默认值照 Material Web 官方 ripple（生长 450 / 淡入 105 / 淡出 375 / 最小按压 225 ms）。
 ## 这几个就是「一个地方改、所有按钮都跟着变」的地方；
 ## 单个按钮想不一样，在按钮的「涟漪」分组里把对应项设成 0 或正数即可（-1 = 跟随全局）。
 const 项目设置表 := {
 	"m3/ripple/opacity": [0.55, "0,1,0.01"],
-	"m3/ripple/hold_duration": [0.45, "0.05,3,0.05"],
-	"m3/ripple/spread_duration": [0.225, "0.05,1,0.05"],
-	"m3/ripple/fade_in_duration": [0.075, "0,1,0.01"],
-	"m3/ripple/fade_out_duration": [0.15, "0,2,0.05"],
+	"m3/ripple/grow_duration": [0.45, "0.05,3,0.005"],
+	"m3/ripple/fade_in_duration": [0.105, "0,1,0.005"],
+	"m3/ripple/fade_out_duration": [0.375, "0,2,0.005"],
+	"m3/ripple/minimum_press": [0.225, "0,2,0.005"],
 }
 
 

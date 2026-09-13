@@ -32,30 +32,31 @@ enum 按钮样式 { FILLED, TONAL, OUTLINED, TEXT, ELEVATED }
 		点击颜色 = 值
 		_刷新样式()
 ## ---- 涟漪（点击水波）----
-## 下面五个留 **-1 = 跟随全局**。全局值在 M3Theme 里（涟漪长按时长 等），
+## 下面几个留 **-1 = 跟随全局**。全局值在 M3Theme 里（涟漪扩散时长 等），
 ## 编辑器里在 项目设置 → m3/ripple 就能改；设成 0 或正数则这个按钮单独覆盖。
+## 时长含义照 Material Web 官方 ripple（生长 450ms / 最小按压 225ms / 淡入 105ms / 淡出 375ms）。
 @export_group("涟漪")
 ## 起始不透明度
 @export_range(-1.0, 1.0, 0.05) var 涟漪不透明度: float = -1.0
-## 按住不放时的扩散时长 —— 越大，长按的扩散过程越慢
-@export_range(-1.0, 2.0, 0.05) var 涟漪长按时长: float = -1.0:
-	set(值):
-		涟漪长按时长 = 值
-		同步涟漪参数()
-## 松开后补完剩余部分的速度基准（也就是「原来的速度」）
-@export_range(-1.0, 1.0, 0.05) var 涟漪扩散时长: float = -1.0:
+## 生长时长（官方 450ms）
+@export_range(-1.0, 2.0, 0.05) var 涟漪扩散时长: float = -1.0:
 	set(值):
 		涟漪扩散时长 = 值
 		同步涟漪参数()
-## 不透明度淡入时长
+## 不透明度淡入时长（官方 105ms）
 @export_range(-1.0, 1.0, 0.01) var 涟漪淡入时长: float = -1.0:
 	set(值):
 		涟漪淡入时长 = 值
 		同步涟漪参数()
-## 松开后的淡出时长
+## 松开后的淡出时长（官方 375ms）
 @export_range(-1.0, 2.0, 0.05) var 涟漪淡出时长: float = -1.0:
 	set(值):
 		涟漪淡出时长 = 值
+		同步涟漪参数()
+## 最短按压时间（官方 225ms）：按住不足这么久，松手也要等满再淡出
+@export_range(-1.0, 2.0, 0.05) var 涟漪最小按压: float = -1.0:
+	set(值):
+		涟漪最小按压 = 值
 		同步涟漪参数()
 
 var _涟漪: M3Ripple
@@ -66,9 +67,9 @@ func 同步涟漪参数() -> void:
 	if _涟漪 == null or not is_instance_valid(_涟漪):
 		return
 	_涟漪.扩散时长 = 涟漪扩散时长
-	_涟漪.长按时长 = 涟漪长按时长
 	_涟漪.淡入时长 = 涟漪淡入时长
 	_涟漪.淡出时长 = 涟漪淡出时长
+	_涟漪.最小按压 = 涟漪最小按压
 
 
 ## 生效的涟漪不透明度（-1 时取全局）
@@ -116,10 +117,15 @@ func _松开() -> void:
 		_涟漪.松开()
 
 
-## 点击时涟漪 / 状态层的实际颜色
+## 点击时涟漪 / 状态层的实际颜色。
+## 官方是「按变体取 on-primary / on-secondary-container / primary」，
+## 但这里默认用 secondary_container（dbe2f9）：官方那套在填充底上会把按钮冲得发白。
+## 想恢复官方的按变体取色：设 M3Theme.涟漪颜色 = Color(0,0,0,0) 并把下面改回官方映射。
 func 状态色() -> Color:
 	if 点击颜色.a > 0.0:
 		return 点击颜色
+	if M3Theme.涟漪颜色.a > 0.0:
+		return M3Theme.涟漪颜色
 	if 样式类型 == 按钮样式.TONAL:
 		# 色调按钮的底色本身就是 secondary_container，再用同色叠上去等于没反应
 		return M3Theme.on_secondary_container
@@ -183,9 +189,12 @@ func _刷新样式() -> void:
 	else:
 		普通 = M3Theme.样式(_底色(), 圆角值)
 
-	# 悬停 / 按下：用状态层跟底色混合（不透明度见 M3Motion.状态_*）
+	# 悬停：叠一层状态层
 	var 悬停 := M3Theme.状态层(_底色(), 状态叠加, 圆角值, M3Motion.状态_悬停)
-	var 按下态 := M3Theme.状态层(_底色(), 状态叠加, 圆角值, M3Motion.状态_按下)
+	# 按下：**不再叠状态层**。MD3 里涟漪本身就是按下状态层，两者叠起来会到
+	# 0.10 + 0.12 ≈ 0.22，整个按钮变成一块实心色（又高又窄的按钮尤其明显，
+	# 看起来像「方块」）。所以按下态直接用普通底，按下反馈交给涟漪。
+	var 按下态 := 普通
 	var 禁用 := M3Theme.样式(Color(M3Theme.on_surface.r, M3Theme.on_surface.g, M3Theme.on_surface.b, 0.12), 圆角值)
 	var 焦点 := M3Theme.描边样式(M3Theme.primary, 圆角值, 2)
 

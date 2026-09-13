@@ -177,9 +177,29 @@ func _侧边导航区() -> void:
 	var 行 := _行()
 	var 轨 := M3NavigationRail.new()
 	轨.项目 = PackedStringArray(["消息", "通讯录", "发现", "我"])
+	轨.图标名 = PackedStringArray(["message", "account-multiple", "compass", "account"])
 	轨.字号 = 18
 	轨.custom_minimum_size = Vector2(150, 320)
 	行.add_child(轨)
+
+	# 也可以不填 项目、改成自己往里放子节点（手动项目 = true）
+	var 手轨 := M3NavigationRail.new()
+	手轨.手动项目 = true
+	手轨.字号 = 18
+	手轨.custom_minimum_size = Vector2(150, 320)
+	行.add_child(手轨)
+	var 手列 := VBoxContainer.new()
+	手列.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	手列.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	手列.alignment = BoxContainer.ALIGNMENT_CENTER
+	手列.add_theme_constant_override("separation", 12)
+	手轨.add_child(手列)
+	for i in range(3):
+		var 项 := M3NavigationRailItem.new()
+		项.文字 = ["首页", "收藏", "设置"][i]
+		项.图标名 = ["home", "star", "cog"][i]
+		项.字号 = 18
+		手列.add_child(项)
 
 	var 开抽屉 := M3Button.new()
 	开抽屉.text = "打开抽屉"

@@ -39,6 +39,14 @@ const 回调键 := "__m3_rail_cb"
 	set(值):
 		图标 = 值
 		_重建()
+## 自动生成时每个项目的**图标名**（Material Design Icons，比如
+## ["message","account-multiple","compass","account"]）。
+## 比 图标 贴图更好用：字形跟着前景色走，不用管贴图颜色。
+## 名字去哪查：编辑器菜单 工具 → Find Material Icon。
+@export var 图标名: PackedStringArray = PackedStringArray():
+	set(值):
+		图标名 = 值
+		_重建()
 ## false = 按 `项目` 自动生成；true = 用你自己加进来的子节点当项目
 @export var 手动项目: bool = false:
 	set(值):
@@ -77,7 +85,18 @@ var _按钮: Array[BaseButton] = []
 
 
 func _ready() -> void:
+	# 运行时往轨道里加/删子节点也要重新收集（场景里加的在 _ready 前就位，不用管）
+	if not child_entered_tree.is_connected(_子节点变了):
+		child_entered_tree.connect(_子节点变了)
+	if not child_exiting_tree.is_connected(_子节点变了):
+		child_exiting_tree.connect(_子节点变了)
 	_重建()
+
+
+## 子节点有增删：手动模式下延迟重建一次（延迟是为了把连续几次合并成一次）
+func _子节点变了(_节点: Node) -> void:
+	if 手动项目 and is_inside_tree():
+		_重建.call_deferred()
 
 
 func _notification(什么是: int) -> void:
@@ -133,6 +152,8 @@ func _生成() -> void:
 		项.name = "项目%d" % i
 		项.文字 = 项目[i]
 		项.字号 = 字号
+		if i < 图标名.size():
+			项.图标名 = 图标名[i]
 		if i < 图标.size():
 			项.图标 = 图标[i]
 		_列.add_child(项)
@@ -175,6 +196,17 @@ func _某个切换(按下: bool, 索引: int) -> void:
 		_刷新选中()
 
 
+## 供子项目调用：把自己设为选中项。
+## 项目自己在编辑器里被点开时也会走这里，这样同一轨道里不会好几个一起亮。
+func 选中项目(项: BaseButton) -> void:
+	var 索引 := _按钮.find(项)
+	if 索引 < 0 or 索引 == 当前索引:
+		_刷新选中()
+		return
+	当前索引 = 索引
+	切换.emit(索引)
+
+
 func _有效(索引: int) -> bool:
 	return 索引 >= 0 and 索引 < _按钮.size()
 
@@ -183,6 +215,10 @@ func _刷新选中() -> void:
 	for i in range(_按钮.size()):
 		var 项 := _按钮[i]
 		项.set_pressed_no_signal(i == 当前索引)
+		# set_pressed_no_signal 不发信号，项目自己不知道状态变了 ——
+		# 不显式刷一下，它会一直画着上一轮的胶囊色（就是「两个胶囊」那个 bug）
+		if 项.has_method("刷新外观"):
+			项.call("刷新外观")
 		项.queue_redraw()
 		if not (项 is M3NavigationRailItem):
 			_套用按钮样式(项, i == 当前索引)

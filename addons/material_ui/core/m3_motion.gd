@@ -42,9 +42,10 @@ const 弹簧_默认_效果_时长 := 0.20
 const 弹簧_慢_效果_时长 := 0.20
 
 # ---------------- 状态层不透明度（--md-sys-state-*-state-layer-opacity） ----------------
+## 数值取自 Material Web 的 tokens/versions/v0_192/_md-sys-state.scss（官方生成文件）
 const 状态_悬停 := 0.08
-const 状态_聚焦 := 0.10
-const 状态_按下 := 0.10
+const 状态_聚焦 := 0.12
+const 状态_按下 := 0.12
 const 状态_拖动 := 0.16
 
 # ---------------- 缓动（--md-sys-motion-easing-*） ----------------

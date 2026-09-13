@@ -17,15 +17,64 @@ var 等待回复的联系人: String = ""
 
 @onready var 联系人_妹妹 = $"内容容器/联系人滚动/联系人列表/联系人_妹妹"
 @onready var 联系人_阿云 = $"内容容器/联系人滚动/联系人列表/联系人_阿云"
+@onready var 关闭按钮 = $"顶栏/关闭按钮"
 
 
 func _ready() -> void:
 	聊天数据.初始化()
+	_套用M3外观()
 	_显示联系人列表()
 	_刷新联系人信息()
 	消息列表.add_theme_constant_override("separation", 8)
 	AIChat.收到AI回复.connect(_on_AI回复)
 	AIChat.AI出错.connect(_on_AI出错)
+
+
+## 把聊天界面的颜色和图标统一到 MD3 令牌上。
+## 场景里那些 Color(0,0,0,1) 之类的写死颜色不会跟着换主题变，
+## 所以运行时统一盖一遍；顶栏两个图标按钮也换成 Material Design Icons 的字形。
+func _套用M3外观() -> void:
+	# 顶栏：图标按钮用字形（"<" / "X" 这种字符太糙了）
+	if M3Icons.可用():
+		var 字模 := M3Icons.字体()
+		_设图标按钮(顶栏返回, "chevron-left", 字模)
+		_设图标按钮(关闭按钮, "close", 字模)
+
+	# 标题
+	顶栏标题.add_theme_color_override("font_color", M3Theme.on_surface)
+
+	# 输入框
+	输入框.add_theme_color_override("font_color", M3Theme.on_surface)
+	输入框.add_theme_color_override("font_placeholder_color", M3Theme.on_surface_variant)
+	输入框.add_theme_color_override("caret_color", M3Theme.primary)
+	输入框.add_theme_color_override("selection_color",
+		Color(M3Theme.primary.r, M3Theme.primary.g, M3Theme.primary.b, 0.3))
+
+	# 联系人行：文字颜色 + 分割线
+	for 行 in [联系人_妹妹, 联系人_阿云]:
+		_染色(行.get_node_or_null("名称"), M3Theme.on_surface)
+		_染色(行.get_node_or_null("最后消息"), M3Theme.on_surface_variant)
+		_染色(行.get_node_or_null("时间"), M3Theme.on_surface_variant)
+		var 线: Node = 行.get_node_or_null("分割线")
+		if 线 is ColorRect:
+			(线 as ColorRect).color = M3Theme.outline_variant
+	# 加一个「我」那侧没有联系人行，分割线只有两条，够用
+
+
+func _设图标按钮(按钮: Button, 图标名: String, 字模: Font) -> void:
+	if 按钮 == null or 字模 == null:
+		return
+	var 单 := M3Icons.取字符(图标名)
+	if 单.is_empty():
+		return
+	按钮.text = 单
+	按钮.add_theme_font_override("font", 字模)
+	按钮.add_theme_font_size_override("font_size", M3Theme.fs(26))
+
+
+func _染色(节点: Node, 色: Color) -> void:
+	if 节点 is Label:
+		(节点 as Label).add_theme_color_override("font_color", 色)
 
 
 func _刷新联系人信息() -> void:
@@ -150,7 +199,9 @@ func _创建气泡本体(内容: String, is_me: bool) -> Control:
 	文本.text = 内容
 	文本.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	文本.add_theme_font_size_override("font_size", 26)
-	文本.add_theme_color_override("font_color", M3Theme.on_surface)
+	# MD3：自己气泡上是 on_primary_container，对方气泡上是 on_surface
+	文本.add_theme_color_override("font_color",
+		M3Theme.on_primary_container if is_me else M3Theme.on_surface)
 	文本.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	文本.custom_minimum_size = Vector2(min(380, _估算文字宽度(内容)), 0)
 	边距.add_child(文本)
@@ -158,11 +209,18 @@ func _创建气泡本体(内容: String, is_me: bool) -> Control:
 	return 气泡
 
 
+## MD3 消息气泡：
+##   自己的  primary_container + 右下角收小
+##   对方的  surface_container_high + 左下角收小
 func _气泡样式(is_me: bool) -> StyleBoxFlat:
 	var sb := StyleBoxFlat.new()
-	# 自己的气泡用主题蓝的浅色容器；对方的用浅灰，和白色背景区分开
-	sb.bg_color = M3Theme.primary_container if is_me else M3Theme.surface_variant
-	sb.set_corner_radius_all(18)
+	sb.bg_color = M3Theme.primary_container if is_me else M3Theme.surface_container_high
+	var 大 := int(round(M3Shape.大 * M3Theme.scale))
+	var 小 := int(round(M3Shape.特小 * M3Theme.scale))
+	sb.corner_radius_top_left = 大
+	sb.corner_radius_top_right = 大
+	sb.corner_radius_bottom_left = 大 if is_me else 小
+	sb.corner_radius_bottom_right = 小 if is_me else 大
 	return sb
 
 
