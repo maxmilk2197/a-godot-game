@@ -9,7 +9,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yo668"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_大小"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_size"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehpcr"]
 
@@ -180,7 +180,7 @@ script = ExtResource("14_m3btn")
 "样式类型" = 2
 "字号" = 26
 toggle_mode = true
-button_group = SubResource("ButtonGroup_大小")
+button_group = SubResource("ButtonGroup_size")
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
@@ -191,7 +191,7 @@ script = ExtResource("14_m3btn")
 "样式类型" = 2
 "字号" = 26
 toggle_mode = true
-button_group = SubResource("ButtonGroup_大小")
+button_group = SubResource("ButtonGroup_size")
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
@@ -202,7 +202,7 @@ script = ExtResource("14_m3btn")
 "样式类型" = 2
 "字号" = 26
 toggle_mode = true
-button_group = SubResource("ButtonGroup_大小")
+button_group = SubResource("ButtonGroup_size")
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
@@ -213,7 +213,7 @@ script = ExtResource("14_m3btn")
 "样式类型" = 2
 "字号" = 26
 toggle_mode = true
-button_group = SubResource("ButtonGroup_大小")
+button_group = SubResource("ButtonGroup_size")
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26

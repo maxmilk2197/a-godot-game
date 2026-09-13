@@ -19,15 +19,26 @@ var 最大页数 : int = 6
 @export_range(0.05, 0.5, 0.01) var 运动时长 : float = 0.22   ## 单个按钮平移的运动时间（越大越慢）
 @export_range(0.05, 0.5, 0.01) var 渐变时长 : float = 0.18   ## 按钮淡入淡出时间
 @export_range(0.0, 0.3, 0.01) var 按钮动画间隔 : float = 0.06 ## 三个按钮错峰的间隔（越大越有层次）
+## 最多允许排到「当前页」前后几页。
+## 连滚时按这个把目标页排队（放完一页立刻翻下一页，不丢输入），
+## 但也别排太长 —— 否则甩一下排一长队、松手了还在自己翻。
+@export_range(1, 6, 1) var 预翻余量 : int = 2
 
-# 翻页状态：动画播放中不接受新的滚动，动画结束后才能翻下一页
+# 翻页状态：动画播放中不再丢弃输入，而是把目标页往后排，放完立刻接着翻
 var 目标页 : int = 0
 var 正在翻页 : bool = false
 
-# 滚轮去抖：一个物理轮齿常被系统拆成多个 WHEEL 事件，同一波连续滚动只翻一页
-const 去抖时间 := 0.15          # 去抖窗口（秒）
-var 本波开始时间 := -INF        # 当前这波滚动的开始时刻
-var 本波已翻页 := false         # 这一波是否已经翻过一页
+# 滚轮：按 event.factor 累积，满一齿翻一页（高精度滚轮一次只给 0.1 也照样对）。
+# 短去抖只用来吞掉「一个物理轮齿被系统拆成好几个事件」的情况。
+const 滚轮去抖 := 0.04          # 秒，同一瞬间的重复事件合并
+var 滚轮累积 := 0.0
+var 上次滚轮时刻 := -INF
+
+# 滑动翻页（触屏 + 鼠标拖动共用一套逻辑）
+const 滑动阈值 := 80.0          # 画布像素，横向位移超过它才算一次滑动
+var 滑动中 := false
+var 滑动已用 := false           # 一次手势只翻一页
+var 滑动起点 := Vector2.ZERO
 #endregion
 
 # =========================
@@ -119,6 +130,14 @@ func 执行翻页动画(方向: int) -> void:
 # 输入控制
 # =========================
 func _input(event: InputEvent) -> void:
+	# 触屏模拟出来的鼠标事件直接跳过。
+	# 项目没关 emulate_mouse_from_touch，一次触摸会同时发「触摸事件」和「模拟鼠标事件」，
+	# 两条路都收的话一次滑动会被算两遍 —— 翻两页。
+	# 模拟鼠标事件仍然会正常派发给 GUI，所以按钮点击不受影响。
+	if (event is InputEventMouseButton or event is InputEventMouseMotion) \
+			and event.device == InputEvent.DEVICE_ID_EMULATION:
+		return
+
 	# ESC 关闭窗口 —— 始终可用
 	if event.is_action_pressed("ui_cancel"):
 		关闭窗口()
@@ -132,33 +151,102 @@ func _input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 			return
 
-		# 滚轮翻页：动画没播完时滚动无效；带时间去抖，同一波连续滚动只翻一页
+		# 按住左键拖动 = 用鼠标模拟滑动（PC 上也能翻，逻辑和触屏共用）
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				滑动开始(event.position)
+			else:
+				滑动结束(event.position)
+			return
+
+		# 滚轮翻页
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP or event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			if not event.pressed:
 				return
 			get_viewport().set_input_as_handled()
+			滚轮翻页(event.button_index == MOUSE_BUTTON_WHEEL_DOWN, event.factor)
+			return
 
-			# 上一次翻页动画还没播完：忽略本次滚动
-			if 正在翻页:
-				return
+	if event is InputEventMouseMotion and 滑动中:
+		滑动移动(event.position)
+		return
 
-			var 现在 := Time.get_ticks_msec() / 1000.0
+	# ---- 触屏 ----
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			滑动开始(event.position)
+		else:
+			滑动结束(event.position)
+		return
 
-			# 超过去抖窗口 => 视为新的一波滚动，重置“本波已翻页”
-			if 现在 - 本波开始时间 > 去抖时间:
-				本波开始时间 = 现在
-				本波已翻页 = false
+	if event is InputEventScreenDrag and 滑动中:
+		滑动移动(event.position)
+		return
 
-			# 这一波已经翻过一页就忽略后续事件（防止一个轮齿触发多次）
-			if 本波已翻页:
-				return
 
-			本波已翻页 = true
-			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-				目标页 = max(0, 当前页数 - 1)
-			else:
-				目标页 = min(最大页数, 当前页数 + 1)
-			推进翻页()
+# =========================
+# 滚轮 / 滑动
+# =========================
+## 滚轮翻页。按 event.factor 累积（有些设备一次只给 0.1），满 1 齿翻一页。
+## 关键是**动画期间也照收**：只更新目标页排队，当前这页放完立刻接着翻，
+## 所以快速连滚不会「滚一半被吞掉、得停一下再滚」。
+func 滚轮翻页(向下: bool, 因数: float) -> void:
+	var 现在 := Time.get_ticks_msec() / 1000.0
+	if 现在 - 上次滚轮时刻 < 滚轮去抖:
+		return
+	上次滚轮时刻 = 现在
+
+	# factor 为 0 的设备兜底成 1 齿
+	var 齿 := absf(因数)
+	if 齿 <= 0.0:
+		齿 = 1.0
+	滚轮累积 += 齿 if 向下 else -齿
+
+	while absf(滚轮累积) >= 1.0:
+		var 向 := 1 if 滚轮累积 > 0.0 else -1
+		滚轮累积 -= float(向)
+		排队翻页(向)
+
+
+## 排一页到目标页。目标从**当前目标**往上加，所以连滚会排队；
+## 但最多只排到当前页前后 预翻余量 页，免得甩一下排一长队、松手了还在自己翻。
+func 排队翻页(方向: int) -> void:
+	if 方向 == 0:
+		return
+	目标页 = clampi(目标页 + 方向,
+		maxi(0, 当前页数 - 预翻余量),
+		mini(最大页数, 当前页数 + 预翻余量))
+	推进翻页()
+
+
+func 滑动开始(位置: Vector2) -> void:
+	滑动中 = true
+	滑动已用 = false
+	滑动起点 = 位置
+
+
+func 滑动移动(位置: Vector2) -> void:
+	if not 滑动中 or 滑动已用:
+		return
+	if _判滑动(位置):
+		get_viewport().set_input_as_handled()
+
+
+func 滑动结束(位置: Vector2) -> void:
+	if 滑动中 and not 滑动已用:
+		_判滑动(位置)
+	滑动中 = false
+
+
+## 横向位移够了就翻一页（往左滑 = 下一页，和轮播方向一致）。
+## 纵向位移更大就不算 —— 免得斜着滑也触发。
+func _判滑动(位置: Vector2) -> bool:
+	var 位移 := 位置 - 滑动起点
+	if absf(位移.x) < M3Theme.px(滑动阈值) or absf(位移.x) <= absf(位移.y):
+		return false
+	滑动已用 = true
+	排队翻页(1 if 位移.x < 0.0 else -1)
+	return true
 
 
 # =========================

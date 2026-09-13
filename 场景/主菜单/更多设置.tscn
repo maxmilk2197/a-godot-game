@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cd2ljkhblk2q3" path="res://addons/material_ui/components/m3_button.gd" id="m3btn"]
 [ext_resource type="Script" uid="uid://comk0xb2dbx5k" path="res://addons/material_ui/components/m3_switch.gd" id="m3sw"]
 
-[sub_resource type="ButtonGroup" id="ButtonGroup_速度"]
+[sub_resource type="ButtonGroup" id="ButtonGroup_speed"]
 
 [node name="更多设置" type="Control" unique_id=1760460604]
 layout_mode = 3
@@ -80,7 +80,7 @@ script = ExtResource("m3btn")
 "样式类型" = 2
 "字号" = 28
 toggle_mode = true
-button_group = SubResource("ButtonGroup_速度")
+button_group = SubResource("ButtonGroup_speed")
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")
@@ -92,7 +92,7 @@ script = ExtResource("m3btn")
 "样式类型" = 2
 "字号" = 28
 toggle_mode = true
-button_group = SubResource("ButtonGroup_速度")
+button_group = SubResource("ButtonGroup_speed")
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")
@@ -104,7 +104,7 @@ script = ExtResource("m3btn")
 "样式类型" = 2
 "字号" = 28
 toggle_mode = true
-button_group = SubResource("ButtonGroup_速度")
+button_group = SubResource("ButtonGroup_speed")
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")
