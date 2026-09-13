@@ -328,6 +328,19 @@ _涟漪层.add_child(_涟漪)
   Godot 的 `BaseButton.set_pressed()` 在 `!toggle_mode` 时**直接 return**，
   而场景里存的 `button_pressed = true` 是在 `_ready` **之前**应用的 ——
   放 `_ready` 就晚了，那个 `true` 会被丢掉，开关永远显示成关。
+- **静默改状态（`set_pressed_no_signal`）要靠 `_process` 轮询补动画，不能靠 `_draw` 兜。**
+  `set_pressed_no_signal()` **不发信号**，`_进度` 只在 `toggled` 里更新，于是设置页那种
+  `全屏开关.set_pressed_no_signal(Settings.全屏)` 会出现：**开关开着却画成关；
+  点一下真的把它关掉时，因为本来就画在 0，看起来"没反应、还是关的样子"**。
+
+  ⚠️ 修的时候**别**图省事在 `_draw`/取值函数里写「没在跑补间就直接读 `button_pressed`」——
+  `button_pressed` 是**先变状态、后发 `toggled`** 的，`_动画到()` 里读到的已经是新值，
+  起点和终点相同 => **从 1 动画到 1，开关就不动了**（这个坑也踩过）。
+  正确做法：
+  - `_进度` 始终是**唯一真相**，`_draw` 只看它；
+  - `_动画到()` 的起点用 `_起值 = _进度`（上次真正画出来的值）；
+  - 另开一个 `_上次按下`，在 `_process` 里每帧比一下 `button_pressed`，
+    发现被静默改了就补一次 `_动画到()`。
 - **要清掉自带样式box**：场景里的节点类型常常还是 `Button`（只是换了脚本），
   那样 Godot 的 `Button` 本体照样会画 `normal`/`hover` 底色 —— 开关后面就会多一块方背景。
   `_ready()` 里 `_清空样式()` 把这几个样式box全换成透明。

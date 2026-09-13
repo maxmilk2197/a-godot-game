@@ -19,6 +19,8 @@ var _进度: float = 0.0
 var _补间: Tween
 var _起值: float = 0.0
 var _目标值: float = 0.0
+## 上次同步过的 button_pressed，用来发现「静默改状态」
+var _上次按下: bool = false
 
 
 ## 必须在 _init 里设 toggle_mode。
@@ -32,6 +34,7 @@ func _init() -> void:
 func _ready() -> void:
 	_清空样式()
 	_进度 = 1.0 if button_pressed else 0.0
+	_上次按下 = button_pressed
 	toggled.connect(_切换)
 	if not resized.is_connected(queue_redraw):
 		resized.connect(queue_redraw)
@@ -54,7 +57,26 @@ func _刷新尺寸() -> void:
 
 
 func _切换(按下: bool) -> void:
+	_上次按下 = 按下
 	_动画到(1.0 if 按下 else 0.0)
+
+
+## 当前该画成什么样（0=关 1=开）—— 就是动画驱动的 _进度。
+## 注意**不能**在这里回退成「没动画时直接读 button_pressed」：
+## button_pressed 是先变状态、后发 toggled 的，_动画到 里读到的已经是新值，
+## 起点=终点 => 从 1 动画到 1，开关就「不动了」。
+func 当前进度() -> float:
+	return _进度
+
+
+## 用来发现「静默改状态」：set_pressed_no_signal() 不发信号，
+## 只靠 toggled 驱动的 _进度 会一直停在旧值（开关明明开着却画成关）。
+## 这里每帧比一下，发现被静默改了就把动画补上。
+func _process(_增量: float) -> void:
+	if button_pressed == _上次按下:
+		return
+	_上次按下 = button_pressed
+	_动画到(1.0 if button_pressed else 0.0)
 
 
 func _动画到(目标: float) -> void:
@@ -64,6 +86,7 @@ func _动画到(目标: float) -> void:
 		return
 	if _补间 != null and _补间.is_valid():
 		_补间.kill()
+	# 起点 = 上次真正画出来的样子（toggled 到达时 button_pressed 已经是新值了，不能用它）
 	_起值 = _进度
 	_目标值 = 目标
 	_补间 = create_tween()
@@ -83,6 +106,8 @@ func _设置进度(值: float) -> void:
 func _draw() -> void:
 	if size.x <= 0.0 or size.y <= 0.0:
 		return
+	# 一律用 当前进度() 画：静默改过 button_pressed 也能画对
+	var 进 := 当前进度()
 	# 按设定的轨道尺寸画，并在这个矩形里居中 ——
 	# 不能直接用 size：放进 HBoxContainer 会被纵向拉伸，轨道一高就变成圆角方块、
 	# 拇指也会跑到中间去。横向同理（被 EXPAND 拉宽的话胶囊会长得离谱）。
@@ -92,23 +117,23 @@ func _draw() -> void:
 	var 半 := 轨高 * 0.5
 
 	# 轨道：关 = surface_container_highest + outline 描边；开 = primary（官方就是这样）
-	var 轨道色 := M3Theme.surface_container_highest.lerp(M3Theme.primary, _进度)
+	var 轨道色 := M3Theme.surface_container_highest.lerp(M3Theme.primary, 进)
 	if disabled:
 		轨道色.a = 0.4
 	var 轨道样式 := M3Theme.样式(轨道色, int(round(半)))
 	# 关着的时候描边跟 outline 走，打开后描边消失
 	var 边色 := M3Theme.outline
-	边色.a *= 1.0 - _进度
-	var 边宽 := int(round(M3Theme.px(2.0) * (1.0 - _进度)))
+	边色.a *= 1.0 - 进
+	var 边宽 := int(round(M3Theme.px(2.0) * (1.0 - 进)))
 	if 边宽 > 0:
 		轨道样式.border_color = 边色
 		轨道样式.set_border_width_all(边宽)
 	draw_style_box(轨道样式, 轨)
 
 	# 拇指：关 = 小圆（outline 色）；开 = 大圆（on_primary 色）
-	var 半径 := lerpf(轨高 * 0.22, 轨高 * 0.36, _进度)
-	var 中心x := lerpf(半, 轨宽 - 半, _进度)
-	var 拇指色 := M3Theme.outline.lerp(M3Theme.on_primary, _进度)
+	var 半径 := lerpf(轨高 * 0.22, 轨高 * 0.36, 进)
+	var 中心x := lerpf(半, 轨宽 - 半, 进)
+	var 拇指色 := M3Theme.outline.lerp(M3Theme.on_primary, 进)
 	if disabled:
 		拇指色.a = 0.6
 	draw_circle(轨.position + Vector2(中心x, 半), 半径, 拇指色, true, -1.0, true)

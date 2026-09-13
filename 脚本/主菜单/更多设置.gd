@@ -98,7 +98,19 @@ func _刷新速度高亮() -> void:
 
 
 # =========================
-# 返回（弹层：直接关闭自己，露出下层设置/主界面）
+# 返回 / 打开测试页
 # =========================
 func _返回设置() -> void:
 	queue_free()
+
+
+## 打开 MD3 组件测试页（当弹层叠上来，不切场景）。
+## 它会自己盖一层 M3Surface 背景，所以不会露出下面的设置页；
+## 页面里会自己加一个「返回」按钮（只在当弹层打开时出现）。
+func _开M3测试() -> void:
+	var 场景 := load("res://场景/测试/M3组件测试.tscn") as PackedScene
+	if 场景 == null:
+		push_warning("加载不到 res://场景/测试/M3组件测试.tscn")
+		return
+	var 层 := 场景.instantiate()
+	get_tree().current_scene.add_child(层)

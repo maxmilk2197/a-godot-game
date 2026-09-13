@@ -43,6 +43,26 @@ func _ready() -> void:
 	_其它区()
 	_调色区()
 
+	# 当「弹层」被打开时（从更多设置页进来）给一个返回按钮；
+	# 直接用 F6 跑本场景时 current_scene 就是自己，不需要返回。
+	var 树 := get_tree()
+	if 树 != null and 树.current_scene != self:
+		_加返回按钮()
+
+
+func _加返回按钮() -> void:
+	var 钮 := M3Button.new()
+	钮.样式类型 = M3Button.按钮样式.TEXT
+	钮.text = "← 返回"
+	钮.字号 = 28
+	钮.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
+	钮.offset_left = -220.0
+	钮.offset_top = 32.0
+	钮.offset_right = -48.0
+	钮.offset_bottom = 100.0
+	钮.pressed.connect(queue_free)
+	add_child(钮)
+
 
 # ---------------- 各分区 ----------------
 func _按钮区() -> void:

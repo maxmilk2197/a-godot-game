@@ -1,12 +1,278 @@
 [gd_scene format=3 uid="uid://c000v0vrmxtlq"]
 
-[ext_resource type="Theme" path="res://资源/主题/测试主题.tres" id="0_warmth"]
+[ext_resource type="Theme" uid="uid://bhi1wr60t3kim" path="res://资源/主题/测试主题.tres" id="0_warmth"]
 [ext_resource type="FontFile" uid="uid://bbkc6rbarj3km" path="res://资源/字体/LXGWWenKaiMono-Medium.ttf" id="1_fnt"]
 [ext_resource type="Script" uid="uid://c76r4354a06qh" path="res://脚本/主菜单/更多设置.gd" id="1_scpt"]
 [ext_resource type="Script" uid="uid://cd2ljkhblk2q3" path="res://addons/material_ui/components/m3_button.gd" id="m3btn"]
 [ext_resource type="Script" uid="uid://comk0xb2dbx5k" path="res://addons/material_ui/components/m3_switch.gd" id="m3sw"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fnrc"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cfrn"]
+bg_color = Color(0.859, 0.886, 0.976, 0.08)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5otr"]
+bg_color = Color(0.106, 0.106, 0.122, 0.12)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42m6s"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.349, 0.78, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_titay"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.459, 0.467, 0.502, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4bxt"]
+bg_color = Color(0.76528, 0.7924, 0.87964, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7pbt"]
+bg_color = Color(0.859, 0.886, 0.976, 0.08)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.459, 0.467, 0.502, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38nxe"]
+bg_color = Color(0.106, 0.106, 0.122, 0.12)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5cauo"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.349, 0.78, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [sub_resource type="ButtonGroup" id="ButtonGroup_speed"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqixu"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.459, 0.467, 0.502, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h8hns"]
+bg_color = Color(0.76528, 0.7924, 0.87964, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05hag"]
+bg_color = Color(0.859, 0.886, 0.976, 0.08)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.459, 0.467, 0.502, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1k3kq"]
+bg_color = Color(0.106, 0.106, 0.122, 0.12)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rtg1"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.349, 0.78, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5tld"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.459, 0.467, 0.502, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvdog"]
+bg_color = Color(0.76528, 0.7924, 0.87964, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pyx0g"]
+bg_color = Color(0.859, 0.886, 0.976, 0.08)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.459, 0.467, 0.502, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvau4"]
+bg_color = Color(0.106, 0.106, 0.122, 0.12)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kl7q"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.349, 0.78, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55j6m"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cn40h"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63wwg"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43xr1"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0ln8"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jw1l"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7no5x"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ha4q"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70wym"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfrpr"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0701m"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0.859, 0.886, 0.976, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcw7u"]
+bg_color = Color(0.79652005, 0.8236, 0.91176003, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_215c2"]
+bg_color = Color(0.106, 0.106, 0.122, 0.12)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_homa2"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.349, 0.78, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="更多设置" type="Control" unique_id=1760460604]
 layout_mode = 3
@@ -40,17 +306,29 @@ text = "更多设置"
 vertical_alignment = 1
 
 [node name="返回按钮" type="Button" parent="." unique_id=379078008]
-script = ExtResource("m3btn")
-"样式类型" = 3
-"字号" = 28
+clip_contents = true
 layout_mode = 0
 offset_left = 1763.0
 offset_top = 17.0
 offset_right = 1901.0
 offset_bottom = 70.0
+theme_override_colors/font_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_focus_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_hover_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_disabled_color = Color(0.267, 0.275, 0.31, 1)
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fnrc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8fnrc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0cfrn")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_u5otr")
+theme_override_styles/focus = SubResource("StyleBoxFlat_42m6s")
 text = "← 返回"
+script = ExtResource("m3btn")
+"样式类型" = 3
+"字号" = 28
 
 [node name="速度区" type="Control" parent="." unique_id=69999184]
 anchors_preset = 0
@@ -76,40 +354,76 @@ offset_bottom = 130.0
 theme_override_constants/separation = 24
 
 [node name="慢" type="Button" parent="速度区/速度行" unique_id=1106816731]
+custom_minimum_size = Vector2(150, 60)
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_focus_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_hover_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_disabled_color = Color(0.267, 0.275, 0.31, 1)
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_titay")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d4bxt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v7pbt")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_38nxe")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5cauo")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_speed")
+text = "慢"
 script = ExtResource("m3btn")
 "样式类型" = 2
 "字号" = 28
-toggle_mode = true
-button_group = SubResource("ButtonGroup_speed")
-custom_minimum_size = Vector2(150, 60)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 28
-text = "慢"
 
 [node name="中" type="Button" parent="速度区/速度行" unique_id=780092330]
+custom_minimum_size = Vector2(150, 60)
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_focus_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_hover_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_disabled_color = Color(0.267, 0.275, 0.31, 1)
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_fqixu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h8hns")
+theme_override_styles/hover = SubResource("StyleBoxFlat_05hag")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1k3kq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2rtg1")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_speed")
+text = "中"
 script = ExtResource("m3btn")
 "样式类型" = 2
 "字号" = 28
-toggle_mode = true
-button_group = SubResource("ButtonGroup_speed")
-custom_minimum_size = Vector2(150, 60)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 28
-text = "中"
 
 [node name="快" type="Button" parent="速度区/速度行" unique_id=401403579]
+custom_minimum_size = Vector2(150, 60)
+clip_contents = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_focus_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_hover_color = Color(0, 0.349, 0.78, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_disabled_color = Color(0.267, 0.275, 0.31, 1)
+theme_override_fonts/font = ExtResource("1_fnt")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5tld")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bvdog")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pyx0g")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dvau4")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6kl7q")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_speed")
+text = "快"
 script = ExtResource("m3btn")
 "样式类型" = 2
 "字号" = 28
-toggle_mode = true
-button_group = SubResource("ButtonGroup_speed")
-custom_minimum_size = Vector2(150, 60)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fnt")
-theme_override_font_sizes/font_size = 28
-text = "快"
 
 [node name="开关区" type="Control" parent="." unique_id=1307905163]
 anchors_preset = 0
@@ -133,11 +447,17 @@ theme_override_font_sizes/font_size = 30
 text = "显示对方头像"
 
 [node name="头像开关" type="Button" parent="开关区/头像行" unique_id=746877975]
-script = ExtResource("m3sw")
-custom_minimum_size = Vector2(110, 60)
+custom_minimum_size = Vector2(60, 38)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_55j6m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cn40h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_63wwg")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_43xr1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_p0ln8")
+toggle_mode = true
+script = ExtResource("m3sw")
 
 [node name="自动继续行" type="HBoxContainer" parent="开关区" unique_id=1808692439]
 layout_mode = 0
@@ -155,11 +475,41 @@ theme_override_font_sizes/font_size = 30
 text = "对话自动继续"
 
 [node name="自动继续开关" type="Button" parent="开关区/自动继续行" unique_id=1281234005]
-script = ExtResource("m3sw")
-custom_minimum_size = Vector2(110, 60)
+custom_minimum_size = Vector2(60, 38)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fnt")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_1jw1l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7no5x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ha4q")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_70wym")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wfrpr")
+toggle_mode = true
+script = ExtResource("m3sw")
+
+[node name="测试按钮" type="Button" parent="." unique_id=1900100001]
+clip_contents = true
+layout_mode = 0
+offset_left = 340.0
+offset_top = 620.0
+offset_right = 940.0
+offset_bottom = 700.0
+theme_override_colors/font_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_focus_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_hover_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.078, 0.106, 0.173, 1)
+theme_override_colors/font_disabled_color = Color(0.267, 0.275, 0.31, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0701m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0701m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fcw7u")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_215c2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_homa2")
+text = "组件测试"
+script = ExtResource("m3btn")
+"样式类型" = 1
+"字号" = 32
 
 [connection signal="pressed" from="返回按钮" to="." method="_返回设置"]
 [connection signal="pressed" from="速度区/速度行/慢" to="." method="_慢_pressed"]
@@ -167,3 +517,4 @@ theme_override_font_sizes/font_size = 30
 [connection signal="pressed" from="速度区/速度行/快" to="." method="_快_pressed"]
 [connection signal="toggled" from="开关区/头像行/头像开关" to="." method="_头像开关_toggled"]
 [connection signal="toggled" from="开关区/自动继续行/自动继续开关" to="." method="_自动继续开关_toggled"]
+[connection signal="pressed" from="测试按钮" to="." method="_开M3测试"]
