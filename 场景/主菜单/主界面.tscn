@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d26d1u65gbepx"]
 
+[ext_resource type="Script" uid="uid://bbosexahi5ows" path="res://脚本/主菜单/主脚本.gd" id="1_qa8wy"]
 [ext_resource type="Texture2D" uid="uid://bcjdy5oa6l1ih" path="res://资源/纹理/主界面/15F38EA8FD1436FF88AD8D8687CBA65F.png" id="1_weg6c"]
-[ext_resource type="Script" uid="uid://cgfy7ykwaqrav" path="res://脚本/主菜单/按钮.gd" id="2_bi7fr"]
 [ext_resource type="Texture2D" uid="uid://dgko74qp7bai5" path="res://资源/纹理/主界面/F31666043FB82DAE2A0F462538C9272E.png" id="2_weg6c"]
 [ext_resource type="Texture2D" uid="uid://bwjo7vq1dql03" path="res://资源/纹理/按钮/9743C05AAEDA22FD300E7FC9A54CBAAD.png" id="4_cwkh2"]
 [ext_resource type="Texture2D" uid="uid://dms6ui58f672s" path="res://资源/纹理/按钮/852FFBA92C105BED3D77DDF1A8BD7654.png" id="4_es7vd"]
@@ -238,6 +238,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qa8wy")
 metadata/_edit_lock_ = true
 
 [node name="背景" type="Control" parent="." unique_id=639374545]
@@ -286,7 +287,7 @@ offset_transform_position = Vector2(0, -183.88625)
 texture = ExtResource("2_weg6c")
 metadata/_edit_use_anchors_ = true
 
-[node name="按钮" type="Control" parent="." unique_id=438225853 node_paths=PackedStringArray("新游戏", "新游戏Label", "继续游戏", "继续游戏Label", "设置", "设置Label", "退出", "退出Label", "雪花")]
+[node name="按钮" type="Control" parent="." unique_id=438225853]
 layout_mode = 1
 anchor_left = 0.04140625
 anchor_top = 0.42222223
@@ -294,17 +295,6 @@ anchor_right = 0.29227433
 anchor_bottom = 0.88055557
 offset_transform_enabled = true
 theme = SubResource("Theme_ajy4o")
-script = ExtResource("2_bi7fr")
-"新游戏" = NodePath("按钮组/开始游戏")
-"新游戏Label" = NodePath("按钮组/开始游戏/Label")
-"继续游戏" = NodePath("按钮组/继续游戏")
-"继续游戏Label" = NodePath("按钮组/继续游戏/Label")
-"设置" = NodePath("按钮组/设置")
-"设置Label" = NodePath("按钮组/设置/Label")
-"退出" = NodePath("按钮组/退出")
-"退出Label" = NodePath("按钮组/退出/Label")
-"雪花" = NodePath("雪花")
-"自动跳过logo" = false
 metadata/_edit_use_anchors_ = true
 
 [node name="按钮组" type="VBoxContainer" parent="按钮" unique_id=1588682671]
@@ -520,7 +510,6 @@ offset_bottom = 23.0
 libraries/ = SubResource("AnimationLibrary_xt34k")
 
 [node name="logo" type="Control" parent="动画" unique_id=556381867]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -1,0 +1,179 @@
+extends Control
+#region 声明变量
+var 开始游戏补间: Tween
+var 退出补间: Tween
+var 加载存档补间: Tween
+var 雪花移动补间 : Tween
+@onready var 遮罩 = $"../遮罩"
+@export var 开始游戏 : Button
+@export var 开始游戏Label : Label
+@export var 继续游戏 : Button
+@export var 继续游戏Label : Label
+@export var 设置 : Button
+@export var 设置Label : Label
+@export var 退出 : Button
+@export var 退出Label : Label
+@export var 雪花 : TextureRect
+@export var 按钮移动 : bool = false
+@export_range(-200, 200, 1) var 雪花X偏移 : float = -50   ## 雪花离 VBox 左缘的额外偏移（负数往左、正数往右）
+@export var 自动跳过logo : bool = true
+#endregion
+
+
+func _ready():
+	if OS.is_debug_build() and 自动跳过logo:
+		print("跳过logo")
+		$"../动画/logo".queue_free()
+		$"../背景音乐".play()
+	else:
+		$"../动画/logo".show()
+		$"../动画".play("logo")
+		await $"../动画".animation_finished
+		$"../动画/logo".queue_free()
+	开始游戏.offset_transform_enabled = true
+	退出.offset_transform_enabled = true
+	继续游戏.offset_transform_enabled = true
+
+	if save.是否有任意存档():
+		print("[存档]","发现现存档")
+	else:
+		print("[存档]","未发现存档")
+		雪花.position = Vector2(VBox左缘X(), 按钮局部Y(开始游戏))  
+
+func _on_signal_event(argument: Variant):
+	if argument == "进入客厅场景":
+		print("[保存]","开始自动保存")
+		var 当前时间字典 = Time.get_datetime_dict_from_system()
+		var 月 = 当前时间字典.month
+		var 日 = 当前时间字典.day
+		var 时 = 当前时间字典.hour
+		var 分 = 当前时间字典.minute
+
+		var 数据 = {
+			"游玩天数": 1,
+			"最后游玩时间": "%d月%d日 %02d:%02d" % [月, 日, 时, 分],
+			"最后游玩场景": "res://场景/家/家.tscn",
+			"上次存档": save.当前存档,
+			"角色数据": {},
+		}
+
+		var 是否保存成功 = save.自动保存(数据)
+		if 是否保存成功:
+			print("[存档]","自动保存成功")
+		else:
+			printerr("[存档]","自动保存失败,返回结果:", 是否保存成功)
+		聊天数据._确保角色提示词()
+		get_tree().change_scene_to_file("res://场景/家/家.tscn")
+
+#region 按钮逻辑
+
+
+func _加载存档() -> void:
+	$"../背景音乐".stop()
+	遮罩.modulate = Color(0,0,0,0)
+	遮罩.show()
+	var tween = create_tween().bind_node(遮罩)
+	tween.tween_property(遮罩, "modulate", Color(0.0, 0.0, 0.0, 0.5), 0.2)
+	await tween.finished
+	var 场景资源 = load("res://场景/存档/存档加载界面.tscn")
+	var 窗口实例 = 场景资源.instantiate()
+	get_tree().current_scene.add_child(窗口实例)
+	遮罩.hide()
+	
+func _开始游戏() -> void:
+	$"../背景音乐".stop()
+	await 渐变动画()
+	Dialogic.signal_event.connect(_on_signal_event)
+	Dialogic.start("res://对话/初次见面.dtl")
+
+func _on_退出_pressed() -> void:
+	$"../背景音乐".stop()
+	await 渐变动画()
+	get_tree().quit()
+
+func _打开设置() -> void:
+	# 弹层方式打开设置：叠加到当前主场景上，不切场景、不销毁主界面，音乐不断
+	var 设置实例 = SceneNav.设置.instantiate()
+	get_tree().current_scene.add_child(设置实例)
+	
+#endregion
+
+#region 动画
+func 当_开始游戏_被鼠标碰到() -> void:
+	开始游戏Label.add_theme_color_override("font_color", Color("#5476d6"))
+	移动雪花(Vector2(VBox左缘X(), 按钮局部Y(开始游戏)))
+	if 按钮移动:
+		开始游戏补间 = 播放按钮动画(开始游戏, Vector2(20, 0), 开始游戏补间)
+
+func 当_开始游戏_不再被鼠标碰到() -> void:
+	开始游戏Label.add_theme_color_override("font_color", Color("#7c8fbd"))
+	if 按钮移动:
+		开始游戏补间 = 播放按钮动画(开始游戏, Vector2(0, 0), 开始游戏补间)
+
+func 当_加载_被鼠标碰到() -> void:
+	继续游戏Label.add_theme_color_override("font_color", Color("#5476d6"))
+	移动雪花(Vector2(VBox左缘X(), 按钮局部Y(继续游戏)))
+	
+	if 按钮移动:
+		加载存档补间 = 播放按钮动画(继续游戏, Vector2(20, 0), 加载存档补间)
+
+func 当_加载_不再被鼠标碰到() -> void:
+	继续游戏Label.add_theme_color_override("font_color", Color("#7c8fbd"))
+	if 按钮移动:
+		加载存档补间 = 播放按钮动画(继续游戏, Vector2(0, 0), 加载存档补间)
+
+func 当_设置_被鼠标碰到() -> void:
+	设置Label.add_theme_color_override("font_color", Color("#5476d6"))
+	移动雪花(Vector2(VBox左缘X(), 按钮局部Y(设置)))
+	if 按钮移动:
+		退出补间 = 播放按钮动画(设置, Vector2(20, 0), 退出补间)
+
+func 当_设置_不再被鼠标碰到() -> void:
+	设置Label.add_theme_color_override("font_color", Color("#7c8fbd"))
+	if 按钮移动:
+		退出补间 = 播放按钮动画(退出, Vector2(0, 0), 退出补间)
+
+
+func 当_退出_被鼠标碰到() -> void:
+	退出Label.add_theme_color_override("font_color", Color("#5476d6"))
+	移动雪花(Vector2(VBox左缘X(), 按钮局部Y(退出)))
+	if 按钮移动:
+		退出补间 = 播放按钮动画(退出, Vector2(20, 0), 退出补间)
+
+func 当_退出_不再被鼠标碰到() -> void:
+	退出Label.add_theme_color_override("font_color", Color("#7c8fbd"))
+	if 按钮移动:
+		退出补间 = 播放按钮动画(退出, Vector2(0, 0), 退出补间)
+
+func 移动雪花(目标位置: Vector2) -> void:
+	if 雪花移动补间 and 雪花移动补间.is_valid():
+		雪花移动补间.kill()
+	雪花移动补间 = create_tween()
+	雪花移动补间.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+	雪花移动补间.tween_property(雪花, "position", 目标位置, 0.2)
+
+func 按钮局部Y(目标按钮: Control) -> float:
+	return 目标按钮.global_position.y - global_position.y
+
+func VBox左缘X() -> float:
+	var vbox := $"按钮组" as Control
+	return vbox.global_position.x - global_position.x + 雪花X偏移
+
+func 播放按钮动画(按钮: Control, 目标位置: Vector2, 旧补间: Tween = null) -> Tween:
+	if 旧补间 and 旧补间.is_valid():
+		旧补间.kill()
+	
+	var 新补间 = create_tween()
+	新补间.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	新补间.tween_property(按钮, "offset_transform_position", 目标位置, 0.2)
+	return 新补间
+	
+func 渐变动画() :
+	遮罩.modulate = Color(0,0,0,0)   # 透明
+	遮罩.show()
+	var tween = create_tween().bind_node(遮罩)
+	tween.tween_property(遮罩, "modulate", Color.BLACK, 0.2)
+	await tween.finished
+
+
+#endregion
