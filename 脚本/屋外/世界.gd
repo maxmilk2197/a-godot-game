@@ -75,7 +75,8 @@ func _记录位置() -> void:
 	if 玩家 == null:
 		return
 	Raise.屋外位置 = 玩家.global_position
-	Raise.保存()
+	# 场景马上要切走，必须立刻写盘 —— 延迟保存会被便利店那边的 初始化() 读回旧值
+	Raise.立刻保存()
 
 
 # ---------------- 交互 ----------------
@@ -99,6 +100,8 @@ func _刷新环境() -> void:
 		var 材质 := 地面.material as ShaderMaterial
 		材质.set_shader_parameter("night_amount", 1.0 if 夜 else 0.0)
 		材质.set_shader_parameter("night_gain", 0.55 if 夜 else 1.35)
+		# 下雪天地面盖一层积雪
+		材质.set_shader_parameter("snow_amount", 1.0 if _上次天气 == "雪" else 0.0)
 
 	# 萤火虫：只有晴/阴的晚上才有，雨雪雾天不出现
 	var 有萤火虫: bool = 夜 and (_上次天气 == "晴" or _上次天气 == "阴")
@@ -146,7 +149,9 @@ func _进入交互点(点: Area2D) -> void:
 	var 目标 := str(点.get("目标场景"))
 	if 目标.is_empty():
 		return
-	_记录位置()
+	# 回屋外时站到这个入口本身的位置，而不是随便站在触发半径里的某处
+	Raise.屋外位置 = 点.global_position
+	Raise.立刻保存()
 	get_tree().change_scene_to_file(目标)
 
 

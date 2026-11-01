@@ -16,6 +16,8 @@ uniform vec3 night_tint : source_color = vec3(0.32, 0.52, 0.92);
 uniform float night_gain : hint_range(0.0, 3.0) = 1.35;
 // 夜晚饱和度：越低越灰
 uniform float night_desat : hint_range(0.0, 1.0) = 0.25;
+// 积雪程度：0 = 无雪，1 = 地面全白
+uniform float snow_amount : hint_range(0.0, 1.0) = 0.0;
 
 void fragment() {
 	vec4 src = texture(TEXTURE, UV);
@@ -30,6 +32,13 @@ void fragment() {
 		night = mix(night, vec3(lum * night_gain), night_desat);
 
 		vec3 result = mix(src.rgb, night, night_amount);
+
+		// 积雪：提亮并往冷白靠，同时保留一点明暗，不然会糊成一片白
+		if (snow_amount > 0.001) {
+			vec3 snowy = result * 0.35 + vec3(0.42, 0.50, 0.64) * (0.35 + lum * 0.75);
+			result = mix(result, snowy, snow_amount);
+		}
+
 		COLOR = vec4(result, src.a);
 	}
 }
