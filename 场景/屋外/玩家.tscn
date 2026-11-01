@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://脚本/屋外/玩家.gd" id="1_player"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hit"]
+size = Vector2(26, 26)
+
+[node name="玩家" type="CharacterBody2D"]
+collision_layer = 1
+collision_mask = 1
+script = ExtResource("1_player")
+
+[node name="外观" type="Polygon2D" parent="."]
+color = Color(0.219608, 0.407843, 0.788235, 1)
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[node name="描边" type="Line2D" parent="."]
+points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16, -16, -16)
+width = 2.0
+default_color = Color(0.117647, 0.227451, 0.541176, 1)
+
+[node name="碰撞" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hit")

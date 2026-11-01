@@ -1,7 +1,7 @@
 extends Control
 #region 声明变量
 var 开始游戏补间: Tween
-var 退出补间: Tween
+var 退出游戏补间: Tween
 var 加载存档补间: Tween
 var 雪花移动补间 : Tween
 @onready var 遮罩 = $"../遮罩"
@@ -11,8 +11,8 @@ var 雪花移动补间 : Tween
 @export var 继续游戏Label : Label
 @export var 设置 : Button
 @export var 设置Label : Label
-@export var 退出 : Button
-@export var 退出Label : Label
+@export var 退出游戏 : Button
+@export var 退出游戏Label : Label
 @export var 雪花 : TextureRect
 @export var 按钮移动 : bool = false
 @export_range(-200, 200, 1) var 雪花X偏移 : float = -50   ## 雪花离 VBox 左缘的额外偏移（负数往左、正数往右）
@@ -31,7 +31,7 @@ func _ready():
 		await $"../动画".animation_finished
 		$"../动画/logo".queue_free()
 	开始游戏.offset_transform_enabled = true
-	退出.offset_transform_enabled = true
+	退出游戏.offset_transform_enabled = true
 	继续游戏.offset_transform_enabled = true
 
 	if save.是否有任意存档():
@@ -86,7 +86,7 @@ func _开始游戏() -> void:
 	Dialogic.signal_event.connect(_on_signal_event)
 	Dialogic.start("res://对话/初次见面.dtl")
 
-func _on_退出_pressed() -> void:
+func _on_退出游戏_pressed() -> void:
 	$"../背景音乐".stop()
 	await 渐变动画()
 	get_tree().quit()
@@ -126,24 +126,24 @@ func 当_设置_被鼠标碰到() -> void:
 	设置Label.add_theme_color_override("font_color", Color("#5476d6"))
 	移动雪花(Vector2(VBox左缘X(), 按钮局部Y(设置)))
 	if 按钮移动:
-		退出补间 = 播放按钮动画(设置, Vector2(20, 0), 退出补间)
+		退出游戏补间 = 播放按钮动画(设置, Vector2(20, 0), 退出游戏补间)
 
 func 当_设置_不再被鼠标碰到() -> void:
 	设置Label.add_theme_color_override("font_color", Color("#7c8fbd"))
 	if 按钮移动:
-		退出补间 = 播放按钮动画(退出, Vector2(0, 0), 退出补间)
+		退出游戏补间 = 播放按钮动画(退出游戏, Vector2(0, 0), 退出游戏补间)
 
 
-func 当_退出_被鼠标碰到() -> void:
-	退出Label.add_theme_color_override("font_color", Color("#5476d6"))
-	移动雪花(Vector2(VBox左缘X(), 按钮局部Y(退出)))
+func 当_退出游戏_被鼠标碰到() -> void:
+	退出游戏Label.add_theme_color_override("font_color", Color("#5476d6"))
+	移动雪花(Vector2(VBox左缘X(), 按钮局部Y(退出游戏)))
 	if 按钮移动:
-		退出补间 = 播放按钮动画(退出, Vector2(20, 0), 退出补间)
+		退出游戏补间 = 播放按钮动画(退出游戏, Vector2(20, 0), 退出游戏补间)
 
-func 当_退出_不再被鼠标碰到() -> void:
-	退出Label.add_theme_color_override("font_color", Color("#7c8fbd"))
+func 当_退出游戏_不再被鼠标碰到() -> void:
+	退出游戏Label.add_theme_color_override("font_color", Color("#7c8fbd"))
 	if 按钮移动:
-		退出补间 = 播放按钮动画(退出, Vector2(0, 0), 退出补间)
+		退出游戏补间 = 播放按钮动画(退出游戏, Vector2(0, 0), 退出游戏补间)
 
 func 移动雪花(目标位置: Vector2) -> void:
 	if 雪花移动补间 and 雪花移动补间.is_valid():

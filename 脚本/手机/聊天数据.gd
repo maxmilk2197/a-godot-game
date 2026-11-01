@@ -113,7 +113,7 @@ static func 添加消息(联系人名: String, 发送者: String, 内容: String
 	var contact = 联系人数据.get(联系人名, {})
 	if contact.is_empty():
 		return
-	var 时间文本 = _当前时间文本()
+	var 时间文本 = _当前时间文本(联系人名)
 	var msg = {"发送者": 发送者, "内容": 内容, "时间": 时间文本}
 	contact["消息"].append(msg)
 	contact["最后消息"] = 内容
@@ -175,9 +175,51 @@ static func 保存当前AI记忆() -> void:
 	_保存AI记忆(当前同步的联系人)
 
 
-static func _当前时间文本() -> String:
-	var d = Time.get_datetime_dict_from_system()
-	return "%02d:%02d" % [d.hour, d.minute]
+## 当前游戏内时段对应的基准时间（HH:MM）。
+## 手机上的时间一律取自游戏世界，**不用现实时钟** ——
+## 玩家几点打开手机，和游戏里几点没有任何关系。
+static func _时段基准时间() -> String:
+	return Settings.晚上时间 if Raise.时段 == "晚上" else Settings.白天时间
+
+
+## 解析 "HH:MM"（容忍 "昨天 08:15" 这类前缀），失败返回 -1
+static func _解析分钟(文本: String) -> int:
+	var 片段 := 文本.split(" ")
+	var 时间部: String = 片段[片段.size() - 1]
+	var 时分 := 时间部.split(":")
+	if 时分.size() != 2:
+		return -1
+	if not 时分[0].is_valid_int() or not 时分[1].is_valid_int():
+		return -1
+	return int(时分[0]) * 60 + int(时分[1])
+
+
+static func _格式时间(总分钟: int) -> String:
+	var 余 := 总分钟 % 1440
+	if 余 < 0:
+		余 += 1440
+	return "%02d:%02d" % [int(余 / 60), int(余 % 60)]
+
+
+## 新消息的时间戳：取当前时段的基准时间；
+## 若上一条消息已落在本时段内，就在它后面 +1 分钟 ——
+## 同一时段聊下去时间是往前走的，不会是一长串同一个数字。
+static func _当前时间文本(联系人名: String) -> String:
+	var 基准 := _时段基准时间()
+	var 基准分 := _解析分钟(基准)
+	if 基准分 < 0:
+		return 基准
+
+	var contact: Dictionary = 联系人数据.get(联系人名, {})
+	var 消息: Array = contact.get("消息", [])
+	if 消息.is_empty():
+		return 基准
+
+	var 上一条: Dictionary = 消息[消息.size() - 1]
+	var 上分 := _解析分钟(str(上一条.get("时间", "")))
+	if 上分 >= 基准分:
+		return _格式时间(上分 + 1)
+	return 基准
 
 
 static func 复制到槽位(新槽位: int) -> void:
